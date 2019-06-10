@@ -90,6 +90,7 @@ Transform:
   m_LocalScale: {x: 0.8, y: 0.8, z: 1}
   m_Children:
   - {fileID: 1534695390}
+  - {fileID: 110196572823313132}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -201,7 +202,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isSitting: 0
-  isInteractive: 0
+  isInteractive: 1
+  hp: 100000
+  speed: 0
 --- !u!114 &3209084379532179684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -215,11 +218,152 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - Speaker: "\uD53C\uACE4\uD574\uBCF4\uC774\uB294 \uC0AC\uB78C"
+  - type: 1
+    Speaker: "\uCC29\uD574\uBCF4\uC774\uB294 \uD1A0\uB07C"
     Text: "\uAF2C\uB9C8\uC57C, \uD639\uC2DC \uAE38\uC744 \uC783\uC5C8\uB2C8?"
-  - Speaker: "\uD53C\uACE4\uD574\uBCF4\uC774\uB294 \uC0AC\uB78C"
-    Text: "\uC557, \uBB34\uC11C\uC6CC \uD560 \uD544\uC694 \uC5C6\uC5B4, \uB098\uB294
-      \uADF8\uB0E5 \uC9C0\uB098\uAC00\uB294 \uD754\uD55C \uB300\uD559\uC6D0\uC0DD\uC774\uB780\uB2E4.
-      \uD639\uC2DC \uBB34\uC2A8 \uC77C \uC788\uB2C8?"
-  - Speaker: "\uB300\uD559\uC6D0\uC0DD"
-    Text: "\uD639\uC2DC \uC5B4\uBA38\uB2C8\uC640 \uB5A8\uC5B4\uC9C4\uAC70\uB2C8?"
+  - type: 1
+    Speaker: "\uB300\uD559\uC6D0\uC0DD"
+    Text: "\uC557, \uBB34\uC11C\uC6CC \uD560 \uD544\uC694 \uC5C6\uC5B4. \uB098\uB294
+      \uADF8\uB0E5 \uC9C0\uB098\uAC00\uB294 \uD754\uD55C \uB300\uD559\uC6D0\uC0DD\uC774\uB780\uB2E4."
+  - type: 1
+    Speaker: "\uB300\uD559\uC6D0\uC0DD"
+    Text: "\uD639\uC2DC \uC5B4\uBA38\uB2C8\uC640 \uB5A8\uC5B4\uC9C0\uAC8C \uB41C\uAC70\uB2C8?"
+  - type: 1
+    Speaker: "\uB300\uD559\uC6D0\uC0DD"
+    Text: "\uADF8\uB807\uAD6C\uB098. \uC5B4\uBA38\uB2C8\uC758 \uD578\uB4DC\uD3F0 \uBC88\uD638\uB294
+      \uC54C\uACE0 \uC788\uB2C8?"
+  - type: 1
+    Speaker: "\uB300\uD559\uC6D0\uC0DD"
+    Text: "\uB178\uD2B8\uC5D0 \uC801\uC5B4\uB450\uC5C8\uB2E4\uACE0? \uC798\uB410\uB124!"
+  - type: 1
+    Speaker: "\uB300\uD559\uC6D0\uC0DD"
+    Text: "\uAC00\uBC29\uC5D0\uC11C \uB178\uD2B8\uB97C \uAEBC\uB0B4 \uBC88\uD638\uB97C
+      \uCC3E\uC544\uBCF4\uACA0\uB2C8?"
+  - type: 2
+    Speaker: "\uB300\uD559\uC6D0\uC0DD"
+    Text: "\uBC88\uD638\uB97C \uC54C\uAC8C \uB418\uBA74 \uB2E4\uC2DC \uB9D0\uC744
+      \uAC78\uC5B4\uC918!"
+  - type: 3
+    Speaker: "\uB300\uD559\uC6D0\uC0DD"
+    Text: "\uC557... \uADF8\uB7FC \uC774 \uB300\uD654\uB97C \uB2E4\uC2DC \uD574\uC57C
+      \uD558\uC796\uC544... \uB300\uC0AC \uAC04\uC2E0\uD788 \uC678\uC6E0\uB294\uB370..."
+  - type: 4
+    Speaker: "\uB300\uD559\uC6D0\uC0DD"
+    Text: "\uAC00\uBC29\uC744 \uC5F4\uC5B4\uC11C \uBC88\uD638\uB97C \uCC3E\uC544\uBCF4\uB834"
+  - type: 5
+    Speaker: "\uB300\uD559\uC6D0\uC0DD"
+    Text: "\uBC88\uD638\uB97C \uC798 \uCC3E\uC558\uAD6C\uB098!"
+  quest: 1
+  reward: 140000000a000000
+--- !u!1 &5914622396799611753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 110196572823313132}
+  - component: {fileID: 1141048058548043649}
+  - component: {fileID: 2741864268311093043}
+  - component: {fileID: 4676752010798929490}
+  m_Layer: 8
+  m_Name: TalkBubble
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &110196572823313132
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5914622396799611753}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2, y: 1.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 574958203248194268}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1141048058548043649
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5914622396799611753}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 1729900917
+  m_SortingLayer: 3
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 5edb4af324f67844fae0f49b8f7bb8c4, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1.8, y: 1.36}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!95 &2741864268311093043
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5914622396799611753}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: c4ca1876bddcae343bb6da2d23e0d1ce, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &4676752010798929490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5914622396799611753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 861066c42fb8b2149beb1f045dd64f78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

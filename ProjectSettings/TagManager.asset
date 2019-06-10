@@ -7,6 +7,7 @@ TagManager:
   - Door
   - InteractArea
   - Bunny
+  - AttackArea
   layers:
   - Default
   - TransparentFX
@@ -49,4 +50,7 @@ TagManager:
     locked: 0
   - name: StandingCharacter
     uniqueID: 1869800291
+    locked: 0
+  - name: Icon
+    uniqueID: 1729900917
     locked: 0

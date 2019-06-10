@@ -17,7 +17,8 @@ public class Talk : MonoBehaviour
     {
         if (canTalk == true && Input.GetKeyDown(KeyCode.Z))
         {
-            //Debug.Log(interactBunny);
+            GameManager.instance.ChangeMoveState(false);
+            interactBunny.GetComponent<Bunny>().FlipBunny(player);
             UIManager.instance.StartTalk(player.transform.position, interactBunny);
         }
     }
@@ -26,10 +27,9 @@ public class Talk : MonoBehaviour
     {
         if(coll.gameObject.tag == "InteractArea" && canTalk == false)
         {
-            //Debug.Log("대화 가능");
-
             canTalk = true;
             interactBunny = coll.gameObject.transform.parent.gameObject;
+            //Debug.Log(interactBunny.name + "와 대화 가능");
         }
     }
 

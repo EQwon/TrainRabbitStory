@@ -14,13 +14,19 @@ public class UIManager : MonoBehaviour
     public GameObject finishDialogText;
     public GameObject acceptQuestButton;
     public GameObject rejectQuestButton;
+    public GameObject basicUI;
+    public Text cellNumberText;
+    public List<Sprite> storyOpeningImage;
+    public List<Sprite> storyEndingImage;
+    public GameObject storyPanel;
+    public GameObject healthBar;
+    public GameObject heart;
 
-    private GameObject mainCamera;    
+    private GameObject mainCamera;
 
     private List<Dialog> currentDialogue;
+    private GameObject currentInteractBunny;
     private int currentDialogNum = -1;
-    private int currentDialogSize = 0;
-    private int currentQuestNum = 0;
 
     private void Awake()
     {
@@ -44,9 +50,11 @@ public class UIManager : MonoBehaviour
         finishDialogText.SetActive(false);
         acceptQuestButton.SetActive(false);
         rejectQuestButton.SetActive(false);
+        basicUI.SetActive(true);
+
+        TrainCellNumberUpdate();
 
         currentDialogNum = -1;
-        currentDialogSize = 0;
 
         mainCamera = GameObject.Find("Main Camera");
 
@@ -56,20 +64,16 @@ public class UIManager : MonoBehaviour
 
     public void StartTalk(Vector2 playerPos, GameObject interactBunny)
     {
+        basicUI.SetActive(false);
+        currentInteractBunny = interactBunny;
         Vector2 interactBunnyPos = interactBunny.transform.position;
-        List<Dialog> dialogue = interactBunny.GetComponent<Dialogue>().dialogue;
+
+        currentDialogue = interactBunny.GetComponent<Dialogue>().dialogueForNow();
 
         talkPanel.SetActive(true);
         mainCamera.transform.position = ZoomInCameraPos(playerPos, interactBunnyPos);
         mainCamera.GetComponent<Camera>().orthographicSize = 4f;
-        currentDialogue = dialogue;
         currentDialogNum = -1;
-        currentDialogSize = dialogue.Count;
-
-        if (currentDialogue[currentDialogSize - 1].type == DialogType.Quest)
-        {
-            currentQuestNum = currentDialogue[currentDialogSize - 1].questNum;
-        }
 
         NextDialog();
     }
@@ -91,62 +95,88 @@ public class UIManager : MonoBehaviour
 
     public void NextDialog()
     {
-        if(currentDialogNum >=0 && currentDialogue[currentDialogNum].type == DialogType.Quest)
-        {
-            return;
-        }
-
-        if(currentDialogNum >= currentDialogSize - 1)
-        {
-            InitUI();
-            return;
-        }
-
         currentDialogNum += 1;
+
+        if (currentDialogNum >= currentDialogue.Count)
+        {
+            currentInteractBunny.GetComponent<Dialogue>().GiveReward(currentDialogue);
+            InitUI();
+            GameManager.instance.ChangeMoveState(true);
+            currentInteractBunny.transform.GetChild(1).GetComponent<TalkBubble>().ChangeBubbleState();
+            return;
+        }
 
         speakerName.text = currentDialogue[currentDialogNum].Speaker;
         speakerText.text = currentDialogue[currentDialogNum].Text;
+        SoundManager.instance.talkSE();
 
-        if(currentDialogNum == currentDialogSize - 1)
+        if(currentDialogNum == currentDialogue.Count - 1)
         {
+            //Debug.Log("왜 안나옴?");
             DialogueFinishNotice(currentDialogue[currentDialogNum].type);
         }
     }
 
     private void DialogueFinishNotice(DialogType type)
     {
-        if(type == DialogType.Default)
-        {
-            finishDialogText.SetActive(true);
-        }
-        else if(type == DialogType.Quest)
+        if (type == DialogType.BeforeQuest)
         {
             acceptQuestButton.SetActive(true);
             rejectQuestButton.SetActive(true);
+            finishDialogText.SetActive(false);
+        }
+        else
+        {
+            acceptQuestButton.SetActive(false);
+            rejectQuestButton.SetActive(false);
+            finishDialogText.SetActive(true);
         }
     }
 
     public void AcceptQuest()
     {
-        if(currentQuestNum == 0)
-        {
-            Debug.Log("퀘스트를 수락할 수 없습니다. 퀘스트가 지정 되지 않았습니다.");
-            return;
-        }
-
-        InitUI();
-        Debug.Log(currentQuestNum + "번의 퀘스트를 수락합니다.");
+        currentDialogue.AddRange(currentInteractBunny.GetComponent<Dialogue>().AfterAcceptDialog());
+        Debug.Log("퀘스트를 수락합니다.");
+        int questNum = (int)currentInteractBunny.GetComponent<Dialogue>().quest;
+        GameManager.instance.gameObject.GetComponent<QuestManager>().isAccept[questNum] = true;
+        NextDialog();
     }
 
     public void RejectQuest()
     {
-        if (currentQuestNum == 0)
-        {
-            Debug.Log("퀘스트를 수락할 수 없습니다. 퀘스트가 지정 되지 않았습니다.");
-            return;
-        }
-
-        InitUI();
+        currentDialogue.AddRange(currentInteractBunny.GetComponent<Dialogue>().AfterRefuseDialog());
         Debug.Log("퀘스트를 거절합니다.");
+        NextDialog();
+    }
+
+    public void TrainCellNumberUpdate()
+    {
+        cellNumberText.text = GameManager.instance.gameObject.GetComponent<TrainController>().CellNum.ToString();
+    }
+
+    public void ShowOpeningStory(GameManager.Level level)
+    {
+        storyPanel.GetComponent<Image>().sprite = storyOpeningImage[(int)level];
+        storyPanel.SetActive(true);
+    }
+
+    public void ShowEndingStory(GameManager.Level level)
+    {
+        storyPanel.GetComponent<Image>().sprite = storyEndingImage[(int)level];
+        storyPanel.SetActive(true);
+    }
+
+    public void AdjustStatusBar()
+    {
+        float hp = GameManager.instance.HP / 100;
+        float mp = GameManager.instance.MP / 100;
+        healthBar.GetComponent<Slider>().value = hp;
+        heart.GetComponent<Image>().color = new Color(mp, mp, mp);
+    }
+
+    public void CloseStory()
+    {
+        storyPanel.SetActive(false);
+        GameManager.instance.ChangeMoveState(true);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class SpecialBunny
 {
-    public int stageNum;
+    public int apearCellNum;
     public GameObject bunnyPrefab;
 }
 
@@ -27,7 +27,7 @@ public class TrainController : MonoBehaviour
     public List<SpecialBunny> highStageStandingBunny;
     public List<SpecialBunny> universityStageStandingBunny;
 
-    public int stageNum = 1;
+    public int CellNum = 1;
 
     private List<GameObject> sittingBunnyList = new List<GameObject>();
     private List<GameObject> standingBunnyList = new List<GameObject>();
@@ -58,7 +58,7 @@ public class TrainController : MonoBehaviour
         sitPositions.Add(new Vector2(8.2f, 3.5f));
     }
 
-    private void DestroyBunny()
+    private void DestroyBunny() //다음 스테이지를 위해 모든 토끼 제거
     {
         GameObject[] bunnyList = GameObject.FindGameObjectsWithTag("Bunny");
 
@@ -68,7 +68,7 @@ public class TrainController : MonoBehaviour
         }
     }
 
-    private void CollocateSittingBunny(List<GameObject> bunnyList)
+    private void CollocateSittingBunny(List<GameObject> bunnyList)  //앉아있는 일반 토끼들 배치하는 함수
     {
         GameObject train = GameObject.Find("Train");
 
@@ -83,9 +83,9 @@ public class TrainController : MonoBehaviour
         }
     }
 
-    private void CollocteStandingBunny(List<GameObject> bunnyList)
+    private void CollocteStandingBunny(List<GameObject> bunnyList)  //서 있는 일반 토끼들 배치하는 함수
     {
-        int standingBunnyNum = 1;   //생성하는 숫자는 나중에 바꾸도록 하자!
+        int standingBunnyNum = 10;   //생성하는 숫자는 나중에 바꾸도록 하자!
         GameObject train = GameObject.Find("Train");
 
         for (int i = 0; i < standingBunnyNum; i++)
@@ -110,7 +110,7 @@ public class TrainController : MonoBehaviour
         CreatePlayer(level);
     }
 
-    private void LayoutBunny(GameManager.Level level)
+    private void LayoutBunny(GameManager.Level level)   //직접 토끼들을 레벨에 따라 배치시키는 함수
     {
         switch (level)
         {
@@ -142,13 +142,13 @@ public class TrainController : MonoBehaviour
         CollocteStandingBunny(normalStandingBunny);
     }
 
-    private void CollocateSpecialStandingBunny(List<SpecialBunny> bunnyList)
+    private void CollocateSpecialStandingBunny(List<SpecialBunny> bunnyList)    //특수한 서 있는 토끼들을 배치하는 함수
     {
         GameObject train = GameObject.Find("Train");
 
         for (int i = 0; i < bunnyList.Count; i++)
         {
-            if(stageNum == bunnyList[i].stageNum)
+            if(CellNum == bunnyList[i].apearCellNum)
             {
                 float xPos, yPos;
                 xPos = Random.Range(-8f, 8f);
@@ -165,13 +165,13 @@ public class TrainController : MonoBehaviour
         }
     }
 
-    private void CollocateSpecialSittingBunny(List<SpecialBunny> bunnyList)
+    private void CollocateSpecialSittingBunny(List<SpecialBunny> bunnyList) //특수한 앉아있는 토끼들 배치하는 함수
     {
         GameObject train = GameObject.Find("Train");
 
         for (int i = 0; i < bunnyList.Count; i++)
         {
-            if(stageNum == bunnyList[i].stageNum)
+            if(CellNum == bunnyList[i].apearCellNum)
             {
                 int randomPos = Random.Range(0, sitPositions.Count);
 
@@ -184,7 +184,7 @@ public class TrainController : MonoBehaviour
         }
     }
 
-    private List<GameObject> SittingBunnyList(List<GameObject> sittingBunnyList)
+    private List<GameObject> SittingBunnyList(List<GameObject> sittingBunnyList)    //이거 잘못만든 것 같은데 일단 내비 둠
     {
         List<GameObject> bunnyList = normalSittingBunny;
 
@@ -194,9 +194,9 @@ public class TrainController : MonoBehaviour
         }
 
         return bunnyList;
-    }   //이거 잘못만든 것 같은데 일단 내비 둠
+    }
 
-    private List<GameObject> RefreshStandingBunnyList(List<GameObject> standingBunntList) //이거 잘못만든 것 같은데 일단 내비 둠
+    private List<GameObject> RefreshStandingBunnyList(List<GameObject> standingBunntList)   //이거 잘못만든 것 같은데 일단 내비 둠
     {
         List<GameObject> bunnyList = normalStandingBunny;
 
@@ -208,7 +208,7 @@ public class TrainController : MonoBehaviour
         return bunnyList;
     }
 
-    private void CreatePlayer(GameManager.Level level)
+    private void CreatePlayer(GameManager.Level level)  //단계에 맞게 플레이어 생성
     {
         Vector2 spawnPosition = new Vector2(-8f, 0f);
         switch(level)
