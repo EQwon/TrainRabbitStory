@@ -9,9 +9,13 @@ public class GameManager : MonoBehaviour
     public GameObject canvas;
 
     public enum Level { kinder, elementary, middle, high, university }
+    public enum TrainState { normal, talking, Quest, cellChange }
 
     public Level level = Level.kinder;
-    public bool canMove = true;
+    private TrainState state = TrainState.normal;
+    public TrainState State { get { return state; } }
+    private TrainState previousState = TrainState.normal;
+    public int cellLength { get { return level == Level.kinder ? 10 : 20; } }
     private float hp;
     public float HP {
         get { return hp; }
@@ -24,9 +28,8 @@ public class GameManager : MonoBehaviour
             if (value >= 100) mp = 100;
             else if (value <= 0) mp = 0;
             else mp = value; } }
-    private int stage = 1;
 
-    private TrainController trainController;
+    public List<GameObject> playerPrefabs;
 
     private void Awake()
     {
@@ -40,8 +43,7 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-
-        trainController = GetComponent<TrainController>();
+        GetComponent<QuestManager>().enabled = false;
     }
 
     private void OnEnable()
@@ -54,39 +56,54 @@ public class GameManager : MonoBehaviour
         if (SceneManager.GetActiveScene().buildIndex == 1)
         {
             Debug.Log("새로운 스테이지가 시작했습니다.");
-            ChangeMoveState(false);
+            ChangeTrainState(TrainState.talking);
 
             HP = 100;
             MP = 100;
 
             InitStage();
             UIManager.instance.ShowOpeningStory(level);
+            GetComponent<QuestManager>().enabled = true;
         }
     }
 
     public void InitStage()
     {
-        //Debug.Log("현재 스테이지는 " + stage);
         Instantiate(canvas);
-        trainController.SetupTrain(level);
-        Debug.Log("Initialize Stage Finish");
+        CreatePlayer();
     }
 
-    public void NextStage()
+    private void CreatePlayer()
     {
-        stage++;
-        //Debug.Log("스테이지를 " + stage + "로 올렸습니다.");
-        trainController.CellNum = stage;
-        trainController.SetupTrain(level);
-        UIManager.instance.TrainCellNumberUpdate();
-        GameManager.instance.ChangeMoveState(true);
+        Vector3 spawnPos = new Vector3(-8f, 0, 0);
+        Instantiate(playerPrefabs[(int)level], spawnPos, Quaternion.identity);
     }
 
-    public void ChangeMoveState(bool isTrue)
+    public void ChangeTrainState(TrainState trainState)
     {
-        canMove = isTrue;
+        previousState = state;
+        state = trainState;
 
-        if (isTrue == true) Time.timeScale = 1;
-        else Time.timeScale = 0;
+        switch (state)
+        {
+            case TrainState.normal:
+                Time.timeScale = 1f;
+                break;
+            case TrainState.talking:
+                Time.timeScale = 0f;
+                break;
+            case TrainState.cellChange:
+                Time.timeScale = 1f;
+                break;
+            case TrainState.Quest:
+                Time.timeScale = 1f;
+                break;
+        }
+    }
+
+    public void BackToPreviousState()
+    {
+        ChangeTrainState(previousState);
+        previousState = state;
     }
 }

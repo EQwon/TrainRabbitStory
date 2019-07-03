@@ -144,4 +144,4 @@ MonoBehaviour:
   isSitting: 0
   isInteractive: 0
   hp: 30
-  speed: 0
+  speed: 4

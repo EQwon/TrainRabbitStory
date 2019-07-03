@@ -5,22 +5,30 @@ using UnityEngine;
 public class Talk : MonoBehaviour
 {
     private GameObject player;
-    private bool canTalk = false;
+    public bool canTalk = false;
     private GameObject interactBunny = null;
+    private Joystick joystick = null;
 
     private void Awake()
     {
-        player = gameObject.transform.parent.gameObject;
+        player = Player.instance.gameObject;
     }
 
     private void Update()
     {
-        if (canTalk == true && Input.GetKeyDown(KeyCode.Z))
+        if (joystick == null) joystick = Player.instance.joystick;
+
+        if (canTalk == true && joystick.Talk/*Input.GetKeyDown(KeyCode.Z)*/)
         {
-            GameManager.instance.ChangeMoveState(false);
-            interactBunny.GetComponent<Bunny>().FlipBunny(player);
-            UIManager.instance.StartTalk(player.transform.position, interactBunny);
+            joystick.Talk = false;
+            Talking();
         }
+    }
+
+    public void Talking()
+    {
+        interactBunny.GetComponent<Bunny>().FlipBunny(player);
+        UIManager.instance.StartTalk(player.transform.position, interactBunny);
     }
 
     private void OnTriggerEnter2D(Collider2D coll)

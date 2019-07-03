@@ -11,8 +11,10 @@ public class Player : MonoBehaviour
     public int damage = 10;
     public float attackDelay = 5f;
 
+    public Joystick joystick;
+
     private Rigidbody2D rb2D;
-    private Animator animator;
+    public Animator animator;
     private float attackedTime = 0;
 
     private void Awake()
@@ -31,20 +33,22 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
+    private void Start()
+    {
+        if (joystick == null)
+        {
+            joystick = GameObject.Find("Fixed Joystick").GetComponent<Joystick>();
+        }
+    }
+
     private void Update()
     {
         GetComponent<SpriteRenderer>().sortingOrder = (int)(-100 * transform.position.y);
 
-        int horizontal = 0;
-        int vertical = 0;
-
-        horizontal = (int)Input.GetAxisRaw("Horizontal");
-        vertical = (int)Input.GetAxisRaw("Vertical");
-
-        if (GameManager.instance.canMove == true)
+        if (GameManager.instance.State == GameManager.TrainState.normal || GameManager.instance.State == GameManager.TrainState.Quest)
         {
-            FlippingPlayer(horizontal); //플레이어 좌우 반전
-            Move(horizontal, vertical); //플레이어 움직여!!
+            FlippingPlayer(joystick.Horizontal);
+            Move(joystick.Horizontal, joystick.Vertical);
             Attack();
         }
 
@@ -52,18 +56,18 @@ public class Player : MonoBehaviour
         attackedTime += Time.deltaTime;
     }
 
-    private void Move(int xDir, int yDir)
+    private void Move(float xDir, float yDir) //플레이어 움직여!!
     {
-        Vector2 newPosition = rb2D.position + new Vector2(xDir, yDir) * speed * Time.deltaTime;
-        rb2D.MovePosition(newPosition);
+        Vector2 moveDelta = new Vector2(xDir, yDir) * speed * Time.deltaTime;
+        rb2D.MovePosition(rb2D.position + moveDelta);
 
-        if (xDir != 0 || yDir != 0) animator.SetBool("playerWalk", true);
+        if (moveDelta.sqrMagnitude >= 0.0001f) animator.SetBool("playerWalk", true);
         else animator.SetBool("playerWalk", false);
     }
 
     private void Attack()
     {
-        if (Input.GetKeyDown(KeyCode.A) && attackedTime >= attackDelay)
+        if (/*Input.GetKeyDown(KeyCode.A)*/ joystick.Attack && attackedTime >= attackDelay)
         {
             transform.GetChild(1).GetComponent<Attack>().ApplyDamage();
             animator.SetTrigger("playerAttack");
@@ -71,7 +75,7 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void FlippingPlayer(int horizontal)
+    private void FlippingPlayer(float horizontal) //플레이어 좌우 반전
     {
         if(horizontal > 0)
         {
@@ -85,11 +89,9 @@ public class Player : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
-        bool finishQuest = !GameManager.instance.gameObject.GetComponent<QuestManager>().CheckUnperformQuest();
-        if (coll.gameObject.tag == "Door" && finishQuest == true)
+        if (coll.gameObject.tag == "Item")
         {
-            GameManager.instance.canMove = false;
-            Invoke("Restart", 0.1f);
+            coll.gameObject.GetComponent<QuestItem>().GetItem();
         }
     }
 
@@ -110,11 +112,5 @@ public class Player : MonoBehaviour
 
         //Debug.Log("체력 감소");
         yield return new WaitForSeconds(0.5f);
-    }
-
-    private void Restart()
-    {
-        GameManager.instance.ChangeMoveState(false);
-        GameManager.instance.NextStage();
     }
 }

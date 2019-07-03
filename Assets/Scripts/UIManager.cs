@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     public GameObject storyPanel;
     public GameObject healthBar;
     public GameObject heart;
+    public GameObject WarningPanel;
 
     private GameObject mainCamera;
 
@@ -51,46 +52,35 @@ public class UIManager : MonoBehaviour
         acceptQuestButton.SetActive(false);
         rejectQuestButton.SetActive(false);
         basicUI.SetActive(true);
+        WarningPanel.SetActive(false);
 
-        TrainCellNumberUpdate();
+        TrainCellNumberUpdate(10);
 
         currentDialogNum = -1;
 
         mainCamera = GameObject.Find("Main Camera");
 
-        mainCamera.transform.position = new Vector3(0, 0, -10f);
-        mainCamera.GetComponent<Camera>().orthographicSize = 5.5f;
+        mainCamera.GetComponent<CameraWalk>().ZoomOutCamera();
     }
 
     public void StartTalk(Vector2 playerPos, GameObject interactBunny)
     {
+        currentDialogue = interactBunny.GetComponent<Dialogue>().dialogueForNow();
+        if (currentDialogue.Count == 0) return;
+
+        GameManager.instance.ChangeTrainState(GameManager.TrainState.talking);
         basicUI.SetActive(false);
         currentInteractBunny = interactBunny;
         Vector2 interactBunnyPos = interactBunny.transform.position;
 
-        currentDialogue = interactBunny.GetComponent<Dialogue>().dialogueForNow();
+        
 
         talkPanel.SetActive(true);
-        mainCamera.transform.position = ZoomInCameraPos(playerPos, interactBunnyPos);
-        mainCamera.GetComponent<Camera>().orthographicSize = 4f;
+        talkPanel.GetComponent<Button>().interactable = true;
+        mainCamera.GetComponent<CameraWalk>().ZoomInCamera(playerPos, interactBunny.transform.position);
         currentDialogNum = -1;
 
         NextDialog();
-    }
-
-    private Vector3 ZoomInCameraPos(Vector2 playerPos, Vector2 interactBunnyPos)
-    {
-        float cameraPos_X, cameraPos_Y;
-
-        cameraPos_X = (playerPos.x + interactBunnyPos.x) / 2;
-        cameraPos_Y = (playerPos.y + interactBunnyPos.y - 2f) / 2;
-
-        if (cameraPos_X > 2.4f)
-            cameraPos_X = 2.4f;
-        else if (cameraPos_X < -2.4f)
-            cameraPos_X = -2.4f;
-
-        return new Vector3(cameraPos_X, cameraPos_Y, -10f);
     }
 
     public void NextDialog()
@@ -99,16 +89,13 @@ public class UIManager : MonoBehaviour
 
         if (currentDialogNum >= currentDialogue.Count)
         {
-            currentInteractBunny.GetComponent<Dialogue>().GiveReward(currentDialogue);
-            InitUI();
-            GameManager.instance.ChangeMoveState(true);
-            currentInteractBunny.transform.GetChild(1).GetComponent<TalkBubble>().ChangeBubbleState();
+            EndTalk();
             return;
         }
 
         speakerName.text = currentDialogue[currentDialogNum].Speaker;
         speakerText.text = currentDialogue[currentDialogNum].Text;
-        SoundManager.instance.talkSE();
+        SoundManager.instance.TalkSE();
 
         if(currentDialogNum == currentDialogue.Count - 1)
         {
@@ -121,6 +108,7 @@ public class UIManager : MonoBehaviour
     {
         if (type == DialogType.BeforeQuest)
         {
+            talkPanel.GetComponent<Button>().interactable = false;
             acceptQuestButton.SetActive(true);
             rejectQuestButton.SetActive(true);
             finishDialogText.SetActive(false);
@@ -133,25 +121,39 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    private void EndTalk()
+    {
+        currentInteractBunny.GetComponent<Dialogue>().GiveReward(currentDialogue);
+        InitUI();
+        GameManager.instance.ChangeTrainState(GameManager.TrainState.normal);
+    }
+
     public void AcceptQuest()
     {
+        talkPanel.GetComponent<Button>().interactable = true;
+        acceptQuestButton.SetActive(false);
+        rejectQuestButton.SetActive(false);
         currentDialogue.AddRange(currentInteractBunny.GetComponent<Dialogue>().AfterAcceptDialog());
-        Debug.Log("퀘스트를 수락합니다.");
         int questNum = (int)currentInteractBunny.GetComponent<Dialogue>().quest;
         GameManager.instance.gameObject.GetComponent<QuestManager>().isAccept[questNum] = true;
+        Debug.Log(questNum + "번째 퀘스트를 수락합니다.");
         NextDialog();
     }
 
     public void RejectQuest()
     {
+        talkPanel.GetComponent<Button>().interactable = true;
+        acceptQuestButton.SetActive(false);
+        rejectQuestButton.SetActive(false);
         currentDialogue.AddRange(currentInteractBunny.GetComponent<Dialogue>().AfterRefuseDialog());
         Debug.Log("퀘스트를 거절합니다.");
         NextDialog();
     }
 
-    public void TrainCellNumberUpdate()
+    public void TrainCellNumberUpdate(int cellNum)
     {
-        cellNumberText.text = GameManager.instance.gameObject.GetComponent<TrainController>().CellNum.ToString();
+        //주어진 번호로 차량 번호 칸을 업데이트 한다.
+        cellNumberText.text = cellNum.ToString();
     }
 
     public void ShowOpeningStory(GameManager.Level level)
@@ -177,6 +179,14 @@ public class UIManager : MonoBehaviour
     public void CloseStory()
     {
         storyPanel.SetActive(false);
-        GameManager.instance.ChangeMoveState(true);
+        GameManager.instance.ChangeTrainState(GameManager.TrainState.normal);
+    }
+
+    public void Warning(string text)
+    {
+        Text warningText = WarningPanel.transform.GetChild(0).transform.GetChild(0).GetComponent<Text>();
+        warningText.text = text;
+
+        WarningPanel.SetActive(true);
     }
 }

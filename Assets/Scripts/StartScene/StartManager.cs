@@ -6,41 +6,54 @@ using UnityEngine.UI;
 
 public class StartManager : MonoBehaviour
 {
-    public GameObject gameName;
-    public GameObject startGameButton;
-    public GameObject stageSelectButton;
-    public GameObject collectionButton;
-    public RectTransform train;
-    public GameObject[] stageCharacters;
+    public GameObject stageNameGroup;
+    public GameObject[] stageName;
+    public GameObject previousButton;
+    public GameObject nextButton;
 
-    private Vector3 trainTarget = new Vector3(50, -240, 0);
-    private float trainSpeed = 1500f;
+    private int nowStage;
 
     private void Start()
     {
-        stageCharacters[0].SetActive(true);
-        stageCharacters[1].SetActive(false);
-        stageCharacters[2].SetActive(false);
-        stageCharacters[3].SetActive(false);
-        stageCharacters[4].SetActive(false);
+        DecideButtonActive();
+        for (int i = 1; i < stageName.Length; i++) stageName[i].SetActive(false);
     }
 
-    private void UIFadeOut()
+    private void Update()
     {
-        startGameButton.GetComponent<Button>().interactable = false;
-        stageSelectButton.GetComponent<Button>().interactable = false;
-        collectionButton.GetComponent<Button>().interactable = false;
-
-        gameName.GetComponent<Image>().CrossFadeAlpha(0f, 1f, false);
-        startGameButton.GetComponent<Image>().CrossFadeAlpha(0f, 1f, false);
-        stageSelectButton.GetComponent<Image>().CrossFadeAlpha(0f, 1f, false);
-        collectionButton.GetComponent<Image>().CrossFadeAlpha(0f, 1f, false);
+        GameManager.instance.level = (GameManager.Level)nowStage;
     }
 
-    public void StartGame()
+    public void nextStage()
     {
-        UIFadeOut();
-        StartCoroutine(MoveTrain());
+        nowStage += 1;
+        StartCoroutine(ChangeStage(-1));
+    }
+
+    public void previousStage()
+    {
+        nowStage -= 1;
+        StartCoroutine(ChangeStage(1));
+    }
+
+    private void DecideButtonActive()
+    {
+        previousButton.SetActive(true);
+        nextButton.SetActive(true);
+
+        if (nowStage == 0)
+        {
+            previousButton.SetActive(false);
+        }
+        if (nowStage == 4)
+        {
+            nextButton.SetActive(false);
+        }
+    }
+
+    private void ChangeAD()
+    {
+
     }
 
     private void SceneChange()
@@ -49,54 +62,23 @@ public class StartManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void SelectStage(string levelName)
+    private IEnumerator ChangeStage(int dir)
     {
-        stageCharacters[0].SetActive(false);
-        stageCharacters[1].SetActive(false);
-        stageCharacters[2].SetActive(false);
-        stageCharacters[3].SetActive(false);
-        stageCharacters[4].SetActive(false);
+        Vector3 targetPos = stageNameGroup.transform.position + dir * new Vector3(800f, 0, 0);
+        float sp = 1000f;
 
-        switch (levelName)
-        {
-            case "kinder":
-                GameManager.instance.level = GameManager.Level.kinder;
-                stageCharacters[0].SetActive(true);
-                break;
-            case "elementary":
-                GameManager.instance.level = GameManager.Level.elementary;
-                stageCharacters[1].SetActive(true);
-                break;
-            case "middle":
-                GameManager.instance.level = GameManager.Level.middle;
-                stageCharacters[2].SetActive(true);
-                break;
-            case "high":
-                GameManager.instance.level = GameManager.Level.high;
-                stageCharacters[3].SetActive(true);
-                break;
-            case "university":
-                GameManager.instance.level = GameManager.Level.university;
-                stageCharacters[4].SetActive(true);
-                break;
-            default:
-                Debug.Log("오류! 오류!");
-                break;
-        }
-    }
+        previousButton.SetActive(false);
+        nextButton.SetActive(false);
+        stageName[nowStage].SetActive(true);
 
-    private IEnumerator MoveTrain()
-    {
-        float n = 0;
-        while (Vector3.Distance(train.localPosition, trainTarget) > Mathf.Epsilon)
+        while (Vector3.Distance(stageNameGroup.transform.position, targetPos) > Mathf.Epsilon)
         {
-            train.localPosition = Vector3.MoveTowards(train.localPosition, trainTarget, Time.deltaTime * (trainSpeed - n));
-            n += 9.5f;
-            yield return new WaitForSeconds(0.001f);
+            stageNameGroup.transform.position = Vector3.MoveTowards(stageNameGroup.transform.position, targetPos, Time.deltaTime * sp);
+            yield return new WaitForSeconds(0.01f);
         }
 
-        yield return new WaitForSeconds(1.5f);
-
-        SceneChange();
+        yield return new WaitForSeconds(0.2f);
+        DecideButtonActive();
+        stageName[nowStage + dir].SetActive(false);
     }
 }

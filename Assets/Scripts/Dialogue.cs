@@ -20,6 +20,8 @@ public class Dialogue : MonoBehaviour
 
     public List<Dialog> dialogueForNow()
     {
+        if (quest == Quest.None) return DefaultDialog();
+
         bool isAccept = GameManager.instance.gameObject.GetComponent<QuestManager>().isAccept[(int)quest];
         bool isSuccess = GameManager.instance.gameObject.GetComponent<QuestManager>().isSuccess[(int)quest];
 

@@ -10,6 +10,14 @@ public class Bunny : MonoBehaviour
     public int hp;
     public float speed;
 
+    private float lastPosX;
+
+    private void Start()
+    {
+        lastPosX = transform.position.x;
+        //StartCoroutine(Move());
+    }
+
     private void Update()
     {
         if(isSitting == false)
@@ -22,7 +30,27 @@ public class Bunny : MonoBehaviour
             Debug.Log(gameObject.name + "가 죽었습니다.");
             Destroy(gameObject);
         }
+
+        Flip();
     }
+
+    /*private IEnumerator Move()
+    {
+        float time = Random.Range(2f, 4f);
+        Vector3 dir = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
+
+        gameObject.GetComponent<Rigidbody2D>().velocity = dir * speed;
+
+        yield return new WaitForSeconds(time);
+
+        gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+
+        time = Random.Range(4f, 8f);
+
+        yield return new WaitForSeconds(time);
+
+        yield return StartCoroutine(Move());
+    }*/
 
     public void Attacked(int damage)
     {
@@ -31,8 +59,18 @@ public class Bunny : MonoBehaviour
         Debug.Log(gameObject.name + "가 공격받음.");
     }
 
+    private void Flip()
+    {
+        if (lastPosX < transform.position.x) transform.rotation = Quaternion.Euler(0, 0, 0);
+        if (lastPosX > transform.position.x) transform.rotation = Quaternion.Euler(0, 180, 0);
+
+        lastPosX = transform.position.x;
+    }
+
     public void FlipBunny(GameObject player)
     {
+        if (isSitting) return;
+
         float myPosX = transform.position.x;
         float playerPosX = player.transform.position.x;
 
