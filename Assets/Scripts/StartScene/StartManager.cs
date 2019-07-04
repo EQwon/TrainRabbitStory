@@ -56,7 +56,7 @@ public class StartManager : MonoBehaviour
 
     }
 
-    private void SceneChange()
+    public void StartGame()
     {
         Debug.Log("게임을 새로 시작합니다.");
         SceneManager.LoadScene(1);
