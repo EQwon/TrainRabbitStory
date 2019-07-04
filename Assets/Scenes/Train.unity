@@ -1133,6 +1133,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &451245403 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1872299282433083065, guid: 689a99d04f9aec8469a8118a69352c1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2085666518550056383}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &451245404 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7471168279319950176, guid: 689a99d04f9aec8469a8118a69352c1f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2085666518550056383}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3395,5 +3407,15 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8626130287195822867, guid: 689a99d04f9aec8469a8118a69352c1f,
+        type: 3}
+      propertyPath: BGMAudio
+      value: 
+      objectReference: {fileID: 451245403}
+    - target: {fileID: 8626130287195822867, guid: 689a99d04f9aec8469a8118a69352c1f,
+        type: 3}
+      propertyPath: SEAudio
+      value: 
+      objectReference: {fileID: 451245404}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 689a99d04f9aec8469a8118a69352c1f, type: 3}
