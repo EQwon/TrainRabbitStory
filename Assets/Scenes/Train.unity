@@ -571,6 +571,8 @@ MonoBehaviour:
   CellNum: 8
   AppearStandingBunnyList:
   - {fileID: 2081886907282091113, guid: 34ede1996ee8d444280120d491c9cf15, type: 3}
+  - {fileID: 2503992160686711965, guid: 9df93a794204d694fbac339e694ea566, type: 3}
+  - {fileID: 2503992160686711965, guid: 78ad6879b8accc04c8b23120f468d87b, type: 3}
   AppearSittingBunnyList:
   - {fileID: 0}
   - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
@@ -1133,18 +1135,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!82 &451245403 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 1872299282433083065, guid: 689a99d04f9aec8469a8118a69352c1f,
-    type: 3}
-  m_PrefabInstance: {fileID: 2085666518550056383}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &451245404 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 7471168279319950176, guid: 689a99d04f9aec8469a8118a69352c1f,
-    type: 3}
-  m_PrefabInstance: {fileID: 2085666518550056383}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,6 +1286,11 @@ MonoBehaviour:
   - {fileID: 6976514002041131658, guid: 35c923dfd9b5577478766ac3b586a6fa, type: 3}
   - {fileID: 846393299363935562, guid: d3eac19066db4cd448df4837a9ec8c2c, type: 3}
   - {fileID: 7256514400031367280, guid: 4d747c294b7a00948882e2a069bde1a7, type: 3}
+  - {fileID: 502631167278193035, guid: f7c701b02e6ed7f4ab496c62000fa518, type: 3}
+  - {fileID: 7256514400031367280, guid: 4d747c294b7a00948882e2a069bde1a7, type: 3}
+  - {fileID: 6976514002041131658, guid: 35c923dfd9b5577478766ac3b586a6fa, type: 3}
+  - {fileID: 2503992160686711965, guid: b1c0a5bb29c83a74ea1c896f194a6fbb, type: 3}
+  - {fileID: 2503992160686711965, guid: 8e37475a30398e740950fd5fceffb4f2, type: 3}
   AppearSittingBunnyList:
   - {fileID: 0}
   - {fileID: 0}
@@ -2005,6 +2000,9 @@ MonoBehaviour:
   AppearStandingBunnyList:
   - {fileID: 3736129501804890883, guid: 5f7383bff479a5d4bb711de93897b47c, type: 3}
   - {fileID: 502631167278193035, guid: f7c701b02e6ed7f4ab496c62000fa518, type: 3}
+  - {fileID: 502631167278193035, guid: f7c701b02e6ed7f4ab496c62000fa518, type: 3}
+  - {fileID: 2503992160686711965, guid: ca6039c942d912d4e87e6cbf0070fef3, type: 3}
+  - {fileID: 2503992160686711965, guid: 7f7f09ebe42385349896d3240472cc4e, type: 3}
   AppearSittingBunnyList:
   - {fileID: 0}
   - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
@@ -2492,6 +2490,15 @@ MonoBehaviour:
   CellNum: 2
   AppearStandingBunnyList:
   - {fileID: 2081886907282091113, guid: 34ede1996ee8d444280120d491c9cf15, type: 3}
+  - {fileID: 502631167278193035, guid: f7c701b02e6ed7f4ab496c62000fa518, type: 3}
+  - {fileID: 3736129501804890883, guid: 5f7383bff479a5d4bb711de93897b47c, type: 3}
+  - {fileID: 2081886907282091113, guid: 34ede1996ee8d444280120d491c9cf15, type: 3}
+  - {fileID: 6732167636380368727, guid: 950d40ef3dc7e2e4689a0bdbbc153863, type: 3}
+  - {fileID: 846393299363935562, guid: d3eac19066db4cd448df4837a9ec8c2c, type: 3}
+  - {fileID: 7256514400031367280, guid: 4d747c294b7a00948882e2a069bde1a7, type: 3}
+  - {fileID: 3736129501804890883, guid: 5f7383bff479a5d4bb711de93897b47c, type: 3}
+  - {fileID: 2503992160686711965, guid: de474424c0a67ba48aa97406729b8ee3, type: 3}
+  - {fileID: 2503992160686711965, guid: 31fdc88df7106a3409f4b9e2535af3e6, type: 3}
   AppearSittingBunnyList:
   - {fileID: 0}
   - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
@@ -3093,6 +3100,7 @@ MonoBehaviour:
   CellNum: 6
   AppearStandingBunnyList:
   - {fileID: 7256514400031367280, guid: 4d747c294b7a00948882e2a069bde1a7, type: 3}
+  - {fileID: 2503992160686711965, guid: 08b88192fea06ca4fa7607fe48d0f604, type: 3}
   AppearSittingBunnyList:
   - {fileID: 0}
   - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
@@ -3407,15 +3415,5 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8626130287195822867, guid: 689a99d04f9aec8469a8118a69352c1f,
-        type: 3}
-      propertyPath: BGMAudio
-      value: 
-      objectReference: {fileID: 451245403}
-    - target: {fileID: 8626130287195822867, guid: 689a99d04f9aec8469a8118a69352c1f,
-        type: 3}
-      propertyPath: SEAudio
-      value: 
-      objectReference: {fileID: 451245404}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 689a99d04f9aec8469a8118a69352c1f, type: 3}
