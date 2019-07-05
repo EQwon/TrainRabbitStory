@@ -9,7 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject canvas;
 
     public enum Level { kinder, elementary, middle, high, university }
-    public enum TrainState { normal, talking, Quest, cellChange }
+    public enum TrainState { normal, talking, normalQuest, instantQuest, cellChange }
 
     public Level level = Level.kinder;
     private TrainState state = TrainState.normal;
@@ -95,8 +95,11 @@ public class GameManager : MonoBehaviour
             case TrainState.cellChange:
                 Time.timeScale = 1f;
                 break;
-            case TrainState.Quest:
+            case TrainState.normalQuest:
                 Time.timeScale = 1f;
+                break;
+            case TrainState.instantQuest:
+                Time.timeScale = 0f;
                 break;
         }
     }

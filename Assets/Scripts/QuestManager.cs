@@ -55,7 +55,7 @@ public class QuestManager : MonoBehaviour
             case GameManager.TrainState.normal:
                 if (GetUnperformQuest() == 0) return;
 
-                GameManager.instance.ChangeTrainState(GameManager.TrainState.Quest);
+                GameManager.instance.ChangeTrainState(GameManager.TrainState.normalQuest);
 
                 if (questCanvas == null) questCanvas = Instantiate(questCanvasPrefab);
                 int questNum = GetUnperformQuest();
@@ -65,7 +65,7 @@ public class QuestManager : MonoBehaviour
             case GameManager.TrainState.talking:
                 if (questCanvas != null) questCanvas.SetActive(false);
                 break;
-            case GameManager.TrainState.Quest:
+            case GameManager.TrainState.normalQuest:
                 if (questCanvas != null) questCanvas.SetActive(true);
                 RestrictCellMove();
 

@@ -10,7 +10,7 @@ public class PickUp : MonoBehaviour
 
     private void Start()
     {
-        GameManager.instance.ChangeTrainState(GameManager.TrainState.Quest);
+        GameManager.instance.ChangeTrainState(GameManager.TrainState.normalQuest);
 
         float spawnPosX = (10 - 3) * 20 + Random.Range(-7f, 7f);
         float spawnPosY = Random.Range(-4f, 2f);

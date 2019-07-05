@@ -45,7 +45,7 @@ public class Player : MonoBehaviour
     {
         GetComponent<SpriteRenderer>().sortingOrder = (int)(-100 * transform.position.y);
 
-        if (GameManager.instance.State == GameManager.TrainState.normal || GameManager.instance.State == GameManager.TrainState.Quest)
+        if (GameManager.instance.State == GameManager.TrainState.normal || GameManager.instance.State == GameManager.TrainState.normalQuest)
         {
             FlippingPlayer(joystick.Horizontal);
             Move(joystick.Horizontal, joystick.Vertical);
