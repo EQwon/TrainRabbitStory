@@ -321,5 +321,5 @@ MonoBehaviour:
   - {fileID: 8300000, guid: de47f3b1002d3664c95a652fb74cafa3, type: 3}
   - {fileID: 8300000, guid: 3f5b7d162da1b3f47bb212bc34c56f80, type: 3}
   - {fileID: 8300000, guid: ea601895d23b4e145be5f4d63cf258f8, type: 3}
-  BGMAudio: {fileID: 7471168279319950176}
-  SEAudio: {fileID: 1872299282433083065}
+  BGMAudio: {fileID: 1872299282433083065}
+  SEAudio: {fileID: 7471168279319950176}
