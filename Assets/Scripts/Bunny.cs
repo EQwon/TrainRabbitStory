@@ -78,13 +78,11 @@ public class Bunny : MonoBehaviour
                 if (cellNum != afterMoveCellNum)
                 {
                     targetPos = transform.position + new Vector3(-moveDir.x, moveDir.y, 0);
-                    Debug.Log("차량을 벗어날 것 같아서 x 방향을 바꿉니다.");
                 }
 
                 if (targetPos.y < -2.2f || targetPos.y > 2f)
                 {
                     targetPos = transform.position + new Vector3(moveDir.x, -moveDir.y, 0);
-                    Debug.Log("차량을 벗어날 것 같아서 y 방향을 바꿉니다.");
                 }
             }
         }
