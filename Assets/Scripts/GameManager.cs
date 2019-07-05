@@ -87,19 +87,19 @@ public class GameManager : MonoBehaviour
         switch (state)
         {
             case TrainState.normal:
-                Time.timeScale = 1f;
+                TimeManager.timeScale = 1;
                 break;
             case TrainState.talking:
-                Time.timeScale = 0f;
+                TimeManager.timeScale = 0;
                 break;
             case TrainState.cellChange:
-                Time.timeScale = 1f;
+                TimeManager.timeScale = 1;
                 break;
             case TrainState.normalQuest:
-                Time.timeScale = 1f;
+                TimeManager.timeScale = 1;
                 break;
             case TrainState.instantQuest:
-                Time.timeScale = 0f;
+                TimeManager.timeScale = 0;
                 break;
         }
     }

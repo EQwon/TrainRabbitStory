@@ -48,43 +48,40 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    private void Update()
+    public void StartUnperfomedQuest()
     {
-        switch (GameManager.instance.State)
-        {
-            case GameManager.TrainState.normal:
-                if (GetUnperformQuest() == 0) return;
+        if (GetUnperformQuest() == 0) return;
 
-                GameManager.instance.ChangeTrainState(GameManager.TrainState.normalQuest);
-
-                if (questCanvas == null) questCanvas = Instantiate(questCanvasPrefab);
-                int questNum = GetUnperformQuest();
-                
-                questCanvas.GetComponent<QuestCanvasController>().ActivateCanvas(questNum);
-                break;
-            case GameManager.TrainState.talking:
-                if (questCanvas != null) questCanvas.SetActive(false);
-                break;
-            case GameManager.TrainState.normalQuest:
-                if (questCanvas != null) questCanvas.SetActive(true);
-                RestrictCellMove();
-
-                if (GetUnperformQuest() == 0)
-                {
-                    GameManager.instance.ChangeTrainState(GameManager.TrainState.normal);
-                    Debug.Log("모든 퀘스트가 수행되어서 다시 정상 상태로 돌아옵니다.");
-                }
-                break;
-        }
+        int questNum = GetUnperformQuest();
+        StartQuest(questNum);
     }
 
-    public int GetUnperformQuest()
+    private int GetUnperformQuest()
     {
         for (int i = 0; i < isAccept.Count; i++)
         {
             if (isAccept[i] == true) return i;
         }
         return 0;
+    }
+
+    private void StartQuest(int questNum)
+    {
+        questCanvas = Instantiate(questCanvasPrefab);
+        questCanvas.GetComponent<QuestCanvasController>().ActivateCanvas(questNum);
+
+        switch (questNum)
+        {
+            case 1:
+                GameManager.instance.ChangeTrainState(GameManager.TrainState.normalQuest);
+                break;
+            case 2:
+                GameManager.instance.ChangeTrainState(GameManager.TrainState.instantQuest);
+                break;
+            case 3:
+                GameManager.instance.ChangeTrainState(GameManager.TrainState.normalQuest);
+                break;
+        }
     }
 
     public void BackToNoraml()

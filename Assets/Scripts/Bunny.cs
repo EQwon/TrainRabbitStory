@@ -51,7 +51,7 @@ public class Bunny : MonoBehaviour
 
     private void Move()
     {
-        nowTime += Time.deltaTime;
+        nowTime += TimeManager.deltaTime;
 
 
         if (isMoving == true)

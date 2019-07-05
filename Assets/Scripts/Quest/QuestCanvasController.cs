@@ -6,14 +6,6 @@ public class QuestCanvasController : MonoBehaviour
 {
     public GameObject[] canvas;
 
-    private void Awake()
-    {
-        for (int i = 0; i < canvas.Length; i++)
-        {
-            canvas[i].SetActive(false);
-        }
-    }
-
     public void ActivateCanvas(int canvasNum)
     {
         for (int i = 0; i < canvas.Length; i++)

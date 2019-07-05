@@ -90,6 +90,7 @@ public class UIManager : MonoBehaviour
         if (currentDialogNum >= currentDialogue.Count)
         {
             EndTalk();
+            QuestManager.instance.StartUnperfomedQuest();
             return;
         }
 
