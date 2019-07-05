@@ -10,6 +10,7 @@ public class StartManager : MonoBehaviour
     public GameObject[] stageName;
     public GameObject previousButton;
     public GameObject nextButton;
+    public RectTransform Train;
 
     private int nowStage;
 
@@ -58,8 +59,7 @@ public class StartManager : MonoBehaviour
 
     public void StartGame()
     {
-        Debug.Log("게임을 새로 시작합니다.");
-        SceneManager.LoadScene(1);
+        StartCoroutine(MoveTrain());
     }
 
     private IEnumerator ChangeStage(int dir)
@@ -80,5 +80,32 @@ public class StartManager : MonoBehaviour
         yield return new WaitForSeconds(0.2f);
         DecideButtonActive();
         stageName[nowStage + dir].SetActive(false);
+    }
+
+    private IEnumerator MoveTrain()
+    {
+        Vector3 targetPos = new Vector3(0, Train.localPosition.y, Train.localPosition.z);
+        float speed = 1000f;
+
+        while (Vector3.Distance(Train.localPosition, targetPos) > Mathf.Epsilon)
+        {
+            Train.localPosition = Vector3.MoveTowards(Train.localPosition, targetPos, Time.deltaTime * speed);
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        yield return new WaitForSeconds(2f);
+
+        targetPos -= new Vector3(2000, 0, 0);
+
+        while(Vector3.Distance(Train.localPosition, targetPos) > Mathf.Epsilon)
+        {
+            Train.localPosition = Vector3.MoveTowards(Train.localPosition, targetPos, Time.deltaTime * speed);
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        yield return new WaitForSeconds(0.5f);
+
+        Debug.Log("게임을 새로 시작합니다.");
+        SceneManager.LoadScene(1);
     }
 }
