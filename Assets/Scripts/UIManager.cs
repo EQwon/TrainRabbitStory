@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
     public GameObject healthBar;
     public GameObject heart;
     public GameObject WarningPanel;
+    public GameObject talkButton;
 
     private GameObject mainCamera;
 
@@ -189,5 +190,17 @@ public class UIManager : MonoBehaviour
         warningText.text = text;
 
         WarningPanel.SetActive(true);
+    }
+
+    public void SetTalkButtonState(bool isActive)
+    {
+        if (isActive == true)
+        {
+            talkButton.GetComponent<Button>().interactable = true;
+        }
+        else
+        {
+            talkButton.GetComponent<Button>().interactable = false;
+        }
     }
 }

@@ -37,6 +37,7 @@ public class Talk : MonoBehaviour
         {
             canTalk = true;
             interactBunny = coll.gameObject.transform.parent.gameObject;
+            UIManager.instance.SetTalkButtonState(true);
             //Debug.Log(interactBunny.name + "와 대화 가능");
         }
     }
@@ -49,6 +50,7 @@ public class Talk : MonoBehaviour
 
             canTalk = false;
             interactBunny = null;
+            UIManager.instance.SetTalkButtonState(false);
         }
     }
 }
