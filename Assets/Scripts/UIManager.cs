@@ -59,7 +59,9 @@ public class UIManager : MonoBehaviour
 
         currentDialogNum = -1;
 
-        mainCamera = GameObject.Find("Main Camera");
+        mainCamera = Camera.main.gameObject;
+        if (mainCamera.GetComponent<CameraWalk>().enabled == false)
+            mainCamera.GetComponent<CameraWalk>().enabled = true;
 
         mainCamera.GetComponent<CameraWalk>().ZoomOutCamera();
     }
