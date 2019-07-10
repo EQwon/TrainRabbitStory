@@ -64,16 +64,16 @@ public class StartManager : MonoBehaviour
 
     private IEnumerator ChangeStage(int dir)
     {
-        Vector3 targetPos = stageNameGroup.transform.position + dir * new Vector3(800f, 0, 0);
+        Vector3 targetPos = stageNameGroup.GetComponent<RectTransform>().localPosition + dir * new Vector3(800f, 0, 0);
         float sp = 1000f;
 
         previousButton.SetActive(false);
         nextButton.SetActive(false);
         stageName[nowStage].SetActive(true);
 
-        while (Vector3.Distance(stageNameGroup.transform.position, targetPos) > Mathf.Epsilon)
+        while (Vector3.Distance(stageNameGroup.GetComponent<RectTransform>().localPosition, targetPos) > Mathf.Epsilon)
         {
-            stageNameGroup.transform.position = Vector3.MoveTowards(stageNameGroup.transform.position, targetPos, Time.deltaTime * sp);
+            stageNameGroup.GetComponent<RectTransform>().localPosition = Vector3.MoveTowards(stageNameGroup.GetComponent<RectTransform>().localPosition, targetPos, Time.deltaTime * sp);
             yield return new WaitForSeconds(0.01f);
         }
 
