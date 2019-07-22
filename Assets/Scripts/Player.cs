@@ -99,7 +99,7 @@ public class Player : MonoBehaviour
     {
         if (coll.gameObject.tag == "Bunny")
         {
-            if (coll.gameObject.GetComponent<Bunny>().isInteractive == false)
+            if (coll.gameObject.GetComponent<Bunny>().isInteractable == false)
             {
                 StartCoroutine(HPDecrease());
             }

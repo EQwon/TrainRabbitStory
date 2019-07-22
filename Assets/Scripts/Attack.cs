@@ -19,7 +19,7 @@ public class Attack : MonoBehaviour
     {
         for (int i = 0; i < attackedBunnies.Count; i++)
         {
-            attackedBunnies[i].GetComponent<Bunny>().Attacked(damage);
+            attackedBunnies[i].GetComponent<Bunny>().TakeDamage(damage);
         }
     }
 
