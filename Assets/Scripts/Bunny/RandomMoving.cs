@@ -2,12 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bunny : MonoBehaviour
+public class RandomMoving : MonoBehaviour
 {
-    //public string bunnyName;    //토끼의 이름
-    public bool isSitting; //토끼가 앉아있는지
-    public bool isInteractive; //상호작용 할 수 있는지
-    public int hp;
     public float speed;
 
     private float lastPosX;
@@ -26,19 +22,9 @@ public class Bunny : MonoBehaviour
 
     private void Update()
     {
-        if(isSitting == false)
-        {
-            GetComponent<SpriteRenderer>().sortingOrder = (int)(-100 * transform.position.y);
-        }
-
-        if (hp <= 0)
-        {
-            Debug.Log(gameObject.name + "가 죽었습니다.");
-            Destroy(gameObject);
-        }
-
+        GetComponent<SpriteRenderer>().sortingOrder = (int)(-100 * transform.position.y);
         Flip();
-        if(isSitting == false) Move();
+        Move();
     }
 
     private void MovingInitialize()
@@ -52,7 +38,6 @@ public class Bunny : MonoBehaviour
     private void Move()
     {
         nowTime += TimeManager.deltaTime;
-
 
         if (isMoving == true)
         {
@@ -71,7 +56,7 @@ public class Bunny : MonoBehaviour
                 isMoving = true;
                 nowTime = 0;
                 moveDir = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
-                targetPos = transform.position + moveDir;
+                targetPos = transform.position + moveDir * speed;
 
                 int cellNum = (int)(transform.position.x + 10) / 20;
                 int afterMoveCellNum = (int)(targetPos.x + 10) / 20;
@@ -86,13 +71,6 @@ public class Bunny : MonoBehaviour
                 }
             }
         }
-    }
-
-    public void Attacked(int damage)
-    {
-        hp = hp - damage;
-        GameManager.instance.MP -= 10;
-        Debug.Log(gameObject.name + "가 공격받음.");
     }
 
     private void Flip()
@@ -111,14 +89,12 @@ public class Bunny : MonoBehaviour
         }
     }
 
-    public void FlipBunny(GameObject player)
+    public void FlipBunny()
     {
-        if (isSitting) return;
-
         float myPosX = transform.position.x;
-        float playerPosX = player.transform.position.x;
+        float playerPosX = Player.instance.gameObject.transform.position.x;
 
-        if(myPosX > playerPosX) transform.rotation = Quaternion.Euler(0, 180, 0);
+        if (myPosX > playerPosX) transform.rotation = Quaternion.Euler(0, 180, 0);
         else transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 }

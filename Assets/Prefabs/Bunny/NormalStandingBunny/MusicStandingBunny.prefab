@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3314276950975714518}
   - component: {fileID: 7709305654246816969}
   - component: {fileID: 6006222198080807277}
+  - component: {fileID: 4050055816191050620}
   m_Layer: 8
   m_Name: MusicStandingBunny
   m_TagString: Bunny
@@ -69,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1869800291
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 624f8be48e0f34543b0fcf02e5562d52, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -141,7 +142,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ea0ca92e4f89844aa4ab886bce6b7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSitting: 0
   isInteractive: 0
   hp: 30
-  speed: 1
+--- !u!114 &4050055816191050620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7256514400031367280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ae6ee392ba1bf419817d768a8e86ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3

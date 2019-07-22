@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4824483357349364204}
   - component: {fileID: 429631949262383603}
   - component: {fileID: 4346198054921565271}
+  - component: {fileID: 4938880695953239890}
   m_Layer: 8
   m_Name: WorkerStandingBunny
   m_TagString: Bunny
@@ -69,7 +70,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1869800291
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 3b5f14a3923e44a46819e9a122c77aaa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -141,7 +142,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ea0ca92e4f89844aa4ab886bce6b7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSitting: 0
   isInteractive: 0
   hp: 30
-  speed: 4
+--- !u!114 &4938880695953239890
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846393299363935562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ae6ee392ba1bf419817d768a8e86ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3

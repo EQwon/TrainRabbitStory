@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2998116078283859500}
   - component: {fileID: 7969448596952682035}
   - component: {fileID: 6286951033264346007}
+  - component: {fileID: 731637454619428683}
   m_Layer: 8
   m_Name: BasicStandingBunny
   m_TagString: Bunny
@@ -141,7 +142,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ea0ca92e4f89844aa4ab886bce6b7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSitting: 0
   isInteractive: 0
   hp: 30
-  speed: 1
+--- !u!114 &731637454619428683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6976514002041131658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ae6ee392ba1bf419817d768a8e86ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
