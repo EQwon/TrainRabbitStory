@@ -9,9 +9,9 @@ namespace LetterboxCamera {
         public ForceCameraRatio cameraManager;
         public float letterboxInRate = 2f;
         public float letterboxOutRate = 10f;
-        float letterboxRate;
+        float letterboxRate = 0;
         Vector2 targetRatio;
-        bool inRatio = false;
+        //bool inRatio = false;
 
         public void Start() {
             targetRatio = new Vector2(16, 9);
