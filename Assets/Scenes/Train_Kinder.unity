@@ -1954,7 +1954,7 @@ MonoBehaviour:
   cond:
   - questName: 1
     isAccept: 1
-    isSuccess: 0
+    isSuccess: 1
     warningText: "\uB2E4\uB978 \uD1A0\uB07C\uB4E4\uC5D0\uAC8C \uB9D0\uC744 \uAC78\uC5B4\uBCF4\uC790!"
 --- !u!1 &995599435
 GameObject:

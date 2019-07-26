@@ -24,5 +24,10 @@ public class PickUp : MonoBehaviour
         {
             handkerchiefIcon.color = new Color(1, 1, 1, 1);
         }
+
+        if (QuestManager.instance.isSuccess[(int)Quest.PickUp] == true && QuestManager.instance.isAccept[(int)Quest.PickUp] == false)
+        {
+            Destroy(gameObject.transform.parent.gameObject);
+        }
     }
 }
