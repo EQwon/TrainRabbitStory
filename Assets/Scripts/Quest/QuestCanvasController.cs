@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class QuestCanvasController : MonoBehaviour
 {
@@ -14,5 +15,11 @@ public class QuestCanvasController : MonoBehaviour
         }
         Debug.Log(canvasNum - 1 + "를 활성화합니다.");
         canvas[canvasNum - 1].SetActive(true);
+    }
+
+    public void GoToTitleScene()
+    {
+        SceneManager.LoadScene(0);
+        GameManager.instance.gameObject.GetComponent<QuestManager>().enabled = false;
     }
 }

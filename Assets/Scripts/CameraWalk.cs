@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CameraWalk : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class CameraWalk : MonoBehaviour
 
     private void Update()
     {
+        if (SceneManager.GetActiveScene().buildIndex == 0) return;
+
         UIManager.instance.TrainCellNumberUpdate(10 - cellNum);
 
         if (cellNum != ((int)player.transform.position.x + 10) / 20)

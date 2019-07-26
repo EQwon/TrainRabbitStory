@@ -94,6 +94,7 @@ public class UIManager : MonoBehaviour
         {
             EndTalk();
             QuestManager.instance.StartUnperfomedQuest();
+            QuestManager.instance.CheckStageClear();
             return;
         }
 

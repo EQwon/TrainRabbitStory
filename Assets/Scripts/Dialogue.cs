@@ -171,6 +171,8 @@ public class Dialogue : MonoBehaviour
 
     public void GiveReward(List<Dialog> dialogs)
     {
+        if (reward.Count != 2) return;
+
         if (dialogs[0].type == DialogType.SuccessQuest)
         {
             GameManager.instance.HP += reward[0];
