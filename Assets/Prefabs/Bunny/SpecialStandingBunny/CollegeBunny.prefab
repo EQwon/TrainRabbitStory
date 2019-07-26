@@ -243,37 +243,37 @@ MonoBehaviour:
   - type: 0
     Speaker: "\uB300\uD559\uC0DD \uD1A0\uB07C"
     Text: "\uD654\uC774\uD305...!"
-  - type: 5
+  - type: 4
     Speaker: "\uC5C4\uB9C8 \uD1A0\uB07C"
     Text: "\uC5EC\uBCF4\uC138\uC694?"
-  - type: 5
+  - type: 4
     Speaker: "\uC5C4\uB9C8 \uD1A0\uB07C"
     Text: "\uC544\uC774\uACE0... \uB0B4 \uC0C8\uB07C \uC5B4\uB514\uB2C8..."
-  - type: 5
+  - type: 4
     Speaker: "\uC5C4\uB9C8 \uD1A0\uB07C"
     Text: "\uADF8\uB798\uADF8\uB798."
-  - type: 5
+  - type: 4
     Speaker: "\uC5C4\uB9C8 \uD1A0\uB07C"
     Text: "\uB9E8 \uC55E\uCE78\uC5D0\uC11C \uBCF4\uC790."
-  - type: 5
+  - type: 4
     Speaker: "\uC5C4\uB9C8 \uD1A0\uB07C"
     Text: "\uB180\uB790\uC796\uB2C8, \uC870\uC2EC\uD788 \uC624\uB834!"
-  - type: 5
+  - type: 4
     Speaker: "\uB300\uD559\uC0DD \uD1A0\uB07C"
     Text: "\uB2E4\uD589\uC774\uB2E4, \uBC14\uB85C \uC804\uD654\uB97C \uBC1B\uC73C\uC154\uC11C."
-  - type: 5
+  - type: 4
     Speaker: "\uB300\uD559\uC0DD \uD1A0\uB07C"
     Text: "\uC911\uAC04\uC5D0 \uB04A\uAE38\uAE4C\uBD10 \uAC71\uC815\uD588\uC5B4."
-  - type: 5
+  - type: 4
     Speaker: "\uB300\uD559\uC0DD \uD1A0\uB07C"
     Text: "\uC544\uB0D0 \uC544\uB0D0."
-  - type: 5
+  - type: 4
     Speaker: "\uB300\uD559\uC0DD \uD1A0\uB07C"
     Text: "\uACE0\uB9C8\uC6CC\uD560 \uAC8C \uBB50\uAC00 \uC788\uB2C8."
-  - type: 5
+  - type: 4
     Speaker: "\uB300\uD559\uC0DD \uD1A0\uB07C"
     Text: "\uBE68\uB9AC \uAC00\uBD10!"
-  - type: 5
+  - type: 4
     Speaker: "\uB300\uD559\uC0DD \uD1A0\uB07C"
     Text: "\uC5B4\uBA38\uB2C8 \uAC71\uC815\uD558\uC2DC\uACA0\uB2E4."
   - type: 3
