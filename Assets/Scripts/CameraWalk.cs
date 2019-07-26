@@ -54,6 +54,8 @@ public class CameraWalk : MonoBehaviour
     {
         float speed = 20f;
         Vector3 targetPos = new Vector3(cellNum * 20, 0, -10);
+        bool isRight = (targetPos.x > transform.position.x);
+
         while (Vector3.Distance(transform.position, targetPos) > Mathf.Epsilon)
         {
             transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * speed);
@@ -63,6 +65,8 @@ public class CameraWalk : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
 
         transform.position = targetPos;
+        if (isRight == true) Player.instance.transform.position += new Vector3(0.5f, 0, 0);
+        else Player.instance.transform.position += new Vector3(-0.5f, 0, 0);
         GameManager.instance.BackToPreviousState();
     }
 }
