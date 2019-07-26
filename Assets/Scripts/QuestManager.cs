@@ -5,20 +5,12 @@ using System;
 
 public enum Quest { None, Tutorial, PhoneCall, PickUp };
 
-[System.Serializable]
-public class QuestRestrict
-{
-    public int maxCellNum;
-    public string warningText;
-}
-
 public class QuestManager : MonoBehaviour
 {
     public static QuestManager instance = null;
 
     public List<bool> isAccept = new List<bool>();
     public List<bool> isSuccess = new List<bool>();
-    public List<QuestRestrict> restrict;
 
     public GameObject questCanvasPrefab;
     private GameObject questCanvas;
@@ -90,19 +82,5 @@ public class QuestManager : MonoBehaviour
         Destroy(questCanvas);
         questCanvas = null;
         UIManager.instance.gameObject.SetActive(true);
-    }
-
-    public void RestrictCellMove()
-    {
-        int questNum = GetUnperformQuest();
-        float maxPosX = (GameManager.instance.cellLength - restrict[questNum].maxCellNum) * 20 + 9f;
-
-        if (Player.instance.gameObject.transform.position.x >= maxPosX)
-        {
-            UIManager.instance.Warning(restrict[questNum].warningText);
-
-            float posY = Player.instance.gameObject.transform.position.y;
-            Player.instance.gameObject.transform.position = new Vector3(maxPosX - 0.5f, posY, 0);
-        }
     }
 }
