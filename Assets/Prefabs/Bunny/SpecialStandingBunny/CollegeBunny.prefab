@@ -201,6 +201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ea0ca92e4f89844aa4ab886bce6b7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hp: 10000
   isInteractable: 1
 --- !u!114 &3209084379532179684
 MonoBehaviour:
@@ -215,31 +216,31 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - type: 1
+  - type: 0
     Speaker: "\uB300\uD559\uC0DD \uD1A0\uB07C"
     Text: "\uC751?"
-  - type: 1
+  - type: 0
     Speaker: "\uB300\uD559\uC0DD \uD1A0\uB07C"
     Text: "\uBB34\uC2A8 \uC77C\uC774\uB2C8?"
-  - type: 1
+  - type: 0
     Speaker: "\uB300\uD559\uC0DD \uD1A0\uB07C"
     Text: "\uC544, \uC5C4\uB9C8\uB97C \uC783\uC5B4\uBC84\uB838\uB2E4\uACE0?"
-  - type: 1
+  - type: 0
     Speaker: "\uB300\uD559\uC0DD \uD1A0\uB07C"
     Text: "\uB2F9\uC5F0\uD558\uC9C0!"
-  - type: 1
+  - type: 0
     Speaker: "\uB300\uD559\uC0DD \uD1A0\uB07C"
     Text: "\uC5B4\uC11C \uC804\uD654\uD558\uB834!"
-  - type: 1
+  - type: 0
     Speaker: "\uB300\uD559\uC0DD \uD1A0\uB07C"
     Text: "\uC557 \uADFC\uB370..."
-  - type: 1
+  - type: 0
     Speaker: "\uB300\uD559\uC0DD \uD1A0\uB07C"
     Text: "\uB0B4\uAC00 \uC9C0\uAE08 \uBC30\uD130\uB9AC\uAC00 \uBCC4\uB85C \uC5C6\uC5B4\uC11C..."
-  - type: 1
+  - type: 0
     Speaker: "\uB300\uD559\uC0DD \uD1A0\uB07C"
     Text: "\uBE68\uB9AC \uC804\uD654\uD558\uB294 \uAC8C \uC88B\uC744 \uAC70\uC57C..."
-  - type: 1
+  - type: 0
     Speaker: "\uB300\uD559\uC0DD \uD1A0\uB07C"
     Text: "\uD654\uC774\uD305...!"
   - type: 5
@@ -258,7 +259,7 @@ MonoBehaviour:
     Speaker: "\uC5C4\uB9C8 \uD1A0\uB07C"
     Text: "\uB180\uB790\uC796\uB2C8, \uC870\uC2EC\uD788 \uC624\uB834!"
   - type: 5
-    Speaker: "\uB300\uD559\uC0DD \uD1A0"
+    Speaker: "\uB300\uD559\uC0DD \uD1A0\uB07C"
     Text: "\uB2E4\uD589\uC774\uB2E4, \uBC14\uB85C \uC804\uD654\uB97C \uBC1B\uC73C\uC154\uC11C."
   - type: 5
     Speaker: "\uB300\uD559\uC0DD \uD1A0\uB07C"
@@ -275,7 +276,7 @@ MonoBehaviour:
   - type: 5
     Speaker: "\uB300\uD559\uC0DD \uD1A0\uB07C"
     Text: "\uC5B4\uBA38\uB2C8 \uAC71\uC815\uD558\uC2DC\uACA0\uB2E4."
-  - type: 4
+  - type: 3
     Speaker: "\uB300\uD559\uC0DD \uD1A0\uB07C"
     Text: "\uC5C7...! \uBE68\uB9AC \uB2E4\uC2DC\uD574\uBCF4\uC790!"
   quest: 2

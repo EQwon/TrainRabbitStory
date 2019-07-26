@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum DialogType { Default, BeforeQuest, AfterAccept, AfterRefuse, WhileQuest, SuccessQuest, AfterSuccess };
+public enum DialogType { BeforeQuest, AfterAccept, AfterRefuse, WhileQuest, SuccessQuest, AfterSuccess, Default1, Default2, Default3 };
 
 [System.Serializable]
 public class Dialog
@@ -17,6 +17,13 @@ public class Dialogue : MonoBehaviour
     public List<Dialog> dialogue;
     public Quest quest;
     public List<int> reward;
+
+    private int defaultDialogCnt;
+
+    private void Start()
+    {
+        defaultDialogCnt = 6;
+    }
 
     public List<Dialog> dialogueForNow()
     {
@@ -40,14 +47,22 @@ public class Dialogue : MonoBehaviour
     private List<Dialog> DefaultDialog()
     {
         List<Dialog> dialog = new List<Dialog>();
+        bool isThereNextDefaultDialog = false;
 
         for (int i = 0; i < dialogue.Count; i++)
         {
-            if (dialogue[i].type == DialogType.Default)
+            if (dialogue[i].type == (DialogType)defaultDialogCnt)
             {
                 dialog.Add(dialogue[i]);
             }
+            if (dialogue[i].type == (DialogType)(defaultDialogCnt + 1))
+            {
+                isThereNextDefaultDialog = true;
+            }
         }
+
+        if (isThereNextDefaultDialog == true) defaultDialogCnt += 1;
+        else defaultDialogCnt = 6;
 
         return dialog;
     }

@@ -1,0 +1,306 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1534695389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1534695390}
+  - component: {fileID: 1534695391}
+  m_Layer: 0
+  m_Name: InteractArea
+  m_TagString: InteractArea
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1534695390
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534695389}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -2.5, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 574958203248194268}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1534695391
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1534695389}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 0.5}
+  m_EdgeRadius: 0
+--- !u!1 &2503992160686711965
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 574958203248194268}
+  - component: {fileID: 75752857502967870}
+  - component: {fileID: 7779136780641783867}
+  - component: {fileID: 3240149001557964836}
+  - component: {fileID: 9075799932249590339}
+  - component: {fileID: 3209084379532179684}
+  m_Layer: 8
+  m_Name: YanggaengBuuny
+  m_TagString: Bunny
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &574958203248194268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503992160686711965}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_Children:
+  - {fileID: 1534695390}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &75752857502967870
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503992160686711965}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -2095584723
+  m_SortingLayer: 2
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 848dd59da6bfc4a41b4eb04727ac4c3a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2.19, y: 5.54}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!61 &7779136780641783867
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503992160686711965}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -2}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 7.866667, y: 7.866667}
+    newSize: {x: 2.19, y: 5.54}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.6, y: 1.5}
+  m_EdgeRadius: 0
+--- !u!50 &3240149001557964836
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503992160686711965}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 20
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
+--- !u!114 &9075799932249590339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503992160686711965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ea0ca92e4f89844aa4ab886bce6b7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 0
+  isInteractable: 1
+--- !u!114 &3209084379532179684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503992160686711965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e5bc17faa37a3945961c5880082fa12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue:
+  - type: 0
+    Speaker: ???
+    Text: "(\uAFB8\uBC85\uAFB8\uBC85)"
+  - type: 0
+    Speaker: ???
+    Text: "(\uB3C4\uB85C\uB871 \uB3C4\uB85C\uB871)"
+  - type: 0
+    Speaker: ???
+    Text: "(\uC911\uC5BC\uC911\uC5BC)"
+  - type: 0
+    Speaker: ???
+    Text: "\uBC29\uC744 \uC9D1 \uADFC\uCC98\uC5D0 \uAD6C\uD558\uBA74 \uB418\uC9C0
+      \uC54A\uC744\uAE4C..."
+  - type: 0
+    Speaker: ???
+    Text: "\uD55C \uC2DC\uAC04 \uC815\uB3C4 \uAC70\uB9AC\uBA74 \uC801\uB2F9\uD558\uB824\uB098..."
+  - type: 0
+    Speaker: ???
+    Text: "\uC18D\uC0C1\uD574\uD558\uC2DC\uBA74 \uC5B4\uB5A1\uD558\uC9C0..."
+  - type: 0
+    Speaker: ???
+    Text: "\uC5C7!"
+  - type: 0
+    Speaker: ???
+    Text: "\uC5B8\uC81C\uBD80\uD130 \uC5EC\uAE30 \uC788\uC5C8\uB2C8?"
+  - type: 0
+    Speaker: ???
+    Text: "\uB098?"
+  - type: 0
+    Speaker: ???
+    Text: "\uC544, \uC790\uCDE8\uD558\uB824\uACE0 \uBD80\uB3D9\uC0B0\uC5D0 \uAC14\uB2E4
+      \uC624\uB294 \uAE38\uC774\uC57C."
+  - type: 0
+    Speaker: ???
+    Text: "\uD5E4\uD5E4, \uACE0\uB9C8\uC6CC."
+  - type: 0
+    Speaker: ???
+    Text: "\uC644\uC804 \uC88B\uC9C0!"
+  - type: 0
+    Speaker: ???
+    Text: "\uC628\uC804\uD55C \uB098\uB9CC\uC758 \uACF5\uAC04\uC774 \uC0DD\uAE30\uB294\uAC78!"
+  - type: 0
+    Speaker: ???
+    Text: "\uADFC\uB370 \uC65C \uD45C\uC815\uC774 \uC548 \uC88B\uB0D0\uACE0?"
+  - type: 0
+    Speaker: ???
+    Text: "\uC5B4..."
+  - type: 0
+    Speaker: ???
+    Text: "\uC880 \uC2E0\uACBD\uC4F0\uC774\uB294 \uBD80\uBD84\uC774 \uC788\uC5B4\uC11C..."
+  - type: 0
+    Speaker: ???
+    Text: "\uBB50, \uAD1C\uCC2E\uC744\uAC70\uC57C."
+  - type: 0
+    Speaker: ???
+    Text: "\uC774\uAC8C \uBB50\uB0D0\uAD6C?"
+  - type: 0
+    Speaker: ???
+    Text: "\uC544, \uC774\uAC70 \uC591\uAC31\uC774\uC57C!"
+  - type: 0
+    Speaker: ???
+    Text: "\uC88B\uC544\uD558\uB294 \uAC00\uAC8C\uC5D0\uC11C \uC794\uB729 \uC0AC\uC654\uC9C0."
+  - type: 0
+    Speaker: ???
+    Text: "\uC9D1\uC5D0 \uAC00\uC838\uAC00\uC11C \uBD80\uBAA8\uB2D8\uC774\uB791 \uAC19\uC774
+      \uBA39\uC73C\uB824\uAD6C!"
+  - type: 0
+    Speaker: ???
+    Text: "\uC73C...\uC751?"
+  - type: 0
+    Speaker: ???
+    Text: "\uADF8\uB807\uC9C0..."
+  - type: 0
+    Speaker: ???
+    Text: "\uB09C \uC88B\uC740 \uB538\uC774\uC9C0..."
+  - type: 0
+    Speaker: ???
+    Text: '...'
+  - type: 0
+    Speaker: "\uC591\uAC31"
+    Text: "\uC591\uAC31\uC528\uB77C\uACE0 \uBD88\uB7EC\uC8FC\uBA74 \uB418."
+  - type: 0
+    Speaker: "\uC591\uAC31"
+    Text: "\uD558\uB098 \uBA39\uC744\uB798?"
+  - type: 0
+    Speaker: 
+    Text: "\uC591\uAC31\uC528\uB97C \uC54C\uAC8C \uB418\uC5C8\uB2E4!"
+  quest: 0
+  reward: 140000000a000000
