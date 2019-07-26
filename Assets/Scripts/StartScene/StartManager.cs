@@ -6,18 +6,19 @@ using UnityEngine.UI;
 
 public class StartManager : MonoBehaviour
 {
-    public GameObject stageNameGroup;
-    public GameObject[] stageName;
-    public GameObject previousButton;
-    public GameObject nextButton;
+    [Header("Holder")]
     public RectTransform Train;
+    public Image stageName;
+
+    [Header("Resources")]
+    public Sprite[] stageNameImage;
 
     private int nowStage;
 
     private void Start()
     {
-        DecideButtonActive();
-        for (int i = 1; i < stageName.Length; i++) stageName[i].SetActive(false);
+        nowStage = GetStageNum();
+        stageName.sprite = stageNameImage[nowStage];
     }
 
     private void Update()
@@ -25,31 +26,9 @@ public class StartManager : MonoBehaviour
         GameManager.instance.level = (GameManager.Level)nowStage;
     }
 
-    public void nextStage()
+    private int GetStageNum()
     {
-        nowStage += 1;
-        StartCoroutine(ChangeStage(-1));
-    }
-
-    public void previousStage()
-    {
-        nowStage -= 1;
-        StartCoroutine(ChangeStage(1));
-    }
-
-    private void DecideButtonActive()
-    {
-        previousButton.SetActive(true);
-        nextButton.SetActive(true);
-
-        if (nowStage == 0)
-        {
-            previousButton.SetActive(false);
-        }
-        if (nowStage == 4)
-        {
-            nextButton.SetActive(false);
-        }
+        return 0;
     }
 
     private void ChangeAD()
@@ -60,26 +39,6 @@ public class StartManager : MonoBehaviour
     public void StartGame()
     {
         StartCoroutine(MoveTrain());
-    }
-
-    private IEnumerator ChangeStage(int dir)
-    {
-        Vector3 targetPos = stageNameGroup.GetComponent<RectTransform>().localPosition + dir * new Vector3(800f, 0, 0);
-        float sp = 1000f;
-
-        previousButton.SetActive(false);
-        nextButton.SetActive(false);
-        stageName[nowStage].SetActive(true);
-
-        while (Vector3.Distance(stageNameGroup.GetComponent<RectTransform>().localPosition, targetPos) > Mathf.Epsilon)
-        {
-            stageNameGroup.GetComponent<RectTransform>().localPosition = Vector3.MoveTowards(stageNameGroup.GetComponent<RectTransform>().localPosition, targetPos, Time.deltaTime * sp);
-            yield return new WaitForSeconds(0.01f);
-        }
-
-        yield return new WaitForSeconds(0.2f);
-        DecideButtonActive();
-        stageName[nowStage + dir].SetActive(false);
     }
 
     private IEnumerator MoveTrain()
