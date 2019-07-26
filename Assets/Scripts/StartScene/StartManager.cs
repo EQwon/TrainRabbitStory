@@ -65,6 +65,6 @@ public class StartManager : MonoBehaviour
         yield return new WaitForSeconds(0.5f);
 
         Debug.Log("게임을 새로 시작합니다.");
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(nowStage + 1);
     }
 }
