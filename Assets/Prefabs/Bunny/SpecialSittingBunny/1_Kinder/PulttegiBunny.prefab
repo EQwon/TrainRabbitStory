@@ -215,82 +215,82 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "(\uAFB8\uBC85\uAFB8\uBC85)"
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "(\uB3C4\uB85C\uB871 \uB3C4\uB85C\uB871)"
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "\uC73C\uC545! \uC57C\uADFC \uC2EB\uC5B4!"
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "\uD5C9\uD5C9..."
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "\uAFC8\uC774\uC5C8\uAD6C\uB098."
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "\uB2E4\uD589\uC774\uB2E4..."
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "\uC608\uC9C0\uBABD\uC740 \uC544\uB2C8\uACA0\uC9C0?"
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "\uC544~ \uCD9C\uADFC\uD558\uAE30 \uC2EB\uB2E4~"
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "\uD558\uC9C0\uB9CC \uBAB8\uC740 \uC774\uBBF8 \uAC00\uACE0 \uC788\uB2E4\uB124~"
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "\uAC1C\uBBF8\uB294~ \uB6A0\uB6A0~"
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "\uC624\uB298\uB3C4~ \uB6A0\uB6A0~"
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "\uB204\uAC00 \uB098 \uB300\uC2E0 \uD68C\uC0AC \uC880 \uAC00\uC92C\uC73C\uBA74...
       \uD5E4\uD5E4."
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "\uC751? \uD68C\uC0AC\uAC00 \uC2EB\uB0D0\uACE0?"
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "\uC74C..."
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "\uC544\uB2C8. \uB9C9 \uC2EB\uC740 \uAC74 \uC544\uB2CC\uB370... \uADF8\uB807\uB2E4\uACE0
       \uC88B\uC740 \uAC83\uB3C4 \uC544\uB2C8\uB77C..."
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "\uC880 \uBCF5\uC7A1\uD574."
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "\uD68C\uC0AC \uB2E4\uB2C8\uB294 \uAC74 \uC5B4\uB5A4 \uB290\uB08C\uC774\uB0D0\uACE0?"
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "\uD760..."
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "\uB9E8\uBC25..."
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "\uC544\uB2C8\uC544\uB2C8."
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "\uD480\uB5BC\uAE30\uB97C \uBA39\uB294 \uAC70\uB791 \uBE44\uC2B7\uD574."
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "\uD558\uB8E8\uD558\uB8E8 \uBC84\uD2F0\uBA74\uC11C \uB9E4\uC77C \uAC19\uC740
       \uD480\uB5BC\uAE30\uB97C \uAFB8\uC5ED\uAFB8\uC5ED..."
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "\uC2AC\uD504\uB124 \uAC11\uC790\uAE30..."
-  - type: 0
+  - type: 6
     Speaker: ???
     Text: "\uB098?"
-  - type: 0
+  - type: 6
     Speaker: "\uD480\uB5BC\uAE30"
     Text: "\uADF8\uB0E5 \uD480\uB5BC\uAE30\uC528\uB77C\uACE0 \uBD88\uB7EC."
   - type: 0

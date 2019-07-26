@@ -215,21 +215,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - type: 0
+  - type: 6
     Speaker: "\uC720\uC2DD\uD55C \uD1A0\uB07C"
     Text: "\uC544\uB294 \uAC83\uC774 \uB9CE\uB2E4\uB294 \uAC83\uC740 \uC88B\uC740
       \uAC70\uC9C0!"
-  - type: 0
+  - type: 6
     Speaker: "\uC720\uC2DD\uD55C \uD1A0\uB07C"
     Text: "\uC9C0\uC2DD\uC758 \uCC3D\uACE0\uB294 \uB05D\uC774 \uC5C6\uB2E4\uB124 \uC5B4\uB9B0
       \uD1A0\uB07C\uC5EC!"
-  - type: 0
+  - type: 6
     Speaker: "\uC720\uC2DD\uD55C \uD1A0\uB07C"
     Text: "\uB0B4\uAC00 \uB204\uAD74 \uB2EE\uC558\uB2E4\uACE0?"
-  - type: 0
+  - type: 6
     Speaker: "\uC720\uC2DD\uD55C \uD1A0\uB07C"
     Text: "\uADF8\uAC74 \uAE30\uBD84 \uD0D3\uC774\uB77C\uB124..."
-  - type: 0
+  - type: 6
     Speaker: "\uC720\uC2DD\uD55C \uD1A0\uB07C"
     Text: "\uD760 \uD07C\uD07C"
   quest: 0
