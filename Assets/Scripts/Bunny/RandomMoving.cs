@@ -12,7 +12,6 @@ public class RandomMoving : MonoBehaviour
     private float restDelay; //가만히 있기로 한 시간
     private bool isMoving; //움직이고 있나?
     private Vector3 moveDir; //움직이려는 방향
-    private Vector3 targetPos;
 
     private void Start()
     {
@@ -38,6 +37,7 @@ public class RandomMoving : MonoBehaviour
     private void Move()
     {
         nowTime += TimeManager.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, transform.position + moveDir * speed, TimeManager.deltaTime * speed);
 
         if (isMoving == true)
         {
@@ -45,9 +45,8 @@ public class RandomMoving : MonoBehaviour
             {
                 isMoving = false;
                 nowTime = 0;
+                moveDir = Vector2.zero;
             }
-
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, Time.deltaTime * speed);
         }
         else
         {
@@ -56,21 +55,18 @@ public class RandomMoving : MonoBehaviour
                 isMoving = true;
                 nowTime = 0;
                 moveDir = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
-                targetPos = transform.position + moveDir * speed;
-
-                int cellNum = (int)(transform.position.x + 10) / 20;
-                int afterMoveCellNum = (int)(targetPos.x + 10) / 20;
-                if (cellNum != afterMoveCellNum)
-                {
-                    targetPos = transform.position + new Vector3(-moveDir.x, moveDir.y, 0);
-                }
-
-                if (targetPos.y < -2.2f || targetPos.y > 2f)
-                {
-                    targetPos = transform.position + new Vector3(moveDir.x, -moveDir.y, 0);
-                }
             }
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.gameObject.tag == "Door") moveDir = new Vector2(-moveDir.x, moveDir.y);
+    }
+
+    private void OnCollisionEnter2D(Collision2D coll)
+    {
+        if (coll.gameObject.tag == "Cell") moveDir = new Vector2(moveDir.x, -moveDir.y);
     }
 
     private void Flip()

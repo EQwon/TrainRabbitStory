@@ -10,6 +10,7 @@ TagManager:
   - AttackArea
   - MainCanvas
   - Item
+  - Cell
   layers:
   - Default
   - TransparentFX
