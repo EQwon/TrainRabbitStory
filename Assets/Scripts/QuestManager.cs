@@ -32,10 +32,10 @@ public class QuestManager : MonoBehaviour
         {
             isAccept.Add(false);
             isSuccess.Add(false);
-            if (i == 1)
+            if (i == (int)Quest.Tutorial)
             {
-                isAccept[1] = true;
-                isSuccess[1] = true;
+                isAccept[i] = true;
+                isSuccess[i] = true;
             }
         }
     }
