@@ -71,6 +71,7 @@ GameObject:
   - component: {fileID: 3240149001557964836}
   - component: {fileID: 9075799932249590339}
   - component: {fileID: 3209084379532179684}
+  - component: {fileID: 433266204571041901}
   m_Layer: 8
   m_Name: SsookgatBunny
   m_TagString: Bunny
@@ -284,3 +285,16 @@ MonoBehaviour:
     Text: "\uC465\uAC13\uC774\uB97C \uC54C\uAC8C \uB418\uC5C8\uB2E4!"
   quest: 0
   reward: 140000000a000000
+--- !u!114 &433266204571041901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503992160686711965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ae6ee392ba1bf419817d768a8e86ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 3
