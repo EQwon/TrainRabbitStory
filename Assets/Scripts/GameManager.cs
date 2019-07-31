@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
             MP = 100;
 
             InitStage();
-            UIManager.instance.ShowOpeningStory(level);
+            UIManager.instance.ShowOpeningStory();
             GetComponent<QuestManager>().enabled = true;
         }
     }

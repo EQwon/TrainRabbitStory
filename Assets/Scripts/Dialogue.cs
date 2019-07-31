@@ -9,6 +9,7 @@ public class Dialog
 {
     public DialogType type;
     public string Speaker;
+    public Sprite SpeakerImage;
     public string Text;
 }
 

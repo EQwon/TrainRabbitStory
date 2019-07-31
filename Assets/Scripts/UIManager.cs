@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager instance = null;
 
+    [Header("Talk UI")]
     public GameObject talkPanel;
     public Image speakerImage;
     public Text speakerName;
@@ -14,15 +15,18 @@ public class UIManager : MonoBehaviour
     public GameObject finishDialogText;
     public GameObject acceptQuestButton;
     public GameObject rejectQuestButton;
+
+    [Header("Basic UI")]
     public GameObject basicUI;
     public Text cellNumberText;
-    public List<Sprite> storyOpeningImage;
-    public List<Sprite> storyEndingImage;
-    public GameObject storyPanel;
     public GameObject healthBar;
     public GameObject heart;
     public GameObject WarningPanel;
     public GameObject talkButton;
+
+    [Header("For Tutorial")]
+    public List<Dialog> tutoDialog;
+    public GameObject darkPanel;
 
     private GameObject mainCamera;
 
@@ -54,6 +58,7 @@ public class UIManager : MonoBehaviour
         rejectQuestButton.SetActive(false);
         basicUI.SetActive(true);
         WarningPanel.SetActive(false);
+        darkPanel.SetActive(false);
 
         TrainCellNumberUpdate(10);
 
@@ -76,8 +81,6 @@ public class UIManager : MonoBehaviour
         currentInteractBunny = interactBunny;
         Vector2 interactBunnyPos = interactBunny.transform.position;
 
-        
-
         talkPanel.SetActive(true);
         talkPanel.GetComponent<Button>().interactable = true;
         mainCamera.GetComponent<CameraWalk>().ZoomInCamera(playerPos, interactBunny.transform.position);
@@ -99,6 +102,7 @@ public class UIManager : MonoBehaviour
         }
 
         speakerName.text = currentDialogue[currentDialogNum].Speaker;
+        speakerImage.sprite = currentDialogue[currentDialogNum].SpeakerImage;
         speakerText.text = currentDialogue[currentDialogNum].Text;
         SoundManager.instance.TalkSE();
 
@@ -128,7 +132,7 @@ public class UIManager : MonoBehaviour
 
     private void EndTalk()
     {
-        currentInteractBunny.GetComponent<Dialogue>().GiveReward(currentDialogue);
+        if(currentInteractBunny != null) currentInteractBunny.GetComponent<Dialogue>().GiveReward(currentDialogue);
         InitUI();
         GameManager.instance.ChangeTrainState(GameManager.TrainState.normal);
     }
@@ -161,16 +165,19 @@ public class UIManager : MonoBehaviour
         cellNumberText.text = cellNum.ToString();
     }
 
-    public void ShowOpeningStory(GameManager.Level level)
+    public void ShowOpeningStory()
     {
-        storyPanel.GetComponent<Image>().sprite = storyOpeningImage[(int)level];
-        storyPanel.SetActive(true);
-    }
+        darkPanel.SetActive(true);
+        currentDialogue = tutoDialog;
 
-    public void ShowEndingStory(GameManager.Level level)
-    {
-        storyPanel.GetComponent<Image>().sprite = storyEndingImage[(int)level];
-        storyPanel.SetActive(true);
+        GameManager.instance.ChangeTrainState(GameManager.TrainState.talking);
+        basicUI.SetActive(false);
+
+        talkPanel.SetActive(true);
+        talkPanel.GetComponent<Button>().interactable = true;
+        currentDialogNum = -1;
+
+        NextDialog();
     }
 
     public void AdjustStatusBar()
@@ -179,12 +186,6 @@ public class UIManager : MonoBehaviour
         float mp = GameManager.instance.MP / 100;
         healthBar.GetComponent<Slider>().value = hp;
         heart.GetComponent<Image>().color = new Color(mp, mp, mp);
-    }
-
-    public void CloseStory()
-    {
-        storyPanel.SetActive(false);
-        GameManager.instance.ChangeTrainState(GameManager.TrainState.normal);
     }
 
     public void Warning(string text)

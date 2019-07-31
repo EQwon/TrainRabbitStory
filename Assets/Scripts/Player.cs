@@ -31,14 +31,8 @@ public class Player : MonoBehaviour
 
         rb2D = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-    }
 
-    private void Start()
-    {
-        if (joystick == null)
-        {
-            joystick = GameObject.Find("Fixed Joystick").GetComponent<Joystick>();
-        }
+        if (joystick == null) joystick = GameObject.Find("Fixed Joystick").GetComponent<Joystick>();
     }
 
     private void Update()
