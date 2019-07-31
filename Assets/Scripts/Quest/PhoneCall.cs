@@ -77,7 +77,7 @@ public class PhoneCall : MonoBehaviour
         remainTimeText.text = "";
         result.SetActive(false);
 
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 9; i++)
         {
             numberToPush[i].GetComponent<Image>().color = new Color(1, 1, 1, 0f);
             numberButton[i].SetActive(false);
@@ -94,30 +94,30 @@ public class PhoneCall : MonoBehaviour
 
     private void StartGame()
     {
-        for (int i = 0; i < 10; i++) numberButton[i].SetActive(true);
+        for (int i = 0; i < 9; i++) numberButton[i].SetActive(true);
 
         state = State.playing;
 
-        int num = Random.Range(0, 10);
+        int num = Random.Range(1, 10);
         ShowNewNumberToPush();
         ShuffleButton();
     }
 
     private void ShuffleButton()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 9; i++)
         {
-            int targetNum = Random.Range(0, 10);
+            int targetNum = Random.Range(1, 10);
             Vector3 temp = numberButton[i].transform.position;
-            numberButton[i].transform.position = numberButton[targetNum].transform.position;
-            numberButton[targetNum].transform.position = temp;
+            numberButton[i].transform.position = numberButton[targetNum - 1].transform.position;
+            numberButton[targetNum - 1].transform.position = temp;
         }
     }
 
     private void ShowNewNumberToPush()
     {
-        nowNum = Random.Range(0, 10);
-        numberToPush[index].GetComponent<Image>().sprite = numberImage[nowNum];
+        nowNum = Random.Range(1, 10);
+        numberToPush[index].GetComponent<Image>().sprite = numberImage[nowNum - 1];
         numberToPush[index].GetComponent<Image>().color = new Color(1, 1, 1, 0.4f);
     }
 
