@@ -5,6 +5,7 @@ using UnityEngine;
 public class RandomMoving : MonoBehaviour
 {
     public float speed;
+    public Sprite[] sprites;
 
     private float lastPosX;
     private float nowTime; //움직인 시간
@@ -22,7 +23,8 @@ public class RandomMoving : MonoBehaviour
     private void Update()
     {
         GetComponent<SpriteRenderer>().sortingOrder = (int)(-100 * transform.position.y);
-        Flip();
+        FlippedByPlayer();
+        FlipByItself();
         Move();
     }
 
@@ -69,28 +71,40 @@ public class RandomMoving : MonoBehaviour
         if (coll.gameObject.tag == "Cell") moveDir = new Vector2(moveDir.x, -moveDir.y);
     }
 
-    private void Flip()
+    private void FlipByItself()
+    {
+        if (moveDir.x > 0) FlipBunny(true);
+        else if (moveDir.x < 0) FlipBunny(false);
+    }
+
+    private void FlippedByPlayer()
     {
         float moveDelta = 0.1f;
 
         if (lastPosX + moveDelta <= transform.position.x)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            FlipBunny(true);
             lastPosX = transform.position.x;
         }
         if (lastPosX - moveDelta >= transform.position.x)
         {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            FlipBunny(false);
             lastPosX = transform.position.x;
         }
     }
 
-    public void FlipBunny()
+    public void FlipForTalk()
     {
         float myPosX = transform.position.x;
         float playerPosX = Player.instance.gameObject.transform.position.x;
 
-        if (myPosX > playerPosX) transform.rotation = Quaternion.Euler(0, 180, 0);
-        else transform.rotation = Quaternion.Euler(0, 0, 0);
+        if (myPosX > playerPosX) FlipBunny(false);//transform.rotation = Quaternion.Euler(0, 180, 0);
+        else FlipBunny(true);//transform.rotation = Quaternion.Euler(0, 0, 0);
+    }
+
+    private void FlipBunny(bool isFacingRight)
+    {
+        if(isFacingRight == true) GetComponent<SpriteRenderer>().sprite = sprites[0];
+        else GetComponent<SpriteRenderer>().sprite = sprites[1];
     }
 }

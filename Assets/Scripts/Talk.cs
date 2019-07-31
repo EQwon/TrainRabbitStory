@@ -28,7 +28,7 @@ public class Talk : MonoBehaviour
     public void Talking()
     {
         if(interactBunny.GetComponent<RandomMoving>() != null)
-            interactBunny.GetComponent<RandomMoving>().FlipBunny();
+            interactBunny.GetComponent<RandomMoving>().FlipForTalk();
         UIManager.instance.StartTalk(player.transform.position, interactBunny);
     }
 

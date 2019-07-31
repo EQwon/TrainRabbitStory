@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534695389}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.5, z: 0}
+  m_LocalPosition: {x: -0.1, y: -1.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 574958203248194268}
@@ -88,7 +88,7 @@ Transform:
   m_GameObject: {fileID: 2503992160686711965}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1534695390}
   m_Father: {fileID: 0}
@@ -131,12 +131,12 @@ SpriteRenderer:
   m_SortingLayerID: 1869800291
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 669dd7183156f384fb0224f4e874023f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 32524fd6f60dea848a1329a222bb60d2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.19, y: 5.54}
+  m_Size: {x: 5.91, y: 5.91}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -155,18 +155,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -2}
+  m_Offset: {x: -0.1, y: -1.4}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.29, y: 5.48}
-    newSize: {x: 2.19, y: 5.54}
+    oldSize: {x: 5.91, y: 5.91}
+    newSize: {x: 5.91, y: 5.91}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.6, y: 1.5}
+  m_Size: {x: 0.9, y: 0.9}
   m_EdgeRadius: 0
 --- !u!50 &3240149001557964836
 Rigidbody2D:
@@ -218,64 +218,82 @@ MonoBehaviour:
   dialogue:
   - type: 4
     Speaker: "\uC5C4\uB9C8 \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uC544\uC774\uACE0..."
   - type: 4
     Speaker: "\uC5C4\uB9C8 \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uB0B4 \uC0C8\uB07C..."
   - type: 4
     Speaker: "\uC5C4\uB9C8 \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uC5B4\uB514\uAC14\uB2E4 \uC628 \uAC70\uB2C8 \uAC71\uC815\uD588\uC796\uC544."
   - type: 4
     Speaker: "\uC5C4\uB9C8 \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uADF8\uB798\uB3C4 \uB204\uAC00 \uB108\uB97C \uBC1C\uACAC\uD558\uACE0 \uD3F0\uC744
       \uBE4C\uB824\uC918\uC11C \uB2E4\uD589\uC774\uC9C0... \uC544\uB2C8\uC5C8\uC73C\uBA74..."
   - type: 4
     Speaker: "\uC5C4\uB9C8 \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uADF8\uB798?"
   - type: 4
     Speaker: "\uC5C4\uB9C8 \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uADF8\uB7AC\uAD6C\uB098..."
   - type: 4
     Speaker: "\uC5C4\uB9C8 \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uC88B\uC740 \uD1A0\uB07C\uB4E4\uC744 \uB9CC\uB0AC\uAD6C\uB098."
   - type: 4
     Speaker: "\uC5C4\uB9C8 \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uC815\uB9D0 \uB2E4\uD589\uC774\uC57C!"
   - type: 4
     Speaker: "\uC5C4\uB9C8 \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uADF8\uB798\uB3C4 \uB2E4\uC74C\uC5D0\uB294 \uC5C4\uB9C8 \uC190 \uB193\uC9C0
       \uB9D0\uACE0!"
   - type: 4
     Speaker: "\uC5C4\uB9C8 \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uD63C\uC790\uC11C \uB2E4\uB978 \uB370\uB85C \uAC00\uBC84\uB9AC\uBA74 \uC548
       \uB3FC!"
   - type: 4
     Speaker: "\uC5C4\uB9C8 \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uBE68\uB9AC \uAC00\uC790, \uD560\uBA38\uB2C8\uB791 \uD560\uC544\uBC84\uC9C0\uAC00
       \uB9DB\uC788\uB294 \uAC70 \uD574\uB193\uACE0 \uAE30\uB2E4\uB9AC\uC2E0\uB300!"
   - type: 4
     Speaker: "\uB300\uD559\uC6D0\uC0DD \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uD6C4\uD6C4\uD6C4...."
   - type: 4
     Speaker: "\uB300\uD559\uC6D0\uC0DD \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uBAA8\uB4E0 \uAC83\uC740 \uACC4\uD68D\uB300\uB85C..."
   - type: 4
     Speaker: "\uB300\uD559\uC6D0\uC0DD \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uBB3C\uACE0\uAE30\uB97C \uC7A1\uC544\uC8FC\uB294 \uAC83\uBCF4\uB2E4 \uB354
       \uC88B\uC740 \uAC74"
   - type: 4
     Speaker: "\uB300\uD559\uC6D0\uC0DD \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uBB3C\uACE0\uAE30\uB97C \uC7A1\uB294 \uBC95\uC744 \uAC00\uB974\uCCD0\uC8FC\uB294
       \uAC83\uC774\uC9C0!"
   - type: 4
     Speaker: "\uB300\uD559\uC6D0\uC0DD \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uB4A4\uC5D0\uC11C \uC9C0\uCF1C\uBCF4\uBA74\uC11C \uB530\uB77C\uC628 \uBCF4\uB78C\uC774
       \uC788\uAD70."
   - type: 4
     Speaker: "\uB300\uD559\uC6D0\uC0DD \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uC800 \uC544\uC774\uB294 \uC7A5\uCC28 \uD06C\uAC8C \uB420 \uC544\uC774\uC57C."
   - type: 4
     Speaker: "\uB300\uD559\uC6D0\uC0DD \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uD558\uD558\uD558\uD558\uD558\uD558!!!!"
   quest: 4
   reward: 
@@ -292,3 +310,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
+  sprites:
+  - {fileID: 21300000, guid: 32524fd6f60dea848a1329a222bb60d2, type: 3}
+  - {fileID: 21300000, guid: 24b57dba93d491442ba20930e11a8190, type: 3}
