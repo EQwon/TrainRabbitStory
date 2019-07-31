@@ -130,12 +130,12 @@ SpriteRenderer:
   m_SortingLayerID: -2095584723
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 54fde1b4f28ff4740ab1fd6e6ae05595, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b7b383e81f4f3fe41bbdde964b2a495c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.72, y: 3.95}
+  m_Size: {x: 5.91, y: 5.91}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -158,8 +158,8 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.1, y: 5.73}
-    newSize: {x: 1.72, y: 3.95}
+    oldSize: {x: 7.88, y: 7.88}
+    newSize: {x: 5.91, y: 5.91}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -217,20 +217,25 @@ MonoBehaviour:
   dialogue:
   - type: 6
     Speaker: "\uC720\uC2DD\uD55C \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uC544\uB294 \uAC83\uC774 \uB9CE\uB2E4\uB294 \uAC83\uC740 \uC88B\uC740
       \uAC70\uC9C0!"
   - type: 6
     Speaker: "\uC720\uC2DD\uD55C \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uC9C0\uC2DD\uC758 \uCC3D\uACE0\uB294 \uB05D\uC774 \uC5C6\uB2E4\uB124 \uC5B4\uB9B0
       \uD1A0\uB07C\uC5EC!"
   - type: 6
     Speaker: "\uC720\uC2DD\uD55C \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uB0B4\uAC00 \uB204\uAD74 \uB2EE\uC558\uB2E4\uACE0?"
   - type: 6
     Speaker: "\uC720\uC2DD\uD55C \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uADF8\uAC74 \uAE30\uBD84 \uD0D3\uC774\uB77C\uB124..."
   - type: 6
     Speaker: "\uC720\uC2DD\uD55C \uD1A0\uB07C"
+    SpeakerImage: {fileID: 0}
     Text: "\uD760 \uD07C\uD07C"
   quest: 0
   reward: 0f0000000a000000

@@ -87,7 +87,7 @@ Transform:
   m_GameObject: {fileID: 2503992160686711965}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1534695390}
   m_Father: {fileID: 0}
@@ -217,48 +217,63 @@ MonoBehaviour:
   dialogue:
   - type: 6
     Speaker: ???
+    SpeakerImage: {fileID: 0}
     Text: "\uC544..."
   - type: 6
     Speaker: ???
+    SpeakerImage: {fileID: 0}
     Text: "\uADC0\uCC2E\uC544..."
   - type: 6
     Speaker: ???
+    SpeakerImage: {fileID: 0}
     Text: "\uC544\uBB34\uAC83\uB3C4 \uD558\uACE0 \uC2F6\uC9C0 \uC54A\uB2E4..."
   - type: 6
     Speaker: ???
+    SpeakerImage: {fileID: 0}
     Text: "\uD6C4..."
   - type: 6
     Speaker: ???
+    SpeakerImage: {fileID: 0}
     Text: "\uC9DC\uC99D\uB098..."
   - type: 6
     Speaker: ???
+    SpeakerImage: {fileID: 0}
     Text: "\uC9D1\uC5D0 \uAC00\uAE30 \uC2EB\uC740\uB370..."
   - type: 6
     Speaker: ???
+    SpeakerImage: {fileID: 0}
     Text: "\uC5B4\uB514 \uAC00\uACE0 \uC2F6\uC740\uB370\uB3C4 \uC5C6\uB124..."
   - type: 6
     Speaker: ???
+    SpeakerImage: {fileID: 0}
     Text: "\uB098?"
   - type: 6
     Speaker: ???
+    SpeakerImage: {fileID: 0}
     Text: "\uBAB0\uB77C..."
   - type: 6
     Speaker: ???
+    SpeakerImage: {fileID: 0}
     Text: "\uB9D8\uB300\uB85C \uBD88\uB7EC..."
   - type: 6
     Speaker: ???
+    SpeakerImage: {fileID: 0}
     Text: "\uBB58 \uC88B\uC544\uD558\uB0D0\uACE0?"
   - type: 6
     Speaker: ???
+    SpeakerImage: {fileID: 0}
     Text: "\uC74C... \uAE00\uC384..."
   - type: 6
     Speaker: ???
+    SpeakerImage: {fileID: 0}
     Text: "\uD6E0\uAD88\uC758 \uD1A0\uB9C8\uD1A0\uD0D5 \uC815\uB3C4...?"
   - type: 6
     Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
     Text: "\uADF8\uB7EC\uB358\uAC00 \uB9D0\uB358\uAC00..."
   - type: 6
     Speaker: 
+    SpeakerImage: {fileID: 0}
     Text: "\uD1A0\uB9C8\uD1A0\uD0D5\uC528\uB97C \uC54C\uAC8C \uB418\uC5C8\uB2E4!"
   quest: 0
   reward: 140000000a000000

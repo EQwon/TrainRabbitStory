@@ -87,7 +87,7 @@ Transform:
   m_GameObject: {fileID: 2503992160686711965}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.8, y: 0.8, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1534695390}
   m_Father: {fileID: 0}
@@ -217,30 +217,39 @@ MonoBehaviour:
   dialogue:
   - type: 6
     Speaker: ???
+    SpeakerImage: {fileID: 0}
     Text: "\uC74C?"
   - type: 6
     Speaker: ???
+    SpeakerImage: {fileID: 0}
     Text: "\uC5B4...\uADF8\uB798."
   - type: 6
     Speaker: ???
+    SpeakerImage: {fileID: 0}
     Text: "\uC548\uB155?"
   - type: 6
     Speaker: ???
+    SpeakerImage: {fileID: 0}
     Text: "\uB0B4 \uC774\uB984?"
   - type: 6
     Speaker: ???
+    SpeakerImage: {fileID: 0}
     Text: "\uC5B4..."
   - type: 6
     Speaker: "\uB091\uAE61"
+    SpeakerImage: {fileID: 0}
     Text: "\uB091\uAE61\uC774\uB77C\uACE0 \uBD88\uB7EC\uC8FC\uB834."
   - type: 6
     Speaker: "\uB091\uAE61"
+    SpeakerImage: {fileID: 0}
     Text: "\uC9C4\uC9DC \uC774\uB984\uC740 \uB098\uC911\uC5D0 \uC54C\uB824\uC904\uAC8C."
   - type: 6
     Speaker: "\uB091\uAE61"
+    SpeakerImage: {fileID: 0}
     Text: "\uB091\uAE61\uC528\uB77C\uACE0 \uBD88\uB7EC\uC918."
   - type: 6
     Speaker: 
+    SpeakerImage: {fileID: 0}
     Text: "\uB091\uAE61\uC528\uB97C \uC54C\uAC8C \uB418\uC5C8\uB2E4!"
   quest: 0
   reward: 140000000a000000
