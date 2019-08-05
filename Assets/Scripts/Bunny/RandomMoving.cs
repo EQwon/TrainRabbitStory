@@ -61,14 +61,26 @@ public class RandomMoving : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D coll)
+    private void OnTriggerStay2D(Collider2D coll)
     {
-        if (coll.gameObject.tag == "Door") moveDir = new Vector2(-moveDir.x, moveDir.y);
+        if (coll.gameObject.tag == "Door")
+        {
+            if (coll.gameObject.name.Contains("Left")) moveDir = new Vector2(0.6f, moveDir.y);
+            if (coll.gameObject.name.Contains("Right")) moveDir = new Vector2(-0.6f, moveDir.y);
+        }
     }
 
-    private void OnCollisionEnter2D(Collision2D coll)
+    private void OnCollisionStay2D(Collision2D coll)
     {
-        if (coll.gameObject.tag == "Cell") moveDir = new Vector2(moveDir.x, -moveDir.y);
+        if (coll.gameObject.tag == "Cell")
+        {
+            if (transform.position.y > 0) moveDir = new Vector2(moveDir.x, -0.6f);
+            if (transform.position.y < 0) moveDir = new Vector2(moveDir.x, 0.6f);
+        }
+        if (coll.gameObject.tag == "Bunny")
+        {
+            moveDir *= (-1);
+        }
     }
 
     private void FlipByItself()
