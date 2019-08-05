@@ -6,20 +6,22 @@ public class Attack : MonoBehaviour
 {
     private GameObject player;
     private List<GameObject> attackedBunnies;
-    private int damage;
+    private int hpDamage;
+    private int mpDamage;
 
     private void Awake()
     {
         player = gameObject.transform.parent.gameObject;
         attackedBunnies = new List<GameObject>();
-        damage = player.GetComponent<Player>().damage;
+        hpDamage = player.GetComponent<Player>().hpDamage;
+        mpDamage = player.GetComponent<Player>().mpDamage;
     }
 
     public void ApplyDamage()
     {
         for (int i = 0; i < attackedBunnies.Count; i++)
         {
-            attackedBunnies[i].GetComponent<Bunny>().TakeDamage(damage);
+            attackedBunnies[i].GetComponent<Bunny>().TakeDamage(hpDamage, mpDamage);
         }
     }
 

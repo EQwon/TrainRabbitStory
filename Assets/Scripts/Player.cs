@@ -8,7 +8,8 @@ public class Player : MonoBehaviour
     public static Player instance = null;
 
     public float speed = 5f;
-    public int damage = 10;
+    public int hpDamage = 10;
+    public int mpDamage = 1;
     public float attackDelay = 5f;
 
     public Joystick joystick;
