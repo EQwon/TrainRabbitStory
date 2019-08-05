@@ -41,6 +41,12 @@ public class RandomMoving : MonoBehaviour
         nowTime += TimeManager.deltaTime;
         transform.position = Vector3.MoveTowards(transform.position, transform.position + moveDir * speed, TimeManager.deltaTime * speed);
 
+        if (GetComponent<Bunny>().isInvincible == true)
+        {
+            RunAway();
+            return;
+        }
+
         if (isMoving == true)
         {
             if (nowTime >= moveDelay)
@@ -61,10 +67,29 @@ public class RandomMoving : MonoBehaviour
         }
     }
 
+    private void RunAway()
+    {
+        GetComponent<Collider2D>().enabled = false;
+        speed = 5f;
+
+        Vector2 runDir = Vector2.zero;
+        if (transform.position.x - Camera.main.transform.position.x >= 0) runDir = Vector2.right;
+        else runDir = Vector2.left;
+
+        moveDir = runDir;
+
+        if (Mathf.Abs(transform.position.x - Camera.main.transform.position.x) > 10f)
+        {
+            Destroy(gameObject);
+        }
+    }
+
     private void OnTriggerStay2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Door")
         {
+            if (GetComponent<Bunny>().isInvincible == true) return;
+
             if (coll.gameObject.name.Contains("Left")) moveDir = new Vector2(0.6f, moveDir.y);
             if (coll.gameObject.name.Contains("Right")) moveDir = new Vector2(-0.6f, moveDir.y);
         }
@@ -79,8 +104,15 @@ public class RandomMoving : MonoBehaviour
         }
         if (coll.gameObject.tag == "Bunny")
         {
+            if (GetComponent<Bunny>().isInvincible == true) return;
+
             moveDir *= (-1);
         }
+    }
+
+    public void StopByAttacked()
+    {
+        moveDir = Vector2.zero;
     }
 
     private void FlipByItself()
