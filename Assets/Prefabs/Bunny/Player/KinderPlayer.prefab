@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 407801b4844b64543899afb86ab7c891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10.21
+  speed: 10
   damage: 10
   attackDelay: 0.5
   joystick: {fileID: 0}
