@@ -9,6 +9,12 @@ public class Bunny : MonoBehaviour
     public bool isInvincible = false;
 
     private int startHp;
+    private SpriteRenderer sr;
+
+    private void Awake()
+    {
+        sr = GetComponent<SpriteRenderer>();
+    }
 
     private void Start()
     {
@@ -17,12 +23,16 @@ public class Bunny : MonoBehaviour
         startHp = hp;
     }
 
+    private void Update()
+    {
+        sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, (float)hp / startHp);
+    }
+
     public void TakeDamage(int hpAmount, int mpAmount)
     {
         if (isInvincible == true) return;
 
         GetComponent<RandomMoving>().StopByAttacked();
-        GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, (float)hp / startHp);
 
         hp -= hpAmount;
         GameManager.instance.MP -= mpAmount;

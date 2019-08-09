@@ -74,6 +74,7 @@ public class RandomMoving : MonoBehaviour
     private void AnimationControl()
     {
         if (moveDir.magnitude > 0) animator.SetBool("Walk", true);
+        else animator.SetBool("Walk", false);
         if (moveDir.x > 0) animator.SetBool("IsRight", true);
         else if (moveDir.x < 0) animator.SetBool("IsRight", false);
     }
@@ -117,7 +118,8 @@ public class RandomMoving : MonoBehaviour
         {
             if (GetComponent<Bunny>().isInvincible == true) return;
 
-            moveDir *= (-1);
+            if (transform.position.x > coll.gameObject.transform.position.x) moveDir = new Vector2(0.6f, moveDir.y);
+            if (transform.position.x < coll.gameObject.transform.position.x) moveDir = new Vector2(-0.6f, moveDir.y);
         }
     }
 

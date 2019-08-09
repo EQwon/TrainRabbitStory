@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 9075799932249590339}
   - component: {fileID: 3209084379532179684}
   - component: {fileID: -6165351878600593405}
+  - component: {fileID: -7922116350224761965}
   m_Layer: 8
   m_Name: PostgraduateBunny
   m_TagString: Bunny
@@ -203,6 +204,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 0
   isInteractable: 1
+  isInvincible: 0
 --- !u!114 &3209084379532179684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -341,6 +343,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  sprites:
-  - {fileID: 21300000, guid: 998ce1d1b05467c4aa164eaa5839a2b6, type: 3}
-  - {fileID: 21300000, guid: 4e92c73b0b8249d4eb22528bec351497, type: 3}
+--- !u!95 &-7922116350224761965
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503992160686711965}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
