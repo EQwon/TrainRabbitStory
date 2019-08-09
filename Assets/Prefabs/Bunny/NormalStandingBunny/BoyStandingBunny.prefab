@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5991426911102821358}
   - component: {fileID: 7675053960861417034}
   - component: {fileID: -9057347576480491910}
+  - component: {fileID: -6737894007594587034}
   m_Layer: 8
   m_Name: BoyStandingBunny
   m_TagString: Bunny
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 1869800291
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 79225161e06b36643afc6155ae3bbd41, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 202d03bdb383e7b48962a07d7d3f8fb9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -144,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   isInteractable: 0
+  isInvincible: 0
 --- !u!114 &-9057347576480491910
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +159,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  sprites:
-  - {fileID: 21300000, guid: 79225161e06b36643afc6155ae3bbd41, type: 3}
-  - {fileID: 21300000, guid: 28e840a47d843b14095dec5c4926fc5e, type: 3}
+--- !u!95 &-6737894007594587034
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6732167636380368727}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: 83eee4812fcefcf49af7ea43c00a26de, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

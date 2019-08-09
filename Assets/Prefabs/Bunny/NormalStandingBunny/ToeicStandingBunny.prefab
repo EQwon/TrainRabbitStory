@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1345728424596943056}
   - component: {fileID: 3101409210061663604}
   - component: {fileID: -3244148588560012015}
+  - component: {fileID: 8520679642145461886}
   m_Layer: 8
   m_Name: ToeicStandingBunny
   m_TagString: Bunny
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 1869800291
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 60eb717c829a62b4cb878fef06ea5fd0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 39fe21e3846195645abb8faa1fa9b065, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,7 +97,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.2, y: -1.4}
+  m_Offset: {x: -0.03, y: -1.4}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -144,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   isInteractable: 0
+  isInvincible: 0
 --- !u!114 &-3244148588560012015
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +159,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  sprites:
-  - {fileID: 21300000, guid: 60eb717c829a62b4cb878fef06ea5fd0, type: 3}
-  - {fileID: 21300000, guid: 02283b8a47e146c4abafabc9a9f64d0b, type: 3}
+--- !u!95 &8520679642145461886
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081886907282091113}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: bd083b468b3bed14387819f3e7bebfb3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

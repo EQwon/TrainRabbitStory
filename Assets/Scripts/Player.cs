@@ -15,7 +15,7 @@ public class Player : MonoBehaviour
     public Joystick joystick;
 
     private Rigidbody2D rb2D;
-    public Animator animator;
+    private Animator animator;
     private float attackedTime = 0;
 
     private void Awake()

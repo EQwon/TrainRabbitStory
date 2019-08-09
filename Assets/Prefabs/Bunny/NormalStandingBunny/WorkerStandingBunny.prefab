@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 429631949262383603}
   - component: {fileID: 4346198054921565271}
   - component: {fileID: 4938880695953239890}
+  - component: {fileID: 6005407594876990418}
   m_Layer: 8
   m_Name: WorkerStandingBunny
   m_TagString: Bunny
@@ -72,12 +73,12 @@ SpriteRenderer:
   m_SortingLayerID: 1869800291
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: a5c29a31682d4eb4e863f9df00e6af1d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 2540ca6af2b63ce41904c0e0fd7e2afc, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.91, y: 5.91}
+  m_Size: {x: 5.9, y: 5.9}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -96,12 +97,12 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.2, y: -1.4}
+  m_Offset: {x: -0.3, y: -1.4}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.91, y: 5.91}
-    newSize: {x: 5.91, y: 5.91}
+    oldSize: {x: 5.9, y: 5.9}
+    newSize: {x: 5.9, y: 5.9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -144,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   isInteractable: 0
+  isInvincible: 0
 --- !u!114 &4938880695953239890
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +159,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  sprites:
-  - {fileID: 21300000, guid: a5c29a31682d4eb4e863f9df00e6af1d, type: 3}
-  - {fileID: 21300000, guid: 3b018e77c705763499a0c19358ed5e03, type: 3}
+--- !u!95 &6005407594876990418
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 846393299363935562}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: b90c27924f293db4aa9b72edb567015b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

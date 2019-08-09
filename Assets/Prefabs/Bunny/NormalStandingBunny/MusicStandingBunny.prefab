@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7709305654246816969}
   - component: {fileID: 6006222198080807277}
   - component: {fileID: 4050055816191050620}
+  - component: {fileID: -4566178895001225044}
   m_Layer: 8
   m_Name: MusicStandingBunny
   m_TagString: Bunny
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 1869800291
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 885500144d8a5c640beafd22e40261e3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: eda803ecac03abb4ba3ddf9f0fe1d849, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -96,7 +97,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.2, y: -1.4}
+  m_Offset: {x: -0.1, y: -1.4}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -144,6 +145,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   isInteractable: 0
+  isInvincible: 0
 --- !u!114 &4050055816191050620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,6 +159,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  sprites:
-  - {fileID: 21300000, guid: 885500144d8a5c640beafd22e40261e3, type: 3}
-  - {fileID: 21300000, guid: 6cdbd14379544414bae19a07ee581865, type: 3}
+--- !u!95 &-4566178895001225044
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7256514400031367280}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 22100000, guid: c11270a389c1e994987fdde81b786575, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

@@ -5,7 +5,6 @@ using UnityEngine;
 public class RandomMoving : MonoBehaviour
 {
     public float speed;
-    public Sprite[] sprites;
 
     private float lastPosX;
     private float nowTime; //움직인 시간
@@ -14,8 +13,12 @@ public class RandomMoving : MonoBehaviour
     private bool isMoving; //움직이고 있나?
     private Vector3 moveDir; //움직이려는 방향
 
+    private Animator animator;
+
     private void Start()
     {
+        animator = GetComponent<Animator>();
+
         lastPosX = transform.position.x;
         MovingInitialize();
     }
@@ -26,6 +29,7 @@ public class RandomMoving : MonoBehaviour
         FlippedByPlayer();
         FlipByItself();
         Move();
+        AnimationControl();
     }
 
     private void MovingInitialize()
@@ -65,6 +69,13 @@ public class RandomMoving : MonoBehaviour
                 moveDir = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
             }
         }
+    }
+
+    private void AnimationControl()
+    {
+        if (moveDir.magnitude > 0) animator.SetBool("Walk", true);
+        if (moveDir.x > 0) animator.SetBool("IsRight", true);
+        else if (moveDir.x < 0) animator.SetBool("IsRight", false);
     }
 
     private void RunAway()
@@ -113,6 +124,7 @@ public class RandomMoving : MonoBehaviour
     public void StopByAttacked()
     {
         moveDir = Vector2.zero;
+        animator.SetTrigger("BeingHit");
     }
 
     private void FlipByItself()
@@ -142,13 +154,13 @@ public class RandomMoving : MonoBehaviour
         float myPosX = transform.position.x;
         float playerPosX = Player.instance.gameObject.transform.position.x;
 
-        if (myPosX > playerPosX) FlipBunny(false);//transform.rotation = Quaternion.Euler(0, 180, 0);
-        else FlipBunny(true);//transform.rotation = Quaternion.Euler(0, 0, 0);
+        if (myPosX > playerPosX) FlipBunny(false);
+        else FlipBunny(true);
     }
 
     private void FlipBunny(bool isFacingRight)
     {
-        if(isFacingRight == true) GetComponent<SpriteRenderer>().sprite = sprites[0];
-        else GetComponent<SpriteRenderer>().sprite = sprites[1];
+        if (isFacingRight == true) animator.SetBool("IsRight", true);
+        else animator.SetBool("IsRight", false);
     }
 }
