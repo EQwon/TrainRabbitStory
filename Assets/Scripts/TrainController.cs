@@ -24,13 +24,13 @@ public class TrainController : MonoBehaviour
         sitPositions.Add(new Vector2(-6.5f, 3.5f));
         sitPositions.Add(new Vector2(-2.8f, 3.5f));
         sitPositions.Add(new Vector2(-1.75f, 3.5f));
-        sitPositions.Add(new Vector2(-0.7f, 3.5f));
-        sitPositions.Add(new Vector2(0.35f, 3.5f));
-        sitPositions.Add(new Vector2(1.4f, 3.5f));
-        sitPositions.Add(new Vector2(2.5f, 3.5f));
+        sitPositions.Add(new Vector2(-0.65f, 3.5f));
+        sitPositions.Add(new Vector2(0.45f, 3.5f));
+        sitPositions.Add(new Vector2(1.5f, 3.5f));
+        sitPositions.Add(new Vector2(2.6f, 3.5f));
         sitPositions.Add(new Vector2(6.2f, 3.5f));
-        sitPositions.Add(new Vector2(7.2f, 3.5f));
-        sitPositions.Add(new Vector2(8.2f, 3.5f));
+        sitPositions.Add(new Vector2(7.3f, 3.5f));
+        sitPositions.Add(new Vector2(8.4f, 3.5f));
     }
 
     public void SetupTrain(GameManager.Level level)
@@ -53,7 +53,7 @@ public class TrainController : MonoBehaviour
 
             GameObject bunny = Instantiate(bunnyList[i], gameObject.transform);
             bunny.transform.localPosition = sitPositions[i];
-            bunny.GetComponent<SpriteRenderer>().sortingOrder = i;
+            bunny.GetComponent<SpriteRenderer>().sortingOrder = (int)(sitPositions[i].x * 100);
         }
     }
 
