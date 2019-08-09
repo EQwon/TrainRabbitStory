@@ -8,4 +8,14 @@ AnimatorOverrideController:
   m_PrefabAsset: {fileID: 0}
   m_Name: ToeicStandingBunny
   m_Controller: {fileID: 9100000, guid: c4b0b8be84e871b48b7eaf4a887b24fb, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 78760ddddf67e4f449f0f185239d889b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 816c831c075bea149b287cccdc8c2388, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7cb546a2bb2e65b468d96a13b1b6686e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: cb8ff6973bb28e54bbd5ae162d156452, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e84647b5821fa264c9d6289ed7425434, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: c84f18dea95ece34bb01da8639649d16, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b71cf9d3470e2d34ebebb39126266061, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 665783ba1d38ef746a2ff775b64c9f9b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 133594830f188b743a62c5ca3faae95d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 7b8293c66d49d3944bdc52efd3255857, type: 2}

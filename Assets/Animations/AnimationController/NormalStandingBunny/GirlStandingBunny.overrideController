@@ -8,4 +8,14 @@ AnimatorOverrideController:
   m_PrefabAsset: {fileID: 0}
   m_Name: GirlStandingBunny
   m_Controller: {fileID: 9100000, guid: c4b0b8be84e871b48b7eaf4a887b24fb, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 78760ddddf67e4f449f0f185239d889b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 218d055154d78144a9c934c736ddde19, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7cb546a2bb2e65b468d96a13b1b6686e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 3197af2e8c365e342ae91fdeb6df060d, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e84647b5821fa264c9d6289ed7425434, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4c8bb34ce24e41e41b1e034b36949c1b, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b71cf9d3470e2d34ebebb39126266061, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: e77e65cb6689a2b429f21b9cc3ec45c8, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 133594830f188b743a62c5ca3faae95d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 5a02cd290b46a334dbac9d814f4eca61, type: 2}

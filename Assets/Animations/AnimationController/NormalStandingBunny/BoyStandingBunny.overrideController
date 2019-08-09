@@ -8,4 +8,14 @@ AnimatorOverrideController:
   m_PrefabAsset: {fileID: 0}
   m_Name: BoyStandingBunny
   m_Controller: {fileID: 9100000, guid: c4b0b8be84e871b48b7eaf4a887b24fb, type: 2}
-  m_Clips: []
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 78760ddddf67e4f449f0f185239d889b, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: afdba139465db63408695678e64df624, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 7cb546a2bb2e65b468d96a13b1b6686e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 27d1ab1f30984b94089dfc8e0cebf729, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: e84647b5821fa264c9d6289ed7425434, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 8aa5e2389b022c64d9a8884400eca4ba, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: b71cf9d3470e2d34ebebb39126266061, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 243e6aabca100a143a19fdb1b08f31ad, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 133594830f188b743a62c5ca3faae95d, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 4da34d2a0bb2ff543be273850d359c5f, type: 2}
