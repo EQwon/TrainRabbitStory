@@ -126,6 +126,7 @@ public class RandomMoving : MonoBehaviour
     public void StopByAttacked()
     {
         moveDir = Vector2.zero;
+        nowTime = 0;
         animator.SetTrigger("BeingHit");
     }
 
