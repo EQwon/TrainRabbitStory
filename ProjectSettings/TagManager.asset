@@ -58,3 +58,6 @@ TagManager:
   - name: StandingCharacter
     uniqueID: 1869800291
     locked: 0
+  - name: TouchEffect
+    uniqueID: 2989080373
+    locked: 0
