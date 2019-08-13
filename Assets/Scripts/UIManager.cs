@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -162,7 +163,7 @@ public class UIManager : MonoBehaviour
     public void TrainCellNumberUpdate(int cellNum)
     {
         //주어진 번호로 차량 번호 칸을 업데이트 한다.
-        cellNumberText.text = cellNum.ToString();
+        //cellNumberText.text = cellNum.ToString();
     }
 
     public void ShowOpeningStory()
@@ -206,5 +207,10 @@ public class UIManager : MonoBehaviour
         {
             talkButton.GetComponent<Button>().interactable = false;
         }
+    }
+
+    public void BackToStartScene()
+    {
+        SceneManager.LoadScene(0);
     }
 }
