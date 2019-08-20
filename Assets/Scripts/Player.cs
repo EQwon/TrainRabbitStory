@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
 
     private void Attack()
     {
-        if (/*Input.GetKeyDown(KeyCode.A)*/ joystick.Attack && attackedTime >= attackDelay)
+        if (/*Input.GetKeyDown(KeyCode.A) ||*/ joystick.Attack && attackedTime >= attackDelay)
         {
             transform.GetChild(1).GetComponent<Attack>().ApplyDamage();
             animator.SetTrigger("playerAttack");
@@ -72,14 +72,8 @@ public class Player : MonoBehaviour
 
     private void FlippingPlayer(float horizontal) //플레이어 좌우 반전
     {
-        if(horizontal > 0)
-        {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
-        }
-        else if (horizontal < 0)
-        {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
-        }
+        if (horizontal > 0) animator.SetBool("playerRight", true);
+        else if (horizontal < 0) animator.SetBool("playerRight", false);
     }
 
     private void OnTriggerEnter2D(Collider2D coll)
