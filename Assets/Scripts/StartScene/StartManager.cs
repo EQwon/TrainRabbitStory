@@ -8,7 +8,7 @@ public class StartManager : MonoBehaviour
 {
     [Header("Holder")]
     public RectTransform Train;
-    public Image stageName;
+    public GameObject stageName;
 
     [Header("Resources")]
     public Sprite[] stageNameImage;
@@ -18,7 +18,7 @@ public class StartManager : MonoBehaviour
     private void Start()
     {
         nowStage = GetStageNum();
-        stageName.sprite = stageNameImage[nowStage];
+        stageName.GetComponent<Image>().sprite = stageNameImage[nowStage];
     }
 
     private void Update()
@@ -38,6 +38,7 @@ public class StartManager : MonoBehaviour
 
     public void StartGame()
     {
+        stageName.GetComponent<Button>().enabled = false;
         StartCoroutine(MoveTrain());
     }
 

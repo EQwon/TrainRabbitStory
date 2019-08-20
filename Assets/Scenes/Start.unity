@@ -364,7 +364,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Train: {fileID: 568051194}
-  stageName: {fileID: 886815864}
+  stageName: {fileID: 886815861}
   stageNameImage:
   - {fileID: 21300000, guid: b07ea9058d98b7c41abf95729441bb9e, type: 3}
   - {fileID: 21300000, guid: 38433a924ec034a4eaeb0dd215f6009f, type: 3}
