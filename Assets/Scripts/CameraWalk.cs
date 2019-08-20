@@ -19,7 +19,7 @@ public class CameraWalk : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().buildIndex == 0) return;
 
-        UIManager.instance.TrainCellNumberUpdate(10 - cellNum);
+        //UIManager.instance.TrainCellNumberUpdate(10 - cellNum);
 
         if (cellNum != ((int)player.transform.position.x + 10) / 20)
         {

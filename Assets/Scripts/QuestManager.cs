@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public enum Quest { None, Tutorial, PhoneCall, PickUp, StageClear };
+public enum Quest { None, Tutorial, PhoneCall, PickUp, Crammed, StageClear };
 
 public class QuestManager : MonoBehaviour
 {
@@ -25,14 +25,23 @@ public class QuestManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
 
+    private void Start()
+    {
         int n = Enum.GetNames(typeof(Quest)).Length;
 
         for (int i = 0; i < n; i++)
         {
             isAccept.Add(false);
             isSuccess.Add(false);
-            if (i == (int)Quest.Tutorial || i == (int)Quest.StageClear)
+
+            if (i == (int)Quest.Tutorial && GameManager.instance.level == GameManager.Level.kinder)
+            {
+                isAccept[i] = true;
+                isSuccess[i] = true;
+            }
+            if (i == (int)Quest.StageClear)
             {
                 isAccept[i] = true;
                 isSuccess[i] = true;
@@ -82,6 +91,9 @@ public class QuestManager : MonoBehaviour
                 break;
             case 3:
                 GameManager.instance.ChangeTrainState(GameManager.TrainState.normalQuest);
+                break;
+            case 4:
+                GameManager.instance.ChangeTrainState(GameManager.TrainState.instantQuest);
                 break;
         }
     }

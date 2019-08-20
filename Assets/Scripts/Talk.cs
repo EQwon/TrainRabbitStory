@@ -9,11 +9,6 @@ public class Talk : MonoBehaviour
     private GameObject interactBunny = null;
     private Joystick joystick = null;
 
-    private void Awake()
-    {
-        player = Player.instance.gameObject;
-    }
-
     private void Update()
     {
         if (joystick == null) joystick = Player.instance.joystick;
@@ -29,7 +24,7 @@ public class Talk : MonoBehaviour
     {
         if(interactBunny.GetComponent<RandomMoving>() != null)
             interactBunny.GetComponent<RandomMoving>().FlipForTalk();
-        UIManager.instance.StartTalk(player.transform.position, interactBunny);
+        UIManager.instance.StartTalk(Player.instance.transform.position, interactBunny);
     }
 
     private void OnTriggerEnter2D(Collider2D coll)

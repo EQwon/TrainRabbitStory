@@ -7,10 +7,15 @@ public class Player : MonoBehaviour
 {
     public static Player instance = null;
 
+    [Header("Player Const")]
     public float speed = 5f;
     public int hpDamage = 10;
     public int mpDamage = 1;
-    public float attackDelay = 5f;
+    public float attackDelay = 0.5f;
+
+    [Header("Player Status")]
+    public float HP;
+    public float MP;
 
     public Joystick joystick;
 
@@ -34,6 +39,15 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
 
         if (joystick == null) joystick = GameObject.Find("Fixed Joystick").GetComponent<Joystick>();
+
+        Init();
+    }
+
+    private void Init()
+    {
+        transform.position = new Vector2(-8f, 0);
+        HP = 100;
+        MP = 100;
     }
 
     private void Update()
@@ -72,8 +86,16 @@ public class Player : MonoBehaviour
 
     private void FlippingPlayer(float horizontal) //플레이어 좌우 반전
     {
-        if (horizontal > 0) animator.SetBool("playerRight", true);
-        else if (horizontal < 0) animator.SetBool("playerRight", false);
+        if (horizontal > 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0);
+            animator.SetBool("playerRight", true);
+        }
+        else if (horizontal < 0)
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0);
+            animator.SetBool("playerRight", false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D coll)
@@ -97,7 +119,7 @@ public class Player : MonoBehaviour
 
     private IEnumerator HPDecrease()
     {
-        GameManager.instance.HP = GameManager.instance.HP - 0.1f;
+        HP -= 0.1f;
 
         //Debug.Log("체력 감소");
         yield return new WaitForSeconds(0.5f);

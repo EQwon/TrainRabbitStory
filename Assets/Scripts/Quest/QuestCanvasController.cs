@@ -13,7 +13,7 @@ public class QuestCanvasController : MonoBehaviour
         {
             canvas[i].SetActive(false);
         }
-        Debug.Log(canvasNum - 1 + "를 활성화합니다.");
+        Debug.Log(canvas[canvasNum - 1].name + "를 활성화합니다.");
         canvas[canvasNum - 1].SetActive(true);
     }
 
