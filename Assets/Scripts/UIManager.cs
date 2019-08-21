@@ -74,7 +74,7 @@ public class UIManager : MonoBehaviour
 
     public void StartTalk(Vector2 playerPos, GameObject interactBunny)
     {
-        currentDialogue = interactBunny.GetComponent<Dialogue>().dialogueForNow();
+        currentDialogue = interactBunny.GetComponent<Dialogue>().DialogueForNow();
         if (currentDialogue.Count == 0) return;
 
         GameManager.instance.ChangeTrainState(GameManager.TrainState.talking);
@@ -103,7 +103,8 @@ public class UIManager : MonoBehaviour
         }
 
         speakerName.text = currentDialogue[currentDialogNum].Speaker;
-        speakerImage.sprite = currentDialogue[currentDialogNum].SpeakerImage;
+        if(currentDialogue[currentDialogNum].SpeakerImage != null)
+            speakerImage.sprite = currentDialogue[currentDialogNum].SpeakerImage;
         speakerText.text = currentDialogue[currentDialogNum].Text;
         SoundManager.instance.TalkSE();
 

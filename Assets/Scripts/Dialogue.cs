@@ -27,7 +27,7 @@ public class Dialogue : MonoBehaviour
         //GameManager.instance.gameObject.GetComponent<QuestManager>().enabled = true;
     }
 
-    public List<Dialog> dialogueForNow()
+    public List<Dialog> DialogueForNow()
     {
         if (quest == Quest.None) return DefaultDialog();
 
