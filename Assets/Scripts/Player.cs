@@ -22,6 +22,9 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb2D;
     private Animator animator;
     private float attackedTime = 0;
+    private Transform interactArea;
+    private Transform attackArea;
+    private float areaPosX;
 
     private void Awake()
     {
@@ -41,6 +44,13 @@ public class Player : MonoBehaviour
         if (joystick == null) joystick = GameObject.Find("Fixed Joystick").GetComponent<Joystick>();
 
         Init();
+    }
+
+    private void Start()
+    {
+        interactArea = transform.GetChild(0);
+        attackArea = transform.GetChild(1);
+        areaPosX = interactArea.localPosition.x;
     }
 
     private void Init()
@@ -88,12 +98,14 @@ public class Player : MonoBehaviour
     {
         if (horizontal > 0)
         {
-            transform.rotation = Quaternion.Euler(0, 0, 0);
+            interactArea.localPosition = new Vector2(areaPosX, interactArea.localPosition.y);
+            attackArea.localPosition = new Vector2(areaPosX, attackArea.localPosition.y);
             animator.SetBool("playerRight", true);
         }
         else if (horizontal < 0)
         {
-            transform.rotation = Quaternion.Euler(0, 180, 0);
+            interactArea.localPosition = new Vector2(-areaPosX, interactArea.localPosition.y);
+            attackArea.localPosition = new Vector2(-areaPosX, attackArea.localPosition.y);
             animator.SetBool("playerRight", false);
         }
     }
