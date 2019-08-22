@@ -161,8 +161,8 @@ public class Crammed : MonoBehaviour
 
     private void ShowGrade()
     {
-        gradeText[0].text = "몰랑";
-        gradeText[1].text = "S";
+        gradeText[0].text = "테슽";
+        gradeText[1].text = "S+";
 
         StartCoroutine(EndTest());
     }

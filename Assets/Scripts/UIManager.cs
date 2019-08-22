@@ -103,8 +103,9 @@ public class UIManager : MonoBehaviour
         }
 
         speakerName.text = currentDialogue[currentDialogNum].Speaker;
-        if(currentDialogue[currentDialogNum].SpeakerImage != null)
-            speakerImage.sprite = currentDialogue[currentDialogNum].SpeakerImage;
+        speakerImage.sprite = currentDialogue[currentDialogNum].SpeakerImage;
+        if (currentDialogue[currentDialogNum].SpeakerImage != null) speakerImage.color = Color.white;
+        else speakerImage.color = Color.clear;
         speakerText.text = currentDialogue[currentDialogNum].Text;
         SoundManager.instance.TalkSE();
 

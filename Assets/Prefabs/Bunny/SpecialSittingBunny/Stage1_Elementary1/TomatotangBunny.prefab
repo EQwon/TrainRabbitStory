@@ -72,7 +72,7 @@ GameObject:
   - component: {fileID: 9075799932249590339}
   - component: {fileID: 3209084379532179684}
   m_Layer: 8
-  m_Name: PulttegiBunny
+  m_Name: TomatotangBunny
   m_TagString: Bunny
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -90,7 +90,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1534695390}
-  - {fileID: 8458680226933454626}
+  - {fileID: 7338526429497596646}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -131,7 +131,7 @@ SpriteRenderer:
   m_SortingLayerID: -2095584723
   m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: ec735e63407b802449a646c196c5c548, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 729fcb8b38dbaf442901d9ffe87501e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -218,119 +218,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue:
   - type: 6
-    Speaker: ???
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
     SpeakerImage: {fileID: 0}
-    Text: "(\uAFB8\uBC85\uAFB8\uBC85)"
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "(\uB3C4\uB85C\uB871 \uB3C4\uB85C\uB871)"
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "\uC73C\uC545! \uC57C\uADFC \uC2EB\uC5B4!"
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "\uD5C9\uD5C9..."
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "\uAFC8\uC774\uC5C8\uAD6C\uB098."
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "\uB2E4\uD589\uC774\uB2E4..."
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "\uC608\uC9C0\uBABD\uC740 \uC544\uB2C8\uACA0\uC9C0?"
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "\uC544~ \uCD9C\uADFC\uD558\uAE30 \uC2EB\uB2E4~"
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "\uD558\uC9C0\uB9CC \uBAB8\uC740 \uC774\uBBF8 \uAC00\uACE0 \uC788\uB2E4\uB124~"
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "\uAC1C\uBBF8\uB294~ \uB6A0\uB6A0~"
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "\uC624\uB298\uB3C4~ \uB6A0\uB6A0~"
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "\uB204\uAC00 \uB098 \uB300\uC2E0 \uD68C\uC0AC \uC880 \uAC00\uC92C\uC73C\uBA74...
-      \uD5E4\uD5E4."
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "\uC751? \uD68C\uC0AC\uAC00 \uC2EB\uB0D0\uACE0?"
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "\uC74C..."
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "\uC544\uB2C8. \uB9C9 \uC2EB\uC740 \uAC74 \uC544\uB2CC\uB370... \uADF8\uB807\uB2E4\uACE0
-      \uC88B\uC740 \uAC83\uB3C4 \uC544\uB2C8\uB77C..."
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "\uC880 \uBCF5\uC7A1\uD574."
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "\uD68C\uC0AC \uB2E4\uB2C8\uB294 \uAC74 \uC5B4\uB5A4 \uB290\uB08C\uC774\uB0D0\uACE0?"
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "\uD760..."
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "\uB9E8\uBC25..."
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "\uC544\uB2C8\uC544\uB2C8."
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "\uD480\uB5BC\uAE30\uB97C \uBA39\uB294 \uAC70\uB791 \uBE44\uC2B7\uD574."
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "\uD558\uB8E8\uD558\uB8E8 \uBC84\uD2F0\uBA74\uC11C \uB9E4\uC77C \uAC19\uC740
-      \uD480\uB5BC\uAE30\uB97C \uAFB8\uC5ED\uAFB8\uC5ED..."
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "\uC2AC\uD504\uB124 \uAC11\uC790\uAE30..."
-  - type: 6
-    Speaker: ???
-    SpeakerImage: {fileID: 0}
-    Text: "\uB098?"
-  - type: 6
-    Speaker: "\uD480\uB5BC\uAE30"
-    SpeakerImage: {fileID: 0}
-    Text: "\uADF8\uB0E5 \uD480\uB5BC\uAE30\uC528\uB77C\uACE0 \uBD88\uB7EC."
-  - type: 0
-    Speaker: "\uD480\uB5BC\uAE30"
-    SpeakerImage: {fileID: 0}
-    Text: "\uB0B4\uAC00 \uC6C3\uB294\uAC8C \uC6C3\uB294\uAC8C \uC544\uB2C8\uC57C..."
-  - type: 0
-    Speaker: 
-    SpeakerImage: {fileID: 0}
-    Text: "\uD480\uB5BC\uAE30\uC528\uB97C \uC54C\uAC8C \uB418\uC5C8\uB2E4!"
+    Text: "\uCD08\uB4F1\uD559\uC0DD \uC2A4\uD14C\uC774\uC9C0\uC758 \uD1A0\uB9C8\uD1A0\uD0D5
+      \uB300\uC0AC"
   quest: 0
   reward: 140000000a000000
---- !u!1 &5585458808297711930
+--- !u!1 &4751851199926781250
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -338,9 +232,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8458680226933454626}
-  - component: {fileID: 7198698672320495538}
-  - component: {fileID: 4005949602624215047}
+  - component: {fileID: 7338526429497596646}
+  - component: {fileID: 4828226192518815571}
+  - component: {fileID: 4911829465121534614}
   m_Layer: 8
   m_Name: Talkable
   m_TagString: Untagged
@@ -348,13 +242,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8458680226933454626
+--- !u!4 &7338526429497596646
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5585458808297711930}
+  m_GameObject: {fileID: 4751851199926781250}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.8, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -362,13 +256,13 @@ Transform:
   m_Father: {fileID: 574958203248194268}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &7198698672320495538
+--- !u!212 &4828226192518815571
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5585458808297711930}
+  m_GameObject: {fileID: 4751851199926781250}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -410,14 +304,14 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &4005949602624215047
+--- !u!95 &4911829465121534614
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5585458808297711930}
+  m_GameObject: {fileID: 4751851199926781250}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: 37ef066921f22a546b51c9a058bea55d, type: 2}

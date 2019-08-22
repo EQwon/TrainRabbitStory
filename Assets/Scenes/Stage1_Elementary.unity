@@ -209,11 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753e06b28a204264b869a9105634efa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cond:
-  - questName: 1
-    isAccept: 1
-    isSuccess: 1
-    warningText: "\uB2E4\uB978 \uD1A0\uB07C\uB4E4\uC5D0\uAC8C \uB9D0\uC744 \uAC78\uC5B4\uBCF4\uC790!"
+  cond: []
 --- !u!61 &48232862
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -365,20 +361,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CellNum: 11
-  AppearStandingBunnyList: []
+  AppearStandingBunnyList:
+  - {fileID: 2503992160686711965, guid: f880879481667c24693c63ed86ed67fc, type: 3}
   AppearSittingBunnyList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
+  - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
 --- !u!68 &94769321
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -774,19 +771,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CellNum: 7
-  AppearStandingBunnyList: []
+  AppearStandingBunnyList:
+  - {fileID: 2503992160686711965, guid: 63dffbd492c20bc4a99fa78246ef7656, type: 3}
   AppearSittingBunnyList:
+  - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 2503992160686711965, guid: 6185e2a5f8af49847ac64da90b37d2a3, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
   - {fileID: 0}
 --- !u!68 &211795532
 EdgeCollider2D:
@@ -1262,20 +1260,35 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CellNum: 8
-  AppearStandingBunnyList: []
+  AppearStandingBunnyList:
+  - {fileID: 6976514002041131658, guid: 35c923dfd9b5577478766ac3b586a6fa, type: 3}
+  - {fileID: 6732167636380368727, guid: 950d40ef3dc7e2e4689a0bdbbc153863, type: 3}
+  - {fileID: 846393299363935562, guid: 47f2e0263fbea504eafc9d913650ecf7, type: 3}
+  - {fileID: 3736129501804890883, guid: 5f7383bff479a5d4bb711de93897b47c, type: 3}
+  - {fileID: 502631167278193035, guid: f7c701b02e6ed7f4ab496c62000fa518, type: 3}
+  - {fileID: 7256514400031367280, guid: 4d747c294b7a00948882e2a069bde1a7, type: 3}
+  - {fileID: 2081886907282091113, guid: 34ede1996ee8d444280120d491c9cf15, type: 3}
+  - {fileID: 846393299363935562, guid: d3eac19066db4cd448df4837a9ec8c2c, type: 3}
+  - {fileID: 6732167636380368727, guid: 950d40ef3dc7e2e4689a0bdbbc153863, type: 3}
+  - {fileID: 6976514002041131658, guid: 35c923dfd9b5577478766ac3b586a6fa, type: 3}
+  - {fileID: 846393299363935562, guid: 47f2e0263fbea504eafc9d913650ecf7, type: 3}
+  - {fileID: 502631167278193035, guid: f7c701b02e6ed7f4ab496c62000fa518, type: 3}
+  - {fileID: 7256514400031367280, guid: 4d747c294b7a00948882e2a069bde1a7, type: 3}
+  - {fileID: 2081886907282091113, guid: 34ede1996ee8d444280120d491c9cf15, type: 3}
+  - {fileID: 846393299363935562, guid: d3eac19066db4cd448df4837a9ec8c2c, type: 3}
   AppearSittingBunnyList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
+  - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
 --- !u!68 &284649989
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -1523,18 +1536,18 @@ MonoBehaviour:
   CellNum: 1
   AppearStandingBunnyList: []
   AppearSittingBunnyList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
+  - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 2503992160686711965, guid: a2a6d010a770c654da66792ecf131c35, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
 --- !u!68 &329977991
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -1944,16 +1957,16 @@ MonoBehaviour:
   AppearStandingBunnyList: []
   AppearSittingBunnyList:
   - {fileID: 0}
+  - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 2503992160686711965, guid: 15c5ffd0dc31889439702c9bf3f59370, type: 3}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
+  - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
   - {fileID: 0}
 --- !u!68 &373004663
 EdgeCollider2D:
@@ -2131,18 +2144,18 @@ MonoBehaviour:
   CellNum: 5
   AppearStandingBunnyList: []
   AppearSittingBunnyList:
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
   - {fileID: 0}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2503992160686711965, guid: 105c84b1d72927d439825e99e1ac913c, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
+  - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
 --- !u!68 &382095945
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -2951,18 +2964,18 @@ MonoBehaviour:
   CellNum: 3
   AppearStandingBunnyList: []
   AppearSittingBunnyList:
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
   - {fileID: 0}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
+  - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
 --- !u!68 &659269157
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -3651,11 +3664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753e06b28a204264b869a9105634efa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cond:
-  - questName: 1
-    isAccept: 1
-    isSuccess: 1
-    warningText: "\uB2E4\uB978 \uD1A0\uB07C\uB4E4\uC5D0\uAC8C \uB9D0\uC744 \uAC78\uC5B4\uBCF4\uC790!"
+  cond: []
 --- !u!61 &839845317
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4131,16 +4140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753e06b28a204264b869a9105634efa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cond:
-  - questName: 3
-    isAccept: 1
-    isSuccess: 0
-    warningText: "\uD560\uC544\uBC84\uC9C0\uC758 \uBD80\uD0C1\uC744 \uB4E4\uC5B4\uC8FC\uC790!"
-  - questName: 3
-    isAccept: 1
-    isSuccess: 1
-    warningText: "\uD560\uC544\uBC84\uC9C0\uC5D0\uAC8C \uC190\uC218\uAC74\uC744 \uAC00\uC838\uB2E4
-      \uB4DC\uB9AC\uC790!"
+  cond: []
 --- !u!1 &947563025
 GameObject:
   m_ObjectHideFlags: 0
@@ -4361,11 +4361,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753e06b28a204264b869a9105634efa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cond:
-  - questName: 1
-    isAccept: 1
-    isSuccess: 1
-    warningText: "\uB2E4\uB978 \uD1A0\uB07C\uB4E4\uC5D0\uAC8C \uB9D0\uC744 \uAC78\uC5B4\uBCF4\uC790!"
+  cond: []
 --- !u!1 &995599435
 GameObject:
   m_ObjectHideFlags: 0
@@ -4562,20 +4558,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CellNum: 14
-  AppearStandingBunnyList: []
+  AppearStandingBunnyList:
+  - {fileID: 2503992160686711965, guid: 10889fce4122bf240a43a375aa69a4c8, type: 3}
   AppearSittingBunnyList:
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
   - {fileID: 0}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
   - {fileID: 0}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
 --- !u!68 &1108113283
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -4750,20 +4747,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CellNum: 4
-  AppearStandingBunnyList: []
+  AppearStandingBunnyList:
+  - {fileID: 2503992160686711965, guid: f880879481667c24693c63ed86ed67fc, type: 3}
   AppearSittingBunnyList:
+  - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
 --- !u!68 &1150351026
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -5446,20 +5444,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CellNum: 15
   AppearStandingBunnyList:
-  - {fileID: 2503992160686711965, guid: f880879481667c24693c63ed86ed67fc, type: 3}
+  - {fileID: 846393299363935562, guid: 47f2e0263fbea504eafc9d913650ecf7, type: 3}
   AppearSittingBunnyList:
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
+  - {fileID: 0}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 2503992160686711965, guid: 0ce93c4f2e4a8f743a0ba5b1543388ee, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
 --- !u!1 &1253407277
 GameObject:
   m_ObjectHideFlags: 0
@@ -5504,11 +5502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753e06b28a204264b869a9105634efa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cond:
-  - questName: 1
-    isAccept: 1
-    isSuccess: 1
-    warningText: "\uB2E4\uB978 \uD1A0\uB07C\uB4E4\uC5D0\uAC8C \uB9D0\uC744 \uAC78\uC5B4\uBCF4\uC790!"
+  cond: []
 --- !u!61 &1253407280
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5820,18 +5814,18 @@ MonoBehaviour:
   CellNum: 2
   AppearStandingBunnyList: []
   AppearSittingBunnyList:
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
 --- !u!68 &1353000104
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -6466,18 +6460,18 @@ MonoBehaviour:
   CellNum: 12
   AppearStandingBunnyList: []
   AppearSittingBunnyList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 2503992160686711965, guid: 904a5afa478c2e944b748a17e957040e, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
 --- !u!68 &1527910755
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -7029,11 +7023,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753e06b28a204264b869a9105634efa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cond:
-  - questName: 1
-    isAccept: 1
-    isSuccess: 1
-    warningText: "\uB2E4\uB978 \uD1A0\uB07C\uB4E4\uC5D0\uAC8C \uB9D0\uC744 \uAC78\uC5B4\uBCF4\uC790!"
+  cond: []
 --- !u!61 &1709693779
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7424,18 +7414,18 @@ MonoBehaviour:
   CellNum: 9
   AppearStandingBunnyList: []
   AppearSittingBunnyList:
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 2503992160686711965, guid: 1cd2a0568f1560f43a28bd116a5964d4, type: 3}
   - {fileID: 0}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
+  - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
 --- !u!68 &1866589440
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -7770,18 +7760,18 @@ MonoBehaviour:
   CellNum: 6
   AppearStandingBunnyList: []
   AppearSittingBunnyList:
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
+  - {fileID: 2503992160686711965, guid: 0b6e2c69cb4c72a4a866053971431738, type: 3}
   - {fileID: 0}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
   - {fileID: 0}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
 --- !u!68 &1931683998
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -8156,20 +8146,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CellNum: 10
-  AppearStandingBunnyList: []
+  AppearStandingBunnyList:
+  - {fileID: 2503992160686711965, guid: 17f7336c72223fd43a9f842f19e790b7, type: 3}
   AppearSittingBunnyList:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
+  - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
+  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
+  - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
+  - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
+  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
 --- !u!68 &2009172948
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -8668,12 +8659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753e06b28a204264b869a9105634efa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cond:
-  - questName: 2
-    isAccept: 0
-    isSuccess: 0
-    warningText: "\uCC29\uD574\uBCF4\uC774\uB294 \uD1A0\uB07C\uC5D0\uAC8C \uD578\uB4DC\uD3F0\uC744
-      \uBE4C\uB824\uBCF4\uC790!"
+  cond: []
 --- !u!1 &2086894783
 GameObject:
   m_ObjectHideFlags: 0
@@ -8947,11 +8933,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 753e06b28a204264b869a9105634efa2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cond:
-  - questName: 1
-    isAccept: 1
-    isSuccess: 1
-    warningText: "\uB2E4\uB978 \uD1A0\uB07C\uB4E4\uC5D0\uAC8C \uB9D0\uC744 \uAC78\uC5B4\uBCF4\uC790!"
+  cond: []
 --- !u!61 &2117965064
 BoxCollider2D:
   m_ObjectHideFlags: 0

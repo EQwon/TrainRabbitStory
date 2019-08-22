@@ -24,7 +24,7 @@ public class Dialogue : MonoBehaviour
     private void Start()
     {
         defaultDialogCnt = 6;
-        //GameManager.instance.gameObject.GetComponent<QuestManager>().enabled = true;
+        GameManager.instance.gameObject.GetComponent<QuestManager>().enabled = true;
     }
 
     public List<Dialog> DialogueForNow()
