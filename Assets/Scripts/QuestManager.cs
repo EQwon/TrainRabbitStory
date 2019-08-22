@@ -27,8 +27,10 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    private void Start()
+    public void Init()
     {
+        isAccept.Clear();
+        isSuccess.Clear();
         int n = Enum.GetNames(typeof(Quest)).Length;
 
         for (int i = 0; i < n; i++)

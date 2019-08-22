@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1869800291
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: d10cf353238b621448d3369fc5d80160, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -102,7 +102,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.59, y: 4.81}
+    oldSize: {x: 3.09, y: 5.54}
     newSize: {x: 2.19, y: 5.54}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -145,7 +145,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  damage: 10
+  hpDamage: 10
+  mpDamage: 1
+  attackDelay: 5
+  HP: 0
+  MP: 0
+  joystick: {fileID: 0}
 --- !u!95 &-212019551665106316
 Animator:
   serializedVersion: 3
@@ -235,6 +240,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed867b497641ed44a80f93b9e40d2e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canTalk: 0
 --- !u!1 &7364252062523712374
 GameObject:
   m_ObjectHideFlags: 0

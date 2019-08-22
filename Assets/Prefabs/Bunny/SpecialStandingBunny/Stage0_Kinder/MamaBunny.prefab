@@ -397,7 +397,7 @@ MonoBehaviour:
     Speaker: "\uB300\uD559\uC6D0\uC0DD \uD1A0\uB07C"
     SpeakerImage: {fileID: 21300000, guid: eeee4fc46d2f1e340835414e82187b26, type: 3}
     Text: "\uD558\uD558\uD558\uD558\uD558\uD558!!!!"
-  quest: 4
+  quest: 5
   reward: 
 --- !u!114 &4639779700239743556
 MonoBehaviour:

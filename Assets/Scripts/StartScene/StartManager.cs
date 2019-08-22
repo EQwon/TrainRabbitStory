@@ -28,7 +28,7 @@ public class StartManager : MonoBehaviour
 
     private int GetStageNum()
     {
-        return 0;
+        return (int)GameManager.instance.level;
     }
 
     private void ChangeAD()
@@ -65,7 +65,7 @@ public class StartManager : MonoBehaviour
 
         yield return new WaitForSeconds(0.5f);
 
-        Debug.Log("게임을 새로 시작합니다.");
+        //Debug.Log("게임을 새로 시작합니다.");
         SceneManager.LoadScene(nowStage + 1);
     }
 }

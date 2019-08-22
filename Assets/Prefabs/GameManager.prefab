@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 1182546078}
   m_Father: {fileID: 2085666517559939541}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!20 &609331172
 Camera:
@@ -207,7 +207,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 2085666517559939541}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -289,102 +289,6 @@ MonoBehaviour:
   effectPrefab: {fileID: 838402551844887426, guid: 2a11c0c058b741e4086010034c2999b1,
     type: 3}
   effectAmount: 8
---- !u!1 &1388736113
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1388736116}
-  - component: {fileID: 1388736115}
-  - component: {fileID: 1388736114}
-  - component: {fileID: 9174057192101733234}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1388736116
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1388736113}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2085666517559939541}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &1388736115
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1388736113}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
-  m_projectionMatrixMode: 1
-  m_GateFitMode: 2
-  m_FOVAxisMode: 0
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 1
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!81 &1388736114
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1388736113}
-  m_Enabled: 1
---- !u!114 &9174057192101733234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1388736113}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9eefe7a2da085294fbce1482a9201040, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &2085666517559939542
 GameObject:
   m_ObjectHideFlags: 0
@@ -415,7 +319,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4312628832145126694}
-  - {fileID: 1388736116}
   - {fileID: 609331173}
   - {fileID: 1300995954}
   m_Father: {fileID: 0}
@@ -433,14 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b6cc906b2fc8444ca991f5d58cbc745, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 474096814586351125, guid: aca22061a12f2bb4e8929e6a1d5cbca4, type: 3}
   level: 0
-  playerPrefabs:
-  - {fileID: 7553802036888581988, guid: 87c74865480fa8c489bb3b06a9fe3ac1, type: 3}
-  - {fileID: 8055383149057418330, guid: c3791825dd604d14a9154394611ed464, type: 3}
-  - {fileID: 2556682920642508152, guid: a852b65e9c0ec3c458534b79e88280f8, type: 3}
-  - {fileID: 3322628031501875662, guid: 181ef5e8bef876e4ea66895259b09caf, type: 3}
-  - {fileID: 932263703206208274, guid: b24b8b034124dc845a306cd3788b568c, type: 3}
 --- !u!114 &2085666517559939538
 MonoBehaviour:
   m_ObjectHideFlags: 0

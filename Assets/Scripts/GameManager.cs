@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
 
             InitStage();
             GetComponent<QuestManager>().enabled = true;
+            QuestManager.instance.Init();
 
             if(SceneManager.GetActiveScene().buildIndex == 1) UIManager.instance.ShowOpeningStory();
         }

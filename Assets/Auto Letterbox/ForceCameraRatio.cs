@@ -126,15 +126,15 @@ namespace LetterboxCamera
             // Use the best fitting of the two
             if (screenViewPortHorizontal.height >= screenViewPortVertical.height && screenViewPortHorizontal.width >= screenViewPortVertical.width) {
                 if (screenViewPortHorizontal.height <= originViewPort.height && screenViewPortHorizontal.width <= originViewPort.width) {
-                    camera.rect = screenViewPortHorizontal;
+                    Camera.main.rect = screenViewPortHorizontal;
                 } else {
-                    camera.rect = screenViewPortVertical;
+                    Camera.main.rect = screenViewPortVertical;
                 }
             } else {
                 if (screenViewPortVertical.height <= originViewPort.height && screenViewPortVertical.width <= originViewPort.width) {
-                    camera.rect = screenViewPortVertical;
+                    Camera.main.rect = screenViewPortVertical;
                 } else {
-                    camera.rect = screenViewPortHorizontal;
+                    Camera.main.rect = screenViewPortHorizontal;
                 }
             }
         }

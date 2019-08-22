@@ -29,8 +29,6 @@ public class UIManager : MonoBehaviour
     public List<Dialog> tutoDialog;
     public GameObject darkPanel;
 
-    private GameObject mainCamera;
-
     private List<Dialog> currentDialogue;
     private GameObject currentInteractBunny;
     private int currentDialogNum = -1;
@@ -65,7 +63,7 @@ public class UIManager : MonoBehaviour
 
         currentDialogNum = -1;
 
-        mainCamera = Camera.main.gameObject;
+        GameObject mainCamera = Camera.main.gameObject;
         if (mainCamera.GetComponent<CameraWalk>().enabled == false)
             mainCamera.GetComponent<CameraWalk>().enabled = true;
 
@@ -84,7 +82,7 @@ public class UIManager : MonoBehaviour
 
         talkPanel.SetActive(true);
         talkPanel.GetComponent<Button>().interactable = true;
-        mainCamera.GetComponent<CameraWalk>().ZoomInCamera(playerPos, interactBunny.transform.position);
+        Camera.main.gameObject.GetComponent<CameraWalk>().ZoomInCamera(playerPos, interactBunny.transform.position);
         currentDialogNum = -1;
 
         NextDialog();

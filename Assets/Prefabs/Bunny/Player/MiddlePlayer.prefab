@@ -72,7 +72,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1869800291
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a585c32e2dfe8784b99eb969f528b3d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -145,7 +145,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  damage: 10
+  hpDamage: 10
+  mpDamage: 1
+  attackDelay: 5
+  HP: 0
+  MP: 0
+  joystick: {fileID: 0}
 --- !u!95 &-2948201096590947406
 Animator:
   serializedVersion: 3
@@ -305,3 +310,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed867b497641ed44a80f93b9e40d2e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canTalk: 0

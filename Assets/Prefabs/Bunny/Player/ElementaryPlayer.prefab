@@ -289,6 +289,8 @@ MonoBehaviour:
   hpDamage: 10
   mpDamage: 1
   attackDelay: 0.5
+  HP: 0
+  MP: 0
   joystick: {fileID: 0}
 --- !u!95 &989894117095479491
 Animator:
