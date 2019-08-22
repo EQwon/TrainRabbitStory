@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3908921025110010071}
   - component: {fileID: 1124159481141949811}
   m_Layer: 9
-  m_Name: SleepingSittingBunny
+  m_Name: SittingSleepingBunny1
   m_TagString: Bunny
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69,9 +69,9 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -2095584723
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 99024bffd109fc04ba508112bb0e4f5c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 6f57deb2373d20642a4b1d51cd4cbb4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -99,7 +99,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.51, y: 3.85}
+    oldSize: {x: 5.9, y: 5.9}
     newSize: {x: 2.19, y: 5.54}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -141,7 +141,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ea0ca92e4f89844aa4ab886bce6b7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isSitting: 1
-  isInteractive: 0
   hp: 30
-  speed: 0
+  isInteractable: 0
+  isInvincible: 0

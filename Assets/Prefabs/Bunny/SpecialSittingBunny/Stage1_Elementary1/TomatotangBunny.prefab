@@ -220,8 +220,119 @@ MonoBehaviour:
   - type: 6
     Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
     SpeakerImage: {fileID: 0}
-    Text: "\uCD08\uB4F1\uD559\uC0DD \uC2A4\uD14C\uC774\uC9C0\uC758 \uD1A0\uB9C8\uD1A0\uD0D5
-      \uB300\uC0AC"
+    Text: "\uC74C?"
+  - type: 6
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uC624, \uC548\uB155."
+  - type: 7
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uB098?"
+  - type: 7
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uC544\uBB34\uB370\uB3C4 \uC548 \uAC00\uB294\uB370?"
+  - type: 7
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uADF8\uB0E5 \uC9D1\uC5D0 \uC788\uAE30 \uC880 \uADF8\uB798\uC11C"
+  - type: 7
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uC9C0\uD558\uCCA0 \uD55C \uBC14\uD034 \uB3CC\uACE0 \uB4E4\uC5B4\uAC00\uAC8C."
+  - type: 7
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uC740\uADFC \uC7AC\uBC0C\uC5B4."
+  - type: 7
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uBC84\uC2A4 \uD55C \uBC14\uD034\uB3C4 \uC7AC\uBC0C\uACE0."
+  - type: 7
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uB2F4\uC5D0 \uD574\uBD10."
+  - type: 8
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uC74C?"
+  - type: 8
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uADF8\uB0E5 \uC9C0\uB0C8\uC9C0 \uBB50."
+  - type: 9
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uD1A0\uB9C8\uD1A0\uD0D5 \uD6E0\uAD88 \uB9DB\uC788\uAC8C \uBA39\uC5C8\uB0D0\uACE0?"
+  - type: 9
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uC751."
+  - type: 9
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uADF8\uAC74 \uD56D\uC0C1 \uB9DB\uC788\uC5B4."
+  - type: 9
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uB2F4\uC5D0 \uB108\uB3C4 \uBA39\uC5B4\uBD10."
+  - type: 10
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uC9C0\uB09C\uBC88\uC774\uB791 \uC880 \uB2E4\uB978 \uAC83 \uAC19\uB2E4\uACE0?"
+  - type: 10
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uC544, \uBBF8\uC548."
+  - type: 10
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uADF8\uB54C\uB294 \uB0B4\uAC00 \uB108\uBB34 \uD53C\uACE4\uD574\uC11C"
+  - type: 10
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uB9D0\uD22C\uAC00 \uC880 \uADF8\uB7AC\uB098\uBD10."
+  - type: 10
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uBBF8\uC548 \uBBF8\uC548."
+  - type: 11
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uC65C \uD53C\uACE4\uD558\uB0D0\uACE0?"
+  - type: 11
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uD760..."
+  - type: 11
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uCF55 \uC9D1\uC5B4 \uB9D0\uD558\uAE30 \uC5B4\uB824\uC6B4\uB370"
+  - type: 11
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uADF8\uB0E5 \uD53C\uACE4\uD574."
+  - type: 11
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uC544\uBB34\uAC83\uB3C4 \uC548 \uD558\uACE0 \uC2F6\uC740\uB370"
+  - type: 11
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uADF8\uB7EC\uACE0 \uC788\uC5B4\uB3C4 \uD53C\uACE4\uD574."
+  - type: 12
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uB9CC\uC0AC\uAC00 \uADC0\uCC2E\uB2E4\uC544..."
+  - type: 13
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uC544\uC544\uBB34\uAC83\uB3C4 \uD558\uACE0 \uC2F6\uC9C0 \uC54A\uC544\uC544...."
+  - type: 14
+    Speaker: "\uD1A0\uB9C8\uD1A0\uD0D5"
+    SpeakerImage: {fileID: 0}
+    Text: "\uC624\uB298\uC740 \uB354 \uC774\uC0C1 \uD560 \uB9D0\uC774 \uC5C6\uC5B4\uC5B4...."
   quest: 0
   reward: 140000000a000000
 --- !u!1 &4751851199926781250

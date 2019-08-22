@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum DialogType { BeforeQuest, AfterAccept, AfterRefuse, WhileQuest, SuccessQuest, AfterSuccess, Default1, Default2, Default3 };
+public enum DialogType { BeforeQuest, AfterAccept, AfterRefuse, WhileQuest, SuccessQuest, AfterSuccess, Default1, Default2, Default3, Default4, Default5, Default6, Default7, Default8, Default9, Default10 };
 
 [System.Serializable]
 public class Dialog
@@ -64,7 +64,7 @@ public class Dialogue : MonoBehaviour
         }
 
         if (isThereNextDefaultDialog == true) defaultDialogCnt += 1;
-        else defaultDialogCnt = 6;
+        //else defaultDialogCnt = 6;
 
         return dialog;
     }

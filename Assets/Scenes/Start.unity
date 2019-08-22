@@ -436,7 +436,7 @@ MonoBehaviour:
   stageName: {fileID: 886815861}
   stageNameImage:
   - {fileID: 21300000, guid: b07ea9058d98b7c41abf95729441bb9e, type: 3}
-  - {fileID: 21300000, guid: 38433a924ec034a4eaeb0dd215f6009f, type: 3}
+  - {fileID: 21300000, guid: 8242c9250315a8645ba2184993c8f28b, type: 3}
   - {fileID: 21300000, guid: 6cea88211a096244ba71c324be116bd3, type: 3}
   - {fileID: 21300000, guid: 0144c27df66d90e4c93bb36e3ce04fa5, type: 3}
   - {fileID: 21300000, guid: f757b51749921ca40a34bb86631f15e6, type: 3}
