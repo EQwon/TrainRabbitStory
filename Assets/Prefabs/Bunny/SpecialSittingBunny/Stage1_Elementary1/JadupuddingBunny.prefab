@@ -235,7 +235,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.19, y: 5.54}
+  m_Size: {x: 5.9, y: 5.9}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -259,7 +259,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.52, y: 0.46}
     oldSize: {x: 5.9, y: 5.9}
-    newSize: {x: 2.19, y: 5.54}
+    newSize: {x: 5.9, y: 5.9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -318,131 +318,131 @@ MonoBehaviour:
   dialogue:
   - type: 6
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uC544..."
   - type: 6
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uD138 \uC5C4\uCCAD \uBB3B\uC5C8\uB124."
   - type: 6
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uC880 \uB5BC\uC5B4 \uBD10\uC57C\uACA0\uB2E4."
   - type: 6
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uC5B4, \uC548\uB155!"
   - type: 6
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uB098\uB294 \uC798 \uC9C0\uB0C8\uC9C0!"
   - type: 6
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uC624, \uC6B0\uB9AC \uACE0\uC591\uC774\uB4E4\uC740 \uC798 \uC9C0\uB0C8\uB0D0\uACE0?"
   - type: 6
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uC751\uC751! \uAC54\uB124\uB3C4 \uC798 \uC9C0\uB0C8\uC9C0!"
   - type: 6
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uB108\uB294 \uC798 \uC9C0\uB0C8\uB2C8?"
   - type: 6
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uC640! \uCD08\uB4F1\uD559\uC0DD\uC774 \uB410\uAD6C\uB098."
   - type: 6
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uCD95\uD558\uD574!"
   - type: 7
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uC751?"
   - type: 7
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uC544, \uC624\uB298\uB530\uB77C \uD138\uC774 \uB9CE\uC774 \uBB3B\uC5B4\uC11C
       \uC880 \uB5BC\uACE0 \uC788\uC5B4."
   - type: 7
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uC0AC\uC2E4 \uB610 \uBD99\uC744 \uAC70\uB77C\uC11C \uBB34\uC758\uBBF8\uD558\uAE34
       \uD55C\uB370"
   - type: 7
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uADF8\uB0E5 \uC2EC\uC2EC\uD558\uAE30\uB3C4 \uD558\uACE0..."
   - type: 7
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uC9DC\uC99D\uB098\uC9C4 \uC54A\uB0D0\uACE0?"
   - type: 7
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uC74C..."
   - type: 7
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uBB50 \uB2F9\uC5F0\uD55C \uC77C\uC774\uB77C\uACE0 \uC0DD\uAC01\uD574."
   - type: 7
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uD138\uC774 \uC788\uB294 \uB3D9\uBB3C\uC774\uB791 \uAC19\uC774 \uC0AC\uB294\uB370"
   - type: 7
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uC5B4\uB5BB\uAC8C \uD138\uC774 \uC637\uC5D0 \uC548 \uBD99\uACA0\uC5B4."
   - type: 7
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uADF8\uAC8C \uC2EB\uC73C\uBA74 \uCC98\uC74C\uBD80\uD130 \uAC19\uC774 \uC0B4\uBA74
       \uC548 \uB418\uB294 \uAC70\uC9C0."
   - type: 7
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uB2E4 \uC54C\uACE0 \uB370\uB824\uC624\uB294 \uAC70\uC9C0."
   - type: 7
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uC544, \uADF8\uAC70 \uC54C\uC544?"
   - type: 7
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uC774\uAC70 \uBB49\uCE58\uBA74 \uD138\uACF5 \uB41C\uB2E4."
   - type: 7
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uAE30\uB2E4\uB824\uBD10."
   - type: 7
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uD558\uB098 \uB9CC\uB4E4\uC5B4\uC11C \uBCF4\uC5EC\uC904\uAC8C."
   - type: 8
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uC624, \uB108\uB3C4 \uACE0\uC591\uC774 \uC88B\uC544\uD574?"
   - type: 8
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uB098\uB294 \uADF8\uB0E5 \uB2E4\uB978 \uB3D9\uBB3C\uB4E4\uC774 \uC88B\uC544."
   - type: 8
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uC0AC\uC2E4 \uAC1C\uB3C4 \uC88B\uC544\uD558\uACE0"
   - type: 8
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uB2E4 \uC88B\uC544."
   - type: 8
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uC6B0\uB9AC \uC9D1 \uACE0\uC591\uC774\uB4E4\uC774\uB791 \uB178\uB294\uAC8C
       \uC81C\uC77C \uC7AC\uBC0C\uC5B4."
   - type: 9
     Speaker: "\uC790\uB450\uD478\uB529"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 70e84d620809fb3448fc6d0c3eaebf9d, type: 3}
     Text: "\uC624\uB298\uC740 \uB354 \uC774\uC0C1 \uD560 \uB9D0\uC774 \uC5C6\uB124!"
   quest: 0
   reward: 140000000a000000

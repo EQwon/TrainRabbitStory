@@ -136,7 +136,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.19, y: 5.54}
+  m_Size: {x: 5.9, y: 5.9}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -160,7 +160,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.52, y: 0.46}
     oldSize: {x: 5.9, y: 5.9}
-    newSize: {x: 2.19, y: 5.54}
+    newSize: {x: 5.9, y: 5.9}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -219,148 +219,148 @@ MonoBehaviour:
   dialogue:
   - type: 6
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uC5B4...\uADF8\uB798."
   - type: 6
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uB610 \uB9CC\uB098\uB124. \uC548\uB155."
   - type: 6
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uB098\uB294 \uD559\uAD50 \uAC00\uB294 \uAE38\uC774\uC57C."
   - type: 6
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uBB34\uC2A8 \uD559\uAD50\uB0D0\uACE0?"
   - type: 6
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uB300\uD559\uAD50."
   - type: 6
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uD300\uD50C \uBAA8\uC784 \uC788\uC5B4\uC11C \uAC00\uB294 \uC911\uC774\uC57C."
   - type: 6
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uC544\uB2C8, \uD558\uB098\uB3C4 \uC548 \uC2E0\uB098."
   - type: 6
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uBAA8\uB974\uB294 \uD1A0\uB07C\uB4E4 \uB9CC\uB098\uB294 \uAC70 \uB108\uBB34
       \uD53C\uACE4\uD558\uACE0 \uD798\uB4E4\uC5B4."
   - type: 7
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: '...'
   - type: 7
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uC800\uAE30"
   - type: 7
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uBBF8\uC548\uD55C\uB370..."
   - type: 7
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uC65C \uC790\uAFB8 \uB9D0 \uAC70\uB294 \uAC70\uC57C?"
   - type: 7
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uC544\uB2C8, \uAE30\uBD84 \uB098\uC05C \uAC74 \uC544\uB2CC\uB370"
   - type: 7
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uAC11\uC790\uAE30 \uBAA8\uB974\uB294 \uD1A0\uB07C\uAC00 \uB9D0 \uAC70\uB2C8\uAE4C
       \uC880 \uADF8\uB798."
   - type: 7
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uB09C \uB0B4\uAC00 \uBA3C\uC800 \uB9D0\uC744 \uAC70\uB294 \uD3B8\uC774
       \uC544\uB2C8\uB77C\uC11C \uC880 \uB0AF\uC124\uC5B4."
   - type: 7
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uB098\uB791 \uCE5C\uD574\uC9C0\uACE0 \uC2F6\uC5B4\uC11C \uADF8\uB807\uB2E4\uACE0?"
   - type: 7
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uB098\uB791?"
   - type: 7
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uC65C?"
   - type: 8
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uC65C \uB300\uB2F5\uD574\uC8FC\uB0D0\uACE0?"
   - type: 8
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uB9D0\uC744 \uAC70\uB294\uB370 \uB610 \uBB34\uC2DC\uD560 \uC218\uB294
       \uC5C6\uC796\uC544."
   - type: 9
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uC544\uB2C8"
   - type: 9
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uB108\uD55C\uD14C \uD654\uB09C \uAC70 \uC544\uB2C8\uB77C\uB2C8\uAE4C."
   - type: 9
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uADF8\uB0E5 \uB0B4 \uB9D0\uD22C\uAC00 \uC6D0\uB798 \uADF8\uB798."
   - type: 9
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uB108\uBB34 \uC2E0\uACBD \uC4F0\uC9C0\uB9C8."
   - type: 9
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uB0B4\uAC00 \uC880..."
   - type: 9
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uCC98\uC74C \uBCF4\uB294 \uD1A0\uB07C\uB4E4\uC774\uB791\uC740 \uBC14\uB85C
       \uD3B8\uD558\uC9C0\uAC00 \uC54A\uC544\uC11C \uADF8\uB798."
   - type: 9
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uB0B4\uAC00 \uB0AF\uC744 \uC880 \uAC00\uB824."
   - type: 10
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uC751?"
   - type: 10
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uC775\uC219\uD574\uC9C0\uAC8C \uC790\uC8FC \uC778\uC0AC\uD558\uACA0\uB2E4\uACE0?"
   - type: 10
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: '......'
   - type: 10
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uADF8\uB798."
   - type: 10
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uAD1C\uD788 \uBBF8\uC548\uD574\uC9C0\uB294\uB370..."
   - type: 10
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uADF8\uB798 \uC548\uB155."
   - type: 10
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uB2E4\uC74C\uC5D0 \uB610 \uBCF4\uC790?"
   - type: 11
     Speaker: "\uAE40\uB9DD\uACE0"
-    SpeakerImage: {fileID: 0}
+    SpeakerImage: {fileID: 21300000, guid: 946d6e5043f035e4dad08a77043c0fb3, type: 3}
     Text: "\uC624\uB298\uC740 \uB354 \uC774\uC0C1 \uD560 \uB9D0\uC774 \uC5C6\uB294\uB370..."
   quest: 0
   reward: 140000000a000000
