@@ -41,6 +41,7 @@ public class Crammed : MonoBehaviour
 
     private void Start()
     {
+        GameManager.instance.IsTalking = true;
         state = State.Ready;
         timerText = timer.GetComponentInChildren<Text>();
         timerText.text = "6.00 s";

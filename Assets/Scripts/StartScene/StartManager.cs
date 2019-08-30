@@ -21,14 +21,9 @@ public class StartManager : MonoBehaviour
         stageName.GetComponent<Image>().sprite = stageNameImage[nowStage];
     }
 
-    private void Update()
-    {
-        GameManager.instance.level = (GameManager.Level)nowStage;
-    }
-
     private int GetStageNum()
     {
-        return (int)GameManager.instance.level;
+        return GameManager.instance.Stage;
     }
 
     private void ChangeAD()

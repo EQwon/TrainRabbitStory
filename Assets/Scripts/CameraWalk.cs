@@ -23,7 +23,7 @@ public class CameraWalk : MonoBehaviour
         if (cellNum != ((int)player.transform.position.x + 10) / 20)
         {
             cellNum = ((int)player.transform.position.x + 10) / 20;
-            GameManager.instance.ChangeTrainState(GameManager.TrainState.cellChange);
+            GameManager.instance.IsCellChanging = true;
             StartCoroutine(MoveCamera());
         }
     }
@@ -67,6 +67,6 @@ public class CameraWalk : MonoBehaviour
         transform.position = targetPos;
         if (isRight == true) Player.instance.transform.position += new Vector3(0.5f, 0, 0);
         else Player.instance.transform.position += new Vector3(-0.5f, 0, 0);
-        GameManager.instance.BackToPreviousState();
+        GameManager.instance.IsCellChanging = false;
     }
 }

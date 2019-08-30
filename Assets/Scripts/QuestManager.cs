@@ -38,7 +38,7 @@ public class QuestManager : MonoBehaviour
             isAccept.Add(false);
             isSuccess.Add(false);
 
-            if (i == (int)Quest.Tutorial && GameManager.instance.level == GameManager.Level.kinder)
+            if (i == (int)Quest.Tutorial && GameManager.instance.Stage == 0)
             {
                 isAccept[i] = true;
                 isSuccess[i] = true;
@@ -54,9 +54,8 @@ public class QuestManager : MonoBehaviour
     public void StartUnperfomedQuest()
     {
         if (GetUnperformQuest() == 0) return;
-
-        int questNum = GetUnperformQuest();
-        StartQuest(questNum);
+        
+        StartQuest(GetUnperformQuest());
     }
 
     public void CheckStageClear()
@@ -83,26 +82,12 @@ public class QuestManager : MonoBehaviour
         questCanvas = Instantiate(questCanvasPrefab);
         questCanvas.GetComponent<QuestCanvasController>().ActivateCanvas(questNum);
 
-        switch (questNum)
-        {
-            case 1:
-                GameManager.instance.ChangeTrainState(GameManager.TrainState.normalQuest);
-                break;
-            case 2:
-                GameManager.instance.ChangeTrainState(GameManager.TrainState.instantQuest);
-                break;
-            case 3:
-                GameManager.instance.ChangeTrainState(GameManager.TrainState.normalQuest);
-                break;
-            case 4:
-                GameManager.instance.ChangeTrainState(GameManager.TrainState.instantQuest);
-                break;
-        }
+        GameManager.instance.IsQuesting = true;
     }
 
     public void BackToNoraml()
     {
-        GameManager.instance.ChangeTrainState(GameManager.TrainState.normal);
+        GameManager.instance.IsQuesting = false;
         Destroy(questCanvas);
         questCanvas = null;
         UIManager.instance.gameObject.SetActive(true);

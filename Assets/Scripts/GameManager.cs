@@ -3,17 +3,53 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+public enum TrainState { normal, talking, normalQuest, instantQuest, cellChange }
+
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
-    public enum Level { kinder, elementary, middle, high, university }
-    public enum TrainState { normal, talking, normalQuest, instantQuest, cellChange }
+    #region SaveLoad
+    private Data data;
+    private void SaveData() { SaveSystem.SaveData(data); }
+    private void LoadData() { data = SaveSystem.LoadData(); }
+    #endregion
 
-    public Level level = Level.kinder;
+    #region GameStatus
+    public int Stage
+    {
+        get { return data.stage; }
+        set { data.stage = value; }
+    }
+    public int HP
+    {
+        get { return data.hp; }
+        set { data.hp = value; }
+    }
+    public int MP
+    {
+        get { return data.mp; }
+        set { data.mp = value; }
+    }
+    public int[] Affinity
+    {
+        get { return data.affinity; }
+        set { data.affinity = value; }
+    }
+    #endregion
+
+    #region TrainState
+    private bool isTalking = false;
+    private bool isQuesting = false;
+    private bool isCellChanging = false;
+
+    public bool IsTalking { set { isTalking = value; ChangeTrainState(); } }
+    public bool IsQuesting { set { isQuesting = value; ChangeTrainState(); } }
+    public bool IsCellChanging { set { isCellChanging = value; ChangeTrainState(); } }
+
     private TrainState state = TrainState.normal;
     public TrainState State { get { return state; } }
-    private TrainState previousState = TrainState.normal;
+    #endregion
 
     private void Awake()
     {
@@ -27,7 +63,9 @@ public class GameManager : MonoBehaviour
         }
 
         DontDestroyOnLoad(gameObject);
-        GetComponent<QuestManager>().enabled = false;
+        LoadData();
+
+        //GetComponent<QuestManager>().enabled = false;
     }
 
     private void OnEnable()
@@ -41,7 +79,7 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("새로운 스테이지가 시작했습니다.");
 
-            InitStage();
+            TimeManager.timeScale = 1;
             GetComponent<QuestManager>().enabled = true;
             QuestManager.instance.Init();
 
@@ -49,15 +87,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void InitStage()
+    public void ChangeTrainState()
     {
-        TimeManager.timeScale = 1;
-    }
-
-    public void ChangeTrainState(TrainState trainState)
-    {
-        previousState = state;
-        state = trainState;
+        if (isCellChanging == true) state = TrainState.cellChange;
+        else if (isTalking == true)
+        {
+            if (isQuesting == true) state = TrainState.instantQuest;
+            else state = TrainState.talking;
+        }
+        else
+        {
+            if (isQuesting == true) state = TrainState.normalQuest;
+            else state = TrainState.normal;
+        }
 
         switch (state)
         {
@@ -77,11 +119,5 @@ public class GameManager : MonoBehaviour
                 TimeManager.timeScale = 0;
                 break;
         }
-    }
-
-    public void BackToPreviousState()
-    {
-        ChangeTrainState(previousState);
-        previousState = state;
     }
 }

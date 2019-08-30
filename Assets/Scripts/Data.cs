@@ -6,12 +6,22 @@ using UnityEngine;
 public class Data
 {
     public int stage;
+    public int hp;
     public int mp;
     public int[] affinity;
+
+    public Data()
+    {
+        stage = 0;
+        hp = 100;
+        mp = 100;
+        affinity = new int[8] { 0, 0, 0, 0, 0, 0, 0, 0 };
+    }
 
     public Data(Data data)
     {
         stage = data.stage;
+        hp = 100;
         mp = data.mp;
 
         affinity = new int[8];

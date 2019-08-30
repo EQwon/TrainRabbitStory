@@ -32,6 +32,7 @@ public class PhoneCall : MonoBehaviour
 
     private void Start()
     {
+        GameManager.instance.IsTalking = true;
         UIManager.instance.gameObject.SetActive(false);
         InitializePanel();
         state = State.ready;

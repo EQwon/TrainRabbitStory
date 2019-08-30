@@ -75,7 +75,7 @@ public class UIManager : MonoBehaviour
         currentDialogue = interactBunny.GetComponent<Dialogue>().DialogueForNow();
         if (currentDialogue.Count == 0) return;
 
-        GameManager.instance.ChangeTrainState(GameManager.TrainState.talking);
+        GameManager.instance.IsTalking = true;
         basicUI.SetActive(false);
         currentInteractBunny = interactBunny;
         Vector2 interactBunnyPos = interactBunny.transform.position;
@@ -135,7 +135,7 @@ public class UIManager : MonoBehaviour
     {
         if(currentInteractBunny != null) currentInteractBunny.GetComponent<Dialogue>().GiveReward(currentDialogue);
         InitUI();
-        GameManager.instance.ChangeTrainState(GameManager.TrainState.normal);
+        GameManager.instance.IsTalking = false;
     }
 
     public void AcceptQuest()
@@ -171,7 +171,7 @@ public class UIManager : MonoBehaviour
         darkPanel.SetActive(true);
         currentDialogue = tutoDialog;
 
-        GameManager.instance.ChangeTrainState(GameManager.TrainState.talking);
+        GameManager.instance.IsTalking = true;
         basicUI.SetActive(false);
 
         talkPanel.SetActive(true);

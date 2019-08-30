@@ -12,7 +12,7 @@ public class TrainController : MonoBehaviour
 
     private void Start()
     {
-        SetupTrain(GameManager.instance.level);
+        SetupTrain(GameManager.instance.Stage);
     }
 
     private void InitializeList()
@@ -33,13 +33,13 @@ public class TrainController : MonoBehaviour
         sitPositions.Add(new Vector2(8.4f, 3.5f));
     }
 
-    public void SetupTrain(GameManager.Level level)
+    public void SetupTrain(int level)
     {
         InitializeList();
         LayoutBunny(level);
     }
 
-    private void LayoutBunny(GameManager.Level level)   //직접 토끼들을 레벨에 따라 배치시키는 함수
+    private void LayoutBunny(int level)   //직접 토끼들을 레벨에 따라 배치시키는 함수
     {
         CollocateSittingBunny(AppearSittingBunnyList);
         CollocteStandingBunny(AppearStandingBunnyList);

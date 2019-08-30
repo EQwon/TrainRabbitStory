@@ -21,7 +21,6 @@ public class QuestCanvasController : MonoBehaviour
     {
         GameManager.instance.gameObject.GetComponent<QuestManager>().enabled = false;
         QuestManager.instance.enabled = false;
-        GameManager.instance.level = GameManager.Level.elementary;
         SceneManager.LoadScene(0);        
     }
 }
