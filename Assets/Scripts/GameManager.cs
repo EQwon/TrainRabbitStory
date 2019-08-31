@@ -125,6 +125,8 @@ public class GameManager : MonoBehaviour
     {
         gameObject.GetComponent<QuestManager>().enabled = false;
 
+        data.stage += 1;
+
         SaveData();
         SceneManager.LoadScene(0);
     }

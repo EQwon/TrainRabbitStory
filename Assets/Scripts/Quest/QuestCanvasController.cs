@@ -16,4 +16,9 @@ public class QuestCanvasController : MonoBehaviour
         Debug.Log(canvas[canvasNum - 1].name + "를 활성화합니다.");
         canvas[canvasNum - 1].SetActive(true);
     }
+
+    public void StageClear()
+    {
+        GameManager.instance.StageClear();
+    }
 }

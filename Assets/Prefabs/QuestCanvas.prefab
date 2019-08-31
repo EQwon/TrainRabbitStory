@@ -2729,7 +2729,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7873148847747218287}
-        m_MethodName: GoToTitleScene
+        m_MethodName: StageClear
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
