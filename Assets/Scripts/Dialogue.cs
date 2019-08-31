@@ -177,8 +177,8 @@ public class Dialogue : MonoBehaviour
 
         if (dialogs[0].type == DialogType.SuccessQuest)
         {
-            Player.instance.HP += reward[0];
-            Player.instance.MP += reward[1];
+            GameManager.instance.HP += reward[0];
+            GameManager.instance.MP += reward[1];
         }
     }
 }

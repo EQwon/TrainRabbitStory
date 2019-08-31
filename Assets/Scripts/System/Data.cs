@@ -13,7 +13,7 @@ public class Data
     public Data()
     {
         stage = 0;
-        hp = 100;
+        hp = 1000;
         mp = 100;
         affinity = new int[8] { 0, 0, 0, 0, 0, 0, 0, 0 };
     }
@@ -21,7 +21,7 @@ public class Data
     public Data(Data data)
     {
         stage = data.stage;
-        hp = 100;
+        hp = 1000;
         mp = data.mp;
 
         affinity = new int[8];

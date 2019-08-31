@@ -120,4 +120,12 @@ public class GameManager : MonoBehaviour
                 break;
         }
     }
+
+    public void StageClear()
+    {
+        gameObject.GetComponent<QuestManager>().enabled = false;
+
+        SaveData();
+        SceneManager.LoadScene(0);
+    }
 }

@@ -35,7 +35,7 @@ public class Bunny : MonoBehaviour
         GetComponent<RandomMoving>().StopByAttacked();
 
         hp -= hpAmount;
-        Player.instance.MP -= mpAmount;
+        GameManager.instance.MP -= mpAmount;
 
         if (hp <= 20)
         {

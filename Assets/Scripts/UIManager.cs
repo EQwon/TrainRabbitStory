@@ -183,8 +183,8 @@ public class UIManager : MonoBehaviour
 
     public void AdjustStatusBar()
     {
-        float hp = Player.instance.HP / 100;
-        float mp = Player.instance.MP / 100;
+        float hp = (float)GameManager.instance.HP / 1000;
+        float mp = (float)GameManager.instance.MP / 100;
         healthBar.GetComponent<Slider>().value = hp;
         heart.GetComponent<Image>().color = new Color(mp, mp, mp);
     }

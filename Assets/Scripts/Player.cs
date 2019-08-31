@@ -13,10 +13,6 @@ public class Player : MonoBehaviour
     public int mpDamage = 1;
     public float attackDelay = 0.5f;
 
-    [Header("Player Status")]
-    public float HP;
-    public float MP;
-
     public Joystick joystick;
 
     private Rigidbody2D rb2D;
@@ -42,8 +38,6 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
 
         if (joystick == null) joystick = GameObject.Find("Fixed Joystick").GetComponent<Joystick>();
-
-        Init();
     }
 
     private void Start()
@@ -51,13 +45,13 @@ public class Player : MonoBehaviour
         interactArea = transform.GetChild(0);
         attackArea = transform.GetChild(1);
         areaPosX = interactArea.localPosition.x;
+
+        Init();
     }
 
     private void Init()
     {
         transform.position = new Vector2(-8f, 0);
-        HP = 100;
-        MP = 100;
     }
 
     private void Update()
@@ -131,7 +125,7 @@ public class Player : MonoBehaviour
 
     private IEnumerator HPDecrease()
     {
-        HP -= 0.1f;
+        GameManager.instance.HP -= 1;
 
         //Debug.Log("체력 감소");
         yield return new WaitForSeconds(0.5f);
