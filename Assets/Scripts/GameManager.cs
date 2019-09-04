@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     #region SaveLoad
     private Data data;
     private void SaveData() { SaveSystem.SaveData(data); }
-    private void LoadData() { data = SaveSystem.LoadData(); }
+    public void LoadData() { data = SaveSystem.LoadData(); data.hp = 1000; }
     #endregion
 
     #region GameStatus
@@ -83,7 +83,10 @@ public class GameManager : MonoBehaviour
             GetComponent<QuestManager>().enabled = true;
             QuestManager.instance.Init();
 
-            if(SceneManager.GetActiveScene().buildIndex == 1) UIManager.instance.ShowOpeningStory();
+            if (SceneManager.GetActiveScene().buildIndex == 1)
+            {
+                UIManager.instance.ShowOpeningStory();
+            }
         }
     }
 

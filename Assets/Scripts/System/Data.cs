@@ -15,7 +15,7 @@ public class Data
         stage = 0;
         hp = 1000;
         mp = 100;
-        affinity = new int[8] { 0, 0, 0, 0, 0, 0, 0, 0 };
+        affinity = new int[9] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     }
 
     public Data(Data data)
@@ -24,7 +24,7 @@ public class Data
         hp = 1000;
         mp = data.mp;
 
-        affinity = new int[8];
+        affinity = new int[9];
         for (int i = 0; i < affinity.Length; i++)
         {
             affinity[i] = data.affinity[i];

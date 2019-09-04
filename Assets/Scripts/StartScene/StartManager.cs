@@ -17,24 +17,29 @@ public class StartManager : MonoBehaviour
 
     private void Start()
     {
-        nowStage = GetStageNum();
+        nowStage = GameManager.instance.Stage;
         stageName.GetComponent<Image>().sprite = stageNameImage[nowStage];
     }
 
-    private int GetStageNum()
+    public void Reset()
     {
-        return GameManager.instance.Stage;
-    }
-
-    private void ChangeAD()
-    {
-
+        GameManager.instance.Stage = 0;
+        nowStage = 0;
+        stageName.GetComponent<Image>().sprite = stageNameImage[nowStage];
     }
 
     public void StartGame()
     {
         stageName.GetComponent<Button>().enabled = false;
         StartCoroutine(MoveTrain());
+
+        if (nowStage == 0)
+        {
+            Data data = new Data();
+            SaveSystem.SaveData(data);
+        }
+
+        GameManager.instance.LoadData();
     }
 
     private IEnumerator MoveTrain()

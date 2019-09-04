@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum DialogType { BeforeQuest, AfterAccept, AfterRefuse, WhileQuest, SuccessQuest, AfterSuccess, Default1, Default2, Default3, Default4, Default5, Default6, Default7, Default8, Default9, Default10 };
+public enum DialogType { BeforeQuest, AfterAccept, AfterRefuse, WhileQuest, SuccessQuest, AfterSuccess, Normal1, Normal2, Normal3, Normal4, Normal5, Normal6, Normal7, Normal8, Normal9, Default };
 
 [System.Serializable]
 public class Dialog
@@ -19,17 +19,17 @@ public class Dialogue : MonoBehaviour
     public Quest quest;
     public List<int> reward;
 
-    private int defaultDialogCnt;
+    private int normalDialogCnt;
 
     private void Start()
     {
-        defaultDialogCnt = 6;
+        normalDialogCnt = 6;
         GameManager.instance.gameObject.GetComponent<QuestManager>().enabled = true;
     }
 
     public List<Dialog> DialogueForNow()
     {
-        if (quest == Quest.None) return DefaultDialog();
+        if (quest == Quest.None) return NormalDialog();
 
         bool isAccept = GameManager.instance.gameObject.GetComponent<QuestManager>().isAccept[(int)quest];
         bool isSuccess = GameManager.instance.gameObject.GetComponent<QuestManager>().isSuccess[(int)quest];
@@ -46,25 +46,39 @@ public class Dialogue : MonoBehaviour
         }
     }
 
-    private List<Dialog> DefaultDialog()
+    private List<Dialog> NormalDialog()
     {
         List<Dialog> dialog = new List<Dialog>();
-        bool isThereNextDefaultDialog = false;
+        bool isThereNormalDialog = false;
 
         for (int i = 0; i < dialogue.Count; i++)
         {
-            if (dialogue[i].type == (DialogType)defaultDialogCnt)
+            if (dialogue[i].type == (DialogType)normalDialogCnt)
             {
                 dialog.Add(dialogue[i]);
-            }
-            if (dialogue[i].type == (DialogType)(defaultDialogCnt + 1))
-            {
-                isThereNextDefaultDialog = true;
+                isThereNormalDialog = true;
             }
         }
 
-        if (isThereNextDefaultDialog == true) defaultDialogCnt += 1;
-        //else defaultDialogCnt = 6;
+        if (isThereNormalDialog == true) normalDialogCnt += 1;
+        else return DefaultDialog();
+
+        if (GetComponent<Affinity>()) GetComponent<Affinity>().IncreaseAffinity();
+
+        return dialog;
+    }
+
+    private List<Dialog> DefaultDialog()
+    {
+        List<Dialog> dialog = new List<Dialog>();
+
+        for (int i = 0; i < dialogue.Count; i++)
+        {
+            if (dialogue[i].type == DialogType.Default)
+            {
+                dialog.Add(dialogue[i]);
+            }
+        }
 
         return dialog;
     }
