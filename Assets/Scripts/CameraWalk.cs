@@ -13,6 +13,7 @@ public class CameraWalk : MonoBehaviour
     {
         player = Player.instance.gameObject;
         cellNum = ((int)player.transform.position.x + 10) / 20;
+        UIManager.instance.TrainCellNumberUpdate(cellNum + 1);
     }
 
     private void Update()
@@ -67,6 +68,7 @@ public class CameraWalk : MonoBehaviour
         transform.position = targetPos;
         if (isRight == true) Player.instance.transform.position += new Vector3(0.5f, 0, 0);
         else Player.instance.transform.position += new Vector3(-0.5f, 0, 0);
+        UIManager.instance.TrainCellNumberUpdate(cellNum + 1);
         GameManager.instance.IsCellChanging = false;
     }
 }

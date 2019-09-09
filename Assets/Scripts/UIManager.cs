@@ -59,8 +59,6 @@ public class UIManager : MonoBehaviour
         WarningPanel.SetActive(false);
         darkPanel.SetActive(false);
 
-        TrainCellNumberUpdate(10);
-
         currentDialogNum = -1;
 
         GameObject mainCamera = Camera.main.gameObject;
@@ -163,7 +161,7 @@ public class UIManager : MonoBehaviour
     public void TrainCellNumberUpdate(int cellNum)
     {
         //주어진 번호로 차량 번호 칸을 업데이트 한다.
-        //cellNumberText.text = cellNum.ToString();
+        cellNumberText.text = cellNum.ToString();
     }
 
     public void ShowOpeningStory()
