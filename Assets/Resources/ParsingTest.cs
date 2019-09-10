@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 public class ParsingTest : MonoBehaviour
 {
@@ -21,5 +22,9 @@ public class ParsingTest : MonoBehaviour
                 Debug.Log(j + "번째 대화 - " + name + " : " + conversation);
             }
         }
+
+        Sprite sprite = (Sprite)AssetDatabase.LoadAssetAtPath("Assets/ArtResources/UI/ChatUI/SpeakerImage/Stage0_Kinder/GotgamBunny_Bust.png", typeof(Sprite));
+        Debug.Log(sprite.name);
+        GetComponent<SpriteRenderer>().sprite = sprite;
     }
 }
