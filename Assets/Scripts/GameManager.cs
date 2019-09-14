@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     #region SaveLoad
     private Data data;
     private void SaveData() { SaveSystem.SaveData(data); }
-    public void LoadData() { data = SaveSystem.LoadData(); data.hp = 1000; }
+    public void LoadData() { data = SaveSystem.LoadData();}
     #endregion
 
     #region GameStatus
@@ -35,6 +35,11 @@ public class GameManager : MonoBehaviour
     {
         get { return data.affinity; }
         set { data.affinity = value; }
+    }
+    public int[] TalkCnt
+    {
+        get { return data.talkCnt; }
+        set { data.talkCnt = value; }
     }
     #endregion
 
@@ -66,6 +71,14 @@ public class GameManager : MonoBehaviour
         LoadData();
 
         //GetComponent<QuestManager>().enabled = false;
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            SaveSystem.DeleteData();
+        }
     }
 
     private void OnEnable()

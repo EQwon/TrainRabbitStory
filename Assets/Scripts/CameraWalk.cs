@@ -29,12 +29,12 @@ public class CameraWalk : MonoBehaviour
         }
     }
 
-    public void ZoomInCamera(Vector2 playerPos, Vector2 interactBunnyPos)
+    public void ZoomInCamera(Vector2 playerPos, GameObject interactBunny)
     {
         float localCamPos_X, localCamPos_Y;
 
-        localCamPos_X = ((playerPos.x + interactBunnyPos.x) / 2) - cellNum * 20;
-        localCamPos_Y = (playerPos.y + interactBunnyPos.y - 2f) / 2;
+        localCamPos_X = ((playerPos.x + interactBunny.transform.position.x) / 2) - cellNum * 20;
+        localCamPos_Y = (playerPos.y + interactBunny.transform.position.y - 2f) / 2;
 
         if (localCamPos_X > 2.4f)
             localCamPos_X = 2.4f;

@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1534695389}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: -2, z: 0}
+  m_LocalPosition: {x: 0, y: -3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 574958203248194268}
@@ -71,10 +71,9 @@ GameObject:
   - component: {fileID: 3240149001557964836}
   - component: {fileID: 9075799932249590339}
   - component: {fileID: 3209084379532179684}
-  - component: {fileID: -6165351878600593405}
-  - component: {fileID: -7922116350224761965}
-  m_Layer: 8
-  m_Name: PostgraduateBunny
+  - component: {fileID: 5255654701500598145}
+  m_Layer: 9
+  m_Name: TomatotangBunny
   m_TagString: Bunny
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,15 +128,15 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 1869800291
-  m_SortingLayer: 3
+  m_SortingLayerID: -2095584723
+  m_SortingLayer: 2
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 998ce1d1b05467c4aa164eaa5839a2b6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 729fcb8b38dbaf442901d9ffe87501e8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 5.91, y: 5.91}
+  m_Size: {x: 2.19, y: 5.54}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -150,24 +149,24 @@ BoxCollider2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2503992160686711965}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.1, y: -1.5}
+  m_Offset: {x: 0, y: -2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 5.91, y: 5.91}
-    newSize: {x: 5.91, y: 5.91}
+    pivot: {x: 0.52, y: 0.46}
+    oldSize: {x: 5.9, y: 5.9}
+    newSize: {x: 2.19, y: 5.54}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.9, y: 0.9}
+  m_Size: {x: 1.6, y: 1.5}
   m_EdgeRadius: 0
 --- !u!50 &3240149001557964836
 Rigidbody2D:
@@ -217,9 +216,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5bc17faa37a3945961c5880082fa12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueAsset: {fileID: 4900000, guid: dc5bed0e35a320f45a2e27f36d3e8b66, type: 3}
-  quest: 1
---- !u!114 &-6165351878600593405
+  dialogueAsset: {fileID: 4900000, guid: 6f489f28a0c67c149b3a63b78e0c2e1b, type: 3}
+  quest: 0
+--- !u!114 &5255654701500598145
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -228,26 +227,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2503992160686711965}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ae6ee392ba1bf419817d768a8e86ab, type: 3}
+  m_Script: {fileID: 11500000, guid: 1cf96069884484a43a7a4b8e1b599459, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.001
---- !u!95 &-7922116350224761965
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2503992160686711965}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: fc3337d0d535b534082e943a77aedd35, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  affinityPrefab: {fileID: 1285651093174285780, guid: 15debb06f244f41478d2b6acc482740a,
+    type: 3}
+  bunnyNum: 5

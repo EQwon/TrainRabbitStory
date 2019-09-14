@@ -37,4 +37,14 @@ public static class SaveSystem
             return data;
         }
     }
+
+    public static void DeleteData()
+    {
+        string path = Application.persistentDataPath + "data.txt";
+        if (File.Exists(path))
+        {
+            Debug.Log("Delete save file in " + path);
+            File.Delete(path);
+        }
+    }
 }

@@ -9,6 +9,7 @@ public class Data
     public int hp;
     public int mp;
     public int[] affinity;
+    public int[] talkCnt;
 
     public Data()
     {
@@ -16,6 +17,7 @@ public class Data
         hp = 1000;
         mp = 100;
         affinity = new int[9] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
+        talkCnt = new int[9] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
     }
 
     public Data(Data data)
@@ -25,9 +27,11 @@ public class Data
         mp = data.mp;
 
         affinity = new int[9];
+        talkCnt = new int[9];
         for (int i = 0; i < affinity.Length; i++)
         {
             affinity[i] = data.affinity[i];
+            talkCnt[i] = data.talkCnt[i];
         }
     }
 }

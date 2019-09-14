@@ -51,6 +51,26 @@ public class QuestManager : MonoBehaviour
         }
     }
 
+    public int State(Quest quest)
+    {
+        if (isAccept[(int)quest] == false)
+        {
+            if (isSuccess[(int)quest] == false) return 0;
+            else return 3;
+        }
+        else
+        {
+            if (isSuccess[(int)quest] == false) return 1;
+            else return 2;
+        }
+    }
+
+    public void ChangeQuestState(Quest quest, bool accept, bool success)
+    {
+        isAccept[(int)quest] = accept;
+        isSuccess[(int)quest] = success;
+    }
+
     public void StartUnperfomedQuest()
     {
         if (GetUnperformQuest() == 0) return;
@@ -79,8 +99,11 @@ public class QuestManager : MonoBehaviour
 
     private void StartQuest(int questNum)
     {
-        questCanvas = Instantiate(questCanvasPrefab);
-        questCanvas.GetComponent<QuestCanvasController>().ActivateCanvas(questNum);
+        if (questNum != 1) // 튜토리얼은 캔버스 생성 안함.
+        {
+            questCanvas = Instantiate(questCanvasPrefab);
+            questCanvas.GetComponent<QuestCanvasController>().ActivateCanvas(questNum);
+        }
 
         GameManager.instance.IsQuesting = true;
     }

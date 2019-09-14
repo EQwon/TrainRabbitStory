@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEditor;
 
 public class UIManager : MonoBehaviour
 {
@@ -25,11 +26,11 @@ public class UIManager : MonoBehaviour
     public GameObject WarningPanel;
     public GameObject talkButton;
 
-    [Header("For Tutorial")]
-    public List<Dialog> tutoDialog;
+    [Header("For Opening")]
+    public TextAsset openingAsset;
     public GameObject darkPanel;
 
-    private List<Dialog> currentDialogue;
+    private List<List<string>> currentDialogue;
     private GameObject currentInteractBunny;
     private int currentDialogNum = -1;
 
@@ -70,19 +71,23 @@ public class UIManager : MonoBehaviour
 
     public void StartTalk(Vector2 playerPos, GameObject interactBunny)
     {
-        currentDialogue = interactBunny.GetComponent<Dialogue>().DialogueForNow();
+        currentDialogue = interactBunny.GetComponent<Dialogue>().DialogForNow();
         if (currentDialogue.Count == 0) return;
 
+        //게임 전체 상태 변환
         GameManager.instance.IsTalking = true;
-        basicUI.SetActive(false);
-        currentInteractBunny = interactBunny;
-        Vector2 interactBunnyPos = interactBunny.transform.position;
 
+        //UI 조정
+        basicUI.SetActive(false);
         talkPanel.SetActive(true);
         talkPanel.GetComponent<Button>().interactable = true;
-        Camera.main.gameObject.GetComponent<CameraWalk>().ZoomInCamera(playerPos, interactBunny.transform.position);
-        currentDialogNum = -1;
 
+        //카메라 조정
+        currentInteractBunny = interactBunny;        
+        Camera.main.gameObject.GetComponent<CameraWalk>().ZoomInCamera(playerPos, currentInteractBunny);
+
+        //대화 시작
+        currentDialogNum = -1;
         NextDialog();
     }
 
@@ -93,68 +98,95 @@ public class UIManager : MonoBehaviour
         if (currentDialogNum >= currentDialogue.Count)
         {
             EndTalk();
-            QuestManager.instance.StartUnperfomedQuest();
-            QuestManager.instance.CheckStageClear();
             return;
         }
 
-        speakerName.text = currentDialogue[currentDialogNum].Speaker;
-        speakerImage.sprite = currentDialogue[currentDialogNum].SpeakerImage;
-        if (currentDialogue[currentDialogNum].SpeakerImage != null) speakerImage.color = Color.white;
-        else speakerImage.color = Color.clear;
-        speakerText.text = currentDialogue[currentDialogNum].Text;
+        speakerName.text = currentDialogue[currentDialogNum][0];
+        speakerText.text = currentDialogue[currentDialogNum][1];
+        if (currentDialogue[currentDialogNum].Count > 2)
+        {
+            string path = "Assets/ArtResources/UI/ChatUI/SpeakerImage/" + currentDialogue[currentDialogNum][2];
+            speakerImage.sprite = (Sprite)AssetDatabase.LoadAssetAtPath(path, typeof(Sprite));
+        }
+        
         SoundManager.instance.TalkSE();
 
         if(currentDialogNum == currentDialogue.Count - 1)
         {
             //Debug.Log("왜 안나옴?");
-            DialogueFinishNotice(currentDialogue[currentDialogNum].type);
+            DialogueFinishNotice();
         }
     }
 
-    private void DialogueFinishNotice(DialogType type)
+    private void DialogueFinishNotice()
     {
-        if (type == DialogType.BeforeQuest)
+        finishDialogText.SetActive(true);
+        acceptQuestButton.SetActive(false);
+        rejectQuestButton.SetActive(false);
+
+        if (currentDialogue[currentDialogNum].Count < 4) return;
+
+        if (currentDialogue[currentDialogNum][3] == "AR")           // 수락, 거절 선택일 경우
         {
             talkPanel.GetComponent<Button>().interactable = false;
             acceptQuestButton.SetActive(true);
             rejectQuestButton.SetActive(true);
             finishDialogText.SetActive(false);
         }
-        else
+        else if (currentDialogue[currentDialogNum][3] == "CH")      // 선택지일 경우
         {
-            acceptQuestButton.SetActive(false);
-            rejectQuestButton.SetActive(false);
-            finishDialogText.SetActive(true);
+
+        }
+        else if (currentDialogue[currentDialogNum][3] == "Quest")   // 퀘스트의 완료일 경우
+        {
+            int questNum = currentDialogue[currentDialogNum][4][0]- 48;
+
+            QuestManager.instance.ChangeQuestState((Quest)questNum, false, true);
         }
     }
 
     private void EndTalk()
     {
-        if(currentInteractBunny != null) currentInteractBunny.GetComponent<Dialogue>().GiveReward(currentDialogue);
+        //currentInteractBunny.GetComponent<Dialogue>().GiveReward(currentDialogue);
+        if (currentInteractBunny != null && currentInteractBunny.GetComponent<Affinity>() != null)
+        {
+            GameManager.instance.TalkCnt[currentInteractBunny.GetComponent<Affinity>().bunnyNum] += 1;
+        }
+
         InitUI();
         GameManager.instance.IsTalking = false;
+        QuestManager.instance.StartUnperfomedQuest();
+        QuestManager.instance.CheckStageClear();
     }
 
     public void AcceptQuest()
     {
+        //UI 조정
         talkPanel.GetComponent<Button>().interactable = true;
         acceptQuestButton.SetActive(false);
         rejectQuestButton.SetActive(false);
-        currentDialogue.AddRange(currentInteractBunny.GetComponent<Dialogue>().AfterAcceptDialog());
+
+        //퀘스트 수락 전달
         int questNum = (int)currentInteractBunny.GetComponent<Dialogue>().quest;
         GameManager.instance.gameObject.GetComponent<QuestManager>().isAccept[questNum] = true;
         Debug.Log(questNum + "번째 퀘스트를 수락합니다.");
+
+        //수락시 대사 출력
+        //currentDialogue.AddRange(currentInteractBunny.GetComponent<Dialogue>().DialogForNow());
         NextDialog();
     }
 
     public void RejectQuest()
     {
+        //UI 조정
         talkPanel.GetComponent<Button>().interactable = true;
         acceptQuestButton.SetActive(false);
         rejectQuestButton.SetActive(false);
-        currentDialogue.AddRange(currentInteractBunny.GetComponent<Dialogue>().AfterRefuseDialog());
+
+        //퀘스트 거절 - 전달할 필요 없음.
         Debug.Log("퀘스트를 거절합니다.");
+
+        //거절시 대화 종료
         NextDialog();
     }
 
@@ -166,16 +198,20 @@ public class UIManager : MonoBehaviour
 
     public void ShowOpeningStory()
     {
+        //UI 조정
         darkPanel.SetActive(true);
-        currentDialogue = tutoDialog;
-
-        GameManager.instance.IsTalking = true;
         basicUI.SetActive(false);
-
         talkPanel.SetActive(true);
         talkPanel.GetComponent<Button>().interactable = true;
-        currentDialogNum = -1;
 
+        //대화 로딩
+        currentDialogue = Parser.DialogParse(openingAsset)[GameManager.instance.Stage];
+
+        //게임 상태 변화
+        GameManager.instance.IsTalking = true;
+        
+        //대화 시작
+        currentDialogNum = -1;
         NextDialog();
     }
 
