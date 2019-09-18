@@ -217,8 +217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5bc17faa37a3945961c5880082fa12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueAsset: {fileID: 4900000, guid: dc5bed0e35a320f45a2e27f36d3e8b66, type: 3}
+  fixDialogueAsset: {fileID: 0}
+  normalDialogueAsset: {fileID: 4900000, guid: dc5bed0e35a320f45a2e27f36d3e8b66, type: 3}
   quest: 1
+  nowTalkCnt: 0
 --- !u!114 &-6165351878600593405
 MonoBehaviour:
   m_ObjectHideFlags: 0

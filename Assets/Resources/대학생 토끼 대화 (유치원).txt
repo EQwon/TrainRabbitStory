@@ -1,6 +1,6 @@
 ﻿0. 퀘스트 수락 전
 ===
-대학생 토끼/응?/CollegeBunny_Bust.png
+대학생 토끼/응?/CollegeBunny_Bust
 대학생 토끼/무슨 일이니?
 대학생 토끼/아, 엄마를 잃어버렸다고?
 대학생 토끼/당연하지!
@@ -8,32 +8,32 @@
 대학생 토끼/앗 근데...
 대학생 토끼/내가 지금 배터리가 별로 없어서...
 대학생 토끼/빨리 전화하는 게 좋을 거야...
-대학생 토끼/화이팅...!/CollegeBunny_Bust.png/AR
+대학생 토끼/화이팅...!/CollegeBunny_Bust/AR
 ===
 
 1. 퀘스트 수락 후, 성공 전
 ===
-대학생 토끼/엇... 내가 다시 켜줄께. 다시 해보자!/CollegeBunny_Bust.png
+대학생 토끼/엇... 내가 다시 켜줄께. 다시 해보자!/CollegeBunny_Bust
 ===
 
 2. 퀘스트 성공 시
 ===
-엄마 토끼/여보세요?/MamaBunny_Bust.png
+엄마 토끼/여보세요?/MamaBunny_Bust
 엄마 토끼/아이고, 내 새끼 어디니...
 엄마 토끼/그래그래.
 엄마 토끼/맨 앞칸에서 보자.
 엄마 토끼/놀랐잖니, 조심히 오렴!
-대학생 토끼/다행이다, 바로 전화를 받으셔서.../CollegeBunny_Bust.png
+대학생 토끼/다행이다, 바로 전화를 받으셔서.../CollegeBunny_Bust
 대학생 토끼/중간에 끊길까봐 걱정했어.
 대학생 토끼/아냐 아냐.
 대학생 토끼/고마워할 게 뭐가 있니.
 대학생 토끼/빨리 가봐!
-대학생 토끼/어머니 걱정하시겠다./CollegeBunny_Bust.png/Quest/2
+대학생 토끼/어머니 걱정하시겠다./CollegeBunny_Bust/Quest/2
 ===
 
 3. 퀘스트 완료 이후
 ===
-대학생 토끼/폰이 꺼졌어.... 흑흑.../CollegeBunny_Bust.png
+대학생 토끼/폰이 꺼졌어.... 흑흑.../CollegeBunny_Bust
 ===
 
 END

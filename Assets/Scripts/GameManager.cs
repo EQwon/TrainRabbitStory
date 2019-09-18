@@ -41,6 +41,10 @@ public class GameManager : MonoBehaviour
         get { return data.talkCnt; }
         set { data.talkCnt = value; }
     }
+    public int MaxTalkCnt
+    {
+        get { return Stage >= 1 ? 5 : 1; }
+    }
     #endregion
 
     #region TrainState
@@ -96,10 +100,7 @@ public class GameManager : MonoBehaviour
             GetComponent<QuestManager>().enabled = true;
             QuestManager.instance.Init();
 
-            if (SceneManager.GetActiveScene().buildIndex == 1)
-            {
-                UIManager.instance.ShowOpeningStory();
-            }
+            UIManager.instance.ShowOpeningStory();
         }
     }
 

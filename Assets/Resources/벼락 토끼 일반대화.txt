@@ -1,0 +1,22 @@
+﻿0. 퀘스트 수락 전
+===
+벼락 토끼/오또카지 오또카지.../CrammedBunny_Bust
+벼락 토끼/도와줘!!/CrammedBunny_Bust/AR
+===
+
+1. 퀘스트 수락 후, 성공 전
+===
+벼락 토끼/퀘스트를 수락했지만 실패했을 경우의 대사/CrammedBunny_Bust
+===
+
+2. 퀘스트 수락 후 완료 시
+===
+벼락 토끼/고마워!/CrammedBunny_Bust
+벼락 토끼/너는 내 퀘스트를 완료했단다!/CrammedBunny_Bust/Quest/4
+===
+
+3. 퀘스트 완료 이후
+===
+벼락 토끼/이제부터가 진짜 공부 시작이지!/CrammedBunny_Bust
+===
+END

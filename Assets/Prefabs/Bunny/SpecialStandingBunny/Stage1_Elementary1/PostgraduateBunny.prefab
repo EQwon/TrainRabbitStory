@@ -217,13 +217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5bc17faa37a3945961c5880082fa12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-  - type: 6
-    Speaker: "\uB300\uD559\uC6D0\uC0DD \uD1A0\uB07C"
-    SpeakerImage: {fileID: 21300000, guid: eeee4fc46d2f1e340835414e82187b26, type: 3}
-    Text: "\uB17C\uBB38 \uC880 \uB300\uC2E0 \uC368\uC918..."
+  fixDialogueAsset: {fileID: 0}
+  normalDialogueAsset: {fileID: 4900000, guid: d695159b03b33924597d59fc4de62604, type: 3}
   quest: 0
-  reward: 140000000a000000
+  nowTalkCnt: 0
 --- !u!114 &-6165351878600593405
 MonoBehaviour:
   m_ObjectHideFlags: 0

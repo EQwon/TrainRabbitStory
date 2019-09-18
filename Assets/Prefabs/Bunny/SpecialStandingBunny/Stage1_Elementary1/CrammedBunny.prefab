@@ -217,92 +217,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e5bc17faa37a3945961c5880082fa12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-  - type: 0
-    Speaker: "\uBCBC\uB77D \uD1A0\uB07C"
-    SpeakerImage: {fileID: 21300000, guid: cff401f2a6dada2498dcfdeb70ae2234, type: 3}
-    Text: "\uB290\uC5B4\uC5B4\uC5B4\uC5B4\uC5C9."
-  - type: 0
-    Speaker: "\uBCBC\uB77D \uD1A0\uB07C"
-    SpeakerImage: {fileID: 21300000, guid: cff401f2a6dada2498dcfdeb70ae2234, type: 3}
-    Text: "\uC5B4\uB5A1\uD558\uC9C0\uC5B4\uB5A1\uD558\uC9C0\uC5B4\uB5A1\uD558\uC9C0."
-  - type: 0
-    Speaker: "\uBCBC\uB77D \uD1A0\uB07C"
-    SpeakerImage: {fileID: 21300000, guid: cff401f2a6dada2498dcfdeb70ae2234, type: 3}
-    Text: "\uB518\uB530 \uC624\uB610\uCE74\uC9C0...."
-  - type: 0
-    Speaker: "\uBCBC\uB77D \uD1A0\uB07C"
-    SpeakerImage: {fileID: 21300000, guid: cff401f2a6dada2498dcfdeb70ae2234, type: 3}
-    Text: "\uB0B4\uAC00 \uB108\uBB34 \uADC0\uC5EC\uC6B4 \uD0D3\uC778\uAC00..."
-  - type: 0
-    Speaker: "\uBCBC\uB77D \uD1A0\uB07C"
-    SpeakerImage: {fileID: 21300000, guid: cff401f2a6dada2498dcfdeb70ae2234, type: 3}
-    Text: "\uB77C\uACE0 \uD558\uBA74 \uB354 \uB9DD\uD560 \uBFD0\uC774\uC57C!"
-  - type: 0
-    Speaker: "\uBCBC\uB77D \uD1A0\uB07C"
-    SpeakerImage: {fileID: 21300000, guid: cff401f2a6dada2498dcfdeb70ae2234, type: 3}
-    Text: "\uD55C \uAE00\uC790\uB77C\uB3C4 \uB354 \uBD10\uC57C\uD574!"
-  - type: 0
-    Speaker: "\uBCBC\uB77D \uD1A0\uB07C"
-    SpeakerImage: {fileID: 21300000, guid: cff401f2a6dada2498dcfdeb70ae2234, type: 3}
-    Text: "\uAF2C\uB9C8\uC57C, \uBBF8\uC548. \uC624\uB298\uC740 \uB0B4\uAC00 \uB108\uBB34
-      \uBC14\uBE60."
-  - type: 0
-    Speaker: "\uBCBC\uB77D \uD1A0\uB07C"
-    SpeakerImage: {fileID: 21300000, guid: cff401f2a6dada2498dcfdeb70ae2234, type: 3}
-    Text: "\uBB34\uB824 \"\uC0BC\uC5F0\uAC15 \uD2B8\uB9AC\uD50C\"\uC774\uB77C\uACE0"
-  - type: 0
-    Speaker: "\uBCBC\uB77D \uD1A0\uB07C"
-    SpeakerImage: {fileID: 21300000, guid: cff401f2a6dada2498dcfdeb70ae2234, type: 3}
-    Text: "\uC138 \uAC1C\uC758 \uC2DC\uD5D8\uC744 \uC5F0\uB2EC\uC544\uC11C \uCE58\uB294\uAC70\uC9C0."
-  - type: 0
-    Speaker: "\uBCBC\uB77D \uD1A0\uB07C"
-    SpeakerImage: {fileID: 21300000, guid: cff401f2a6dada2498dcfdeb70ae2234, type: 3}
-    Text: "\uC804\uACF5 \uC2DC\uD5D8 \uB450 \uAC1C! \uAD50\uC591 \uC2DC\uD5D8 \uD558\uB098!"
-  - type: 0
-    Speaker: "\uBCBC\uB77D \uD1A0\uB07C"
-    SpeakerImage: {fileID: 21300000, guid: cff401f2a6dada2498dcfdeb70ae2234, type: 3}
-    Text: "\uB108\uBB34 \uC548\uC77C\uD588\uB2E4..."
-  - type: 0
-    Speaker: "\uBCBC\uB77D \uD1A0\uB07C"
-    SpeakerImage: {fileID: 21300000, guid: cff401f2a6dada2498dcfdeb70ae2234, type: 3}
-    Text: "\uD758\uB824\uBCF4\uB0B8 \uC2DC\uAC04\uB4E4\uC774 \uBAA8\uB798\uC54C \uAC19\uAD6C\uB098
-      \uC815\uB9D0..."
-  - type: 0
-    Speaker: "\uBCBC\uB77D \uD1A0\uB07C"
-    SpeakerImage: {fileID: 21300000, guid: cff401f2a6dada2498dcfdeb70ae2234, type: 3}
-    Text: "\uD558..."
-  - type: 0
-    Speaker: "\uBCBC\uB77D \uD1A0\uB07C"
-    SpeakerImage: {fileID: 21300000, guid: cff401f2a6dada2498dcfdeb70ae2234, type: 3}
-    Text: "\uACFC\uAC70\uC758 \uB098\uC57C, \uC65C \uADF8\uB7AC\uB2C8?"
-  - type: 0
-    Speaker: "\uBCBC\uB77D \uD1A0\uB07C"
-    SpeakerImage: {fileID: 21300000, guid: cff401f2a6dada2498dcfdeb70ae2234, type: 3}
-    Text: "\uD639\uC2DC \uB0B4\uAC00 \uC81C\uB300\uB85C \uC678\uC6E0\uB294\uC9C0 \uBD10\uC904
-      \uC218 \uC788\uC5B4?"
-  - type: 4
-    Speaker: "\uBCBC\uB77D \uD1A0\uB07C"
-    SpeakerImage: {fileID: 21300000, guid: cff401f2a6dada2498dcfdeb70ae2234, type: 3}
-    Text: "\uD558..."
-  - type: 4
-    Speaker: "\uBCBC\uB77D \uD1A0\uB07C"
-    SpeakerImage: {fileID: 21300000, guid: cff401f2a6dada2498dcfdeb70ae2234, type: 3}
-    Text: '......'
-  - type: 4
-    Speaker: "\uBCBC\uB77D \uD1A0\uB07C"
-    SpeakerImage: {fileID: 21300000, guid: cff401f2a6dada2498dcfdeb70ae2234, type: 3}
-    Text: "\uC2DC\uAC04\uC774 \uC5C6\uB2E4. \uBE68\uB9AC \uB354 \uBD10\uC57C\uACA0\uC5B4."
-  - type: 4
-    Speaker: "\uBCBC\uB77D \uD1A0\uB07C"
-    SpeakerImage: {fileID: 21300000, guid: cff401f2a6dada2498dcfdeb70ae2234, type: 3}
-    Text: "\uB3C4\uC640\uC918\uC11C \uC815\uB9D0 \uACE0\uB9C8\uC6CC!"
-  - type: 4
-    Speaker: "\uBCBC\uB77D \uD1A0\uB07C"
-    SpeakerImage: {fileID: 21300000, guid: cff401f2a6dada2498dcfdeb70ae2234, type: 3}
-    Text: "\uC9C4\uC9DC \uACF5\uBD80\uB294 \uC774\uC81C \uC2DC\uC791\uC774\uC57C!"
+  fixDialogueAsset: {fileID: 0}
+  normalDialogueAsset: {fileID: 4900000, guid: 6e6ca727fbec0ca458fa8623f7ec5a36, type: 3}
   quest: 4
-  reward: 140000000a000000
+  nowTalkCnt: 0
 --- !u!114 &-3024613964939362535
 MonoBehaviour:
   m_ObjectHideFlags: 0

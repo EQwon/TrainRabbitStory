@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEditor;
 
 public class UIManager : MonoBehaviour
 {
@@ -105,8 +104,8 @@ public class UIManager : MonoBehaviour
         speakerText.text = currentDialogue[currentDialogNum][1];
         if (currentDialogue[currentDialogNum].Count > 2)
         {
-            string path = "Assets/ArtResources/UI/ChatUI/SpeakerImage/" + currentDialogue[currentDialogNum][2];
-            speakerImage.sprite = (Sprite)AssetDatabase.LoadAssetAtPath(path, typeof(Sprite));
+            string path = "SpeakerImage/" + currentDialogue[currentDialogNum][2];
+            speakerImage.sprite = Resources.Load<Sprite>(path);
         }
         
         SoundManager.instance.TalkSE();

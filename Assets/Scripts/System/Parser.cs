@@ -36,6 +36,7 @@ public class Parser
 
             while (source != "===")         //===를 만나면 그만둔다.
             {
+                //Debug.Log(source);
                 values = source.Split('/');  // Slash로 구분한다
 
                 List<string> temp = new List<string>();
