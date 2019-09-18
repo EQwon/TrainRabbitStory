@@ -73,6 +73,12 @@ public class RandomMoving : MonoBehaviour
 
     private void AnimationControl()
     {
+        if (TimeManager.timeScale == 0)
+        {
+            animator.SetBool("Walk", false);
+            return;
+        }
+
         if (moveDir.magnitude > 0) animator.SetBool("Walk", true);
         else animator.SetBool("Walk", false);
         if (moveDir.x > 0) animator.SetBool("IsRight", true);
