@@ -45,6 +45,10 @@ public class GameManager : MonoBehaviour
     {
         get { return Stage >= 1 ? 5 : 1; }
     }
+    public int MaxCellNum
+    {
+        get { return Stage >= 1 ? 16 : 11; }
+    }
     #endregion
 
     #region TrainState
