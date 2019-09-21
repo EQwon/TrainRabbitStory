@@ -57,7 +57,7 @@ public class GameManager : MonoBehaviour
     private bool isCellChanging = false;
 
     public bool IsTalking { set { isTalking = value; ChangeTrainState(); } }
-    public bool IsQuesting { set { isQuesting = value; ChangeTrainState(); } }
+    public bool IsQuesting { get { return isQuesting; } set { isQuesting = value; ChangeTrainState(); } }
     public bool IsCellChanging { set { isCellChanging = value; ChangeTrainState(); } }
 
     private TrainState state = TrainState.normal;

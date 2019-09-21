@@ -73,9 +73,18 @@ public class QuestManager : MonoBehaviour
 
     public void StartUnperfomedQuest()
     {
-        if (GetUnperformQuest() == 0) return;
+        int questNum = GetUnperformQuest();
+
+        if (GameManager.instance.IsQuesting == true) return;
+        if (questNum == 0) return;
         
-        StartQuest(GetUnperformQuest());
+        if (questNum != 1) // 튜토리얼은 캔버스 생성 안함.
+        {
+            questCanvas = Instantiate(questCanvasPrefab);
+            questCanvas.GetComponent<QuestCanvasController>().ActivateCanvas(questNum);
+        }
+
+        GameManager.instance.IsQuesting = true;
     }
 
     public void CheckStageClear()
@@ -95,17 +104,6 @@ public class QuestManager : MonoBehaviour
             if (isAccept[i] == true) return i;
         }
         return 0;
-    }
-
-    private void StartQuest(int questNum)
-    {
-        if (questNum != 1) // 튜토리얼은 캔버스 생성 안함.
-        {
-            questCanvas = Instantiate(questCanvasPrefab);
-            questCanvas.GetComponent<QuestCanvasController>().ActivateCanvas(questNum);
-        }
-
-        GameManager.instance.IsQuesting = true;
     }
 
     public void BackToNoraml()

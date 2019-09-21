@@ -141,6 +141,7 @@ public class UIManager : MonoBehaviour
             int questNum = currentDialogue[currentDialogNum][4][0]- 48;
 
             QuestManager.instance.ChangeQuestState((Quest)questNum, false, true);
+            GameManager.instance.IsQuesting = false;
         }
     }
 
