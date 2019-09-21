@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 9212957916507590825}
   - component: {fileID: 3486245801958279351}
   - component: {fileID: 2779874065605791576}
+  - component: {fileID: 8550025033460248563}
   m_Layer: 8
   m_Name: AttackArea
   m_TagString: AttackArea
@@ -70,6 +71,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cee00f216950fe642b5f78179f88df2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!50 &8550025033460248563
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3456196252344436666}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &6998497860419278192
 GameObject:
   m_ObjectHideFlags: 0
@@ -81,6 +103,7 @@ GameObject:
   - component: {fileID: 1472268730981803972}
   - component: {fileID: 6364665580803211056}
   - component: {fileID: 3568051560204515790}
+  - component: {fileID: 7044338237241537597}
   m_Layer: 0
   m_Name: PlayerInteractArea
   m_TagString: Untagged
@@ -141,6 +164,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canTalk: 0
+--- !u!50 &7044338237241537597
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6998497860419278192}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &8055383149057418330
 GameObject:
   m_ObjectHideFlags: 0
@@ -289,8 +333,6 @@ MonoBehaviour:
   hpDamage: 10
   mpDamage: 1
   attackDelay: 0.5
-  HP: 0
-  MP: 0
   joystick: {fileID: 0}
 --- !u!95 &989894117095479491
 Animator:

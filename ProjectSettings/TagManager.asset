@@ -12,6 +12,7 @@ TagManager:
   - Item
   - Cell
   - Joystick
+  - StageGoal
   layers:
   - Default
   - TransparentFX

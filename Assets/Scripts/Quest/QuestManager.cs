@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public enum Quest { None, Tutorial, PhoneCall, PickUp, Crammed, StageClear };
+public enum Quest { None, Tutorial, PhoneCall, PickUp, Crammed };
 
 public class QuestManager : MonoBehaviour
 {
@@ -39,11 +39,6 @@ public class QuestManager : MonoBehaviour
             isSuccess.Add(false);
 
             if (i == (int)Quest.Tutorial && GameManager.instance.Stage == 0)
-            {
-                isAccept[i] = true;
-                isSuccess[i] = true;
-            }
-            if (i == (int)Quest.StageClear)
             {
                 isAccept[i] = true;
                 isSuccess[i] = true;
@@ -87,20 +82,10 @@ public class QuestManager : MonoBehaviour
         GameManager.instance.IsQuesting = true;
     }
 
-    public void CheckStageClear()
-    {
-        if (isAccept[(int)Quest.StageClear] == false && isSuccess[(int)Quest.StageClear] == true)
-        {
-            questCanvas = Instantiate(questCanvasPrefab);
-            questCanvas.GetComponent<QuestCanvasController>().ActivateCanvas((int)Quest.StageClear);
-        }
-    }
-
     private int GetUnperformQuest()
     {
         for (int i = 0; i < isAccept.Count; i++)
         {
-            if (i == (int)Quest.StageClear) continue;
             if (isAccept[i] == true) return i;
         }
         return 0;

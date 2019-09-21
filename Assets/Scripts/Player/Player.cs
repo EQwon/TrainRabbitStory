@@ -110,6 +110,11 @@ public class Player : MonoBehaviour
         {
             coll.gameObject.GetComponent<QuestItem>().GetItem();
         }
+
+        if (coll.gameObject.tag == "StageGoal")
+        {
+            UIManager.instance.StageClear();
+        }
     }
 
     private void OnCollisionStay2D(Collision2D coll)

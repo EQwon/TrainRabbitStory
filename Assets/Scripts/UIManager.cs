@@ -29,6 +29,10 @@ public class UIManager : MonoBehaviour
     public TextAsset openingAsset;
     public GameObject darkPanel;
 
+    [Header("Stage Clear")]
+    public GameObject stageClearPanel;
+    public List<Sprite> clearMent;
+
     private List<List<string>> currentDialogue;
     private GameObject currentInteractBunny;
     private int currentDialogNum = -1;
@@ -58,6 +62,7 @@ public class UIManager : MonoBehaviour
         basicUI.SetActive(true);
         WarningPanel.SetActive(false);
         darkPanel.SetActive(false);
+        stageClearPanel.SetActive(false);
 
         currentDialogNum = -1;
 
@@ -138,10 +143,15 @@ public class UIManager : MonoBehaviour
         }
         else if (currentDialogue[currentDialogNum][3] == "Quest")   // 퀘스트의 완료일 경우
         {
-            int questNum = currentDialogue[currentDialogNum][4][0]- 48;
+            int questNum = currentDialogue[currentDialogNum][4][0] - 48;
 
             QuestManager.instance.ChangeQuestState((Quest)questNum, false, true);
             GameManager.instance.IsQuesting = false;
+        }
+        else if (currentDialogue[currentDialogNum][3] == "Clear")    // 클리어일 경우
+        {
+            EndTalk();
+            StageClear();
         }
     }
 
@@ -156,7 +166,6 @@ public class UIManager : MonoBehaviour
         InitUI();
         GameManager.instance.IsTalking = false;
         QuestManager.instance.StartUnperfomedQuest();
-        QuestManager.instance.CheckStageClear();
     }
 
     public void AcceptQuest()
@@ -241,6 +250,17 @@ public class UIManager : MonoBehaviour
         {
             talkButton.GetComponent<Button>().interactable = false;
         }
+    }
+
+    public void StageClear()
+    {
+        stageClearPanel.transform.GetChild(0).GetComponent<Image>().sprite = clearMent[GameManager.instance.Stage];
+        stageClearPanel.SetActive(true);
+    }
+
+    public void TellGameMangerStageClear()
+    {
+        GameManager.instance.StageClear();
     }
 
     public void BackToStartScene()
