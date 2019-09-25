@@ -92,6 +92,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1534695390}
+  - {fileID: 4307134071537537736}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -220,6 +221,7 @@ MonoBehaviour:
   fixDialogueAsset: {fileID: 0}
   normalDialogueAsset: {fileID: 4900000, guid: 0f2aa6c7c7b4c71468835d8fc1e307a4, type: 3}
   quest: 2
+  TalkableIcon: {fileID: 0}
   nowTalkCnt: 0
 --- !u!114 &-3024613964939362535
 MonoBehaviour:
@@ -253,3 +255,78 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1001 &8500771161144447360
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 574958203248194268}
+    m_Modifications:
+    - target: {fileID: 6915676500662089083, guid: f0642f6eef262c84ba5f08bb72a50a83,
+        type: 3}
+      propertyPath: m_Name
+      value: QuestTalkableIcon
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638170056033321800, guid: f0642f6eef262c84ba5f08bb72a50a83,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638170056033321800, guid: f0642f6eef262c84ba5f08bb72a50a83,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638170056033321800, guid: f0642f6eef262c84ba5f08bb72a50a83,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638170056033321800, guid: f0642f6eef262c84ba5f08bb72a50a83,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638170056033321800, guid: f0642f6eef262c84ba5f08bb72a50a83,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638170056033321800, guid: f0642f6eef262c84ba5f08bb72a50a83,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638170056033321800, guid: f0642f6eef262c84ba5f08bb72a50a83,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638170056033321800, guid: f0642f6eef262c84ba5f08bb72a50a83,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638170056033321800, guid: f0642f6eef262c84ba5f08bb72a50a83,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638170056033321800, guid: f0642f6eef262c84ba5f08bb72a50a83,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5638170056033321800, guid: f0642f6eef262c84ba5f08bb72a50a83,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f0642f6eef262c84ba5f08bb72a50a83, type: 3}
+--- !u!4 &4307134071537537736 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5638170056033321800, guid: f0642f6eef262c84ba5f08bb72a50a83,
+    type: 3}
+  m_PrefabInstance: {fileID: 8500771161144447360}
+  m_PrefabAsset: {fileID: 0}

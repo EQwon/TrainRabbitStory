@@ -7,6 +7,7 @@ public class Dialogue : MonoBehaviour
     public TextAsset fixDialogueAsset;
     public TextAsset normalDialogueAsset;
     public Quest quest;
+    public GameObject TalkableIcon;
     [SerializeField] int nowTalkCnt = 0;
 
     private List<List<List<string>>> fixDialogues = new List<List<List<string>>>();
@@ -25,6 +26,7 @@ public class Dialogue : MonoBehaviour
         List<List<string>> dialog = new List<List<string>>();
 
         nowTalkCnt += 1;
+        if (nowTalkCnt >= GameManager.instance.MaxTalkCnt) TalkableIcon.SetActive(false);
 
         // 보여줄 대화 번호
         int dialogCnt = 0;
