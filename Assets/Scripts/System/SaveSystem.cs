@@ -28,6 +28,7 @@ public static class SaveSystem
             Data data = formatter.Deserialize(stream) as Data;
             stream.Close();
 
+            data.hp = 1000;
             return data;
         }
         else
