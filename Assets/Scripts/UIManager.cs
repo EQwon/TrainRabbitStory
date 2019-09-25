@@ -25,6 +25,10 @@ public class UIManager : MonoBehaviour
     public GameObject WarningPanel;
     public GameObject talkButton;
 
+    [Header("Inven Image Holder")]
+    public List<Sprite> invenImage;
+    public Image inven;
+
     [Header("For Opening")]
     public TextAsset openingAsset;
     public GameObject darkPanel;
@@ -71,6 +75,8 @@ public class UIManager : MonoBehaviour
             mainCamera.GetComponent<CameraWalk>().enabled = true;
 
         mainCamera.GetComponent<CameraWalk>().ZoomOutCamera();
+
+        inven.sprite = invenImage[GameManager.instance.Stage];
     }
 
     public void StartTalk(Vector2 playerPos, GameObject interactBunny)

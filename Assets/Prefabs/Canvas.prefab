@@ -1041,6 +1041,11 @@ MonoBehaviour:
   heart: {fileID: 98812123113723389}
   WarningPanel: {fileID: 7609093338362139074}
   talkButton: {fileID: 4237335955996046204}
+  invenImage:
+  - {fileID: 21300000, guid: a1cbad0bd99e56744a57afc45393fb51, type: 3}
+  - {fileID: 21300000, guid: e4cfa559569b97f4b920903cb32f40be, type: 3}
+  - {fileID: 21300000, guid: de1681f5a3732ca4abea4bc13ccd9025, type: 3}
+  inven: {fileID: 8626519987607530241}
   openingAsset: {fileID: 4900000, guid: 9fbd19f58eba38f4dac07e1977bc7c7e, type: 3}
   darkPanel: {fileID: 3605425463280892710}
   stageClearPanel: {fileID: 7910456228984069775}
@@ -1160,10 +1165,10 @@ RectTransform:
   m_Father: {fileID: 3202845221370745513}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 1, y: 0}
-  m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -130, y: 515.6}
-  m_SizeDelta: {x: 141, y: 205}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -100, y: -100}
+  m_SizeDelta: {x: 122, y: 148}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1356013303747305003
 CanvasRenderer:
