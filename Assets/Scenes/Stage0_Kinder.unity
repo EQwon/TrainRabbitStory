@@ -4912,6 +4912,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 98bb0439aa30b304aa323ed25db6291a, type: 3}
   - {fileID: 21300000, guid: 1ac1f5e9c8e8f754188863fad000a5f8, type: 3}
   - {fileID: 21300000, guid: 53f3b88b98e6c444aa5e414f54019390, type: 3}
+  - {fileID: 21300000, guid: 193925af903e5eb49800cd2c880d3adc, type: 3}
+  - {fileID: 21300000, guid: 3722f84e34c984a4caaf2c346b2b580a, type: 3}
+  - {fileID: 21300000, guid: 729544f1659509c44b4241f1be16050f, type: 3}
+  - {fileID: 21300000, guid: a80ded0cd037e864a9231f1418d3b335, type: 3}
   tuto: {fileID: 1844091426}
 --- !u!1 &1669054215
 GameObject:
