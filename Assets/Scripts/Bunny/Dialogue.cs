@@ -26,7 +26,11 @@ public class Dialogue : MonoBehaviour
         List<List<string>> dialog = new List<List<string>>();
 
         nowTalkCnt += 1;
-        if (nowTalkCnt >= GameManager.instance.MaxTalkCnt) TalkableIcon.SetActive(false);
+        if (nowTalkCnt >= GameManager.instance.MaxTalkCnt)
+        {
+            if (TalkableIcon == null) Debug.Log(gameObject.name + "에게 대화 가능 아이콘이 할당 되지 않았습니다.");
+            else TalkableIcon.SetActive(false);
+        }
 
         // 보여줄 대화 번호
         int dialogCnt = 0;

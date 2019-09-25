@@ -219,7 +219,7 @@ MonoBehaviour:
   fixDialogueAsset: {fileID: 0}
   normalDialogueAsset: {fileID: 4900000, guid: 4f5b683c00a293e499a1e23db9df8c25, type: 3}
   quest: 0
-  TalkableIcon: {fileID: 0}
+  TalkableIcon: {fileID: 2514661360359609631}
   nowTalkCnt: 0
 --- !u!1001 &7895551866132323676
 PrefabInstance:
@@ -290,6 +290,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2f79eba66a6b954183ebfcc4c720e19, type: 3}
+--- !u!1 &2514661360359609631 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5726183688587167811, guid: a2f79eba66a6b954183ebfcc4c720e19,
+    type: 3}
+  m_PrefabInstance: {fileID: 7895551866132323676}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5890987498665262085 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4346641584805699929, guid: a2f79eba66a6b954183ebfcc4c720e19,
