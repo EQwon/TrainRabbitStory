@@ -45,12 +45,12 @@ public class StartManager : MonoBehaviour
     private IEnumerator MoveTrain()
     {
         Vector3 targetPos = new Vector3(0, Train.localPosition.y, Train.localPosition.z);
-        float speed = 1000f;
+        float speed = 1500f;
 
         while (Vector3.Distance(Train.localPosition, targetPos) > Mathf.Epsilon)
         {
-            Train.localPosition = Vector3.MoveTowards(Train.localPosition, targetPos, Time.deltaTime * speed);
-            yield return new WaitForSeconds(0.01f);
+            Train.localPosition = Vector3.MoveTowards(Train.localPosition, targetPos, Time.fixedDeltaTime * speed);
+            yield return new WaitForSeconds(Time.fixedDeltaTime);
         }
 
         yield return new WaitForSeconds(2f);
@@ -59,8 +59,8 @@ public class StartManager : MonoBehaviour
 
         while(Vector3.Distance(Train.localPosition, targetPos) > Mathf.Epsilon)
         {
-            Train.localPosition = Vector3.MoveTowards(Train.localPosition, targetPos, Time.deltaTime * speed);
-            yield return new WaitForSeconds(0.01f);
+            Train.localPosition = Vector3.MoveTowards(Train.localPosition, targetPos, Time.fixedDeltaTime * speed);
+            yield return new WaitForSeconds(Time.fixedDeltaTime);
         }
 
         yield return new WaitForSeconds(0.5f);

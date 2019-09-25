@@ -170,6 +170,7 @@ public class UIManager : MonoBehaviour
         }
 
         InitUI();
+        Player.instance.joystick.StopMoving();
         GameManager.instance.IsTalking = false;
         QuestManager.instance.StartUnperfomedQuest();
     }
