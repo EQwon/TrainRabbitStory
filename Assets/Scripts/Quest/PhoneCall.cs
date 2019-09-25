@@ -11,7 +11,10 @@ public class PhoneCall : MonoBehaviour
     //  //화면에 임의의 번호가 출력
     //  //숫자판 출력 - 배열이 임의의 형태로 되어있음
     //  //제대로 된 숫자를 누르면 알파값 = 1
-
+    [Header("Tutorial")]
+    public GameObject tutorialPanel;
+    
+    [Header("Quest")]
     public GameObject[] numberToPush;
     public GameObject[] numberButton;
     public GameObject countDownNumber;
@@ -22,7 +25,7 @@ public class PhoneCall : MonoBehaviour
     public Text remainTimeText;
     public float timeLimit = 15f;
 
-    private enum State { ready, playing, success, fail };
+    private enum State { tutorial, ready, playing, success, fail };
     private State state;
 
     private int index = 0;
@@ -35,7 +38,7 @@ public class PhoneCall : MonoBehaviour
         GameManager.instance.IsTalking = true;
         UIManager.instance.gameObject.SetActive(false);
         InitializePanel();
-        state = State.ready;
+        state = State.tutorial;
         remainTime = timeLimit;
     }
 
@@ -43,6 +46,9 @@ public class PhoneCall : MonoBehaviour
     {
         switch (state)
         {
+            case State.tutorial:
+                tutorialPanel.SetActive(true);
+                break;
             case State.ready :
                 countDownTime -= Time.deltaTime;
                 CountDown();
@@ -163,5 +169,11 @@ public class PhoneCall : MonoBehaviour
 
         questManager.BackToNoraml();
         Player.instance.gameObject.GetComponentInChildren<Talk>().Talking();
+    }
+
+    public void Ready()
+    {
+        state = State.ready;
+        tutorialPanel.SetActive(false);
     }
 }
