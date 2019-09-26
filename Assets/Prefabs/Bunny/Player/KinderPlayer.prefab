@@ -271,7 +271,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 4
 --- !u!114 &5100368879914254435
 MonoBehaviour:
@@ -289,8 +289,6 @@ MonoBehaviour:
   hpDamage: 10
   mpDamage: 1
   attackDelay: 0.5
-  HP: 0
-  MP: 0
   joystick: {fileID: 0}
 --- !u!95 &1334866358014691357
 Animator:
