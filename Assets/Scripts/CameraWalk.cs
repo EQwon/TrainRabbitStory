@@ -16,7 +16,7 @@ public class CameraWalk : MonoBehaviour
         UIManager.instance.TrainCellNumberUpdate(cellNum + 1);
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if (SceneManager.GetActiveScene().buildIndex == 0) return;
 
