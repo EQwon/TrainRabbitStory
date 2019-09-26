@@ -169,7 +169,15 @@ public class RandomMoving : MonoBehaviour
 
     private void FlipBunny(bool isFacingRight)
     {
-        if (isFacingRight == true) animator.SetBool("IsRight", true);
-        else animator.SetBool("IsRight", false);
+        if (isFacingRight == true)
+        {
+            moveDir = new Vector2(speed, 0);
+            animator.SetBool("IsRight", true);
+        }
+        else
+        {
+            moveDir = new Vector2(-speed, 0);
+            animator.SetBool("IsRight", false);
+        }
     }
 }
