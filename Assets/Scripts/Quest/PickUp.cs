@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class PickUp : MonoBehaviour
 {
-    public Image handkerchiefIcon;
     public GameObject handkerchief;
 
     private void Start()
@@ -18,11 +17,6 @@ public class PickUp : MonoBehaviour
 
     private void Update()
     {
-        if (QuestManager.instance.isSuccess[(int)Quest.PickUp] == true && handkerchiefIcon.color.a != 1)
-        {
-            handkerchiefIcon.color = new Color(1, 1, 1, 1);
-        }
-
         if (QuestManager.instance.isSuccess[(int)Quest.PickUp] == true && QuestManager.instance.isAccept[(int)Quest.PickUp] == false)
         {
             Destroy(gameObject.transform.parent.gameObject);

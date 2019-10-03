@@ -9,6 +9,9 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance = null;
 
+    public TextAsset itemAsset;
+    private List<ItemInfo> itemList = new List<ItemInfo>();
+
     #region SaveLoad
     private Data data;
     private void SaveData() { SaveSystem.SaveData(data); }
@@ -49,6 +52,17 @@ public class GameManager : MonoBehaviour
     {
         get { return Stage >= 1 ? 16 : 11; }
     }
+    public List<Item> Items
+    {
+        get {
+            List<Item> items = new List<Item>();
+            for (int i = 0; i < data.items.Length; i++)
+            {
+                if (data.items[i] == 0) continue;
+                items.Add(new Item(itemList[data.items[i]], 1));
+            }
+            return items; }
+    }
     #endregion
 
     #region TrainState
@@ -77,7 +91,7 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
         LoadData();
-
+        ReadItemAsset();
         //GetComponent<QuestManager>().enabled = false;
     }
 
@@ -140,6 +154,11 @@ public class GameManager : MonoBehaviour
                 TimeManager.timeScale = 0;
                 break;
         }
+    }
+
+    private void ReadItemAsset()
+    {
+        itemList = Parser.ItemParse(itemAsset);
     }
 
     public void StageClear()

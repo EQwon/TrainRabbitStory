@@ -149,12 +149,18 @@ public class UIManager : MonoBehaviour
         }
         else if (currentDialogue[currentDialogNum][3] == "Quest")   // 퀘스트의 완료일 경우
         {
-            int questNum = currentDialogue[currentDialogNum][4][0] - 48;
+            int questNum = int.Parse(currentDialogue[currentDialogNum][4]);
 
             QuestManager.instance.ChangeQuestState((Quest)questNum, false, true);
             GameManager.instance.IsQuesting = false;
         }
-        else if (currentDialogue[currentDialogNum][3] == "Clear")    // 클리어일 경우
+        else if (currentDialogue[currentDialogNum][3] == "Item")      // 아이템일 경우
+        {
+            int itemNum = int.Parse(currentDialogue[currentDialogNum][4]);
+
+
+        }
+        else if (currentDialogue[currentDialogNum][3] == "Clear")   // 클리어일 경우
         {
             EndTalk();
             StageClear();

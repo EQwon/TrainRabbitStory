@@ -54,4 +54,27 @@ public class Parser
 
         return returnList;
     }
+
+    public static List<ItemInfo> ItemParse(TextAsset data)
+    {
+        List<ItemInfo> returnList = new List<ItemInfo>();
+
+        StringReader sr = new StringReader(data.text);
+        string source = sr.ReadLine();  // 먼저 한줄을 읽는다. 
+        string[] values;                // 구분된 데이터들을 저장할 배열 (values[0]이면 첫번째 데이터 )
+
+        while (source != null)
+        {
+            values = source.Split('/'); // Slash로 구분
+
+            Sprite image = Resources.Load<Sprite>("ItemImage/" + values[2]);
+            bool isForQuest = values[3] == "Yes" ? true : false;
+
+            returnList.Add(new ItemInfo(values[1], image, isForQuest, values[4]));
+
+            source = sr.ReadLine();    // 한줄 읽는다.
+        }
+
+        return returnList;
+    }
 }
