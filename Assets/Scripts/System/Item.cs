@@ -4,16 +4,20 @@ using UnityEngine;
 
 public class ItemInfo
 {
+    public int indexNum;
     public string name;
     public Sprite image;
-    public bool isForQuest;
+    public int hpChange;
+    public int mpChange;
     public string description;
 
-    public ItemInfo(string itemName, Sprite itemImage, bool isQuestItem, string itemDescription)
+    public ItemInfo(int index, string itemName, Sprite itemImage, int hp, int mp, string itemDescription)
     {
+        indexNum = index;
         name = itemName;
         image = itemImage;
-        isForQuest = isQuestItem;
+        hpChange = hp;
+        mpChange = mp;
         description = itemDescription;
     }
 }

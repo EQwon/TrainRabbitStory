@@ -10,11 +10,16 @@ public class GameManager : MonoBehaviour
     public static GameManager instance = null;
 
     public TextAsset itemAsset;
-    private List<ItemInfo> itemList = new List<ItemInfo>();
+    private List<ItemInfo> itemIndexList = new List<ItemInfo>();
+    public List<Item> itemList = new List<Item>();
 
     #region SaveLoad
     private Data data;
-    private void SaveData() { SaveSystem.SaveData(data); }
+    private void SaveData()
+    {
+        SaveSystem.SaveData(data);
+        SaveItem();
+    }
     public void LoadData() { data = SaveSystem.LoadData();}
     #endregion
 
@@ -52,17 +57,6 @@ public class GameManager : MonoBehaviour
     {
         get { return Stage >= 1 ? 16 : 11; }
     }
-    public List<Item> Items
-    {
-        get {
-            List<Item> items = new List<Item>();
-            for (int i = 0; i < data.items.Length; i++)
-            {
-                if (data.items[i] == 0) continue;
-                items.Add(new Item(itemList[data.items[i]], 1));
-            }
-            return items; }
-    }
     #endregion
 
     #region TrainState
@@ -91,8 +85,8 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
         LoadData();
+
         ReadItemAsset();
-        //GetComponent<QuestManager>().enabled = false;
     }
 
     private void Update()
@@ -158,7 +152,43 @@ public class GameManager : MonoBehaviour
 
     private void ReadItemAsset()
     {
-        itemList = Parser.ItemParse(itemAsset);
+        itemIndexList = Parser.ItemParse(itemAsset);
+
+        for (int i = 0; i < data.items.Length; i++)
+        {
+            GetItem(data.items[i]);
+        }
+    }
+
+    public void GetItem(int itemIndex)
+    {
+        if (itemIndex == 0) return;
+
+        for (int i = 0; i < itemList.Count; i++)
+        {
+            if (itemList[i].info.name == itemIndexList[itemIndex].name)
+            {
+                itemList[i].amount += 1;
+                return;
+            }
+        }
+
+        itemList.Add(new Item(itemIndexList[itemIndex], 1));
+    }
+
+    private void SaveItem()
+    {
+        System.Array.Clear(data.items, 0, data.items.Length);
+        int cnt = 0;
+
+        for (int i = 0; i < itemList.Count; i++)
+        {
+            for (int j = 0; j < itemList[i].amount; j++)
+            {
+                data.items[cnt] = itemList[i].info.indexNum;
+                cnt += 1;
+            }
+        }
     }
 
     public void StageClear()

@@ -67,10 +67,12 @@ public class Parser
         {
             values = source.Split('/'); // Slash로 구분
 
+            int indexNum = int.Parse(values[0]);
             Sprite image = Resources.Load<Sprite>("ItemImage/" + values[2]);
-            bool isForQuest = values[3] == "Yes" ? true : false;
+            int hpChange = indexNum != 0 ? int.Parse(values[3]) : 0;
+            int mpChange = indexNum != 0 ? int.Parse(values[4]) : 0;
 
-            returnList.Add(new ItemInfo(values[1], image, isForQuest, values[4]));
+            returnList.Add(new ItemInfo(indexNum, values[1], image, hpChange, mpChange, values[5]));
 
             source = sr.ReadLine();    // 한줄 읽는다.
         }

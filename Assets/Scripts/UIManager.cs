@@ -158,7 +158,7 @@ public class UIManager : MonoBehaviour
         {
             int itemNum = int.Parse(currentDialogue[currentDialogNum][4]);
 
-
+            GameManager.instance.GetItem(itemNum);
         }
         else if (currentDialogue[currentDialogNum][3] == "Clear")   // 클리어일 경우
         {

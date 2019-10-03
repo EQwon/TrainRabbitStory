@@ -14,10 +14,10 @@ public class InvenController : MonoBehaviour
     public Text itemDescription;
     private List<Item> items;
 
-    private void OpenInven()
+    public void OpenInven()
     {
         // 인벤 정보를 GameManager와 동기화
-        items = GameManager.instance.Items;
+        items = GameManager.instance.itemList;
 
         for (int i = 0; i < items.Count; i++)
         {
@@ -26,9 +26,7 @@ public class InvenController : MonoBehaviour
     }
 
     public void ShowItem(int num)
-    {
-        OpenInven();
-        
+    {        
         if (items.Count <= num)
         {
             descriptionPanel.SetActive(false);
@@ -39,6 +37,29 @@ public class InvenController : MonoBehaviour
         descriptionPanel.SetActive(true);
         itemImage.sprite = targetItem.info.image;
         itemName.text = targetItem.info.name;
+        itemEffect.text = EffectDescription(num);
         itemDescription.text = targetItem.info.description;
+    }
+
+    private string EffectDescription(int num)
+    {
+        ItemInfo targetItem = items[num].info;
+
+        int hpChange = targetItem.hpChange;
+        int mpChange = targetItem.mpChange;
+
+        if (hpChange != 0 && mpChange != 0)
+        {
+            return "체력 " + (hpChange > 0 ? "+" : "") + hpChange + ", 토성 " + (mpChange > 0 ? "+" : "") + mpChange;
+        }
+        else if (hpChange != 0 && mpChange == 0)
+        {
+            return "체력 " + (hpChange > 0 ? "+" : "") + hpChange;
+        }
+        else if (hpChange == 0 && mpChange != 0)
+        {
+            return "토성 " + (mpChange > 0 ? "+" : "") + mpChange;
+        }
+        else return "효과 없음";
     }
 }
