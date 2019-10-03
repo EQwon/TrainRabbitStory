@@ -17,8 +17,8 @@ public class GameManager : MonoBehaviour
     private Data data;
     private void SaveData()
     {
-        SaveSystem.SaveData(data);
         SaveItem();
+        SaveSystem.SaveData(data);
     }
     public void LoadData() { data = SaveSystem.LoadData();}
     #endregion
