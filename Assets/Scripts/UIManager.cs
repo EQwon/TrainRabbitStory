@@ -121,18 +121,19 @@ public class UIManager : MonoBehaviour
         
         SoundManager.instance.TalkSE();
 
-        if(currentDialogNum == currentDialogue.Count - 1)
-        {
-            //Debug.Log("왜 안나옴?");
-            DialogueFinishNotice();
-        }
+        SpecialDialogueAction();
     }
 
-    private void DialogueFinishNotice()
+    private void SpecialDialogueAction()
     {
-        finishDialogText.SetActive(true);
+        finishDialogText.SetActive(false);
         acceptQuestButton.SetActive(false);
         rejectQuestButton.SetActive(false);
+
+        if (currentDialogNum == currentDialogue.Count - 1)
+        {
+            finishDialogText.SetActive(true);
+        }
 
         if (currentDialogue[currentDialogNum].Count < 4) return;
 
