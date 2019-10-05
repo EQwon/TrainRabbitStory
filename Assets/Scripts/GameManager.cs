@@ -32,12 +32,20 @@ public class GameManager : MonoBehaviour
     public int HP
     {
         get { return data.hp; }
-        set { data.hp = value; }
+        set
+        {
+            data.hp = value;
+            if (data.hp > 1000) data.hp = 1000;
+        }
     }
     public int MP
     {
         get { return data.mp; }
-        set { data.mp = value; }
+        set
+        {
+            data.mp = value;
+            if (data.mp > 100) data.mp = 100;
+        }
     }
     public int[] Affinity
     {
@@ -189,6 +197,16 @@ public class GameManager : MonoBehaviour
                 cnt += 1;
             }
         }
+    }
+
+    public void UseItem(Item usingItem)
+    {
+        Item targetItem = itemList.Find(x => x == usingItem);
+
+        HP += targetItem.info.hpChange;
+        MP += targetItem.info.mpChange;
+        targetItem.amount -= 1;
+        if (targetItem.amount == 0) itemList.Remove(targetItem);
     }
 
     public void StageClear()
