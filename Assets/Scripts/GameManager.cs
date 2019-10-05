@@ -20,7 +20,11 @@ public class GameManager : MonoBehaviour
         SaveItem();
         SaveSystem.SaveData(data);
     }
-    public void LoadData() { data = SaveSystem.LoadData();}
+    public void LoadData()
+    {
+        data = SaveSystem.LoadData();
+        ReadItemAsset();
+    }
     #endregion
 
     #region GameStatus
@@ -93,8 +97,6 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
         LoadData();
-
-        ReadItemAsset();
     }
 
     private void Update()
@@ -162,6 +164,7 @@ public class GameManager : MonoBehaviour
     {
         itemIndexList = Parser.ItemParse(itemAsset);
 
+        itemList.Clear();
         for (int i = 0; i < data.items.Length; i++)
         {
             GetItem(data.items[i]);
