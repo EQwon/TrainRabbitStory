@@ -174,6 +174,6 @@ public class Crammed : MonoBehaviour
 
         QuestManager.instance.isSuccess[(int)Quest.Crammed] = true;
         QuestManager.instance.BackToNoraml();
-        Player.instance.gameObject.GetComponentInChildren<Talk>().Talking();
+        UIManager.instance.StartTalk();
     }
 }

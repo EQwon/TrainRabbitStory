@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class Dialogue : MonoBehaviour
 {
-    public TextAsset fixDialogueAsset;
-    public TextAsset normalDialogueAsset;
+    [SerializeField] private TextAsset fixDialogueAsset;
+    [SerializeField] private TextAsset normalDialogueAsset;
+    [SerializeField] private TextAsset presentDialogueAsset;
     public Quest quest;
     public GameObject TalkableIcon;
     [SerializeField] int nowTalkCnt = 0;
 
     private List<List<List<string>>> fixDialogues = new List<List<List<string>>>();
     private List<List<List<string>>> normalDialogues = new List<List<List<string>>>();
+    private List<List<List<string>>> presentDialogues = new List<List<List<string>>>();
 
     private void Start()
     {
         normalDialogues = Parser.DialogParse(normalDialogueAsset);
 
-        if (fixDialogueAsset == null) return;
-        fixDialogues = Parser.DialogParse(fixDialogueAsset);
+        if (fixDialogueAsset != null) fixDialogues = Parser.DialogParse(fixDialogueAsset);
+        if (presentDialogueAsset != null) presentDialogues = Parser.DialogParse(presentDialogueAsset);
     }
 
     public List<List<string>> DialogForNow()
@@ -60,6 +62,15 @@ public class Dialogue : MonoBehaviour
         {
             dialog = new List<List<string>>(normalDialogues[dialogCnt]);
         }
+
+        return dialog;
+    }
+
+    public List<List<string>> DialogForPresent(int presentNum)
+    {
+        List<List<string>> dialog = new List<List<string>>();
+
+        if (presentDialogues.Count > presentNum) dialog = presentDialogues[presentNum];
 
         return dialog;
     }

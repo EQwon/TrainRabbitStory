@@ -130,4 +130,9 @@ public class Player : MonoBehaviour
         //Debug.Log("체력 감소");
         yield return new WaitForSeconds(0.5f);
     }
+
+    public void PlayerStop()
+    {
+        Move(0, 0);
+    }
 }

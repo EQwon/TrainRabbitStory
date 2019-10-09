@@ -78,14 +78,61 @@ public class UIManager : MonoBehaviour
 
         inven.sprite = invenImage[GameManager.instance.Stage];
     }
-
-    public void StartTalk(Vector2 playerPos, GameObject interactBunny)
+    
+    /// <summary>
+    /// 방금 전 토끼와 다시 대화
+    /// </summary>
+    public void StartTalk()
     {
+        GameObject interactBunny = currentInteractBunny;
+
+        //1. 현재 할 대화를 가져오는 기능
         currentDialogue = interactBunny.GetComponent<Dialogue>().DialogForNow();
         if (currentDialogue.Count == 0) return;
 
+        //2. 대화 상태로 UI 조정하는 기능
+        AdjustUIAndStart(interactBunny);
+    }
+    
+    /// <summary>
+    /// 대화할 토끼 지정해서 대화
+    /// </summary>
+    /// <param name="interactBunny">대화할 토끼</param>
+    public void StartTalk(GameObject interactBunny)
+    {
+        //1. 현재 할 대화를 가져오는 기능
+        currentDialogue = interactBunny.GetComponent<Dialogue>().DialogForNow();
+        if (currentDialogue.Count == 0) return;
+
+        //2. 대화 상태로 UI 조정하는 기능
+        AdjustUIAndStart(interactBunny);
+    }
+
+    /// <summary>
+    /// 선물하기 대화
+    /// </summary>
+    /// <param name="interactBunny">선물할 토끼</param>
+    /// <param name="presentNum">선물 index 번호</param>
+    public void StartPresentTalk(GameObject interactBunny, int presentNum)
+    {
+        currentDialogue = interactBunny.GetComponent<Dialogue>().DialogForPresent(presentNum);
+        if (currentDialogue.Count == 0) return;
+
+        AdjustUIAndStart(interactBunny);
+    }
+
+    private void AdjustUIAndStart(GameObject interactBunny)
+    {
         //게임 전체 상태 변환
         GameManager.instance.IsTalking = true;
+
+        //플레이어 정지
+        Player.instance.GetComponent<Animator>().SetBool("playerWalk", false);
+        Player.instance.PlayerStop();
+
+        //대화 토끼랑 바라보게 조정
+        if (interactBunny.GetComponent<RandomMoving>() != null)
+            interactBunny.GetComponent<RandomMoving>().FlipForTalk();
 
         //UI 조정
         basicUI.SetActive(false);
@@ -93,7 +140,8 @@ public class UIManager : MonoBehaviour
         talkPanel.GetComponent<Button>().interactable = true;
 
         //카메라 조정
-        currentInteractBunny = interactBunny;        
+        Vector2 playerPos = Player.instance.transform.position;
+        currentInteractBunny = interactBunny;
         Camera.main.gameObject.GetComponent<CameraWalk>().ZoomInCamera(playerPos, currentInteractBunny);
 
         //대화 시작

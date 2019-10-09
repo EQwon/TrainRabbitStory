@@ -158,7 +158,7 @@ public class PhoneCall : MonoBehaviour
 
         questManager.isSuccess[(int)Quest.PhoneCall] = true;
         questManager.BackToNoraml();
-        Player.instance.gameObject.GetComponentInChildren<Talk>().Talking();
+        UIManager.instance.StartTalk();
     }
 
     private IEnumerator FailReaction()
@@ -168,7 +168,7 @@ public class PhoneCall : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         questManager.BackToNoraml();
-        Player.instance.gameObject.GetComponentInChildren<Talk>().Talking();
+        UIManager.instance.StartTalk();
     }
 
     public void Ready()

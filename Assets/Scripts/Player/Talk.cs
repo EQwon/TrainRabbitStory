@@ -9,6 +9,8 @@ public class Talk : MonoBehaviour
     private GameObject interactBunny = null;
     private Joystick joystick = null;
 
+    public GameObject InteractBunny { get { return interactBunny; } }
+
     private void Update()
     {
         if (joystick == null) joystick = Player.instance.joystick;
@@ -16,17 +18,8 @@ public class Talk : MonoBehaviour
         if (canTalk == true && joystick.Talk/*Input.GetKeyDown(KeyCode.Z)*/)
         {
             joystick.Talk = false;
-            Talking();
+            UIManager.instance.StartTalk(interactBunny);
         }
-    }
-
-    public void Talking()
-    {
-        transform.parent.GetComponent<Animator>().SetBool("playerWalk", false);
-
-        if (interactBunny.GetComponent<RandomMoving>() != null)
-            interactBunny.GetComponent<RandomMoving>().FlipForTalk();
-        UIManager.instance.StartTalk(Player.instance.transform.position, interactBunny);
     }
 
     private void OnTriggerEnter2D(Collider2D coll)

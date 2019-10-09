@@ -14,11 +14,16 @@ public class InvenController : MonoBehaviour
     public Text itemName;
     public Text itemEffect;
     public Text itemDescription;
+    public GameObject noBunnyAlertPanel;
+    public GameObject presentCheckPanel;
     private List<Item> items;
     private Item targetItem;
 
     public void OpenInven()
     {
+        noBunnyAlertPanel.SetActive(false);
+        presentCheckPanel.SetActive(false);
+
         // 인벤 정보를 GameManager와 동기화
         items = GameManager.instance.itemList;
 
@@ -91,5 +96,38 @@ public class InvenController : MonoBehaviour
         GameManager.instance.UseItem(targetItem);
         OpenInven();
         descriptionPanel.SetActive(false);
+    }
+
+    public void TryToPresentItem()
+    {
+        GameObject interactBunny = Player.instance.gameObject.transform.GetChild(0).GetComponent<Talk>().InteractBunny;
+
+        if (interactBunny == null)
+        {
+            // 토끼가 없다는 알림
+            noBunnyAlertPanel.SetActive(true);
+        }
+        else
+        {
+            // 누구누구에게 선물할까요?
+            presentCheckPanel.SetActive(true);
+            Text text = presentCheckPanel.transform.GetChild(0).GetChild(0).GetComponent<Text>();
+
+            text.text = interactBunny.name + "에게 " + targetItem.info.name + "를(을) 선물할까요?";
+        }
+    }
+
+    public void Present()
+    {
+        GameObject interactBunny = Player.instance.gameObject.transform.GetChild(0).GetComponent<Talk>().InteractBunny;
+
+        if (interactBunny == null)
+        {
+            presentCheckPanel.SetActive(false);
+            noBunnyAlertPanel.SetActive(true);
+            return;
+        }
+
+        UIManager.instance.StartPresentTalk(interactBunny, targetItem.info.indexNum);
     }
 }

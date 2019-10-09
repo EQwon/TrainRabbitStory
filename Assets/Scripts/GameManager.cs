@@ -206,7 +206,8 @@ public class GameManager : MonoBehaviour
     {
         Item targetItem = itemList.Find(x => x == usingItem);
 
-        HP += targetItem.info.hpChange;
+        // 왜 10배냐면 최대 체력을 1000이라고 뒀기 때문!
+        HP += targetItem.info.hpChange * 10;
         MP += targetItem.info.mpChange;
         targetItem.amount -= 1;
         if (targetItem.amount == 0) itemList.Remove(targetItem);
