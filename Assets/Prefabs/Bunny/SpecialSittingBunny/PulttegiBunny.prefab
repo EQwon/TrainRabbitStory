@@ -71,7 +71,6 @@ GameObject:
   - component: {fileID: 3240149001557964836}
   - component: {fileID: 9075799932249590339}
   - component: {fileID: 3209084379532179684}
-  - component: {fileID: 2463122172999978777}
   m_Layer: 9
   m_Name: PulttegiBunny
   m_TagString: Bunny
@@ -219,22 +218,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fixDialogueAsset: {fileID: 4900000, guid: 8fcdb63163af30b4abd94683b0f98a01, type: 3}
   normalDialogueAsset: {fileID: 4900000, guid: 7b0704daefed28e4ba8a483f84930476, type: 3}
+  presentDialogueAsset: {fileID: 4900000, guid: bd009799f9afd974dabd078e2f47e4da,
+    type: 3}
   quest: 0
   TalkableIcon: {fileID: 157735429018798234}
   nowTalkCnt: 0
---- !u!114 &2463122172999978777
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2503992160686711965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cf96069884484a43a7a4b8e1b599459, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bunnyNum: 4
+  myName: 4
 --- !u!1001 &5994381562019324946
 PrefabInstance:
   m_ObjectHideFlags: 0

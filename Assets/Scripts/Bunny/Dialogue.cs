@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum BunnyName { Gotgam, Jadupudding, Kkingkkang, Mango, Pulttegi, Ssookgat, Tomatotang, Yanggaeng, Yuza, None }
+
 public class Dialogue : MonoBehaviour
 {
     [SerializeField] private TextAsset fixDialogueAsset;
@@ -9,7 +11,8 @@ public class Dialogue : MonoBehaviour
     [SerializeField] private TextAsset presentDialogueAsset;
     public Quest quest;
     public GameObject TalkableIcon;
-    [SerializeField] int nowTalkCnt = 0;
+    [SerializeField] private int nowTalkCnt = 0;
+    public BunnyName myName;
 
     private List<List<List<string>>> fixDialogues = new List<List<List<string>>>();
     private List<List<List<string>>> normalDialogues = new List<List<List<string>>>();
@@ -37,9 +40,9 @@ public class Dialogue : MonoBehaviour
         // 보여줄 대화 번호
         int dialogCnt = 0;
 
-        if (GetComponent<Affinity>())
+        if (myName != BunnyName.None)
         {
-            int bunnyNum = GetComponent<Affinity>().bunnyNum;
+            int bunnyNum = (int)myName;
             int talkCnt = GameManager.instance.TalkCnt[bunnyNum];
 
             if (nowTalkCnt > GameManager.instance.MaxTalkCnt)
@@ -50,7 +53,7 @@ public class Dialogue : MonoBehaviour
 
             if (talkCnt == 0) return fixDialogues[0];
             if (nowTalkCnt == 1) return fixDialogues[GameManager.instance.Stage];
-            dialogCnt = GameManager.instance.TalkCnt[GetComponent<Affinity>().bunnyNum];
+            dialogCnt = GameManager.instance.TalkCnt[(int)myName];
         }
         else
         {

@@ -1,0 +1,14 @@
+﻿1번 아이템 '마딛는 애폴'에 대한 반응
+===
+곶감씨/앗...!/GotgamBunny_Bust
+곶감씨/꺼마워용~
+곶감씨/호감도가 5 증가했다./GotgamBunny_Bust/Affinity/5
+===
+
+2번 아이템 '마덥는 애폴'에 대한 반응
+===
+곶감씨/디용~/GotgamBunny_Bust
+곶감씨/마덥는 애폴이자나!!
+곶감씨/호감도가 3 감소했다./GotgamBunny_Bust/Affinity/-3
+===
+END

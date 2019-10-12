@@ -73,7 +73,6 @@ GameObject:
   - component: {fileID: 3209084379532179684}
   - component: {fileID: 433266204571041901}
   - component: {fileID: 7705527600164929009}
-  - component: {fileID: 4698338873408499794}
   m_Layer: 8
   m_Name: SsookgatBunny_2
   m_TagString: Bunny
@@ -221,9 +220,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fixDialogueAsset: {fileID: 4900000, guid: d64277f4ad7f81e48a5b54f73ad8963c, type: 3}
   normalDialogueAsset: {fileID: 4900000, guid: d5cbfd7be2ef23d4d9343049e44ca5cc, type: 3}
+  presentDialogueAsset: {fileID: 4900000, guid: c349f658f2133ae40a84f8bc777b2dc9,
+    type: 3}
   quest: 0
   TalkableIcon: {fileID: 6782673842594248429}
   nowTalkCnt: 0
+  myName: 5
 --- !u!114 &433266204571041901
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,19 +258,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4698338873408499794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2503992160686711965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cf96069884484a43a7a4b8e1b599459, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bunnyNum: 8
 --- !u!1001 &1090104345410738789
 PrefabInstance:
   m_ObjectHideFlags: 0

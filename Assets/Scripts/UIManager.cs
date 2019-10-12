@@ -25,9 +25,10 @@ public class UIManager : MonoBehaviour
     public GameObject WarningPanel;
     public GameObject talkButton;
 
-    [Header("Inven Image Holder")]
+    [Header("Inven")]
     public List<Sprite> invenImage;
     public Image inven;
+    public GameObject InventoryPanel;
 
     [Header("For Opening")]
     public TextAsset openingAsset;
@@ -66,6 +67,7 @@ public class UIManager : MonoBehaviour
         basicUI.SetActive(true);
         WarningPanel.SetActive(false);
         darkPanel.SetActive(false);
+        InventoryPanel.SetActive(false);
         stageClearPanel.SetActive(false);
 
         currentDialogNum = -1;
@@ -113,11 +115,17 @@ public class UIManager : MonoBehaviour
     /// </summary>
     /// <param name="interactBunny">선물할 토끼</param>
     /// <param name="presentNum">선물 index 번호</param>
-    public void StartPresentTalk(GameObject interactBunny, int presentNum)
+    public void StartPresentTalk(GameObject interactBunny, Item present)
     {
-        currentDialogue = interactBunny.GetComponent<Dialogue>().DialogForPresent(presentNum);
+        // 먼저 선물에 대한 처리를 합니다.
+        GameManager.instance.UseItem(present, false);       // 선물한 아이템 사용
+        int presentNum = present.info.indexNum;
+
+        // presentNum - 1인 이유는 아이템은 1부터 시작하고 대화는 0부터 시작해서입니다.
+        currentDialogue = interactBunny.GetComponent<Dialogue>().DialogForPresent(presentNum - 1);
         if (currentDialogue.Count == 0) return;
 
+        // 마지막으로 대화 상태로 UI를 조정합니다.
         AdjustUIAndStart(interactBunny);
     }
 
@@ -203,11 +211,17 @@ public class UIManager : MonoBehaviour
             QuestManager.instance.ChangeQuestState((Quest)questNum, false, true);
             GameManager.instance.IsQuesting = false;
         }
-        else if (currentDialogue[currentDialogNum][3] == "Item")      // 아이템일 경우
+        else if (currentDialogue[currentDialogNum][3] == "Item")    // 아이템일 경우
         {
             int itemNum = int.Parse(currentDialogue[currentDialogNum][4]);
 
             GameManager.instance.GetItem(itemNum);
+        }
+        else if (currentDialogue[currentDialogNum][3] == "Affinity")// 호감도일 경우
+        {
+            int changeAmount = int.Parse(currentDialogue[currentDialogNum][4]);
+
+            GameManager.instance.AffinityChange(currentInteractBunny.GetComponent<Dialogue>().myName, changeAmount);
         }
         else if (currentDialogue[currentDialogNum][3] == "Clear")   // 클리어일 경우
         {
@@ -219,10 +233,6 @@ public class UIManager : MonoBehaviour
     private void EndTalk()
     {
         //currentInteractBunny.GetComponent<Dialogue>().GiveReward(currentDialogue);
-        if (currentInteractBunny != null && currentInteractBunny.GetComponent<Affinity>() != null)
-        {
-            GameManager.instance.TalkCnt[currentInteractBunny.GetComponent<Affinity>().bunnyNum] += 1;
-        }
 
         InitUI();
         Player.instance.joystick.StopMoving();

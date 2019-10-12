@@ -91,9 +91,9 @@ public class InvenController : MonoBehaviour
         }
     }
 
-    public void UseItem()
+    public void UseItemForMe()
     {
-        GameManager.instance.UseItem(targetItem);
+        GameManager.instance.UseItem(targetItem, true);
         OpenInven();
         descriptionPanel.SetActive(false);
     }
@@ -128,6 +128,7 @@ public class InvenController : MonoBehaviour
             return;
         }
 
-        UIManager.instance.StartPresentTalk(interactBunny, targetItem.info.indexNum);
+        gameObject.SetActive(false);
+        UIManager.instance.StartPresentTalk(interactBunny, targetItem);
     }
 }

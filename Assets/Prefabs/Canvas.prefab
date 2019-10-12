@@ -1696,6 +1696,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: e4cfa559569b97f4b920903cb32f40be, type: 3}
   - {fileID: 21300000, guid: de1681f5a3732ca4abea4bc13ccd9025, type: 3}
   inven: {fileID: 8626519987607530241}
+  InventoryPanel: {fileID: 8535463026493343941}
   openingAsset: {fileID: 4900000, guid: 9fbd19f58eba38f4dac07e1977bc7c7e, type: 3}
   darkPanel: {fileID: 3605425463280892710}
   stageClearPanel: {fileID: 7910456228984069775}
@@ -11313,7 +11314,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8357046297161793916
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11527,7 +11528,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1592602885767740390}
-        m_MethodName: UseItem
+        m_MethodName: UseItemForMe
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

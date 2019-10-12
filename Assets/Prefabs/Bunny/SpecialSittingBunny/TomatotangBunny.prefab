@@ -71,7 +71,6 @@ GameObject:
   - component: {fileID: 3240149001557964836}
   - component: {fileID: 9075799932249590339}
   - component: {fileID: 3209084379532179684}
-  - component: {fileID: 5255654701500598145}
   m_Layer: 9
   m_Name: TomatotangBunny
   m_TagString: Bunny
@@ -219,22 +218,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fixDialogueAsset: {fileID: 4900000, guid: 9a73276d8b332d14fa8b28a44dca7a7d, type: 3}
   normalDialogueAsset: {fileID: 4900000, guid: 8e8996cb1b3e09f4495f0877205b0560, type: 3}
+  presentDialogueAsset: {fileID: 4900000, guid: f9b7f31f65c2de647b4fe6e9a03b1c54,
+    type: 3}
   quest: 0
   TalkableIcon: {fileID: 7324351678334864661}
   nowTalkCnt: 0
---- !u!114 &5255654701500598145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2503992160686711965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cf96069884484a43a7a4b8e1b599459, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bunnyNum: 5
+  myName: 6
 --- !u!1001 &3793546870355616157
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -54,7 +54,14 @@ public class GameManager : MonoBehaviour
     public int[] Affinity
     {
         get { return data.affinity; }
-        set { data.affinity = value; }
+    }
+    public void AffinityChange(BunnyName bunnyName, int amount)
+    {
+        int target = data.affinity[(int)bunnyName] + amount;
+
+        if (target < 0) target = 0;
+        if (target > 100) target = 100;
+        data.affinity[(int)bunnyName] = target;
     }
     public int[] TalkCnt
     {
@@ -202,13 +209,17 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void UseItem(Item usingItem)
+    public void UseItem(Item usingItem, bool forMe)
     {
         Item targetItem = itemList.Find(x => x == usingItem);
 
-        // 왜 10배냐면 최대 체력을 1000이라고 뒀기 때문!
-        HP += targetItem.info.hpChange * 10;
-        MP += targetItem.info.mpChange;
+        if (forMe)
+        {
+            // 왜 10배냐면 최대 체력을 1000이라고 뒀기 때문!
+            HP += targetItem.info.hpChange * 10;
+            MP += targetItem.info.mpChange;
+        }
+
         targetItem.amount -= 1;
         if (targetItem.amount == 0) itemList.Remove(targetItem);
     }

@@ -71,7 +71,6 @@ GameObject:
   - component: {fileID: 3240149001557964836}
   - component: {fileID: 9075799932249590339}
   - component: {fileID: 3209084379532179684}
-  - component: {fileID: 5146003755778225691}
   m_Layer: 9
   m_Name: KkingkkangBunny
   m_TagString: Bunny
@@ -219,22 +218,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fixDialogueAsset: {fileID: 4900000, guid: 2da7759449850b947a63a1a7a16e9f13, type: 3}
   normalDialogueAsset: {fileID: 4900000, guid: 4a3efa25884438c48bdb30898183d47c, type: 3}
+  presentDialogueAsset: {fileID: 4900000, guid: 174d931a8ef8fbb4d9cf2d1d763ff9a7,
+    type: 3}
   quest: 0
   TalkableIcon: {fileID: 7772033569734897540}
   nowTalkCnt: 0
---- !u!114 &5146003755778225691
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2503992160686711965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cf96069884484a43a7a4b8e1b599459, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bunnyNum: 2
+  myName: 2
 --- !u!1001 &4241263396865786636
 PrefabInstance:
   m_ObjectHideFlags: 0
