@@ -25,10 +25,10 @@ public class UIManager : MonoBehaviour
     public GameObject WarningPanel;
     public GameObject talkButton;
 
-    [Header("Inven")]
-    public List<Sprite> invenImage;
-    public Image inven;
-    public GameObject InventoryPanel;
+    [Header("Bag")]
+    public List<Sprite> bagImage;
+    public Image bag;
+    public GameObject bagPanel;
 
     [Header("For Opening")]
     public TextAsset openingAsset;
@@ -67,7 +67,7 @@ public class UIManager : MonoBehaviour
         basicUI.SetActive(true);
         WarningPanel.SetActive(false);
         darkPanel.SetActive(false);
-        InventoryPanel.SetActive(false);
+        bagPanel.SetActive(false);
         stageClearPanel.SetActive(false);
 
         currentDialogNum = -1;
@@ -78,7 +78,7 @@ public class UIManager : MonoBehaviour
 
         mainCamera.GetComponent<CameraWalk>().ZoomOutCamera();
 
-        inven.sprite = invenImage[GameManager.instance.Stage];
+        bag.sprite = bagImage[GameManager.instance.Stage];
     }
     
     /// <summary>
@@ -121,7 +121,7 @@ public class UIManager : MonoBehaviour
         GameManager.instance.UseItem(present, false);       // 선물한 아이템 사용
         int presentNum = present.info.indexNum;
 
-        // presentNum - 1인 이유는 아이템은 1부터 시작하고 대화는 0부터 시작해서입니다.
+        // presentNum - 1인 이유는 아이템 리스트는 1부터 시작하고 대화는 0부터 시작해서입니다.
         currentDialogue = interactBunny.GetComponent<Dialogue>().DialogForPresent(presentNum - 1);
         if (currentDialogue.Count == 0) return;
 

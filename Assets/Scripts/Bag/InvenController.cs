@@ -6,23 +6,31 @@ using UnityEngine.UI;
 public class InvenController : MonoBehaviour
 {
     [Header("Inventory")]
+    public GameObject inventory;
     public List<GameObject> cell;
     private List<Image> cellItemImage = new List<Image>();
     private List<Text> cellItemCount = new List<Text>();
+
+    [Header("Description")]
     public GameObject descriptionPanel;
     public Image itemImage;
     public Text itemName;
     public Text itemEffect;
     public Text itemDescription;
+
+    [Header("Pop Up")]
     public GameObject noBunnyAlertPanel;
     public GameObject presentCheckPanel;
+
     private List<Item> items;
     private Item targetItem;
 
-    public void OpenInven()
+    public void OpenBag()
     {
+        inventory.SetActive(true);
         noBunnyAlertPanel.SetActive(false);
         presentCheckPanel.SetActive(false);
+        descriptionPanel.SetActive(false);
 
         // 인벤 정보를 GameManager와 동기화
         items = GameManager.instance.itemList;
@@ -94,7 +102,7 @@ public class InvenController : MonoBehaviour
     public void UseItemForMe()
     {
         GameManager.instance.UseItem(targetItem, true);
-        OpenInven();
+        OpenBag();
         descriptionPanel.SetActive(false);
     }
 
