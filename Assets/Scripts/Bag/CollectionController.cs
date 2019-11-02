@@ -24,11 +24,11 @@ public class CollectionController : MonoBehaviour
 
     public void SelectBunny(int num)
     {
-        showBunnyInfo(num);
+        ShowBunnyInfo(num);
         descriptionPanel.SetActive(true);
     }
 
-    private void showBunnyInfo(int num)
+    private void ShowBunnyInfo(int num)
     {
         nickName.text = ((BunnyName)num).ToString();
 

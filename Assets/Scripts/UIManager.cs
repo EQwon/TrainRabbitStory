@@ -16,6 +16,8 @@ public class UIManager : MonoBehaviour
     public GameObject finishDialogText;
     public GameObject acceptQuestButton;
     public GameObject rejectQuestButton;
+    public GameObject choicePanel;
+    public List<Text> choiceText;
 
     [Header("Basic UI")]
     public GameObject basicUI;
@@ -41,6 +43,7 @@ public class UIManager : MonoBehaviour
     private List<List<string>> currentDialogue;
     private GameObject currentInteractBunny;
     private int currentDialogNum = -1;
+    private int choosedNum = 0;
 
     private void Awake()
     {
@@ -64,6 +67,7 @@ public class UIManager : MonoBehaviour
         finishDialogText.SetActive(false);
         acceptQuestButton.SetActive(false);
         rejectQuestButton.SetActive(false);
+        choicePanel.SetActive(false);
         basicUI.SetActive(true);
         WarningPanel.SetActive(false);
         darkPanel.SetActive(false);
@@ -202,7 +206,16 @@ public class UIManager : MonoBehaviour
         }
         else if (currentDialogue[currentDialogNum][3] == "CH")      // 선택지일 경우
         {
-
+            talkPanel.GetComponent<Button>().interactable = false;
+            choicePanel.SetActive(true);
+            choiceText[0].text = currentDialogue[currentDialogNum][4];
+            choiceText[1].text = currentDialogue[currentDialogNum][5];
+            choiceText[2].text = currentDialogue[currentDialogNum][6];
+            finishDialogText.SetActive(false);
+        }
+        else if (currentDialogue[currentDialogNum][3] == "RE")      // 대답일 경우
+        {
+            speakerText.text = currentDialogue[currentDialogNum][4 + choosedNum];
         }
         else if (currentDialogue[currentDialogNum][3] == "Quest")   // 퀘스트의 완료일 경우
         {
@@ -268,6 +281,19 @@ public class UIManager : MonoBehaviour
         Debug.Log("퀘스트를 거절합니다.");
 
         //거절시 대화 종료
+        NextDialog();
+    }
+
+    public void Choose(int i)
+    {
+        //UI 조정
+        talkPanel.GetComponent<Button>().interactable = true;
+        choicePanel.SetActive(false);
+
+        //선택한 정보 저장
+        choosedNum = i;
+
+        //선택한 선택지에 대한 대사 출력
         NextDialog();
     }
 

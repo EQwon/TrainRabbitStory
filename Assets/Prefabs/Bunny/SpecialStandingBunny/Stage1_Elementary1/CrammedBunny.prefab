@@ -220,9 +220,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fixDialogueAsset: {fileID: 0}
   normalDialogueAsset: {fileID: 4900000, guid: 6e6ca727fbec0ca458fa8623f7ec5a36, type: 3}
+  presentDialogueAsset: {fileID: 0}
   quest: 4
   TalkableIcon: {fileID: 8195813596353342727}
   nowTalkCnt: 0
+  myName: 9
 --- !u!114 &-3024613964939362535
 MonoBehaviour:
   m_ObjectHideFlags: 0
