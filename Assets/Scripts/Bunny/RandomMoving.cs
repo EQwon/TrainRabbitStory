@@ -171,12 +171,12 @@ public class RandomMoving : MonoBehaviour
     {
         if (isFacingRight == true)
         {
-            moveDir = new Vector2(speed, 0);
+            moveDir = new Vector2(speed, moveDir.y);
             animator.SetBool("IsRight", true);
         }
         else
         {
-            moveDir = new Vector2(-speed, 0);
+            moveDir = new Vector2(-speed, moveDir.y);
             animator.SetBool("IsRight", false);
         }
     }
