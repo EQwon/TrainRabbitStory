@@ -9,8 +9,8 @@ public class QuestManager : MonoBehaviour
 {
     public static QuestManager instance = null;
 
-    public List<bool> isAccept = new List<bool>();
-    public List<bool> isSuccess = new List<bool>();
+    [SerializeField] private List<bool> isAccept = new List<bool>();
+    [SerializeField] private List<bool> isSuccess = new List<bool>();
 
     public GameObject questCanvasPrefab;
     private GameObject questCanvas;
@@ -58,6 +58,16 @@ public class QuestManager : MonoBehaviour
             if (isSuccess[(int)quest] == false) return 1;
             else return 2;
         }
+    }
+
+    public bool GetQuestState_Success(Quest quest)
+    {
+        return isSuccess[(int)quest];
+    }
+
+    public bool GetQuestState_Accept(Quest quest)
+    {
+        return isAccept[(int)quest];
     }
 
     public void ChangeQuestState(Quest quest, bool accept, bool success)

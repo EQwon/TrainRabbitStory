@@ -152,12 +152,10 @@ public class PhoneCall : MonoBehaviour
 
     private IEnumerator SuccessReaction()
     {
-        QuestManager questManager = QuestManager.instance;
-
         yield return new WaitForSeconds(1f);
 
-        questManager.isSuccess[(int)Quest.PhoneCall] = true;
-        questManager.BackToNoraml();
+        QuestManager.instance.ChangeQuestState(Quest.PhoneCall, true, true);
+        QuestManager.instance.BackToNoraml();
         UIManager.instance.StartTalk();
     }
 

@@ -13,7 +13,7 @@ public class QuestItem : MonoBehaviour
         switch (itemName)
         {
             case Name.handkerchief:
-                QuestManager.instance.isSuccess[(int)Quest.PickUp] = true;
+                QuestManager.instance.ChangeQuestState(Quest.PickUp, true, true);
                 break;
         }
 

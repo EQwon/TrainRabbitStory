@@ -261,9 +261,9 @@ public class UIManager : MonoBehaviour
         rejectQuestButton.SetActive(false);
 
         //퀘스트 수락 전달
-        int questNum = (int)currentInteractBunny.GetComponent<Dialogue>().quest;
-        GameManager.instance.gameObject.GetComponent<QuestManager>().isAccept[questNum] = true;
-        Debug.Log(questNum + "번째 퀘스트를 수락합니다.");
+        Quest quest = currentInteractBunny.GetComponent<Dialogue>().quest;
+        QuestManager.instance.ChangeQuestState(quest, true, false);
+        Debug.Log(quest.ToString() + " 퀘스트를 수락합니다.");
 
         //수락시 대사 출력
         //currentDialogue.AddRange(currentInteractBunny.GetComponent<Dialogue>().DialogForNow());

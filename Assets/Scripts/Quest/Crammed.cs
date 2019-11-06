@@ -172,7 +172,7 @@ public class Crammed : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
 
-        QuestManager.instance.isSuccess[(int)Quest.Crammed] = true;
+        QuestManager.instance.ChangeQuestState(Quest.Crammed, true, true);
         QuestManager.instance.BackToNoraml();
         UIManager.instance.StartTalk();
     }

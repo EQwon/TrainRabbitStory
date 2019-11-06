@@ -17,7 +17,7 @@ public class PickUp : MonoBehaviour
 
     private void Update()
     {
-        if (QuestManager.instance.isSuccess[(int)Quest.PickUp] == true && QuestManager.instance.isAccept[(int)Quest.PickUp] == false)
+        if (QuestManager.instance.GetQuestState_Success(Quest.PickUp) == true && QuestManager.instance.GetQuestState_Accept(Quest.PickUp) == false)
         {
             Destroy(gameObject.transform.parent.gameObject);
         }

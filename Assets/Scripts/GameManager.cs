@@ -79,8 +79,8 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region TrainState
-    private bool isTalking = false;
-    private bool isQuesting = false;
+    [SerializeField] private bool isTalking = false;
+    [SerializeField] private bool isQuesting = false;
     private bool isCellChanging = false;
 
     public bool IsTalking { set { isTalking = value; ChangeTrainState(); } }
