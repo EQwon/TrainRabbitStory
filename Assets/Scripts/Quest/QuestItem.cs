@@ -8,12 +8,12 @@ public class QuestItem : MonoBehaviour
 
     public Name itemName;
 
-    public void GetItem()
+    public void GetQuestItem()
     {
         switch (itemName)
         {
             case Name.handkerchief:
-                QuestManager.instance.ChangeQuestState(Quest.PickUp, true, true);
+                QuestManager.instance.GetQuest(QuestName.PickUp).ChangeQuestState(true, true);
                 break;
         }
 

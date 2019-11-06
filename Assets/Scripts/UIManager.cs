@@ -221,7 +221,7 @@ public class UIManager : MonoBehaviour
         {
             int questNum = int.Parse(currentDialogue[currentDialogNum][4]);
 
-            QuestManager.instance.ChangeQuestState((Quest)questNum, false, true);
+            QuestManager.instance.GetQuest((QuestName)questNum).ChangeQuestState(false, true);
             GameManager.instance.IsQuesting = false;
         }
         else if (currentDialogue[currentDialogNum][3] == "Item")    // 아이템일 경우
@@ -250,7 +250,7 @@ public class UIManager : MonoBehaviour
         InitUI();
         Player.instance.joystick.StopMoving();
         GameManager.instance.IsTalking = false;
-        QuestManager.instance.StartUnperfomedQuest();
+        QuestManager.instance.StartInstantQuest();
     }
 
     public void AcceptQuest()
@@ -262,8 +262,8 @@ public class UIManager : MonoBehaviour
 
         //퀘스트 수락 전달
         Quest quest = currentInteractBunny.GetComponent<Dialogue>().quest;
-        QuestManager.instance.ChangeQuestState(quest, true, false);
-        Debug.Log(quest.ToString() + " 퀘스트를 수락합니다.");
+        QuestManager.instance.GetQuest(quest.Name).ChangeQuestState(true, false);
+        Debug.Log(quest.Name.ToString() + " 퀘스트를 수락합니다.");
 
         //수락시 대사 출력
         //currentDialogue.AddRange(currentInteractBunny.GetComponent<Dialogue>().DialogForNow());

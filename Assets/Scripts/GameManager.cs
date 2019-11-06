@@ -127,7 +127,6 @@ public class GameManager : MonoBehaviour
 
             TimeManager.timeScale = 1;
             GetComponent<QuestManager>().enabled = true;
-            QuestManager.instance.Init();
 
             UIManager.instance.ShowOpeningStory();
         }

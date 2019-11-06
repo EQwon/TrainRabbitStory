@@ -14,12 +14,4 @@ public class PickUp : MonoBehaviour
 
         Instantiate(handkerchief, new Vector3(spawnPosX, spawnPosY, 0), Quaternion.identity);
     }
-
-    private void Update()
-    {
-        if (QuestManager.instance.GetQuestState_Success(Quest.PickUp) == true && QuestManager.instance.GetQuestState_Accept(Quest.PickUp) == false)
-        {
-            Destroy(gameObject.transform.parent.gameObject);
-        }
-    }
 }

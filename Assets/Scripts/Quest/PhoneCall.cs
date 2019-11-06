@@ -154,7 +154,7 @@ public class PhoneCall : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
-        QuestManager.instance.ChangeQuestState(Quest.PhoneCall, true, true);
+        QuestManager.instance.GetQuest(QuestName.PhoneCall).ChangeQuestState(true, true);
         QuestManager.instance.BackToNoraml();
         UIManager.instance.StartTalk();
     }

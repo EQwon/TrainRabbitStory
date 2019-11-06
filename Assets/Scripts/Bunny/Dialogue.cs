@@ -57,7 +57,7 @@ public class Dialogue : MonoBehaviour
         }
         else
         {
-            dialogCnt = QuestManager.instance.State(quest);
+            dialogCnt = (int)QuestManager.instance.GetQuest(quest.Name).State();
         }
 
         // 해당 대화 번호에 대화가 있으면

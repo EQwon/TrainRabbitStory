@@ -108,7 +108,7 @@ public class Player : MonoBehaviour
     {
         if (coll.gameObject.tag == "Item")
         {
-            coll.gameObject.GetComponent<QuestItem>().GetItem();
+            coll.gameObject.GetComponent<QuestItem>().GetQuestItem();
         }
     }
 

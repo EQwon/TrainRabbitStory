@@ -3,17 +3,58 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public enum Quest { None, Tutorial, PhoneCall, PickUp, Crammed };
+public enum QuestName{ Tutorial, PhoneCall, PickUp, Crammed };
+public enum QuestState { BeforeQuest, AcceptQuest, SuccessQuest, AfterQuest };
+
+public class Quest
+{
+    private QuestName name;
+    private bool isAccept;
+    private bool isSuccess;
+    private bool isInstant;
+
+    Quest(QuestName name, bool isAccept = false, bool isSuccess = false, bool isInstant = false)
+    {
+        this.name = name;
+        this.isAccept = isAccept;
+        this.isSuccess = isSuccess;
+        this.isInstant = isInstant;
+    }
+
+    public QuestName Name { get { return name; } }
+    public bool IsAccpet { get { return isAccept; } }
+    public bool IsSuccess { get { return isSuccess; } }
+    public bool IsInstant { get { return isInstant; } }
+
+    public void ChangeQuestState(bool accept, bool success)
+    {
+        isAccept = accept;
+        isSuccess = success;
+    }
+
+    public QuestState State()
+    {
+        if (isAccept == false)
+        {
+            if (isSuccess == false) return QuestState.BeforeQuest;
+            else return QuestState.AfterQuest;
+        }
+        else
+        {
+            if (isSuccess == false) return QuestState.AcceptQuest;
+            else return QuestState.SuccessQuest;
+        }
+    }
+}
 
 public class QuestManager : MonoBehaviour
 {
     public static QuestManager instance = null;
 
-    [SerializeField] private List<bool> isAccept = new List<bool>();
-    [SerializeField] private List<bool> isSuccess = new List<bool>();
+    private List<Quest> quests = new List<Quest>();
 
     public GameObject questCanvasPrefab;
-    private GameObject questCanvas;
+    private GameObject questCanvas = null;
 
     private void Awake()
     {
@@ -27,78 +68,59 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    public void Init()
+    public void AddQuest(Quest myQuest)
     {
-        isAccept.Clear();
-        isSuccess.Clear();
-        int n = Enum.GetNames(typeof(Quest)).Length;
+        quests.Add(myQuest);
+    }
 
-        for (int i = 0; i < n; i++)
+    public Quest GetQuest(QuestName name)
+    {
+        foreach (Quest quest in quests)
         {
-            isAccept.Add(false);
-            isSuccess.Add(false);
-
-            if (i == (int)Quest.Tutorial && GameManager.instance.Stage == 0)
-            {
-                isAccept[i] = true;
-                isSuccess[i] = true;
-            }
-        }
-    }
-
-    public int State(Quest quest)
-    {
-        if (isAccept[(int)quest] == false)
-        {
-            if (isSuccess[(int)quest] == false) return 0;
-            else return 3;
-        }
-        else
-        {
-            if (isSuccess[(int)quest] == false) return 1;
-            else return 2;
-        }
-    }
-
-    public bool GetQuestState_Success(Quest quest)
-    {
-        return isSuccess[(int)quest];
-    }
-
-    public bool GetQuestState_Accept(Quest quest)
-    {
-        return isAccept[(int)quest];
-    }
-
-    public void ChangeQuestState(Quest quest, bool accept, bool success)
-    {
-        isAccept[(int)quest] = accept;
-        isSuccess[(int)quest] = success;
-    }
-
-    public void StartUnperfomedQuest()
-    {
-        int questNum = GetUnperformQuest();
-
-        if (GameManager.instance.IsQuesting == true) return;
-        if (questNum == 0) return;
-        
-        if (questNum != 1) // 튜토리얼은 캔버스 생성 안함.
-        {
-            questCanvas = Instantiate(questCanvasPrefab);
-            questCanvas.GetComponent<QuestCanvasController>().ActivateCanvas(questNum);
+            if (quest.Name == name) return quest;
         }
 
+        Debug.LogError("해당하는 퀘스트를 찾을 수 없습니다.");
+        return null;
+    }
+
+    public void StartInstantQuest()
+    {
+        if(questCanvas == null) questCanvas = Instantiate(questCanvasPrefab);
+
+        Quest targetQuest = null;
+
+        foreach (Quest quest in ProgressQuestList())
+        {
+            if (quest.IsInstant) targetQuest = quest;
+        }
+
+        if (targetQuest == null) return;
+
+        questCanvas.GetComponent<QuestCanvasController>().ActivateCanvas((int)targetQuest.Name);
         GameManager.instance.IsQuesting = true;
     }
 
-    private int GetUnperformQuest()
+    private List<Quest> ProgressQuestList()
     {
-        for (int i = 0; i < isAccept.Count; i++)
+        List<Quest> returnList = new List<Quest>();
+
+        for (int i = 0; i < quests.Count; i++)
         {
-            if (isAccept[i] == true) return i;
+            if (quests[i].State() == QuestState.AcceptQuest) returnList.Add(quests[i]);
         }
-        return 0;
+        return returnList;
+    }
+
+    private List<Quest> SuccessQuestList()
+    {
+        List<Quest> returnList = new List<Quest>();
+
+        for (int i = 0; i < quests.Count; i++)
+        {
+            if (quests[i].State() == QuestState.SuccessQuest) returnList.Add(quests[i]);
+        }
+        return returnList;
     }
 
     public void BackToNoraml()

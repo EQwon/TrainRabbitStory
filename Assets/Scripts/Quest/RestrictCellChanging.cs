@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class RestrictCondition
 {
-    public Quest questName;
+    public Quest quest;
     public bool isAccept;
     public bool isSuccess;
     public string warningText;
@@ -21,7 +21,8 @@ public class RestrictCellChanging : MonoBehaviour
 
         for(int i = 0; i < cond.Count; i++)
         {
-            if (QuestManager.instance.GetQuestState_Accept(cond[i].questName) == cond[i].isAccept && QuestManager.instance.GetQuestState_Success(cond[i].questName) == cond[i].isSuccess)
+            if (QuestManager.instance.GetQuest(cond[i].quest.Name).IsAccpet == cond[i].isAccept
+                && QuestManager.instance.GetQuest(cond[i].quest.Name).IsSuccess == cond[i].isSuccess)
             {
                 Player.instance.gameObject.transform.position -= new Vector3(0.5f, 0, 0);
                 UIManager.instance.Warning(cond[i].warningText);
