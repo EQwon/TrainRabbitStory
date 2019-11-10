@@ -12,7 +12,7 @@
 2. 퀘스트 수락 후 완료 시
 ===
 벼락 토끼/고마워!/CrammedBunny_Bust
-벼락 토끼/너는 내 퀘스트를 완료했단다!/CrammedBunny_Bust/Quest/4
+벼락 토끼/너는 내 퀘스트를 완료했단다!/CrammedBunny_Bust/Quest/3
 ===
 
 3. 퀘스트 완료 이후

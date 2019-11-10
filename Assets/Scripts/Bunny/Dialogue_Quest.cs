@@ -5,14 +5,19 @@ using UnityEngine;
 public class Dialogue_Quest : Dialogue
 {
     [SerializeField] private QuestName questName;
+    [SerializeField] private List<bool> questState;
 
     private Quest myQuest;
 
     public Quest MyQuest { get { return myQuest; } }
 
-    private void Start()
+    protected override void Start()
     {
-        myQuest = new Quest(questName, true, false, false);
+        base.Start();
+
+        if (questState.Count == 3)
+            myQuest = new Quest(questName, questState[0], questState[1], questState[2]);
+        else myQuest = new Quest(questName);
     }
 
     public override List<List<string>> DialogForNow()

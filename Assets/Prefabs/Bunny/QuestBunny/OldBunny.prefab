@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 790085320554752588}
   - component: {fileID: 5617303337269199443}
   - component: {fileID: 8381828369585184759}
-  - component: {fileID: 2351578355204196158}
+  - component: {fileID: 8183632332049086285}
   m_Layer: 9
   m_Name: OldBunny
   m_TagString: Bunny
@@ -204,7 +204,7 @@ MonoBehaviour:
   hp: 0
   isInteractable: 1
   isInvincible: 0
---- !u!114 &2351578355204196158
+--- !u!114 &8183632332049086285
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -213,14 +213,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 4880791886453202666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f792b91061ddd5f46a83f70c6a757077, type: 3}
+  m_Script: {fileID: 11500000, guid: e0b63e8d7953aab4ca407b3e0acc41f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueAsset: {fileID: 0}
+  dialogueAsset: {fileID: 4900000, guid: d0b762eba9bbdc744964d737b225c5a5, type: 3}
   nowTalkCnt: 0
-  fixDialogueAsset: {fileID: 0}
-  presentDialogueAsset: {fileID: 0}
-  myName: 0
+  questName: 2
+  questState: 
 --- !u!1001 &488296583349007593
 PrefabInstance:
   m_ObjectHideFlags: 0

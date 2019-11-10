@@ -11,8 +11,10 @@ public class Dialogue_Story : Dialogue
     private List<List<List<string>>> fixDialogues = new List<List<List<string>>>();
     private List<List<List<string>>> presentDialogues = new List<List<List<string>>>();
 
-    private void Start()
+    protected override void Start()
     {
+        base.Start();
+
         fixDialogues = Parser.DialogParse(fixDialogueAsset);
         presentDialogues = Parser.DialogParse(presentDialogueAsset);
     }

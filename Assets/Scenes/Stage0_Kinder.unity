@@ -2606,11 +2606,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cond:
-  - questName: 3
+  - questName: 2
     isAccept: 1
     isSuccess: 0
     warningText: "\uD560\uC544\uBC84\uC9C0\uC758 \uBD80\uD0C1\uC744 \uB4E4\uC5B4\uC8FC\uC790!"
-  - questName: 3
+  - questName: 2
     isAccept: 1
     isSuccess: 1
     warningText: "\uD560\uC544\uBC84\uC9C0\uC5D0\uAC8C \uC190\uC218\uAC74\uC744 \uAC00\uC838\uB2E4
@@ -2836,7 +2836,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cond:
-  - questName: 1
+  - questName: 0
     isAccept: 1
     isSuccess: 1
     warningText: "\uB2E4\uB978 \uD1A0\uB07C\uB4E4\uC5D0\uAC8C \uB9D0\uC744 \uAC78\uC5B4\uBCF4\uC790!"
@@ -6162,7 +6162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cond:
-  - questName: 2
+  - questName: 1
     isAccept: 0
     isSuccess: 0
     warningText: "\uCC29\uD574\uBCF4\uC774\uB294 \uD1A0\uB07C\uC5D0\uAC8C \uD578\uB4DC\uD3F0\uC744

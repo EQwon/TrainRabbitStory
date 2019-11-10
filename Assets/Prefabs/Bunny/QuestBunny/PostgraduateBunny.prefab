@@ -221,6 +221,7 @@ MonoBehaviour:
   dialogueAsset: {fileID: 4900000, guid: dc5bed0e35a320f45a2e27f36d3e8b66, type: 3}
   nowTalkCnt: 0
   questName: 0
+  questState: 010100
 --- !u!114 &-6165351878600593405
 MonoBehaviour:
   m_ObjectHideFlags: 0

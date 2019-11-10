@@ -70,7 +70,7 @@ GameObject:
   - component: {fileID: 790085320554752588}
   - component: {fileID: 5617303337269199443}
   - component: {fileID: 8381828369585184759}
-  - component: {fileID: -6711230530590267747}
+  - component: {fileID: 9095804425179495537}
   m_Layer: 9
   m_Name: KindBunny
   m_TagString: Bunny
@@ -204,7 +204,7 @@ MonoBehaviour:
   hp: 0
   isInteractable: 1
   isInvincible: 0
---- !u!114 &-6711230530590267747
+--- !u!114 &9095804425179495537
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -213,14 +213,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 4880791886453202666}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f792b91061ddd5f46a83f70c6a757077, type: 3}
+  m_Script: {fileID: 11500000, guid: 0e5bc17faa37a3945961c5880082fa12, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueAsset: {fileID: 0}
+  dialogueAsset: {fileID: 4900000, guid: 4f5b683c00a293e499a1e23db9df8c25, type: 3}
   nowTalkCnt: 0
-  fixDialogueAsset: {fileID: 0}
-  presentDialogueAsset: {fileID: 0}
-  myName: 0
 --- !u!1001 &7895551866132323676
 PrefabInstance:
   m_ObjectHideFlags: 0

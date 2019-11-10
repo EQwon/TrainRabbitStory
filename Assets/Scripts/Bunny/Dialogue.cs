@@ -16,7 +16,7 @@ public class Dialogue : MonoBehaviour
 
     protected List<List<List<string>>> dialogues = new List<List<List<string>>>();
 
-    private void Start()
+    protected virtual void Start()
     {
         dialogues = Parser.DialogParse(dialogueAsset);
 

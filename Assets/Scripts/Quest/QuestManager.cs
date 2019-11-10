@@ -19,6 +19,8 @@ public class Quest
         this.isAccept = isAccept;
         this.isSuccess = isSuccess;
         this.isInstant = isInstant;
+
+        QuestManager.instance.AddQuest(this);
     }
 
     public QuestName Name { get { return name; } }
