@@ -125,8 +125,8 @@ public class UIManager : MonoBehaviour
         GameManager.instance.UseItem(present, false);       // 선물한 아이템 사용
         int presentNum = present.info.indexNum;
 
-        // presentNum - 1인 이유는 아이템 리스트는 1부터 시작하고 대화는 0부터 시작해서입니다.
-        currentDialogue = interactBunny.GetComponent<Dialogue>().DialogForPresent(presentNum - 1);
+        // 해당하는 번호에 대한 대사를 가져온다.
+        currentDialogue = interactBunny.GetComponent<Dialogue_Story>().DialogForPresent(presentNum);
         if (currentDialogue.Count == 0) return;
 
         // 마지막으로 대화 상태로 UI를 조정합니다.
@@ -234,7 +234,7 @@ public class UIManager : MonoBehaviour
         {
             int changeAmount = int.Parse(currentDialogue[currentDialogNum][4]);
 
-            GameManager.instance.AffinityChange(currentInteractBunny.GetComponent<Dialogue>().myName, changeAmount);
+            GameManager.instance.AffinityChange(currentInteractBunny.GetComponent<Dialogue_Story>().myName, changeAmount);
         }
         else if (currentDialogue[currentDialogNum][3] == "Clear")   // 클리어일 경우
         {
@@ -261,7 +261,7 @@ public class UIManager : MonoBehaviour
         rejectQuestButton.SetActive(false);
 
         //퀘스트 수락 전달
-        Quest quest = currentInteractBunny.GetComponent<Dialogue>().quest;
+        Quest quest = currentInteractBunny.GetComponent<Dialogue_Quest>().MyQuest;
         QuestManager.instance.GetQuest(quest.Name).ChangeQuestState(true, false);
         Debug.Log(quest.Name.ToString() + " 퀘스트를 수락합니다.");
 

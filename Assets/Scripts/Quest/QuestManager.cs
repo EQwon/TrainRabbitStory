@@ -13,7 +13,7 @@ public class Quest
     private bool isSuccess;
     private bool isInstant;
 
-    Quest(QuestName name, bool isAccept = false, bool isSuccess = false, bool isInstant = false)
+    public Quest(QuestName name, bool isAccept = false, bool isSuccess = false, bool isInstant = false)
     {
         this.name = name;
         this.isAccept = isAccept;
