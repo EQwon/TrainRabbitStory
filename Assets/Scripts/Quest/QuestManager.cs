@@ -86,7 +86,7 @@ public class QuestManager : MonoBehaviour
         return null;
     }
 
-    public void StartInstantQuest()
+    public bool StartInstantQuest()
     {
         if(questCanvas == null) questCanvas = Instantiate(questCanvasPrefab);
 
@@ -97,10 +97,15 @@ public class QuestManager : MonoBehaviour
             if (quest.IsInstant) targetQuest = quest;
         }
 
-        if (targetQuest == null) return;
+        if (targetQuest == null) return false;
 
         questCanvas.GetComponent<QuestCanvasController>().ActivateCanvas((int)targetQuest.Name);
         GameManager.instance.IsQuesting = true;
+        return true;
+    }
+
+    public void UpdateQuestList()
+    {
     }
 
     private List<Quest> ProgressQuestList()

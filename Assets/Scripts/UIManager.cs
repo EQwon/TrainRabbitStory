@@ -250,7 +250,12 @@ public class UIManager : MonoBehaviour
         InitUI();
         Player.instance.joystick.StopMoving();
         GameManager.instance.IsTalking = false;
-        QuestManager.instance.StartInstantQuest();
+
+        if (!QuestManager.instance.StartInstantQuest())
+        {
+            QuestManager.instance.UpdateQuestList();
+        }
+
     }
 
     public void AcceptQuest()
