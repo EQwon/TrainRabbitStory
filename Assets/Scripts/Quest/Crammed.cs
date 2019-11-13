@@ -4,13 +4,22 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [System.Serializable]
-public struct Question
+public struct Problem
 {
-    public string question;
-    public string answer1;
-    public string answer2;
-    public string answer3;
-    public string answer4;
+    private string question;
+    private List<string> examples;
+    private int answer;
+
+    public string Question { get { return question; } }
+    public List<string> Examples { get { return examples; } }
+    public int Answer { get { return answer; } }
+
+    public Problem(string question, List<string> examples, int answer)
+    {
+        this.question = question;
+        this.examples = examples;
+        this.answer = answer;
+    }
 }
 
 public class Crammed : MonoBehaviour
@@ -19,25 +28,27 @@ public class Crammed : MonoBehaviour
     private State state;
 
     [Header("Resources")]
-    public List<Sprite> countDownImage;
-    public int limitTime;
-    public List<Sprite> noteImage;
-    public List<Question> questions;
+    [SerializeField] private List<Sprite> countDownImage;
+    [SerializeField] private int limitTime;
+    [SerializeField] private List<Sprite> noteImage;
+    [SerializeField] private TextAsset problemNote;
+    [SerializeField] private List<Problem> problems;
 
     [Header("Holder")]
-    public GameObject countDown;
-    public GameObject timer;
-    public GameObject note;
-    public GameObject test;
-    public List<Text> testText;
-    public GameObject checkMark;
-    public GameObject gradeCard;
-    public List<Text> gradeText;
+    [SerializeField] private GameObject countDown;
+    [SerializeField] private GameObject timer;
+    [SerializeField] private GameObject note;
+    [SerializeField] private GameObject test;
+    [SerializeField] private List<Text> testText;
+    [SerializeField] private GameObject checkMark;
+    [SerializeField] private GameObject gradeCard;
+    [SerializeField] private List<Text> gradeText;
     
     private float nowTime;
     private Text timerText;
     private int noteNum = 0;
-    private int testNum = 0;
+    private int problemNum = 0;
+    private int answerCnt = 0;
 
     private void Start()
     {
@@ -45,6 +56,7 @@ public class Crammed : MonoBehaviour
         state = State.Ready;
         timerText = timer.GetComponentInChildren<Text>();
         timerText.text = "6.00 s";
+        problems = Parser.CrammedParse(problemNote);
         nowTime = 0;
 
         countDown.SetActive(true);
@@ -113,7 +125,7 @@ public class Crammed : MonoBehaviour
 
     private void ShowTest()
     {
-        if (testNum == questions.Count)
+        if (problemNum == problems.Count)
         {
             state = State.Grading;
 
@@ -123,15 +135,13 @@ public class Crammed : MonoBehaviour
             return;
         }
 
-        string[] temp;
-        temp = questions[testNum].question.Split('!');
-        if (temp.Length <= 1) testText[0].text = (testNum + 1) + ". " + questions[testNum].question;
-        else testText[0].text = (testNum + 1) + ". " + temp[0] + "\n <size=45>" + temp[1] + "</size>";
+        Problem problem = problems[problemNum];
 
-        testText[1].text = "가. " + questions[testNum].answer1.Replace("<>", "\n");
-        testText[2].text = "나. " + questions[testNum].answer2.Replace("<>", "\n");
-        testText[3].text = "다. " + questions[testNum].answer3.Replace("<>", "\n");
-        testText[4].text = "라. " + questions[testNum].answer4.Replace("<>", "\n");
+        testText[0].text = problem.Question;
+        testText[1].text = problem.Examples[0];
+        testText[2].text = problem.Examples[1];
+        testText[3].text = problem.Examples[2];
+        testText[4].text = problem.Examples[3];
     }
 
     public void NextTest(int answerNum)
@@ -146,8 +156,12 @@ public class Crammed : MonoBehaviour
             testText[i].GetComponent<Button>().interactable = false;
         }
 
-        checkMark.SetActive(true);
-        checkMark.GetComponent<RectTransform>().anchoredPosition = testText[answerNum].GetComponent<RectTransform>().anchoredPosition - new Vector2(250, 0);
+        if (answerNum == problems[problemNum].Answer)
+        {
+            answerCnt += 1;
+            checkMark.SetActive(true);
+            checkMark.GetComponent<RectTransform>().anchoredPosition = testText[answerNum].GetComponent<RectTransform>().anchoredPosition - new Vector2(250, 0);
+        }
 
         yield return new WaitForSeconds(1f);
 
@@ -157,20 +171,29 @@ public class Crammed : MonoBehaviour
         }
 
         checkMark.SetActive(false);
-        testNum += 1;
+        problemNum += 1;
     }
 
     private void ShowGrade()
     {
-        gradeText[0].text = "테슽";
-        gradeText[1].text = "S+";
+        string grade = "";
+
+        if (answerCnt == 0) grade = "F";
+        else if (1 <= answerCnt && answerCnt <= 3) grade = "C+";
+        else if (4 <= answerCnt && answerCnt <= 6) grade = "B+";
+        else if (7 <= answerCnt && answerCnt <= 9) grade = "A";
+        else if (answerCnt == 10) grade = "A+";
+
+
+        gradeText[0].text = (answerCnt * 10).ToString() + " 점";
+        gradeText[1].text = grade;
 
         StartCoroutine(EndTest());
     }
 
     private IEnumerator EndTest()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2.5f);
 
         QuestManager.instance.GetQuest(QuestName.Crammed).ChangeQuestState(true, true);
         QuestManager.instance.BackToNoraml();

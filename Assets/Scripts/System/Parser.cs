@@ -79,4 +79,41 @@ public class Parser
 
         return returnList;
     }
+
+    public static List<Problem> CrammedParse(TextAsset data)
+    {
+        List<Problem> ret = new List<Problem>();
+
+        StringReader sr = new StringReader(data.text);
+        string source = sr.ReadLine();  // 먼저 한줄을 읽는다. 
+        string[] values;                // 구분된 데이터들을 저장할 배열 (values[0]이면 첫번째 데이터 )
+
+        while (source != null)
+        {
+            Problem problem;
+
+            string question = "";
+            List<string> examples = new List<string>();
+            int answer;
+
+            question = source;
+
+            source = sr.ReadLine();
+            values = source.Split('\t'); // tab으로 구분
+            foreach (string example in values)
+            {
+                examples.Add(example);
+            }
+
+            source = sr.ReadLine();
+            answer = int.Parse(source);
+
+            problem = new Problem(question, examples, answer);
+            ret.Add(problem);
+
+            source = sr.ReadLine();    // 한줄 읽는다.
+        }
+
+        return ret;
+    }
 }

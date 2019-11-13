@@ -2403,7 +2403,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8615268844263514594
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3355,7 +3355,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8538075742124818843
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3859,13 +3859,14 @@ GameObject:
   - component: {fileID: 7320058673547863420}
   - component: {fileID: 1167883434899857823}
   - component: {fileID: 3933554080358385998}
+  - component: {fileID: 3429339869255829154}
   m_Layer: 5
   m_Name: CrammedPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &514425648290214331
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3947,68 +3948,8 @@ MonoBehaviour:
   noteImage:
   - {fileID: 21300000, guid: 61a52c81c337d234c8b32344002931ca, type: 3}
   - {fileID: 21300000, guid: ac5a14babcce55140a5dd7d4811945a5, type: 3}
-  - {fileID: 21300000, guid: 067bf7a435fc94f41a84ab644b5c82d7, type: 3}
-  questions:
-  - question: "\uB9F9\uC790\uC758 \uC774\uB984\uC740 \uBB34\uC5C7\uC774\uBA70 \uADF8
-      \uB73B\uC73C\uB85C \uB9DE\uB294 \uAC83\uC740?"
-    answer1: "\uB9F9\uACC4 - \uBC14\uD034"
-    answer2: "\uB9F9\uAC00 - \uC218\uB808"
-    answer3: "\uB9F9\uD658 - \uC21C\uD658"
-    answer4: "\uB9F9\uACBD - \uACF5\uACBD"
-  - question: "\uC778, \uC758, \uC608, \uC9C0\uC758 \uB2E8\uCD08\uB85C \uC0BC\uC544\uC57C
-      \uD558\uB294 \uB124\uAC00\uC9C0\uB294?"
-    answer1: "\uCE21\uC740 \uC218\uC624 \uC0AC\uC591 \uC2DC\uBE44"
-    answer2: "\uCE21\uC740 \uACF5\uACBD \uC0AC\uC591 \uC2DC\uBE44"
-    answer3: "\uCE21\uC740 \uC2DC\uACBD \uCD08\uC0AC \uC218\uC624"
-    answer4: "\uCE21\uC740 \uC911\uC6A9 \uACF5\uACBD \uC0AC\uC591"
-  - question: "\uB9F9\uC790\uB294 OO\uC655\uC744 \uBB34\uC2DC\uD588\uB2E4. \uC655\uC758
-      \uC774\uB984\uACFC \uADF8 \uC774\uC720\uB294?"
-    answer1: "\uC591\uACBD\uC655 - \uBABB\uC0DD\uAE40"
-    answer2: "\uC591\uD61C\uC655 - \uC655\uAC19\uC9C0 \uC54A\uC74C"
-    answer3: "\uC591\uD6A8\uC655 - \uC704\uC5C4\uC774 \uC5C6\uC74C"
-    answer4: "\uC591\uC131\uC655 - \uB9D0\uC744 \uB354\uB4EC\uC74C"
-  - question: "\uBE48\uCE78\uC5D0 \uB4E4\uC5B4\uAC08 \uB2E8\uC5B4\uB294?!  OO \uBC30\uC6B0\uACE0
-      OOO\uB9D0\uD568\uC740 \uC7A5\uCC28 \uB3CC\uC774\uCF1C\uC11C OOO\uC744 \uB9D0\uD558\uACE0\uC790
-      \uD574\uC11C\uC774\uB2E4."
-    answer1: "\uB113\uAC8C - \uC138\uC2EC\uD788 - \uC9C4\uC2E4\uB428"
-    answer2: "\uB110\uB9AC - \uC0C1\uC138\uD788 - \uC694\uC57D\uD568"
-    answer3: "\uB110\uB9AC - \uC9C4\uC2E4\uB428 - \uC694\uC57D\uD568"
-    answer4: "\uAE4A\uAC8C - \uC0C1\uC138\uD788 - \uC694\uC57D\uD568"
-  - question: "\uBE48\uCE78\uC5D0 \uB4E4\uC5B4\uAC04 \uB2E8\uC5B4\uB294?!  OO\uC774OO\uC9C0,
-      \uC7A5\uC774OO\uC544."
-    answer1: "\uBC15\uD559 - \uC0C1\uC124 - \uBC18\uC124"
-    answer2: "\uD64D\uC775 - \uC138\uC124 - \uBC18\uC124"
-    answer3: "\uBC15\uD55C - \uC138\uC124 - \uCE21\uC124"
-    answer4: "\uD64D\uC775 - \uC0C1\uC124 - \uCE21\uC124"
-  - question: "\uAD70\uC790\uB294 \uC774\uAC83\uC744 \uB9C8\uC74C\uC5D0 \uB450\uAE30\uC5D0
-      \uC77C\uBC18 \uBC31\uC131\uACFC \uB2E4\uB974\uB2E4."
-    answer1: "\uC778 - \uC758"
-    answer2: "\uC778 - \uC608"
-    answer3: "\uC778 - \uC9C0"
-    answer4: "\uC778 - \uC2E0"
-  - question: "'\uC778'\uD55C \uC0AC\uB78C\uC740 \uB0A8\uC744 OO\uD558\uACE0 '\uC608'\uAC00
-      \uC788\uB294 \uC0AC\uB78C\uC740 \uB0A8\uC744 OO\uD55C\uB2E4."
-    answer1: "\uC0AC\uB791 - \uACF5\uACBD"
-    answer2: "\uC0AC\uB791 - \uC874\uACBD"
-    answer3: "\uC874\uACBD - \uC0AC\uB791"
-    answer4: "\uACF5\uACBD - \uC0AC\uB791"
-  - question: "\uB0B4\uAC00 \uB0A8\uC5D0\uAC8C \uC21C\uC11C\uB300\uB85C O, O, O \uD588\uB294\uC9C0
-      \uB3CC\uC774\uCF1C\uBD10\uC57C\uD55C\uB2E4."
-    answer1: "\uC778, \uC758, \uC608"
-    answer2: "\uC758, \uC608, \uC9C0"
-    answer3: "\uC778, \uC758, \uCDA9"
-    answer4: "\uC758, \uC9C0, \uCDA9"
-  - question: "\uAD70\uC790\uB294 OOOO\uD558\uB294 \uAC71\uC815\uC740 \uC788\uC5B4\uB3C4
-      OOOO\uC758 \uAC71\uC815\uC740 \uC5C6\uB2E4."
-    answer1: "\uBC18\uB098\uC808\uAC04 - \uD558\uB8E8\uC544\uCE68"
-    answer2: "\uC885\uC77C\uD1A0\uB85D - \uC885\uC2E0\uD1A0\uB85D"
-    answer3: "\uD55C\uD3C9\uC0DD\uAC04 - \uD558\uB8E8\uC800\uB141"
-    answer4: "\uC885\uC2E0\uD1A0\uB85D - \uD558\uB8E8\uC544\uCE68"
-  - question: "9\uBC88 \uBB38\uC81C\uC758 \uC6D0\uBB38\uC744 \uACE0\uB974\uC2DC\uC624."
-    answer1: "\uC2DC\uACE0\uAD70\uC790\uC720\uC77C\uC0DD\uC9C0\uC6B0<>    \uBB34\uC77C\uC57C\uC9C0\uD658"
-    answer2: "\uC2DC\uACE0\uB2C8\uC704\uBC84\uB108\uBB34\uBA4B\uC838<>    \uC5D0\uC77C\uB9AC\uC5B8\uB3C4"
-    answer3: "\uC2DC\uACE0\uAD70\uC790\uC720\uD3C9\uC0DD\uC9C0\uD658<>    \uBB34\uC77C\uC77C\uC9C0\uC6B0"
-    answer4: "\uC2DC\uACE0\uAD70\uC790\uC720\uC885\uC2E0\uC9C0\uC6B0<>    \uBB34\uC77C\uC870\uC9C0\uD658"
+  problemNote: {fileID: 4900000, guid: 7f958223d16bf2944bf622c2908fde40, type: 3}
+  problems: []
   countDown: {fileID: 2611863069095378279}
   timer: {fileID: 4729925934237557650}
   note: {fileID: 8326281652711396797}
@@ -4024,6 +3965,102 @@ MonoBehaviour:
   gradeText:
   - {fileID: 6508923662137773962}
   - {fileID: 3102533494993945078}
+--- !u!82 &3429339869255829154
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8280814239489637663}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &8303807671370539252
 GameObject:
   m_ObjectHideFlags: 0
@@ -4229,6 +4266,7 @@ GameObject:
   - component: {fileID: 1014582448842217239}
   - component: {fileID: 5642495089676503172}
   - component: {fileID: 2421110156287608663}
+  - component: {fileID: 6853352954460612197}
   m_Layer: 5
   m_Name: Question
   m_TagString: Untagged
@@ -4251,10 +4289,10 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -170}
-  m_SizeDelta: {x: -200, y: 170}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 100, y: -170}
+  m_SizeDelta: {x: 1164, y: 0}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &5642495089676503172
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4298,6 +4336,20 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: "1. \uB9F9\uC790\uC758 \uC774\uB984\uC740 \uBB34\uC5C7\uC774\uBA70 \uADF8
     \uB73B\uC73C\uB85C \uB9DE\uB294 \uAC83\uC740?"
+--- !u!114 &6853352954460612197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8382336926411422786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1741964061, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_HorizontalFit: 0
+  m_VerticalFit: 2
 --- !u!1 &8853281744008438346
 GameObject:
   m_ObjectHideFlags: 0
