@@ -90,8 +90,6 @@ public class Parser
 
         while (source != null)
         {
-            Problem problem;
-
             string question = "";
             List<string> examples = new List<string>();
             int answer;
@@ -108,10 +106,52 @@ public class Parser
             source = sr.ReadLine();
             answer = int.Parse(source);
 
-            problem = new Problem(question, examples, answer);
+            Problem problem = new Problem(question, examples, answer);
             ret.Add(problem);
 
             source = sr.ReadLine();    // 한줄 읽는다.
+        }
+
+        return ret;
+    }
+
+    public static List<CarrotTalkDialogue> SkippingParse(TextAsset data)
+    {
+        List<CarrotTalkDialogue> ret = new List<CarrotTalkDialogue>();
+
+        StringReader sr = new StringReader(data.text);
+        string source = sr.ReadLine();  // 먼저 한줄을 읽는다. 
+        string[] values;                // 구분된 데이터들을 저장할 배열 (values[0]이면 첫번째 데이터 )
+
+        while (source != null)
+        {
+            string question = "";
+            List<string> answers = new List<string>();
+            List<int> points = new List<int>();
+            List<string> reactions = new List<string>();
+
+            values = source.Split('\t');
+            question = values[1];
+
+            for (int i = 0; i < 4; i++)
+            {
+                source = sr.ReadLine();
+                values = source.Split('\t');
+                answers.Add(values[1]);
+                points.Add(int.Parse(values[2]));
+            }
+
+            for (int i = 0; i < 4; i++)
+            {
+                source = sr.ReadLine();
+                values = source.Split('\t');
+                reactions.Add(values[1]);
+            }
+
+            CarrotTalkDialogue dialogue = new CarrotTalkDialogue(question, answers, points, reactions);
+            ret.Add(dialogue);
+
+            source = sr.ReadLine();
         }
 
         return ret;

@@ -1,0 +1,9 @@
+﻿Question	이것은 첫번째 질문입니다.	
+Answer	첫번째 답변	10
+Answer	제2의 답변	5
+Answer	답변! 그 세번째	2
+Answer	네번 엔딩 스토리	-5
+Reaction	첫번째 답변에 대한 반응	
+Reaction	제2의 반응	
+Reaction	반응! 그 세번째	
+Reaction	네번 스타트 스토리	
