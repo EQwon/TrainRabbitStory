@@ -1,18 +1,45 @@
-﻿Question	이것은 첫번째 질문입니다.
-Answer	첫번째 답변	10
-Answer	제2의 답변	5
-Answer	답변! 그 세번째	2
-Answer	네번 엔딩 스토리	-5
-Reaction	첫번째 답변에 대한 반응
-Reaction	제2의 반응
-Reaction	반응! 그 세번째
-Reaction	네번 스타트 스토리
-Question	이것은 두번째 질문입니다. 좀 긴 질문이죠. 알겠나요?!!
-Answer	첫번째 답변입니당	10
-Answer	제2의 답변이구요	5
-Answer	답변! 그 세번째! 하하	2
-Answer	네번 엔딩 스토리라인	-5
-Reaction	첫번째 답변에 대한 반응이 쵸큼 길어요
-Reaction	제2의 반응을 조금 길게 해보려고 합니다.
-Reaction	반응! 그 세번째는 좀 짧죠.
-Reaction	네번 스타트 스토리라인은 끝나지 않아! 이 가슴 속에! 하나가 되어 살아가!
+﻿Question	야채야, 쌤인데 너 지금 어디니?	
+Answer	어디긴요 쌤 맘속이죠 ><	20
+Answer	왜용?	10
+Answer	쌤은 어디세요?	-10
+Answer	히히 알아맞춰보세요	-20
+Reaction	아 진짜? ㅎㅎ 고건 몰랐넹 ㅎㅎ 	
+Reaction	왜라니ㅠ 너 안보여서 연락했다	
+Reaction	쌤은 교무실인데 우리 야채는 어디일까…	
+Reaction	싫은데?	
+Question	야채 오늘 야자하는 날인데 안 오니?	
+Answer	어... 좀만 있다가 가면 안될까요ㅠ	20
+Answer	ㅠㅠ.....	10
+Answer	아 맞다 오늘 야자하는 날!	-10
+Answer	네? 저 지금 학교인데요?	-20
+Reaction	음... 우리 야채가 무슨 일일까…?	
+Reaction	ㅜㅠ...???	
+Reaction	맨날 야자하는데 까먹었니...?	
+Reaction	지금 학교라고? ^^	
+Question	그래서 야채 지금 어디서 뭐하니?	
+Answer	쌤 저 진짜 학교에요 ㅠㅠㅠㅠㅠㅠ	-30
+Answer	피씨방이요... 	30
+Answer	ㅎㅎ.....	0
+Answer	쌤ㅠㅠㅠ 저 곧 갈게요ㅜㅜ	10
+Reaction	^^...
+Reaction	피씨방?	
+Reaction	ㅋㅋ?	
+Reaction	뭘 자꾸 금방 온대ㅠㅠ	
+Question	야채야 쌤한테 할 말 없니?	
+Answer	오늘 레벨업 마지막 날이라서요... 죄송해요..	30
+Answer	저 학교인데 왜 그러세요...ㅠㅠ 억울해용...	-30
+Answer	ㅠㅠ...	-10
+Answer	저 진짜 좀만 있다가 갈게요 진짜 진짜	10
+Reaction	음... 그래 사실대로 말해준건 고마워	
+Reaction	억울하다고?	
+Reaction	???????	
+Reaction	아니 어디냐고	
+Question	야채야, 이제 어떻게 할거니?	
+Answer	저 이제 영어 복습할건데요?	-30
+Answer	ㅎㅎ...	-10
+Answer	쌤, 저 2시간 안으로 갈게요 진짜 진짜	10
+Answer	죄송해요... 몰래 나와서...	20
+Reaction	쌤 지금 야채 책상 앞인데 야채는 어딨을까ㅋ	
+Reaction	그저 웃지요 ㅎㅎ 	
+Reaction	두고본다 김야채 ^^ 	
+Reaction	오늘만 봐줄게, 다음에는 몰래 나가지 마
