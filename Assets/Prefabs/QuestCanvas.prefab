@@ -2730,7 +2730,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 110}
-  m_SizeDelta: {x: 516.8, y: 410}
+  m_SizeDelta: {x: 516.8, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &431301619953750001
 CanvasRenderer:
@@ -4091,6 +4091,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   phoneScreen: {fileID: 809459827246324547}
+  answerButtons:
+  - {fileID: 2882945484049655201}
+  - {fileID: 7894821341616526514}
+  - {fileID: 4196400986994479933}
+  - {fileID: 4128449515417632042}
   answerTexts:
   - {fileID: 4949882498976613544}
   - {fileID: 2306052382749273926}

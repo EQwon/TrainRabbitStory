@@ -1,9 +1,18 @@
-﻿Question	이것은 첫번째 질문입니다.	
+﻿Question	이것은 첫번째 질문입니다.
 Answer	첫번째 답변	10
 Answer	제2의 답변	5
 Answer	답변! 그 세번째	2
 Answer	네번 엔딩 스토리	-5
-Reaction	첫번째 답변에 대한 반응	
-Reaction	제2의 반응	
-Reaction	반응! 그 세번째	
-Reaction	네번 스타트 스토리	
+Reaction	첫번째 답변에 대한 반응
+Reaction	제2의 반응
+Reaction	반응! 그 세번째
+Reaction	네번 스타트 스토리
+Question	이것은 두번째 질문입니다. 좀 긴 질문이죠. 알겠나요?!!
+Answer	첫번째 답변입니당	10
+Answer	제2의 답변이구요	5
+Answer	답변! 그 세번째! 하하	2
+Answer	네번 엔딩 스토리라인	-5
+Reaction	첫번째 답변에 대한 반응이 쵸큼 길어요
+Reaction	제2의 반응을 조금 길게 해보려고 합니다.
+Reaction	반응! 그 세번째는 좀 짧죠.
+Reaction	네번 스타트 스토리라인은 끝나지 않아! 이 가슴 속에! 하나가 되어 살아가!

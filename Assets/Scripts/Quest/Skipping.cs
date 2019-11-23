@@ -28,6 +28,7 @@ public class Skipping : MonoBehaviour
 {
     [Header("Object Holder")]
     [SerializeField] private GameObject phoneScreen;
+    [SerializeField] private List<Button> answerButtons;
     [SerializeField] private List<Text> answerTexts;
 
     [Header("Resource Holder")]
@@ -38,19 +39,44 @@ public class Skipping : MonoBehaviour
     private List<CarrotTalkDialogue> dialogues;
     private int nowDialogue;
     private List<GameObject> SpeakLists = new List<GameObject>();
+    private int points;
 
     private void Start()
     {
         dialogues = Parser.SkippingParse(skippingTextAsset);
         nowDialogue = 0;
+        points = 0;
 
         CleanAnswerText();
         TeacherSpeak();
     }
 
+    private void Update()
+    {
+        //거리 계산해서 배치해야함
+        for (int i = 0; i < SpeakLists.Count; i++)
+        {
+            GameObject target = SpeakLists[SpeakLists.Count - 1 - i];
+            Vector2 spawnPos;
+
+            if (i == 0)
+            {
+                spawnPos = Vector2.zero;
+            }
+            else
+            {
+                spawnPos = SpeakLists[SpeakLists.Count - i].GetComponent<RectTransform>().anchoredPosition;
+                spawnPos.y += SpeakLists[SpeakLists.Count - i].GetComponent<RectTransform>().sizeDelta.y + 10f;
+            }
+
+            target.GetComponent<RectTransform>().anchoredPosition = spawnPos;
+        }
+    }
+
     private void TeacherSpeak()
     {
         GameObject teacherText = Instantiate(teacherTextPrefab, phoneScreen.transform);
+        SpeakLists.Add(teacherText);
 
         string question = dialogues[nowDialogue].Question;
         teacherText.GetComponent<CarrotTalkSizeFitter>().AssignText(question);
@@ -63,12 +89,14 @@ public class Skipping : MonoBehaviour
         for (int i = 0; i < answerTexts.Count; i++)
         {
             answerTexts[i].text = dialogues[nowDialogue].Answer(i);
+            answerButtons[i].interactable = true;
         }
     }
 
     private void MySpeak(int num)
     {
         GameObject myText = Instantiate(myTextPrefab, phoneScreen.transform);
+        SpeakLists.Add(myText);
 
         string answer = dialogues[nowDialogue].Answer(num);
         myText.GetComponent<CarrotTalkSizeFitter>().AssignText(answer);
@@ -77,6 +105,7 @@ public class Skipping : MonoBehaviour
     private void TeacherReaction(int num)
     {
         GameObject teacherText = Instantiate(teacherTextPrefab, phoneScreen.transform);
+        SpeakLists.Add(teacherText);
 
         string reaction = dialogues[nowDialogue].Reaction(num);
         teacherText.GetComponent<CarrotTalkSizeFitter>().AssignText(reaction);
@@ -84,8 +113,34 @@ public class Skipping : MonoBehaviour
 
     public void Answer(int i)
     {
+        StartCoroutine(AnswerRoutine(i));
+        points += dialogues[nowDialogue].Point(i);
+    }
+
+    private IEnumerator AnswerRoutine(int i)
+    {
         MySpeak(i);
+        CleanAnswerText();
+
+        yield return new WaitForSeconds(2f);
+
         TeacherReaction(i);
+
+        yield return new WaitForSeconds(2f);
+
+        nowDialogue += 1;
+        if (dialogues.Count == nowDialogue)
+        {
+            GameObject teacherText = Instantiate(teacherTextPrefab, phoneScreen.transform);
+            SpeakLists.Add(teacherText);
+
+            string question = "당신의 점수는 " + points + "입니다~";
+            teacherText.GetComponent<CarrotTalkSizeFitter>().AssignText(question);
+
+            yield break;
+        }
+
+        TeacherSpeak();
     }
 
     private void CleanAnswerText()
@@ -93,13 +148,7 @@ public class Skipping : MonoBehaviour
         for (int i = 0; i < answerTexts.Count; i++)
         {
             answerTexts[i].text = "";
+            answerButtons[i].interactable = false;
         }
-    }
-
-    private void AddSpeak(GameObject speak)
-    {
-        SpeakLists.Add(speak);
-
-        //거리 계산해서 배치해야함
     }
 }
