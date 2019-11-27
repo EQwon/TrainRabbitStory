@@ -42,6 +42,7 @@ public class UIManager : MonoBehaviour
 
     private List<List<string>> currentDialogue;
     private GameObject currentInteractBunny;
+    public GameObject CurrentInteractBunny { get { return currentInteractBunny; } }
     private int currentDialogNum = -1;
     private int choosedNum = 0;
 

@@ -38,14 +38,17 @@ public class Skipping : MonoBehaviour
 
     private List<CarrotTalkDialogue> dialogues;
     private int nowDialogue;
-    private List<GameObject> SpeakLists = new List<GameObject>();
+    private List<GameObject> SpeakLists;
     private int points;
 
     private void Start()
     {
+        GameManager.instance.IsTalking = true;
+
         dialogues = Parser.SkippingParse(skippingTextAsset);
         nowDialogue = 0;
         points = 0;
+        SpeakLists = new List<GameObject>();
 
         CleanAnswerText();
         TeacherSpeak();
@@ -131,11 +134,12 @@ public class Skipping : MonoBehaviour
         nowDialogue += 1;
         if (dialogues.Count == nowDialogue)
         {
-            GameObject teacherText = Instantiate(teacherTextPrefab, phoneScreen.transform);
-            SpeakLists.Add(teacherText);
+            yield return new WaitForSeconds(2f);
 
-            string question = "당신의 점수는 " + points + "입니다~";
-            teacherText.GetComponent<CarrotTalkSizeFitter>().AssignText(question);
+            UIManager.instance.CurrentInteractBunny.GetComponent<Dialogue_Quest>().Score = points;
+            QuestManager.instance.GetQuest(QuestName.Skipping).ChangeQuestState(true, true);
+            QuestManager.instance.BackToNoraml();
+            UIManager.instance.StartTalk();
 
             yield break;
         }

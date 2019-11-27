@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: -3024613964939362535}
   - component: {fileID: -7736000910626530510}
   m_Layer: 8
-  m_Name: CrammedBunny
+  m_Name: SkippingBunny
   m_TagString: Bunny
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -133,7 +133,7 @@ SpriteRenderer:
   m_SortingLayerID: 1869800291
   m_SortingLayer: 3
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: de2a4bb82d1e01e47b1dd4a66b435546, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5fcdba2c4b862b64b92e22e509715544, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -160,7 +160,7 @@ BoxCollider2D:
   m_Offset: {x: -0.1, y: -1.55}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.44}
+    pivot: {x: 0.5, y: 0.55}
     oldSize: {x: 5.9, y: 5.9}
     newSize: {x: 5.9, y: 5.9}
     adaptiveTilingThreshold: 0.5
@@ -218,10 +218,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0b63e8d7953aab4ca407b3e0acc41f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueAsset: {fileID: 4900000, guid: 6e6ca727fbec0ca458fa8623f7ec5a36, type: 3}
+  dialogueAsset: {fileID: 4900000, guid: 68f5aaf060debc34796fd76a70571ce4, type: 3}
   nowTalkCnt: 0
-  questName: 3
+  questName: 4
   questState: 000001
+  successDialogues:
+    scoreLimit: 640000003c0000007effffff
+    dialogue: {fileID: 4900000, guid: 0248f91f5d4180249b65215c78370e57, type: 3}
+  afterDialogues:
+    scoreLimit: 640000003c0000007effffff
+    dialogue: {fileID: 4900000, guid: 0248f91f5d4180249b65215c78370e57, type: 3}
 --- !u!114 &-3024613964939362535
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,7 +251,7 @@ Animator:
   m_GameObject: {fileID: 2503992160686711965}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 22100000, guid: 0641ba8c3bd9c9c428575a6b4a824942, type: 2}
+  m_Controller: {fileID: 22100000, guid: 46b8c4b7b2003a44fa0eefe016401bdc, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
