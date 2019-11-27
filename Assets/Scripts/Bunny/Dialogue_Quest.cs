@@ -5,6 +5,7 @@ using UnityEngine;
 public class Dialogue_Quest : Dialogue
 {
     [SerializeField] private QuestName questName;
+    [Tooltip("0 : isAccept, 1 : isSuccess, 2 : isInstant")]
     [SerializeField] private List<bool> questState;
 
     private Quest myQuest;
