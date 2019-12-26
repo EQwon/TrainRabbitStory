@@ -27,7 +27,7 @@ public class Quest
     {
         get
         {
-            if (isInstant == false)
+            if (isInstant)
             {
                 Debug.Log("즉시 퀘스트는 타이틀이 없습니다.");
                 return null;
@@ -39,7 +39,7 @@ public class Quest
     {
         get
         {
-            if (isInstant == false)
+            if (isInstant)
             {
                 Debug.Log("즉시 퀘스트는 설명이 없습니다.");
                 return null;

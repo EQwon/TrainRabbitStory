@@ -35,6 +35,7 @@ public class UIManager : MonoBehaviour
     [Header("Quest")]
     public GameObject questPanel;
     public GameObject questCard;
+    private List<GameObject> questCards = new List<GameObject>();
 
     [Header("For Opening")]
     public TextAsset openingAsset;
@@ -330,6 +331,36 @@ public class UIManager : MonoBehaviour
         //대화 시작
         currentDialogNum = -1;
         NextDialog();
+    }
+
+    public void ClearQuestCard()
+    {
+        for (int i = questCards.Count - 1; i >= 0; i--)
+        {
+            Destroy(questCards[i]);
+        }
+
+        questCards = new List<GameObject>();
+    }
+
+    public void AddQuestCard(Quest quest)
+    {
+        GameObject card = Instantiate(questCard, questPanel.transform);
+        questCards.Add(card);
+        card.GetComponent<QuestCardSizeFitter>().SetCard(quest.Title, quest.Description);
+
+        float posY = -50f;
+
+        if (questCards.Count != 1)
+        {
+            RectTransform previousRect = questCards[questCards.Count - 2].GetComponent<RectTransform>();
+            float previousPosY = previousRect.anchoredPosition.y;
+            float previousHeight = previousRect.sizeDelta.y;
+
+            posY = previousPosY - previousHeight;
+        }
+
+        card.GetComponent<RectTransform>().anchoredPosition = new Vector2(0, posY);
     }
 
     public void AdjustStatusBar()

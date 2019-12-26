@@ -30,13 +30,16 @@ public class Dialogue_Quest : Dialogue
         nowTalkCnt += 1;
         int dialogNum = (int)myQuest.State();
 
-        if (dialogNum == 2)
+        if(myQuest.SuccessDialogues.ScoreLimit.Count != 0)
         {
-            return SuccessDialogue();
-        }
-        if (dialogNum == 3)
-        {
-            return AfterDialogue();
+            if (dialogNum == 2)
+            {
+                return SuccessDialogue();
+            }
+            if (dialogNum == 3)
+            {
+                return AfterDialogue();
+            }
         }
 
         return dialogues[dialogNum];

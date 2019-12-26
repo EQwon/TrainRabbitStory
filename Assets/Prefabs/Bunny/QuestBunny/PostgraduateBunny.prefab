@@ -223,8 +223,8 @@ MonoBehaviour:
   myQuest:
     questName: 0
     isAccept: 1
-    isSuccess: 0
-    isInstant: 1
+    isSuccess: 1
+    isInstant: 0
     title: "\uAE38\uC744 \uC783\uC5C8\uB2E4..."
     description: "\uB204\uAD70\uAC00 \uB3C4\uC640\uC904 \uB9CC\uD55C \uCE5C\uC808\uD55C
       \uC0AC\uB78C\uC744 \uCC3E\uC544\uBCF4\uC790!"

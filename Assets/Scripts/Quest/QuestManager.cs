@@ -60,6 +60,13 @@ public class QuestManager : MonoBehaviour
 
     public void UpdateQuestList()
     {
+        UIManager.instance.ClearQuestCard();
+
+        for (int i = 0; i < quests.Count; i++)
+        {
+            Quest quest = quests[i];
+            if(quest.IsAccpet && !quest.IsInstant) UIManager.instance.AddQuestCard(quest);
+        }
     }
 
     private List<Quest> ProgressQuestList()
