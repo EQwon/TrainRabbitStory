@@ -218,8 +218,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueAsset: {fileID: 4900000, guid: d0b762eba9bbdc744964d737b225c5a5, type: 3}
   nowTalkCnt: 0
-  questName: 2
-  questState: 
+  myQuest:
+    questName: 2
+    isAccept: 0
+    isSuccess: 0
+    isInstant: 0
+    title: "\uD560\uC544\uBC84\uC9C0\uC758 \uC190\uC218\uAC74"
+    description: "3\uBC88 \uCE78\uC5D0 \uC788\uB294 \uD560\uC544\uBC84\uC9C0\uC758
+      \uC190\uC218\uAC74\uC744 \uCC3E\uC544\uB4DC\uB9AC\uC790!"
+    successDialogues:
+      scoreLimit: 
+      dialogue: {fileID: 0}
+    afterDialogues:
+      scoreLimit: 
+      dialogue: {fileID: 0}
+    score: 0
 --- !u!1001 &488296583349007593
 PrefabInstance:
   m_ObjectHideFlags: 0

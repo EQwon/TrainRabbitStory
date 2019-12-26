@@ -3,52 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public enum QuestName{ Tutorial, PhoneCall, PickUp, Crammed, Skipping };
-public enum QuestState { BeforeQuest, AcceptQuest, SuccessQuest, AfterQuest };
-
-public class Quest
-{
-    private QuestName name;
-    private bool isAccept;
-    private bool isSuccess;
-    private bool isInstant;
-
-    public Quest(QuestName name, bool isAccept = false, bool isSuccess = false, bool isInstant = false)
-    {
-        this.name = name;
-        this.isAccept = isAccept;
-        this.isSuccess = isSuccess;
-        this.isInstant = isInstant;
-
-        QuestManager.instance.AddQuest(this);
-    }
-
-    public QuestName Name { get { return name; } }
-    public bool IsAccpet { get { return isAccept; } }
-    public bool IsSuccess { get { return isSuccess; } }
-    public bool IsInstant { get { return isInstant; } }
-
-    public void ChangeQuestState(bool accept, bool success)
-    {
-        isAccept = accept;
-        isSuccess = success;
-    }
-
-    public QuestState State()
-    {
-        if (isAccept == false)
-        {
-            if (isSuccess == false) return QuestState.BeforeQuest;
-            else return QuestState.AfterQuest;
-        }
-        else
-        {
-            if (isSuccess == false) return QuestState.AcceptQuest;
-            else return QuestState.SuccessQuest;
-        }
-    }
-}
-
 public class QuestManager : MonoBehaviour
 {
     public static QuestManager instance = null;
@@ -79,7 +33,7 @@ public class QuestManager : MonoBehaviour
     {
         foreach (Quest quest in quests)
         {
-            if (quest.Name == name) return quest;
+            if (quest.QuestName == name) return quest;
         }
 
         Debug.LogError("해당하는 퀘스트를 찾을 수 없습니다.");
@@ -99,7 +53,7 @@ public class QuestManager : MonoBehaviour
 
         if (targetQuest == null) return false;
 
-        questCanvas.GetComponent<QuestCanvasController>().ActivateCanvas((int)targetQuest.Name);
+        questCanvas.GetComponent<QuestCanvasController>().ActivateCanvas((int)targetQuest.QuestName);
         GameManager.instance.IsQuesting = true;
         return true;
     }

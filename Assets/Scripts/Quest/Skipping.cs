@@ -136,7 +136,7 @@ public class Skipping : MonoBehaviour
         {
             yield return new WaitForSeconds(2f);
 
-            UIManager.instance.CurrentInteractBunny.GetComponent<Dialogue_Quest>().Score = points;
+            UIManager.instance.CurrentInteractBunny.GetComponent<Dialogue_Quest>().MyQuest.Score = points;
             QuestManager.instance.GetQuest(QuestName.Skipping).ChangeQuestState(true, true);
             QuestManager.instance.BackToNoraml();
             UIManager.instance.StartTalk();

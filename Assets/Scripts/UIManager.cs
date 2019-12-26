@@ -32,6 +32,10 @@ public class UIManager : MonoBehaviour
     public Image bag;
     public GameObject bagPanel;
 
+    [Header("Quest")]
+    public GameObject questPanel;
+    public GameObject questCard;
+
     [Header("For Opening")]
     public TextAsset openingAsset;
     public GameObject darkPanel;
@@ -268,8 +272,8 @@ public class UIManager : MonoBehaviour
 
         //퀘스트 수락 전달
         Quest quest = currentInteractBunny.GetComponent<Dialogue_Quest>().MyQuest;
-        QuestManager.instance.GetQuest(quest.Name).ChangeQuestState(true, false);
-        Debug.Log(quest.Name.ToString() + " 퀘스트를 수락합니다.");
+        QuestManager.instance.GetQuest(quest.QuestName).ChangeQuestState(true, false);
+        Debug.Log(quest.QuestName.ToString() + " 퀘스트를 수락합니다.");
 
         //수락시 대사 출력
         //currentDialogue.AddRange(currentInteractBunny.GetComponent<Dialogue>().DialogForNow());

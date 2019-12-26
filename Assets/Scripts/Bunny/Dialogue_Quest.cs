@@ -14,31 +14,21 @@ public class ScoreDialogue
 
 public class Dialogue_Quest : Dialogue
 {
-    [SerializeField] private QuestName questName;
-    [Tooltip("0 : isAccept, 1 : isSuccess, 2 : isInstant")]
-    [SerializeField] private List<bool> questState;
-    [SerializeField] private ScoreDialogue successDialogues;
-    [SerializeField] private ScoreDialogue afterDialogues;
-
-    private Quest myQuest;
-    private int score = 0;
+    [SerializeField] private Quest myQuest;
 
     public Quest MyQuest { get { return myQuest; } }
-    public int Score { set { score = value; } }
 
     protected override void Start()
     {
         base.Start();
 
-        if (questState.Count == 3)
-            myQuest = new Quest(questName, questState[0], questState[1], questState[2]);
-        else myQuest = new Quest(questName);
+        QuestManager.instance.AddQuest(myQuest);
     }
 
     public override List<List<string>> DialogForNow()
     {
         nowTalkCnt += 1;
-        int dialogNum = (int)QuestManager.instance.GetQuest(questName).State();
+        int dialogNum = (int)myQuest.State();
 
         if (dialogNum == 2)
         {
@@ -54,6 +44,9 @@ public class Dialogue_Quest : Dialogue
 
     private List<List<string>> SuccessDialogue()
     {
+        ScoreDialogue successDialogues = myQuest.SuccessDialogues;
+        int score = myQuest.Score;
+
         List<int> scoreLimit = successDialogues.ScoreLimit;
         for (int i = 0; i < scoreLimit.Count; i++)
         {
@@ -67,6 +60,9 @@ public class Dialogue_Quest : Dialogue
 
     private List<List<string>> AfterDialogue()
     {
+        ScoreDialogue afterDialogues = myQuest.AfterDialogues;
+        int score = myQuest.Score;
+
         List<int> scoreLimit = afterDialogues.ScoreLimit;
         for (int i = 0; i < scoreLimit.Count; i++)
         {

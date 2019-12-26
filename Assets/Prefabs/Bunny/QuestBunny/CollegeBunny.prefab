@@ -220,8 +220,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueAsset: {fileID: 4900000, guid: 0f2aa6c7c7b4c71468835d8fc1e307a4, type: 3}
   nowTalkCnt: 0
-  questName: 1
-  questState: 000001
+  myQuest:
+    questName: 1
+    isAccept: 0
+    isSuccess: 0
+    isInstant: 1
+    title: 
+    description: 
+    successDialogues:
+      scoreLimit: 
+      dialogue: {fileID: 0}
+    afterDialogues:
+      scoreLimit: 
+      dialogue: {fileID: 0}
+    score: 0
 --- !u!114 &-3024613964939362535
 MonoBehaviour:
   m_ObjectHideFlags: 0

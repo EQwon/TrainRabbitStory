@@ -220,14 +220,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogueAsset: {fileID: 4900000, guid: 68f5aaf060debc34796fd76a70571ce4, type: 3}
   nowTalkCnt: 0
-  questName: 4
-  questState: 000001
-  successDialogues:
-    scoreLimit: 640000003c0000007effffff
-    dialogue: {fileID: 4900000, guid: 0248f91f5d4180249b65215c78370e57, type: 3}
-  afterDialogues:
-    scoreLimit: 640000003c0000007effffff
-    dialogue: {fileID: 4900000, guid: 0248f91f5d4180249b65215c78370e57, type: 3}
+  myQuest:
+    questName: 4
+    isAccept: 0
+    isSuccess: 0
+    isInstant: 1
+    title: 
+    description: 
+    successDialogues:
+      scoreLimit: 640000003c0000007effffff
+      dialogue: {fileID: 4900000, guid: 0248f91f5d4180249b65215c78370e57, type: 3}
+    afterDialogues:
+      scoreLimit: 640000003c0000007effffff
+      dialogue: {fileID: 4900000, guid: 0248f91f5d4180249b65215c78370e57, type: 3}
+    score: 0
 --- !u!114 &-3024613964939362535
 MonoBehaviour:
   m_ObjectHideFlags: 0
