@@ -24,9 +24,10 @@ public class QuestCardSizeFitter : MonoBehaviour
         cardRect.sizeDelta = new Vector2(cardRect.sizeDelta.x, titleHeight + descriptionHeight + 35);
     }
 
-    public void SetCard(string title, string description)
+    public void SetCard(string title, string description, bool isSuccess = false)
     {
         this.title.text = title;
         this.description.text = description;
+        if (isSuccess) this.description.color = Color.red;
     }
 }

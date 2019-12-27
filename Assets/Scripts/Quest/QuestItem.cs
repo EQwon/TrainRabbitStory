@@ -17,6 +17,7 @@ public class QuestItem : MonoBehaviour
                 break;
         }
 
+        QuestManager.instance.UpdateQuest();
         Destroy(gameObject);
     }
 }

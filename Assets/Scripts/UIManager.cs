@@ -257,11 +257,7 @@ public class UIManager : MonoBehaviour
         Player.instance.joystick.StopMoving();
         GameManager.instance.IsTalking = false;
 
-        if (!QuestManager.instance.StartInstantQuest())
-        {
-            QuestManager.instance.UpdateQuestList();
-        }
-
+        QuestManager.instance.UpdateQuest();
     }
 
     public void AcceptQuest()
@@ -277,7 +273,6 @@ public class UIManager : MonoBehaviour
         Debug.Log(quest.QuestName.ToString() + " 퀘스트를 수락합니다.");
 
         //수락시 대사 출력
-        //currentDialogue.AddRange(currentInteractBunny.GetComponent<Dialogue>().DialogForNow());
         NextDialog();
     }
 
@@ -343,11 +338,11 @@ public class UIManager : MonoBehaviour
         questCards = new List<GameObject>();
     }
 
-    public void AddQuestCard(Quest quest)
+    public void AddQuestCard(Quest quest, bool isSuccess = false)
     {
         GameObject card = Instantiate(questCard, questPanel.transform);
         questCards.Add(card);
-        card.GetComponent<QuestCardSizeFitter>().SetCard(quest.Title, quest.Description);
+        card.GetComponent<QuestCardSizeFitter>().SetCard(quest.Title, quest.Description, isSuccess);
 
         float posY = -50f;
 

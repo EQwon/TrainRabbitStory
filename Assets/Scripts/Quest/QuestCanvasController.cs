@@ -8,11 +8,17 @@ public class QuestCanvasController : MonoBehaviour
 
     public void ActivateCanvas(int canvasNum)
     {
-        for (int i = 0; i < canvas.Length; i++)
-        {
-            canvas[i].SetActive(false);
-        }
+        if (canvas[canvasNum].activeInHierarchy) return;
+
         Debug.Log(canvas[canvasNum].name + "를 활성화합니다.");
         canvas[canvasNum].SetActive(true);
+    }
+
+    public void DeactivateCanvas(int canvasNum)
+    {
+        if (!canvas[canvasNum].activeInHierarchy) return;
+
+        Debug.Log(canvas[canvasNum].name + "를 비활성화합니다.");
+        canvas[canvasNum].SetActive(false);
     }
 }

@@ -40,32 +40,35 @@ public class QuestManager : MonoBehaviour
         return null;
     }
 
-    public bool StartInstantQuest()
+    public void UpdateQuest()
     {
-        if(questCanvas == null) questCanvas = Instantiate(questCanvasPrefab);
-
-        Quest targetQuest = null;
-
-        foreach (Quest quest in ProgressQuestList())
-        {
-            if (quest.IsInstant) targetQuest = quest;
-        }
-
-        if (targetQuest == null) return false;
-
-        questCanvas.GetComponent<QuestCanvasController>().ActivateCanvas((int)targetQuest.QuestName);
-        GameManager.instance.IsQuesting = true;
-        return true;
-    }
-
-    public void UpdateQuestList()
-    {
+        //퀘스트 패널의 카드 정렬
         UIManager.instance.ClearQuestCard();
 
-        for (int i = 0; i < quests.Count; i++)
+        //성공한 퀘스트 카드 삽입
+        foreach (Quest quest in SuccessQuestList())
         {
-            Quest quest = quests[i];
-            if(quest.IsAccpet && !quest.IsInstant) UIManager.instance.AddQuestCard(quest);
+            UIManager.instance.AddQuestCard(quest, true);
+        }
+
+        //진행 중인 퀘스트 카드 삽입
+        foreach (Quest quest in ProgressQuestList())
+        {
+            UIManager.instance.AddQuestCard(quest, false);
+        }
+
+        //퀘스트 캔버스 오브젝트 활성화, 비활성화
+        if (questCanvas == null) questCanvas = Instantiate(questCanvasPrefab);
+        QuestCanvasController controller = questCanvas.GetComponent<QuestCanvasController>();
+
+        foreach (Quest quest in quests)
+        {
+            if (quest.IsAccpet)
+            {
+                controller.ActivateCanvas((int)quest.QuestName);
+                GameManager.instance.IsQuesting = true;
+            }
+            else controller.DeactivateCanvas((int)quest.QuestName);
         }
     }
 
@@ -87,6 +90,17 @@ public class QuestManager : MonoBehaviour
         for (int i = 0; i < quests.Count; i++)
         {
             if (quests[i].State() == QuestState.SuccessQuest) returnList.Add(quests[i]);
+        }
+        return returnList;
+    }
+
+    private List<Quest> AfterQuestList()
+    {
+        List<Quest> returnList = new List<Quest>();
+
+        for (int i = 0; i < quests.Count; i++)
+        {
+            if (quests[i].State() == QuestState.AfterQuest) returnList.Add(quests[i]);
         }
         return returnList;
     }
