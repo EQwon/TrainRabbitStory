@@ -17,7 +17,7 @@ public class UIManager : MonoBehaviour
     public GameObject acceptQuestButton;
     public GameObject rejectQuestButton;
     public GameObject choicePanel;
-    public List<Text> choiceText;
+    public GameObject choiceCard;
 
     [Header("Basic UI")]
     public GameObject basicUI;
@@ -179,7 +179,7 @@ public class UIManager : MonoBehaviour
 
         speakerName.text = currentDialogue[currentDialogNum][0];
         speakerText.text = currentDialogue[currentDialogNum][1];
-        if (currentDialogue[currentDialogNum].Count > 2)
+        if (currentDialogue[currentDialogNum].Count > 2 && currentDialogue[currentDialogNum][2] != "")
         {
             string path = "SpeakerImage/" + currentDialogue[currentDialogNum][2];
             speakerImage.sprite = Resources.Load<Sprite>(path);
@@ -212,11 +212,15 @@ public class UIManager : MonoBehaviour
         }
         else if (currentDialogue[currentDialogNum][3] == "CH")      // 선택지일 경우
         {
+            List<string> nowDialog = currentDialogue[currentDialogNum];
+
             talkPanel.GetComponent<Button>().interactable = false;
             choicePanel.SetActive(true);
-            choiceText[0].text = currentDialogue[currentDialogNum][4];
-            choiceText[1].text = currentDialogue[currentDialogNum][5];
-            choiceText[2].text = currentDialogue[currentDialogNum][6];
+            for (int i = 4; i < nowDialog.Count; i++)
+            {
+                GameObject choice = Instantiate(choiceCard, choicePanel.transform);
+                choice.GetComponent<ChoiceCard>().SetChoice(nowDialog[i], nowDialog.Count - 3, i - 4);
+            }
             finishDialogText.SetActive(false);
         }
         else if (currentDialogue[currentDialogNum][3] == "RE")      // 대답일 경우
