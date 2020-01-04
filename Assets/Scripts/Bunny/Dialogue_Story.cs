@@ -29,6 +29,9 @@ public class Dialogue_Story : Dialogue
             return dialog;
         }
 
+        // 대화할 때마다 호감도 증가
+        GameManager.instance.StoryBunny(myName).ChangeAffinity(1);
+
         if (nowTalkCnt == 0)    // 이번 스테이지의 최초 대화라면 고정 대화를 출력하고 종료
         {
             nowTalkCnt += 1;
