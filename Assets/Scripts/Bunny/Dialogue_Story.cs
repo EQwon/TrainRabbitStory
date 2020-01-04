@@ -23,12 +23,6 @@ public class Dialogue_Story : Dialogue
     {
         List<List<string>> dialog = new List<List<string>>();
 
-        // 보여줄 대화 번호
-        int dialogCnt = 0;
-
-        int bunnyNum = (int)myName;
-        int talkCnt = GameManager.instance.TalkCnt[bunnyNum];
-
         if (nowTalkCnt > GameManager.instance.MaxTalkCnt)
         {
             Debug.Log("최대 대화 횟수를 초과했습니다.");
@@ -41,7 +35,8 @@ public class Dialogue_Story : Dialogue
             return fixDialogues[GameManager.instance.Stage];
         }
 
-        dialogCnt = GameManager.instance.TalkCnt[talkCnt];
+        // 보여줄 대화 번호
+        int dialogCnt = GameManager.instance.StoryBunny(myName).TalkCnt;
 
         // 해당 대화 번호에 대화가 있으면
         if (dialogues.Count > dialogCnt)

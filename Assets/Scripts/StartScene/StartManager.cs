@@ -33,12 +33,6 @@ public class StartManager : MonoBehaviour
         stageName.GetComponent<Button>().enabled = false;
         StartCoroutine(MoveTrain());
 
-        if (nowStage == 0)
-        {
-            Data data = new Data();
-            SaveSystem.SaveData(data);
-        }
-
         GameManager.instance.LoadData();
     }
 

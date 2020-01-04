@@ -238,13 +238,14 @@ public class UIManager : MonoBehaviour
         {
             int itemNum = int.Parse(currentDialogue[currentDialogNum][4]);
 
-            GameManager.instance.GetItem(itemNum);
+            //GameManager.instance.GetItem(itemNum);
         }
         else if (currentDialogue[currentDialogNum][3] == "Affinity")// 호감도일 경우
         {
             int changeAmount = int.Parse(currentDialogue[currentDialogNum][4]);
 
-            GameManager.instance.AffinityChange(currentInteractBunny.GetComponent<Dialogue_Story>().myName, changeAmount);
+            BunnyName bunnyName = currentInteractBunny.GetComponent<Dialogue_Story>().myName;
+            GameManager.instance.StoryBunny(bunnyName).ChangeAffinity(changeAmount);
         }
         else if (currentDialogue[currentDialogNum][3] == "Clear")   // 클리어일 경우
         {

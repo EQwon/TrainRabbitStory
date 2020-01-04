@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public enum BunnyName { Gotgam, Jadupudding, Kkingkkang,
                         Mango, Pulttegi, Ssookgat, Tomatotang,
                         Yanggaeng, Yuza, None }

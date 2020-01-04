@@ -1,42 +1,60 @@
 ﻿using UnityEngine;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
+using System.Runtime.Serialization;
 
 public static class SaveSystem
 {
     public static void SaveData(Data data)
     {
-        BinaryFormatter formatter = new BinaryFormatter();
+        string path = Application.persistentDataPath + "/data.txt";
+        FileStream stream = new FileStream(path, FileMode.OpenOrCreate);
 
-        string path = Application.persistentDataPath + "data.txt";
-        FileStream stream = new FileStream(path, FileMode.Create);
-
-        Data newData = new Data(data);
-
-        formatter.Serialize(stream, data);
-        stream.Close();
+        try
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            formatter.Serialize(stream, data);
+            Debug.Log("Save Successfully");
+        }
+        catch(SerializationException e)
+        {
+            Debug.LogError("Sth happens during Saving : " + e.Message);
+        }
+        finally
+        {
+            stream.Close();
+        }
     }
 
     public static Data LoadData()
     {
-        string path = Application.persistentDataPath + "data.txt";
-        if (File.Exists(path))
-        {
-            BinaryFormatter formatter = new BinaryFormatter();
-            FileStream stream = new FileStream(path, FileMode.Open);
-
-            Data data = formatter.Deserialize(stream) as Data;
-            stream.Close();
-
-            data.hp = 1000;
-            return data;
-        }
-        else
+        string path = Application.persistentDataPath + "/data.txt";
+        if (!File.Exists(path))
         {
             Debug.Log("Save file not found in " + path);
-            Data data = new Data();
-            return data;
+            Debug.Log("Creating New File...");
+            SaveData(new Data());
         }
+
+        FileStream stream = new FileStream(path, FileMode.Open);
+        Data data = new Data();
+
+        try
+        {
+            BinaryFormatter formatter = new BinaryFormatter();
+            data = formatter.Deserialize(stream) as Data;
+            Debug.Log("Load Successfully");
+        }
+        catch (SerializationException e)
+        {
+            Debug.LogError("Sth happens during Loading : " + e.Message);
+        }
+        finally
+        {
+            stream.Close();
+        }
+
+        return data;
     }
 
     public static void DeleteData()

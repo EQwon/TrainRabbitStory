@@ -2,48 +2,54 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public struct StoryBunny
+{
+    private int affinity;
+    private int talkCnt;
+
+    public int Affinity { get { return affinity; } }
+    public int TalkCnt { get { return talkCnt; } }
+
+    public StoryBunny(int _affinity, int _talkCnt)
+    {
+        affinity = _affinity;
+        talkCnt = _talkCnt;
+    }
+
+    public void ChangeAffinity(int amount)
+    {
+        int target = affinity + amount;
+
+        if (target < 0) target = 0;
+        if (target > 100) target = 100;
+
+        affinity = target;
+    }
+
+    public void IncreaseTalkCnt()
+    {
+        talkCnt += 1;
+    }
+}
+
 [System.Serializable]
 public class Data
 {
     public int stage;
     public int hp;
     public int mp;
-    public int[] affinity;
-    public int[] talkCnt;
-    public int[] items;
+    public StoryBunny[] storyBunnies;
 
     public Data()
     {
         stage = 0;
         hp = 1000;
         mp = 100;
-        affinity = new int[9] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-        talkCnt = new int[9] { 0, 0, 0, 0, 0, 0, 0, 0, 0 };
-        items = new int[30] {
-            0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0,
-            0,0,0,0,0,0,0,0,0,0
-        };
-    }
-
-    public Data(Data data)
-    {
-        stage = data.stage;
-        hp = 1000;
-        mp = data.mp;
-
-        affinity = new int[9];
-        talkCnt = new int[9];
-        items = new int[30];
-
-        for (int i = 0; i < affinity.Length; i++)
-        {
-            affinity[i] = data.affinity[i];
-            talkCnt[i] = data.talkCnt[i];
-        }
-        for (int i = 0; i < items.Length; i++)
-        {
-            items[i] = data.items[i];
-        }
+        storyBunnies = new StoryBunny[9]
+            {
+                new StoryBunny(0,0), new StoryBunny(0,0),new StoryBunny(0,0),
+                new StoryBunny(0,0),new StoryBunny(0,0),new StoryBunny(0,0),
+                new StoryBunny(0,0),new StoryBunny(0,0),new StoryBunny(0,0)
+            };
     }
 }

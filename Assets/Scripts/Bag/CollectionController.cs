@@ -32,8 +32,8 @@ public class CollectionController : MonoBehaviour
     {
         nickName.text = ((BunnyName)num).ToString();
 
-        int value = GameManager.instance.Affinity[num];
-        affinitySlider.value = value;
-        affinityValueText.text = value.ToString();
+        int affinityValue = GameManager.instance.StoryBunny((BunnyName)num).Affinity;
+        affinitySlider.value = affinityValue;
+        affinityValueText.text = affinityValue.ToString();
     }
 }

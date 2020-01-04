@@ -17,13 +17,11 @@ public class GameManager : MonoBehaviour
     private Data data;
     private void SaveData()
     {
-        SaveItem();
         SaveSystem.SaveData(data);
     }
     public void LoadData()
     {
         data = SaveSystem.LoadData();
-        ReadItemAsset();
     }
     #endregion
 
@@ -51,22 +49,9 @@ public class GameManager : MonoBehaviour
             if (data.mp > 100) data.mp = 100;
         }
     }
-    public int[] Affinity
+    public StoryBunny StoryBunny(BunnyName name)
     {
-        get { return data.affinity; }
-    }
-    public void AffinityChange(BunnyName bunnyName, int amount)
-    {
-        int target = data.affinity[(int)bunnyName] + amount;
-
-        if (target < 0) target = 0;
-        if (target > 100) target = 100;
-        data.affinity[(int)bunnyName] = target;
-    }
-    public int[] TalkCnt
-    {
-        get { return data.talkCnt; }
-        set { data.talkCnt = value; }
+        return data.storyBunnies[(int)name];
     }
     public int MaxTalkCnt
     {
@@ -163,48 +148,6 @@ public class GameManager : MonoBehaviour
             case TrainState.instantQuest:
                 TimeManager.timeScale = 0;
                 break;
-        }
-    }
-
-    private void ReadItemAsset()
-    {
-        itemIndexList = Parser.ItemParse(itemAsset);
-
-        itemList.Clear();
-        for (int i = 0; i < data.items.Length; i++)
-        {
-            GetItem(data.items[i]);
-        }
-    }
-
-    public void GetItem(int itemIndex)
-    {
-        if (itemIndex == 0) return;
-
-        for (int i = 0; i < itemList.Count; i++)
-        {
-            if (itemList[i].info.name == itemIndexList[itemIndex].name)
-            {
-                itemList[i].amount += 1;
-                return;
-            }
-        }
-
-        itemList.Add(new Item(itemIndexList[itemIndex], 1));
-    }
-
-    private void SaveItem()
-    {
-        System.Array.Clear(data.items, 0, data.items.Length);
-        int cnt = 0;
-
-        for (int i = 0; i < itemList.Count; i++)
-        {
-            for (int j = 0; j < itemList[i].amount; j++)
-            {
-                data.items[cnt] = itemList[i].info.indexNum;
-                cnt += 1;
-            }
         }
     }
 
