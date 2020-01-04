@@ -1,7 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
+using UnityEditor;
+
+[System.Serializable]
+public struct AttackDelay
+{
+    public float pre;
+    public float post;
+}
 
 public class Player : MonoBehaviour
 {
@@ -11,13 +18,13 @@ public class Player : MonoBehaviour
     public float speed = 5f;
     public int hpDamage = 10;
     public int mpDamage = 1;
-    public float attackDelay = 0.5f;
+    public AttackDelay attackDelay;
 
     public Joystick joystick;
 
     private Rigidbody2D rb2D;
     private Animator animator;
-    private float attackedTime = 0;
+    private bool canAttack = true;
     private Transform interactArea;
     private Transform attackArea;
     private float areaPosX;
@@ -62,11 +69,10 @@ public class Player : MonoBehaviour
         {
             FlippingPlayer(joystick.Horizontal);
             Move(joystick.Horizontal, joystick.Vertical);
-            Attack();
+            StartCoroutine(Attack());
         }
 
         UIManager.instance.AdjustStatusBar();
-        attackedTime += Time.deltaTime;
     }
 
     private void Move(float xDir, float yDir) //플레이어 움직여!!
@@ -78,14 +84,21 @@ public class Player : MonoBehaviour
         else animator.SetBool("playerWalk", false);
     }
 
-    private void Attack()
+    private IEnumerator Attack()
     {
-        if (/*Input.GetKeyDown(KeyCode.A) ||*/ joystick.Attack && attackedTime >= attackDelay)
-        {
-            transform.GetChild(1).GetComponent<Attack>().ApplyDamage();
-            animator.SetTrigger("playerAttack");
-            attackedTime = 0;
-        }
+        if (!canAttack) yield break;
+        if (!(/*Input.GetKeyDown(KeyCode.A) ||*/joystick.Attack)) yield break;
+
+        canAttack = false;
+        animator.SetTrigger("playerAttack");
+
+        yield return new WaitForSeconds(attackDelay.pre);
+
+        transform.GetChild(1).GetComponent<Attack>().ApplyDamage();
+
+        yield return new WaitForSeconds(attackDelay.post);
+
+        canAttack = true;
     }
 
     private void FlippingPlayer(float horizontal) //플레이어 좌우 반전
@@ -136,3 +149,38 @@ public class Player : MonoBehaviour
         Move(0, 0);
     }
 }
+
+#if UNITY_EDITOR
+[CustomPropertyDrawer(typeof(AttackDelay))]
+public class DelayDrawerUIE : PropertyDrawer
+{
+    // Draw the property inside the given rect
+    public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+    {
+        // Using BeginProperty / EndProperty on the parent property means that
+        // prefab override logic works on the entire property.
+        EditorGUI.BeginProperty(position, label, property);
+
+        // Draw label
+        position = EditorGUI.PrefixLabel(position, GUIUtility.GetControlID(FocusType.Passive), label);
+
+        // Don't make child fields be indented
+        var indent = EditorGUI.indentLevel;
+        EditorGUI.indentLevel = 0;
+
+        // Calculate rects
+        float rectWidth = (position.width - 10) / 2;
+        var preRect = new Rect(position.x, position.y, rectWidth, position.height);
+        var postRect = new Rect(position.x + rectWidth + 10, position.y, rectWidth, position.height);
+
+        // Draw fields - passs GUIContent.none to each so they are drawn without labels
+        EditorGUI.PropertyField(preRect, property.FindPropertyRelative("pre"), GUIContent.none);
+        EditorGUI.PropertyField(postRect, property.FindPropertyRelative("post"), GUIContent.none);
+
+        // Set indent back to what it was
+        EditorGUI.indentLevel = indent;
+
+        EditorGUI.EndProperty();
+    }
+}
+#endif
