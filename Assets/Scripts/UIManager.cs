@@ -227,6 +227,13 @@ public class UIManager : MonoBehaviour
         {
             speakerText.text = currentDialogue[currentDialogNum][4 + choosedNum];
         }
+        else if (currentDialogue[currentDialogNum][3] == "RE_Affinity") // 대답에 따른 호감도 변화
+        {
+            int changeAmount = int.Parse(currentDialogue[currentDialogNum][4 + choosedNum]);
+
+            BunnyName bunnyName = currentInteractBunny.GetComponent<Dialogue_Story>().myName;
+            GameManager.instance.StoryBunny(bunnyName).ChangeAffinity(changeAmount);
+        }
         else if (currentDialogue[currentDialogNum][3] == "Quest")   // 퀘스트의 완료일 경우
         {
             int questNum = int.Parse(currentDialogue[currentDialogNum][4]);
