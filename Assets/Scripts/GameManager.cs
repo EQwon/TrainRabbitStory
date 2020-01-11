@@ -53,9 +53,13 @@ public class GameManager : MonoBehaviour
     {
         return data.storyBunnies[(int)name];
     }
-    public int MaxTalkCnt
+    public int MaxStoryTalkCnt
     {
         get { return Stage >= 1 ? 5 : 1; }
+    }
+    public int MaxNormalTalkCnt
+    {
+        get { return 3; }
     }
     public int MaxCellNum
     {

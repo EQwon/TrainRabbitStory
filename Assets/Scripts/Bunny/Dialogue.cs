@@ -26,7 +26,18 @@ public class Dialogue : MonoBehaviour
 
     public virtual List<List<string>> DialogForNow()
     {
+        List<List<string>> dialog = new List<List<string>>();
+
+        if (nowTalkCnt >= GameManager.instance.MaxStoryTalkCnt)
+        {
+            Debug.Log(name + "과의 일반 대화 횟수를 초과했습니다.");
+            return dialog;
+        }
+
         nowTalkCnt += 1;
-        return dialogues[0];
+
+        dialog = dialogues[Random.Range(0, dialogues.Count)];
+
+        return dialog;
     }
 }

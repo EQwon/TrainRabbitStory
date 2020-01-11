@@ -23,7 +23,7 @@ public class Dialogue_Story : Dialogue
     {
         List<List<string>> dialog = new List<List<string>>();
 
-        if (nowTalkCnt > GameManager.instance.MaxTalkCnt)
+        if (nowTalkCnt > GameManager.instance.MaxStoryTalkCnt)
         {
             Debug.Log("최대 대화 횟수를 초과했습니다.");
             return dialog;
