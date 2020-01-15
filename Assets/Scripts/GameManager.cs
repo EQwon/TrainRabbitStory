@@ -55,7 +55,16 @@ public class GameManager : MonoBehaviour
     }
     public int MaxStoryTalkCnt
     {
-        get { return Stage >= 1 ? 5 : 1; }
+        get
+        {
+            if (Stage == 1)
+                return 1;
+            else
+            {
+                if (MP >= 50) return 5;
+                else return 3;
+            }
+        }
     }
     public int MaxNormalTalkCnt
     {
