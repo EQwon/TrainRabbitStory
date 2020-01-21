@@ -5477,10 +5477,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CellNum: 15
-  AppearStandingBunnyList:
-  - {fileID: 846393299363935562, guid: 47f2e0263fbea504eafc9d913650ecf7, type: 3}
-  - {fileID: 2503992160686711965, guid: f880879481667c24693c63ed86ed67fc, type: 3}
-  - {fileID: 2081886907282091113, guid: 34ede1996ee8d444280120d491c9cf15, type: 3}
+  AppearStandingBunnyList: []
   AppearSittingBunnyList:
   - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
   - {fileID: 8503556356629361691, guid: 7feb322b9dac2ce4c8aace400f386beb, type: 3}
@@ -5491,7 +5488,7 @@ MonoBehaviour:
   - {fileID: 8503556356629361691, guid: 0ccfae04766d7904ca27873805be5b38, type: 3}
   - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
   - {fileID: 1085439849001219257, guid: 7186550ee774ae249905694d2dfe531f, type: 3}
-  - {fileID: 0}
+  - {fileID: 4880791886453202666, guid: 7aeb48d12feff8b4ea98a3a85dea32aa, type: 3}
   - {fileID: 1085439849001219257, guid: 98f261d3b3d398b4dace5c550854db57, type: 3}
   - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
 --- !u!1 &1253407277

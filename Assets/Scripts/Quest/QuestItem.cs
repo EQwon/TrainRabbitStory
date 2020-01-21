@@ -4,18 +4,12 @@ using UnityEngine;
 
 public class QuestItem : MonoBehaviour
 {
-    public enum Name { handkerchief };
-
-    public Name itemName;
+    private PickUpQuest questScript;
+    public PickUpQuest QuestScript { set { questScript = value; } }
 
     public void GetQuestItem()
     {
-        switch (itemName)
-        {
-            case Name.handkerchief:
-                QuestManager.instance.GetQuest(QuestName.PickUp).ChangeQuestState(true, true);
-                break;
-        }
+        questScript.GetItem();
 
         QuestManager.instance.UpdateQuest();
         Destroy(gameObject);
