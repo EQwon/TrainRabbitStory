@@ -29,10 +29,11 @@ public static class SaveSystem
     public static Data LoadData()
     {
         string path = Application.persistentDataPath + "/data.txt";
+        Debug.Log(path);
         if (!File.Exists(path))
         {
             Debug.Log("Save file not found in " + path);
-            Debug.Log("Creating New File...");
+            Debug.Log("Create And Saving New File...");
             SaveData(new Data());
         }
 
