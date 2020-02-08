@@ -38,6 +38,7 @@ public class Thonos : PickUpQuest
             {
                 Destroy(stone);
             }
+            QuestManager.instance.GetQuest(QuestName.Thonos).ChangeQuestState(true, true);
         }
 
         remainTimeText.text = remainTime.ToString("0.0") + " 초";
@@ -61,13 +62,14 @@ public class Thonos : PickUpQuest
     public override void GetItem()
     {
         collectedCnt += 1;
-        QuestManager.instance.UpdateQuest();
-
+        
         if (collectedCnt == cnt)
         {
             // 퀘스트 성공!
             // 성공 처리하면 됨.
             QuestManager.instance.GetQuest(QuestName.Thonos).ChangeQuestState(true, true);
         }
+
+        QuestManager.instance.UpdateQuest();
     }
 }

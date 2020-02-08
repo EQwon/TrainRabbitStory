@@ -227,11 +227,11 @@ MonoBehaviour:
     description: "\uC9C0\uD558\uCCA0 \uC5EC\uAE30\uC800\uAE30 \uB5A8\uC5B4\uC9C4 \uD2B8\uB808\uC778
       \uC2A4\uD1A4\uC744 \uBAA8\uC544\uC624\uC790!"
     successDialogues:
-      scoreLimit: 
-      dialogue: {fileID: 0}
+      scoreLimit: 0600000000000000
+      dialogue: {fileID: 4900000, guid: d9f8125f4f9b87145b7646de0d2b1669, type: 3}
     afterDialogues:
-      scoreLimit: 
-      dialogue: {fileID: 0}
+      scoreLimit: 0600000000000000
+      dialogue: {fileID: 4900000, guid: 20051b1909819744caf07dddac814835, type: 3}
     score: 0
 --- !u!1001 &488296583349007593
 PrefabInstance:
