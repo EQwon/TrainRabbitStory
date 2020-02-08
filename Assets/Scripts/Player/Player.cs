@@ -117,14 +117,6 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D coll)
-    {
-        if (coll.gameObject.tag == "Item")
-        {
-            coll.gameObject.GetComponent<QuestItem>().GetQuestItem();
-        }
-    }
-
     private void OnCollisionStay2D(Collision2D coll)
     {
         if (coll.gameObject.tag == "Bunny")

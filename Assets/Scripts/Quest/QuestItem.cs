@@ -11,7 +11,14 @@ public class QuestItem : MonoBehaviour
     {
         questScript.GetItem();
 
-        QuestManager.instance.UpdateQuest();
-        Destroy(gameObject);
+        gameObject.SetActive(false);
+    }
+
+    private void OnTriggerEnter2D(Collider2D coll)
+    {
+        if (coll.gameObject.tag == "Player")
+        {
+            GetQuestItem();
+        }
     }
 }

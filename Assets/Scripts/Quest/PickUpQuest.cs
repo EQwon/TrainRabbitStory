@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class PickUpQuest : MonoBehaviour
 {
-    private void Start()
+    protected virtual void Start()
     {
         CreateItem();
     }
