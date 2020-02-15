@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
     }
     public int MaxCellNum
     {
-        get { return Stage >= 1 ? 16 : 11; }
+        get { return Stage >= 1 ? 11 : 9; }
     }
     #endregion
 

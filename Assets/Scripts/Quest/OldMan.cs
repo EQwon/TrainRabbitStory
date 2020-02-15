@@ -14,7 +14,7 @@ public class OldMan : PickUpQuest
 
     protected override void CreateItem()
     {
-        float spawnPosX = (10 - 3) * 20 + Random.Range(-7f, 7f);
+        float spawnPosX = (8 - 3) * 20 + Random.Range(-7f, 7f);
         float spawnPosY = Random.Range(-4f, 2f);
 
         QuestItem item = Instantiate(handkerchief, new Vector3(spawnPosX, spawnPosY, 0), Quaternion.identity);
