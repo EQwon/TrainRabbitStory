@@ -14,7 +14,7 @@ public static class SaveSystem
         {
             BinaryFormatter formatter = new BinaryFormatter();
             formatter.Serialize(stream, data);
-            Debug.Log("Save Successfully");
+            Debug.Log("Save Successfully at " + path);
         }
         catch(SerializationException e)
         {

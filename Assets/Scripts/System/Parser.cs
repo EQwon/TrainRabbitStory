@@ -156,4 +156,29 @@ public class Parser
 
         return ret;
     }
+
+    public static List<CollectionInfo> CollectionParse(TextAsset data)
+    {
+        List<CollectionInfo> returnList = new List<CollectionInfo>();
+
+        StringReader sr = new StringReader(data.text);
+        string source = sr.ReadLine();  // 먼저 한줄을 읽는다. 
+        string[] values;                // 구분된 데이터들을 저장할 배열 (values[0]이면 첫번째 데이터 )
+
+        while (source != null)
+        {
+            values = source.Split('\t'); // tab으로 구분
+            if (values.Length != 3) Debug.Log("Collection Parsing Warning at " + values[0] + " : " + data.name + "를 읽은 과정에서 길이가 3가 아닌 줄을 발견했습니다.");
+
+            string name = values[0];
+            string desc = values[1];
+            Sprite img = Resources.Load<Sprite>("CollectionImage/" + values[2]);
+
+            returnList.Add(new CollectionInfo(name, desc, img));
+
+            source = sr.ReadLine();    // 한줄 읽는다.
+        }
+
+        return returnList;
+    }
 }

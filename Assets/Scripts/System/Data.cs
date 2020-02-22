@@ -40,6 +40,7 @@ public class Data
     public int hp;
     public int mp;
     public StoryBunny[] storyBunnies;
+    public bool[] getCollection;
 
     public Data()
     {
@@ -52,5 +53,6 @@ public class Data
                 new StoryBunny(0,0),new StoryBunny(0,0),new StoryBunny(0,0),
                 new StoryBunny(0,0),new StoryBunny(0,0),new StoryBunny(0,0)
             };
+        getCollection = new bool[50];
     }
 }

@@ -300,6 +300,7 @@ GameObject:
   - component: {fileID: 2085666517559939541}
   - component: {fileID: 2085666517559939540}
   - component: {fileID: 2085666517559939538}
+  - component: {fileID: 792889262837562237}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -337,6 +338,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemAsset: {fileID: 4900000, guid: d7e583d16f3a6334798db3ef652b67e0, type: 3}
+  isTalking: 0
+  isQuesting: 0
 --- !u!114 &2085666517559939538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,10 +352,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cf28d8004b8cfd41b1788f87fa02c8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isAccept: 
-  isSuccess: 
   questCanvasPrefab: {fileID: 8303807671370539252, guid: b9b6dda35c28b2e49af27d8d2c6eadfe,
     type: 3}
+--- !u!114 &792889262837562237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085666517559939542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be2c5ddb0b68f5548b52ec9431d56c84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  collections: []
+  collectionData: {fileID: 4900000, guid: 1f09ef8e1ad48f640ae4e1240d3c3cf0, type: 3}
 --- !u!1 &6295507752970586129
 GameObject:
   m_ObjectHideFlags: 0
