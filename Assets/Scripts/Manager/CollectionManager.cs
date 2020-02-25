@@ -5,9 +5,9 @@ using UnityEngine;
 [System.Serializable]
 public struct CollectionInfo
 {
-    private string name;
-    private string desc;
-    private Sprite img;
+    [SerializeField] private string name;
+    [SerializeField] private string desc;
+    [SerializeField] private Sprite img;
 
     public CollectionInfo(string name, string desc, Sprite img)
     {
@@ -15,25 +15,34 @@ public struct CollectionInfo
         this.desc = desc;
         this.img = img;
     }
+
+    public string Name { get { return name; } }
+    public string Desc { get { return desc; } }
+    public Sprite Img { get { return img; } }
 }
 
 [System.Serializable]
 public struct Collection
 {
-    private bool isGet;
-    private CollectionInfo info;
+    [SerializeField] private bool isGet;
+    [SerializeField] private CollectionInfo info;
 
     public Collection(bool isGet, CollectionInfo info)
     {
         this.isGet = isGet;
         this.info = info;
     }
+
+    public bool IsGet { get { return isGet; } }
+    public CollectionInfo Info { get { return info; } }
 }
 
 public class CollectionManager : MonoBehaviour
 {
     [SerializeField] private List<Collection> collections = new List<Collection>();
     [SerializeField] private TextAsset collectionData;
+
+    public List<Collection> Collections { get { return collections; } }
 
     private void Start()
     {

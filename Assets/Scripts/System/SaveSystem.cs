@@ -44,7 +44,7 @@ public static class SaveSystem
         {
             BinaryFormatter formatter = new BinaryFormatter();
             data = formatter.Deserialize(stream) as Data;
-            Debug.Log("Load Successfully");
+            Debug.Log("Load Successfully from + " + path);
         }
         catch (SerializationException e)
         {
