@@ -130,7 +130,7 @@ public class InvenController : MonoBehaviour
         GameObject interactBunny = Player.instance.gameObject.transform.GetChild(0).GetComponent<Talk>().InteractBunny;
 
         // 주변에 토끼가 없거나 스토리 토끼가 없을 경우
-        if (interactBunny == null || !interactBunny.GetComponent<Dialogue_Story>())
+        if (interactBunny == null || !interactBunny.GetComponent<StoryDialogue>())
         {
             presentCheckPanel.SetActive(false);
             noBunnyAlertPanel.SetActive(true);

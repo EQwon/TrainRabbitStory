@@ -4,21 +4,16 @@ using UnityEngine;
 
 public class QuestItem : MonoBehaviour
 {
-    private PickUpQuest questScript;
-    public PickUpQuest QuestScript { set { questScript = value; } }
+    public delegate void WhenPlayerGetItem();
 
-    public void GetQuestItem()
-    {
-        questScript.GetItem();
-
-        gameObject.SetActive(false);
-    }
+    public WhenPlayerGetItem GetItem;
 
     private void OnTriggerEnter2D(Collider2D coll)
     {
         if (coll.gameObject.tag == "Player")
         {
-            GetQuestItem();
+            GetItem();
+            gameObject.SetActive(false);
         }
     }
 }

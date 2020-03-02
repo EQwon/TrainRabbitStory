@@ -11,15 +11,20 @@ public class ScoreDialogue
     public List<int> ScoreLimit { get { return scoreLimit; } }
     public TextAsset Dialogue { get { return dialogue; } }
 }
-
-public class Dialogue_Quest : Dialogue
+[RequireComponent(typeof(Quest))]
+public class QuestDialogue : Dialogue
 {
-    [SerializeField] private Quest myQuest;
+    [SerializeField] private ScoreDialogue successDialogues;
+    [SerializeField] private ScoreDialogue afterDialogues;
+
+    private Quest myQuest;
 
     public Quest MyQuest { get { return myQuest; } }
 
     protected override void Start()
     {
+        myQuest = GetComponent<Quest>();
+
         base.Start();
 
         QuestManager.instance.AddQuest(myQuest);
@@ -28,9 +33,9 @@ public class Dialogue_Quest : Dialogue
     public override List<List<string>> DialogForNow()
     {
         nowTalkCnt += 1;
-        int dialogNum = (int)myQuest.State();
+        int dialogNum = (int)myQuest.GetState();
 
-        if(myQuest.SuccessDialogues.ScoreLimit.Count != 0)
+        if(successDialogues.ScoreLimit.Count != 0)
         {
             if (dialogNum == 2)
             {
@@ -47,7 +52,6 @@ public class Dialogue_Quest : Dialogue
 
     private List<List<string>> SuccessDialogue()
     {
-        ScoreDialogue successDialogues = myQuest.SuccessDialogues;
         int score = myQuest.Score;
 
         List<int> scoreLimit = successDialogues.ScoreLimit;
@@ -63,7 +67,6 @@ public class Dialogue_Quest : Dialogue
 
     private List<List<string>> AfterDialogue()
     {
-        ScoreDialogue afterDialogues = myQuest.AfterDialogues;
         int score = myQuest.Score;
 
         List<int> scoreLimit = afterDialogues.ScoreLimit;

@@ -22,7 +22,7 @@ public struct Problem
     }
 }
 
-public class Crammed : MonoBehaviour
+public class CrammedQuest : Quest
 {
     private enum State { Ready, Note, Test, Grading }
     private State state;
@@ -195,7 +195,7 @@ public class Crammed : MonoBehaviour
     {
         yield return new WaitForSeconds(2.5f);
 
-        QuestManager.instance.GetQuest(QuestName.Crammed).ChangeQuestState(true, true);
+        QuestManager.instance.QuestFinish(questName);
         QuestManager.instance.BackToNoraml();
         UIManager.instance.StartTalk();
     }

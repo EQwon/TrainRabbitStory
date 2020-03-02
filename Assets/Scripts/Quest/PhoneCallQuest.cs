@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PhoneCall : MonoBehaviour
+public class PhoneCallQuest : Quest
 {
     //3, 2, 1 시작!
     //제한시간 15초
@@ -154,7 +154,7 @@ public class PhoneCall : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
-        QuestManager.instance.GetQuest(QuestName.PhoneCall).ChangeQuestState(true, true);
+        QuestManager.instance.QuestFinish(questName);
         QuestManager.instance.BackToNoraml();
         UIManager.instance.StartTalk();
     }

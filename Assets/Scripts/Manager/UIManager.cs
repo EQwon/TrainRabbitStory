@@ -132,7 +132,7 @@ public class UIManager : MonoBehaviour
         int presentNum = present.info.indexNum;
 
         // 해당하는 번호에 대한 대사를 가져온다.
-        currentDialogue = interactBunny.GetComponent<Dialogue_Story>().DialogForPresent(presentNum);
+        currentDialogue = interactBunny.GetComponent<StoryDialogue>().DialogForPresent(presentNum);
         if (currentDialogue.Count == 0) return;
 
         // 마지막으로 대화 상태로 UI를 조정합니다.
@@ -231,14 +231,14 @@ public class UIManager : MonoBehaviour
         {
             int changeAmount = int.Parse(currentDialogue[currentDialogNum][4 + choosedNum]);
 
-            BunnyName bunnyName = currentInteractBunny.GetComponent<Dialogue_Story>().myName;
+            BunnyName bunnyName = currentInteractBunny.GetComponent<StoryDialogue>().myName;
             GameManager.instance.StoryBunny(bunnyName).ChangeAffinity(changeAmount);
         }
         else if (currentDialogue[currentDialogNum][3] == "Quest")   // 퀘스트의 완료일 경우
         {
             int questNum = int.Parse(currentDialogue[currentDialogNum][4]);
 
-            QuestManager.instance.GetQuest((QuestName)questNum).ChangeQuestState(false, true);
+            QuestManager.instance.QuestFinish((QuestName)questNum);
             GameManager.instance.IsQuesting = false;
         }
         else if (currentDialogue[currentDialogNum][3] == "Item")    // 아이템일 경우
@@ -251,7 +251,7 @@ public class UIManager : MonoBehaviour
         {
             int changeAmount = int.Parse(currentDialogue[currentDialogNum][4]);
 
-            BunnyName bunnyName = currentInteractBunny.GetComponent<Dialogue_Story>().myName;
+            BunnyName bunnyName = currentInteractBunny.GetComponent<StoryDialogue>().myName;
             GameManager.instance.StoryBunny(bunnyName).ChangeAffinity(changeAmount);
         }
         else if (currentDialogue[currentDialogNum][3] == "Clear")   // 클리어일 경우
@@ -280,8 +280,8 @@ public class UIManager : MonoBehaviour
         rejectQuestButton.SetActive(false);
 
         //퀘스트 수락 전달
-        Quest quest = currentInteractBunny.GetComponent<Dialogue_Quest>().MyQuest;
-        QuestManager.instance.GetQuest(quest.QuestName).ChangeQuestState(true, false);
+        Quest quest = currentInteractBunny.GetComponent<QuestDialogue>().MyQuest;
+        QuestManager.instance.QuestStart(quest.QuestName);
         Debug.Log(quest.QuestName.ToString() + " 퀘스트를 수락합니다.");
 
         //수락시 대사 출력

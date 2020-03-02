@@ -24,7 +24,7 @@ public class CarrotTalkDialogue
     }
 }
 
-public class Skipping : MonoBehaviour
+public class SkippingQuest : Quest
 {
     [Header("Object Holder")]
     [SerializeField] private GameObject phoneScreen;
@@ -136,8 +136,8 @@ public class Skipping : MonoBehaviour
         {
             yield return new WaitForSeconds(2f);
 
-            UIManager.instance.CurrentInteractBunny.GetComponent<Dialogue_Quest>().MyQuest.Score = points;
-            QuestManager.instance.GetQuest(QuestName.Skipping).ChangeQuestState(true, true);
+            UIManager.instance.CurrentInteractBunny.GetComponent<QuestDialogue>().MyQuest.Score = points;
+            QuestManager.instance.QuestFinish(questName);
             QuestManager.instance.BackToNoraml();
             UIManager.instance.StartTalk();
 

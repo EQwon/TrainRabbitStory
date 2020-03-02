@@ -10,7 +10,7 @@ public class QuestManager : MonoBehaviour
     private List<Quest> quests = new List<Quest>();
 
     public GameObject questCanvasPrefab;
-    private GameObject questCanvas = null;
+    private QuestCanvasController questCanvas;
 
     private void Awake()
     {
@@ -22,11 +22,28 @@ public class QuestManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        questCanvas = Instantiate(questCanvasPrefab).GetComponent<QuestCanvasController>();
     }
 
     public void AddQuest(Quest myQuest)
     {
         quests.Add(myQuest);
+    }
+
+    public void AddQuestCanvas(QuestName questName, GameObject questCanvas)
+    {
+        this.questCanvas.AddCanvas(questName, questCanvas);
+    }
+
+    public void ActivateQuestCanvas(QuestName questName)
+    {
+        questCanvas.ActivateCanvas(questName);
+    }
+
+    public void DeactivateQuestCanvas(QuestName questName)
+    {
+        questCanvas.DeactivateCanvas(questName);
     }
 
     public Quest GetQuest(QuestName name)
@@ -56,20 +73,6 @@ public class QuestManager : MonoBehaviour
         {
             UIManager.instance.AddQuestCard(quest, false);
         }
-
-        //퀘스트 캔버스 오브젝트 활성화, 비활성화
-        if (questCanvas == null) questCanvas = Instantiate(questCanvasPrefab);
-        QuestCanvasController controller = questCanvas.GetComponent<QuestCanvasController>();
-
-        foreach (Quest quest in quests)
-        {
-            if (quest.IsAccpet)
-            {
-                controller.ActivateCanvas((int)quest.QuestName);
-                GameManager.instance.IsQuesting = true;
-            }
-            else controller.DeactivateCanvas((int)quest.QuestName);
-        }
     }
 
     private List<Quest> ProgressQuestList()
@@ -78,7 +81,7 @@ public class QuestManager : MonoBehaviour
 
         for (int i = 0; i < quests.Count; i++)
         {
-            if (quests[i].State() == QuestState.AcceptQuest) returnList.Add(quests[i]);
+            if (quests[i].GetState() == QuestState.DoingQuest) returnList.Add(quests[i]);
         }
         return returnList;
     }
@@ -89,7 +92,7 @@ public class QuestManager : MonoBehaviour
 
         for (int i = 0; i < quests.Count; i++)
         {
-            if (quests[i].State() == QuestState.SuccessQuest) returnList.Add(quests[i]);
+            if (quests[i].GetState() == QuestState.FinishQuest) returnList.Add(quests[i]);
         }
         return returnList;
     }
@@ -100,9 +103,23 @@ public class QuestManager : MonoBehaviour
 
         for (int i = 0; i < quests.Count; i++)
         {
-            if (quests[i].State() == QuestState.AfterQuest) returnList.Add(quests[i]);
+            if (quests[i].GetState() == QuestState.AfterQuest) returnList.Add(quests[i]);
         }
         return returnList;
+    }
+
+    public void QuestStart(QuestName questName)
+    {
+        Quest targetQuest = GetCorrespondQuest(questName);
+
+        targetQuest.StartQuest();
+    }
+
+    public void QuestFinish(QuestName questName)
+    {
+        Quest targetQuest = GetCorrespondQuest(questName);
+
+        targetQuest.FinishQuest();
     }
 
     public void BackToNoraml()
@@ -111,5 +128,17 @@ public class QuestManager : MonoBehaviour
         Destroy(questCanvas);
         questCanvas = null;
         UIManager.instance.gameObject.SetActive(true);
+    }
+
+    private Quest GetCorrespondQuest(QuestName questName)
+    {
+        for (int i = 0; i < quests.Count; i++)
+        {
+            Quest quest = quests[i];
+            if (quest.QuestName == questName) return quest;
+        }
+
+        Debug.LogError(questName.ToString() + "에 해당하는 퀘스트를 찾지 못했습니다.");
+        return null;
     }
 }

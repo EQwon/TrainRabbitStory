@@ -4,21 +4,21 @@ using UnityEngine;
 
 public class QuestCanvasController : MonoBehaviour
 {
-    public GameObject[] canvas;
+    private Dictionary<QuestName, GameObject> canvasDict = new Dictionary<QuestName, GameObject>();
 
-    public void ActivateCanvas(int canvasNum)
+    public void AddCanvas(QuestName questName, GameObject questCanvas)
     {
-        if (canvas[canvasNum].activeInHierarchy) return;
-
-        Debug.Log(canvas[canvasNum].name + "를 활성화합니다.");
-        canvas[canvasNum].SetActive(true);
+        questCanvas.transform.parent = gameObject.transform;
+        canvasDict.Add(questName, questCanvas);
     }
 
-    public void DeactivateCanvas(int canvasNum)
+    public void ActivateCanvas(QuestName questName)
     {
-        if (!canvas[canvasNum].activeInHierarchy) return;
+        canvasDict[questName].SetActive(true);
+    }
 
-        Debug.Log(canvas[canvasNum].name + "를 비활성화합니다.");
-        canvas[canvasNum].SetActive(false);
+    public void DeactivateCanvas(QuestName questName)
+    {
+        canvasDict[questName].SetActive(false);
     }
 }

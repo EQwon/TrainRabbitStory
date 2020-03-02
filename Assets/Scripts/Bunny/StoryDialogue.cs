@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Dialogue_Story : Dialogue
+public class StoryDialogue : Dialogue
 {
     [SerializeField] private TextAsset fixDialogueAsset;
     [SerializeField] private TextAsset presentDialogueAsset;

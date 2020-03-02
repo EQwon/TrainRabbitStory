@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Thonos : PickUpQuest
+public class ThonosQuest : Quest
 {
+    [Header("For Thonos")]
     [SerializeField] private QuestItem trainStone;
     [SerializeField] private List<Sprite> stoneImages;
     private List<GameObject> stones = new List<GameObject>();
@@ -12,22 +13,29 @@ public class Thonos : PickUpQuest
     [SerializeField] private int cnt;
     [SerializeField] private int collectedCnt = 0;
 
-    [SerializeField] private float limitTime;
+    [SerializeField] private float timeLimit;
     private float remainTime;
+    private bool questStart;
 
     [Header("UI Element")]
     [SerializeField] private Text remainTimeText;
 
-    protected override void Start()
+    public override void StartQuest()
     {
-        cnt = stoneImages.Count;
-        remainTime = limitTime;
+        base.StartQuest();
 
-        base.Start();
+        cnt = stoneImages.Count;
+        remainTime = timeLimit;
+
+        CreateStones();
+
+        questStart = true;
     }
 
     private void FixedUpdate()
     {
+        if (!questStart) return;
+
         if (remainTime > 0)
             remainTime -= Time.fixedDeltaTime;
         else
@@ -38,13 +46,13 @@ public class Thonos : PickUpQuest
             {
                 Destroy(stone);
             }
-            QuestManager.instance.GetQuest(QuestName.Thonos).ChangeQuestState(true, true);
+            QuestManager.instance.QuestFinish(QuestName.Thonos);
         }
 
         remainTimeText.text = remainTime.ToString("0.0") + " 초";
     }
 
-    protected override void CreateItem()
+    private void CreateStones()
     {
         for (int i = 0; i < cnt; i++)
         {
@@ -55,11 +63,11 @@ public class Thonos : PickUpQuest
             QuestItem stone = Instantiate(trainStone, new Vector2(spawnPosX, spawnPosY), Quaternion.identity);
             stones.Add(stone.gameObject);
             stone.GetComponent<SpriteRenderer>().sprite = stoneImages[i];
-            stone.QuestScript = this;
+            stone.GetItem += GetStone;
         }
     }
 
-    public override void GetItem()
+    private void GetStone()
     {
         collectedCnt += 1;
         
@@ -67,9 +75,14 @@ public class Thonos : PickUpQuest
         {
             // 퀘스트 성공!
             // 성공 처리하면 됨.
-            QuestManager.instance.GetQuest(QuestName.Thonos).ChangeQuestState(true, true);
+            QuestManager.instance.QuestFinish(questName);
         }
 
         QuestManager.instance.UpdateQuest();
+    }
+
+    protected override void Reward()
+    {
+        Debug.Log("현재 모은 돌 개수 : " + cnt + "에 따른 보상을 줘야합니다.");
     }
 }
