@@ -3,38 +3,28 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public struct CollectionInfo
+public struct Collection
 {
-    [SerializeField] private string name;
-    [SerializeField] private string desc;
-    [SerializeField] private Sprite img;
+    public bool isGet;
+    public string name;
+    public string desc;
+    public Sprite img;
 
-    public CollectionInfo(string name, string desc, Sprite img)
+    public Collection(bool isGet, string name, string desc, Sprite img)
     {
+        this.isGet = isGet;
         this.name = name;
         this.desc = desc;
         this.img = img;
     }
 
-    public string Name { get { return name; } }
-    public string Desc { get { return desc; } }
-    public Sprite Img { get { return img; } }
-}
-
-[System.Serializable]
-public struct Collection
-{
-    [SerializeField] private bool isGet;
-    [SerializeField] private CollectionInfo info;
-
-    public Collection(bool isGet, CollectionInfo info)
+    public Collection(bool isGet, Collection collection)
     {
         this.isGet = isGet;
-        this.info = info;
+        this.name = collection.name;
+        this.desc = collection.desc;
+        this.img = collection.img;
     }
-
-    public bool IsGet { get { return isGet; } }
-    public CollectionInfo Info { get { return info; } }
 }
 
 public class CollectionManager : MonoBehaviour
@@ -46,7 +36,7 @@ public class CollectionManager : MonoBehaviour
 
     private void Start()
     {
-        List<CollectionInfo> collectionInfos = Parser.CollectionParse(collectionData);
+        List<Collection> collectionInfos = Parser.CollectionParse(collectionData);
         bool[] getCollection = GameManager.instance.getCollection;
 
         for (int i = 0; i < collectionInfos.Count; i++)

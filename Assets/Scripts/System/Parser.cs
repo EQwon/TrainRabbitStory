@@ -157,9 +157,9 @@ public class Parser
         return ret;
     }
 
-    public static List<CollectionInfo> CollectionParse(TextAsset data)
+    public static List<Collection> CollectionParse(TextAsset data)
     {
-        List<CollectionInfo> returnList = new List<CollectionInfo>();
+        List<Collection> returnList = new List<Collection>();
 
         StringReader sr = new StringReader(data.text);
         string source = sr.ReadLine();  // 먼저 한줄을 읽는다. 
@@ -174,7 +174,7 @@ public class Parser
             string desc = values[1];
             Sprite img = Resources.Load<Sprite>("CollectionImage/" + values[2]);
 
-            returnList.Add(new CollectionInfo(name, desc, img));
+            returnList.Add(new Collection(false, name, desc, img));
 
             source = sr.ReadLine();    // 한줄 읽는다.
         }

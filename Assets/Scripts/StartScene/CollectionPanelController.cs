@@ -38,12 +38,11 @@ public class CollectionPanelController : MonoBehaviour
 
     public void ShowCollectionInfo(Collection collection)
     {
-        if (collection.IsGet)
+        if (collection.isGet)
         {
-            CollectionInfo info = collection.Info;
-            itemImage.sprite = info.Img;
-            itemNameText.text = info.Name;
-            itemDescText.text = info.Desc;
+            itemImage.sprite = collection.img;
+            itemNameText.text = collection.name;
+            itemDescText.text = collection.desc;
 
             infoPanel.SetActive(true);
         }

@@ -15,9 +15,9 @@ public class CollectionCellController : MonoBehaviour
         this.collection = collection;
         GetComponent<Button>().onClick.AddListener(() => controller.ShowCollectionInfo(collection));
 
-        if (collection.IsGet)
+        if (collection.isGet)
         {
-            myImage.sprite = collection.Info.Img;
+            myImage.sprite = collection.img;
         }
     }
 }
