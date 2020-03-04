@@ -89,14 +89,14 @@ GameObject:
   m_Component:
   - component: {fileID: 3342831200002433243}
   - component: {fileID: 1730144585932473165}
-  - component: {fileID: 3671073867776313047}
+  - component: {fileID: 4441075748604876131}
   m_Layer: 5
-  m_Name: Thonos Panel
+  m_Name: Thonos Quest Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3342831200002433243
 RectTransform:
   m_ObjectHideFlags: 0
@@ -125,7 +125,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2730775453032245612}
   m_CullTransparentMesh: 0
---- !u!114 &3671073867776313047
+--- !u!114 &4441075748604876131
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -134,29 +134,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2730775453032245612}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa144c7d8c1bb564aa7108e81816ee95, type: 3}
+  m_Script: {fileID: 11500000, guid: 69203a1bdd0ad444890fb77e0a9fdf40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questName: 0
-  questCanvas: {fileID: 0}
-  isAccept: 0
-  isFinish: 0
-  isInstant: 0
-  title: 
-  description: 
-  score: 0
-  trainStone: {fileID: 6671812737121740057, guid: 234d6ca37a6ffcd4e8e8edccbf314f28,
-    type: 3}
-  stoneImages:
-  - {fileID: 21300000, guid: 95b4bb748f3f05a40a58e2e0c2a6e351, type: 3}
-  - {fileID: 21300000, guid: d18d19003260f194eb6c7aada3f11710, type: 3}
-  - {fileID: 21300000, guid: c3aee05b471d0524a9f7004c496fb769, type: 3}
-  - {fileID: 21300000, guid: 1906f95b16ebc7748912a4cb108e6ec0, type: 3}
-  - {fileID: 21300000, guid: a218290540082584aab6633dca56ccea, type: 3}
-  - {fileID: 21300000, guid: 793f91a5f251dc84aa98b89914388188, type: 3}
-  cnt: 0
-  collectedCnt: 0
-  timeLimit: 0
   remainTimeText: {fileID: 3064081669305148538}
 --- !u!1 &3268103186806578342
 GameObject:

@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class ThonosQuest : Quest
 {
@@ -10,15 +9,12 @@ public class ThonosQuest : Quest
     [SerializeField] private List<Sprite> stoneImages;
     private List<GameObject> stones = new List<GameObject>();
 
-    [SerializeField] private int cnt;
-    [SerializeField] private int collectedCnt = 0;
-
     [SerializeField] private float timeLimit;
     private float remainTime;
     private bool questStart;
+    private int cnt;
 
-    [Header("UI Element")]
-    [SerializeField] private Text remainTimeText;
+    public float RemainTime { get { return remainTime; } }
 
     public override void StartQuest()
     {
@@ -46,10 +42,8 @@ public class ThonosQuest : Quest
             {
                 Destroy(stone);
             }
-            QuestManager.instance.QuestFinish(QuestName.Thonos);
+            EndQuest();
         }
-
-        remainTimeText.text = remainTime.ToString("0.0") + " 초";
     }
 
     private void CreateStones()
@@ -69,16 +63,9 @@ public class ThonosQuest : Quest
 
     private void GetStone()
     {
-        collectedCnt += 1;
-        
-        if (collectedCnt == cnt)
-        {
-            // 퀘스트 성공!
-            // 성공 처리하면 됨.
-            QuestManager.instance.QuestFinish(questName);
-        }
+        score += 1;
 
-        QuestManager.instance.UpdateQuest();
+        if (score == cnt) EndQuest();
     }
 
     protected override void Reward()

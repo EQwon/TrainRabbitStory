@@ -33,24 +33,23 @@ public class QuestDialogue : Dialogue
     public override List<List<string>> DialogForNow()
     {
         nowTalkCnt += 1;
-        int dialogNum = (int)myQuest.GetState();
 
-        if(successDialogues.ScoreLimit.Count != 0)
+        switch (myQuest.GetState())
         {
-            if (dialogNum == 2)
-            {
-                return SuccessDialogue();
-            }
-            if (dialogNum == 3)
-            {
+            case QuestState.BeforeQuest:
+                return dialogues[0];
+            case QuestState.DoingQuest:
+                return dialogues[1];
+            case QuestState.FinishQuest:
+                return FinishDialogue();
+            case QuestState.AfterQuest:
                 return AfterDialogue();
-            }
+            default:
+                return null;
         }
-
-        return dialogues[dialogNum];
     }
 
-    private List<List<string>> SuccessDialogue()
+    private List<List<string>> FinishDialogue()
     {
         int score = myQuest.Score;
 

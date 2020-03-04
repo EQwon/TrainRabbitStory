@@ -16,7 +16,7 @@ public class Quest : MonoBehaviour
     [SerializeField] private bool isInstant;
     [SerializeField] private string title;
     [SerializeField] private string description;
-    [SerializeField] private int score = 0;
+    [SerializeField] protected int score = 0;
 
     protected GameObject myQuestCanvas;
 
@@ -50,7 +50,7 @@ public class Quest : MonoBehaviour
         }
     }
 
-    public void SetState(QuestState state)
+    private void SetState(QuestState state)
     {
         if (state == QuestState.BeforeQuest) isAccept = false; isFinish = false;
         if (state == QuestState.DoingQuest) isAccept = true; isFinish = false;
@@ -80,10 +80,15 @@ public class Quest : MonoBehaviour
         QuestManager.instance.AddQuest(this);
         // 자신 전용 Quest Canvas를 생성
         myQuestCanvas = Instantiate(questCanvas);
+        myQuestCanvas.GetComponent<QuestPanel>().StartQuest(this);
         // 자신 전용 Quest Canvas를 QuestCanvas에 등록
         QuestManager.instance.AddQuestCanvas(questName, myQuestCanvas);
+        myQuestCanvas.SetActive(false);
     }
 
+    /// <summary>
+    /// 퀘스트를 시작하는 함수
+    /// </summary>
     public virtual void StartQuest()
     {
         // 퀘스트의 상태를 DoingQuest로 바꿔주고
@@ -92,12 +97,21 @@ public class Quest : MonoBehaviour
         QuestManager.instance.ActivateQuestCanvas(questName);
     }
 
+    /// <summary>
+    /// 퀘스트의 결과를 확정짓는 함수.
+    /// </summary>
+    public void EndQuest()
+    {
+        SetState(QuestState.FinishQuest);
+        QuestManager.instance.DeactivateQuestCanvas(questName);
+    }
+
+    /// <summary>
+    /// 퀘스트를 종료하는 함수. 퀘스트 토끼에게 대화를 걺으로써 불린다.
+    /// </summary>
     public void FinishQuest()
     {
-        // 퀘스트의 상태를 FinishQuest로 바꿔주고
-        SetState(QuestState.FinishQuest);
-        // Quest Canvas Off
-        QuestManager.instance.DeactivateQuestCanvas(questName);
+        SetState(QuestState.AfterQuest);
         // 퀘스트 완료에 대한 이벤트를 실행
         Reward();
     }
