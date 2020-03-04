@@ -54,6 +54,11 @@ public class CollectionManager : MonoBehaviour
             collections.Add(new Collection(getCollection[i], collectionInfos[i]));
         }
     }
+
+    public static void AcquireCollection(string collectionName)
+    {
+        Debug.Log(collectionName + "에 해당하는 콜렉션을 획득했습니다.");
+    }
 }
 
 

@@ -64,6 +64,7 @@ public class ThonosQuest : Quest
     private void GetStone()
     {
         score += 1;
+        CollectionManager.AcquireCollection("Thonos Stone Name");
 
         if (score == cnt) EndQuest();
     }
@@ -71,5 +72,9 @@ public class ThonosQuest : Quest
     protected override void Reward()
     {
         Debug.Log("현재 모은 돌 개수 : " + cnt + "에 따른 보상을 줘야합니다.");
+
+        float rewardHp = (1000f - GameManager.instance.HP) / 2;
+        GameManager.instance.HP += (int)rewardHp;
+        CollectionManager.AcquireCollection("gauntlets");
     }
 }
