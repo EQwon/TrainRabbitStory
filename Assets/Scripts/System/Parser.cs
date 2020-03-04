@@ -7,49 +7,28 @@ public class Parser
     public static List<List<List<string>>> DialogParse(TextAsset data)
     {
         List<List<List<string>>> returnList = new List<List<List<string>>>();
+
         StringReader sr = new StringReader(data.text);
+        string source = sr.ReadLine();              // 먼저 한줄을 읽는다. 
+        string[] values;                            // 구분된 데이터들을 저장할 배열 (values[0]이면 첫번째 데이터 )
 
-        bool isEnd = false;
-        while (isEnd == false)
+        while (source != null)
         {
-            bool readMode = false;
+            values = source.Split('\t');        // tab으로 구분한다
 
-            while (readMode == false)       // ===가 나올때까지 읽는다.
+            int num = int.Parse(values[0]);
+            List<string> dialog = new List<string>();
+
+            for (int i = 1; i < values.Length; i++)
             {
-                string findStart = sr.ReadLine();
-                if (findStart == "===")
-                {
-                    readMode = true;
-                }
-                if (findStart == "END")
-                {
-                    isEnd = true;
-                    break;
-                }
+                dialog.Add(values[i]);
             }
 
-            if (isEnd == true) break;
+            if (returnList.Count <= num) returnList.Add(new List<List<string>>());
 
-            string source = sr.ReadLine();  // 먼저 한줄을 읽는다. 
-            string[] values;                // 구분된 데이터들을 저장할 배열 (values[0]이면 첫번째 데이터 )
-            List<List<string>> dialog = new List<List<string>>();   // 하나의 대화를 저장하는 2차원 리스트
+            returnList[num].Add(dialog);
 
-            while (source != "===")         //===를 만나면 그만둔다.
-            {
-                //Debug.Log(source);
-                values = source.Split('/');  // Slash로 구분한다
-
-                List<string> temp = new List<string>();
-                for (int i = 0; i < values.Length; i++)
-                {
-                    temp.Add(values[i]);
-                }
-                dialog.Add(temp);
-
-                source = sr.ReadLine();    // 한줄 읽는다.
-            }
-
-            returnList.Add(dialog);
+            source = sr.ReadLine();             // 한줄 읽는다.
         }
 
         return returnList;
