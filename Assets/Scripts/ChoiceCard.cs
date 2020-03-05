@@ -8,9 +8,10 @@ public class ChoiceCard : MonoBehaviour
     
     [SerializeField] private Text choiceText;
 
-    public void SetChoice(string text, int total, int myNum)
+    public void SetChoice(List<string> texts, int myNum)
     {
-        choiceText.text = text;
+        choiceText.text = texts[myNum];
+        int total = texts.Count;
 
         float myPos = (total - 1) * 50 - 100 * myNum;
         GetComponent<RectTransform>().anchoredPosition = new Vector2(0, myPos);

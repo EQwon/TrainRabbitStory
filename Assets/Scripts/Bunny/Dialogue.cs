@@ -15,7 +15,7 @@ public class Dialogue : MonoBehaviour
     /// </summary>
     [SerializeField] protected int nowTalkCnt;
 
-    protected List<List<List<string>>> dialogues = new List<List<List<string>>>();
+    protected List<List<Dialog>> dialogues = new List<List<Dialog>>();
 
     protected virtual void Start()
     {
@@ -24,20 +24,20 @@ public class Dialogue : MonoBehaviour
         nowTalkCnt = 0;
     }
 
-    public virtual List<List<string>> DialogForNow()
+    public virtual List<Dialog> DialogueForNow()
     {
-        List<List<string>> dialog = new List<List<string>>();
+        List<Dialog> dialogue = new List<Dialog>();
 
         if (nowTalkCnt >= GameManager.instance.MaxStoryTalkCnt)
         {
             Debug.Log(name + "과의 일반 대화 횟수를 초과했습니다.");
-            return dialog;
+            return dialogue;
         }
 
         nowTalkCnt += 1;
 
-        dialog = dialogues[Random.Range(0, dialogues.Count)];
+        dialogue = dialogues[Random.Range(0, dialogues.Count)];
 
-        return dialog;
+        return dialogue;
     }
 }

@@ -45,7 +45,7 @@ public class UIManager : MonoBehaviour
     public GameObject stageClearPanel;
     public List<Sprite> clearMent;
 
-    private List<List<string>> currentDialogue;
+    private List<Dialog> currentDialogue;
     private GameObject currentInteractBunny;
     public GameObject CurrentInteractBunny { get { return currentInteractBunny; } }
     private int currentDialogNum = -1;
@@ -99,7 +99,7 @@ public class UIManager : MonoBehaviour
         GameObject interactBunny = currentInteractBunny;
 
         //1. 현재 할 대화를 가져오는 기능
-        currentDialogue = interactBunny.GetComponent<Dialogue>().DialogForNow();
+        currentDialogue = interactBunny.GetComponent<Dialogue>().DialogueForNow();
         if (currentDialogue.Count == 0) return;
 
         //2. 대화 상태로 UI 조정하는 기능
@@ -113,7 +113,7 @@ public class UIManager : MonoBehaviour
     public void StartTalk(GameObject interactBunny)
     {
         //1. 현재 할 대화를 가져오는 기능
-        currentDialogue = interactBunny.GetComponent<Dialogue>().DialogForNow();
+        currentDialogue = interactBunny.GetComponent<Dialogue>().DialogueForNow();
         if (currentDialogue.Count == 0) return;
 
         //2. 대화 상태로 UI 조정하는 기능
@@ -177,88 +177,104 @@ public class UIManager : MonoBehaviour
             return;
         }
 
-        speakerName.text = currentDialogue[currentDialogNum][0];
-        speakerText.text = currentDialogue[currentDialogNum][1];
-        if (currentDialogue[currentDialogNum].Count > 2 && currentDialogue[currentDialogNum][2] != "")
-        {
-            string path = "SpeakerImage/" + currentDialogue[currentDialogNum][2];
-            speakerImage.sprite = Resources.Load<Sprite>(path);
-        }
-        
-        SoundManager.instance.TalkSE();
-
-        SpecialDialogueAction();
-    }
-
-    private void SpecialDialogueAction()
-    {
+        talkPanel.GetComponent<Button>().interactable = true;
         finishDialogText.SetActive(false);
         acceptQuestButton.SetActive(false);
         rejectQuestButton.SetActive(false);
+        SoundManager.instance.TalkSE();
+
+        currentDialogue[currentDialogNum].Show(this);
+    }
+
+    public void ShowTalkDialog(BasicDialog dialog)
+    {
+        speakerName.text = dialog.speakerName;
+        speakerText.text = dialog.speakerText;
+        speakerImage.sprite = dialog.speakerImg;
 
         if (currentDialogNum == currentDialogue.Count - 1)
         {
             finishDialogText.SetActive(true);
         }
+    }
 
-        if (currentDialogue[currentDialogNum].Count < 4) return;
+    public void ShowARDialog(BasicDialog dialog)
+    {
+        speakerName.text = dialog.speakerName;
+        speakerText.text = dialog.speakerText;
+        speakerImage.sprite = dialog.speakerImg;
 
-        if (currentDialogue[currentDialogNum][3] == "AR")           // 수락, 거절 선택일 경우
-        {
-            talkPanel.GetComponent<Button>().interactable = false;
-            acceptQuestButton.SetActive(true);
-            rejectQuestButton.SetActive(true);
-            finishDialogText.SetActive(false);
-        }
-        else if (currentDialogue[currentDialogNum][3] == "CH")      // 선택지일 경우
-        {
-            List<string> nowDialog = currentDialogue[currentDialogNum];
+        talkPanel.GetComponent<Button>().interactable = false;
+        acceptQuestButton.SetActive(true);
+        rejectQuestButton.SetActive(true);
+    }
 
-            talkPanel.GetComponent<Button>().interactable = false;
-            choicePanel.SetActive(true);
-            for (int i = 4; i < nowDialog.Count; i++)
-            {
-                GameObject choice = Instantiate(choiceCard, choicePanel.transform);
-                choice.GetComponent<ChoiceCard>().SetChoice(nowDialog[i], nowDialog.Count - 3, i - 4);
-            }
-            finishDialogText.SetActive(false);
-        }
-        else if (currentDialogue[currentDialogNum][3] == "RE")      // 대답일 경우
-        {
-            speakerText.text = currentDialogue[currentDialogNum][4 + choosedNum];
-        }
-        else if (currentDialogue[currentDialogNum][3] == "RE_Affinity") // 대답에 따른 호감도 변화
-        {
-            int changeAmount = int.Parse(currentDialogue[currentDialogNum][4 + choosedNum]);
+    public void ShowChoiceDialog(BasicDialog dialog, List<string> choiceTexts)
+    {
+        speakerName.text = dialog.speakerName;
+        speakerText.text = dialog.speakerText;
+        speakerImage.sprite = dialog.speakerImg;
 
-            BunnyName bunnyName = currentInteractBunny.GetComponent<StoryDialogue>().myName;
-            GameManager.instance.StoryBunny(bunnyName).ChangeAffinity(changeAmount);
-        }
-        else if (currentDialogue[currentDialogNum][3] == "Quest")   // 퀘스트의 완료일 경우
+        talkPanel.GetComponent<Button>().interactable = false;
+        choicePanel.SetActive(true);
+        for (int i = 0; i < choiceTexts.Count; i++)
         {
-            int questNum = int.Parse(currentDialogue[currentDialogNum][4]);
+            GameObject choice = Instantiate(choiceCard, choicePanel.transform);
+            choice.GetComponent<ChoiceCard>().SetChoice(choiceTexts, i);
+        }
+    }
 
-            QuestManager.instance.QuestFinish((QuestName)questNum);
-            GameManager.instance.IsQuesting = false;
-        }
-        else if (currentDialogue[currentDialogNum][3] == "Item")    // 아이템일 경우
-        {
-            int itemNum = int.Parse(currentDialogue[currentDialogNum][4]);
+    public void ShowReactionDialog(List<BasicDialog> dialogs)
+    {
+        BasicDialog dialog = dialogs[choosedNum];
 
-            //GameManager.instance.GetItem(itemNum);
-        }
-        else if (currentDialogue[currentDialogNum][3] == "Affinity")// 호감도일 경우
-        {
-            int changeAmount = int.Parse(currentDialogue[currentDialogNum][4]);
+        speakerName.text = dialog.speakerName;
+        speakerText.text = dialog.speakerText;
+        speakerImage.sprite = dialog.speakerImg;
+    }
 
-            BunnyName bunnyName = currentInteractBunny.GetComponent<StoryDialogue>().myName;
-            GameManager.instance.StoryBunny(bunnyName).ChangeAffinity(changeAmount);
-        }
-        else if (currentDialogue[currentDialogNum][3] == "Clear")   // 클리어일 경우
-        {
-            EndTalk();
-            StageClear();
-        }
+    public void ShowReactionAffDialog()
+    {
+        //else if (currentDialogue[currentDialogNum][3] == "RE_Affinity") // 대답에 따른 호감도 변화
+        //{
+        //    int changeAmount = int.Parse(currentDialogue[currentDialogNum][4 + choosedNum]);
+
+        //    BunnyName bunnyName = currentInteractBunny.GetComponent<StoryDialogue>().myName;
+        //    GameManager.instance.StoryBunny(bunnyName).ChangeAffinity(changeAmount);
+        //}
+    }
+
+    public void ShowQuestFinishDialog(BasicDialog dialog)
+    {
+        speakerName.text = dialog.speakerName;
+        speakerText.text = dialog.speakerText;
+        speakerImage.sprite = dialog.speakerImg;
+
+        currentInteractBunny.GetComponent<Quest>().FinishQuest();
+        GameManager.instance.IsQuesting = false;
+    }
+
+    public void ShowItemDialog()
+    {
+        //int itemNum = int.Parse(currentDialogue[currentDialogNum][4]);
+
+        //GameManager.instance.GetItem(itemNum);
+    }
+
+    public void ShowAffinityDialog(BasicDialog dialog, int affinityAmount)
+    {
+        speakerName.text = dialog.speakerName;
+        speakerText.text = dialog.speakerText;
+        speakerImage.sprite = dialog.speakerImg;
+
+        BunnyName bunnyName = currentInteractBunny.GetComponent<StoryDialogue>().myName;
+        GameManager.instance.StoryBunny(bunnyName).ChangeAffinity(affinityAmount);
+    }
+
+    public void ShowClearDialog()
+    {
+        EndTalk();
+        StageClear();
     }
 
     private void EndTalk()

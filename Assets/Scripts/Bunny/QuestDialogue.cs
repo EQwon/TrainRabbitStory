@@ -30,7 +30,7 @@ public class QuestDialogue : Dialogue
         QuestManager.instance.AddQuest(myQuest);
     }
 
-    public override List<List<string>> DialogForNow()
+    public override List<List<string>> DialogueForNow()
     {
         nowTalkCnt += 1;
 

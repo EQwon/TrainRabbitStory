@@ -19,7 +19,7 @@ public class StoryDialogue : Dialogue
         presentDialogues = Parser.DialogParse(presentDialogueAsset);
     }
 
-    public override List<List<string>> DialogForNow()
+    public override List<List<string>> DialogueForNow()
     {
         List<List<string>> dialog = new List<List<string>>();
 

@@ -4,9 +4,9 @@ using System.IO;
 
 public class Parser
 {
-    public static List<List<List<string>>> DialogParse(TextAsset data)
+    public static List<List<Dialog>> DialogParse(TextAsset data)
     {
-        List<List<List<string>>> returnList = new List<List<List<string>>>();
+        List<List<Dialog>> returnList = new List<List<Dialog>>();
 
         StringReader sr = new StringReader(data.text);
         string source = sr.ReadLine();              // 먼저 한줄을 읽는다. 
@@ -16,17 +16,7 @@ public class Parser
         {
             values = source.Split('\t');        // tab으로 구분한다
 
-            int num = int.Parse(values[0]);
-            List<string> dialog = new List<string>();
-
-            for (int i = 1; i < values.Length; i++)
-            {
-                dialog.Add(values[i]);
-            }
-
-            if (returnList.Count <= num) returnList.Add(new List<List<string>>());
-
-            returnList[num].Add(dialog);
+            Dialog.ConvertToDialog(new List<string>(values), ref returnList);
 
             source = sr.ReadLine();             // 한줄 읽는다.
         }
