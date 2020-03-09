@@ -1,0 +1,3 @@
+﻿0	풀떼기	0번 선물의 테스트용 선물 대화	PulttegiBunny_Bust
+1	풀떼기	1번 선물의 테스트용 선물 대화	PulttegiBunny_Bust
+2	풀떼기	2번 선물의 테스트용 선물 대화	PulttegiBunny_Bust

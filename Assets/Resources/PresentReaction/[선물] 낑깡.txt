@@ -1,0 +1,3 @@
+﻿0	낑깡	0번 선물의 테스트용 선물 대화	KkingkkangBunny_Bust
+1	낑깡	1번 선물의 테스트용 선물 대화	KkingkkangBunny_Bust
+2	낑깡	2번 선물의 테스트용 선물 대화	KkingkkangBunny_Bust

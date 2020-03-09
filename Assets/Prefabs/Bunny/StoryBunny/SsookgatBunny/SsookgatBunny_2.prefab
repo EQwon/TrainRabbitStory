@@ -218,9 +218,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f792b91061ddd5f46a83f70c6a757077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueAsset: {fileID: 4900000, guid: d5cbfd7be2ef23d4d9343049e44ca5cc, type: 3}
-  nowTalkCnt: 0
-  fixDialogueAsset: {fileID: 4900000, guid: d64277f4ad7f81e48a5b54f73ad8963c, type: 3}
+  dialogueAsset: {fileID: 4900000, guid: 595f1dcb296e2504a955e486afd97fac, type: 3}
+  fixDialogueAsset: {fileID: 4900000, guid: e8aed69dbefd88d4e8d726ea1e8e8fe4, type: 3}
   presentDialogueAsset: {fileID: 4900000, guid: c349f658f2133ae40a84f8bc777b2dc9,
     type: 3}
   myName: 5

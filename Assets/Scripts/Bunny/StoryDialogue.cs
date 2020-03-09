@@ -8,9 +8,8 @@ public class StoryDialogue : Dialogue
     [SerializeField] private TextAsset presentDialogueAsset;
     public BunnyName myName;
 
-    private List<List<List<string>>> fixDialogues = new List<List<List<string>>>();
-    private List<List<List<string>>> presentDialogues = new List<List<List<string>>>();
-
+    private List<List<Dialog>> fixDialogues = new List<List<Dialog>>();
+    private List<List<Dialog>> presentDialogues = new List<List<Dialog>>();
     protected override void Start()
     {
         base.Start();
@@ -19,9 +18,9 @@ public class StoryDialogue : Dialogue
         presentDialogues = Parser.DialogParse(presentDialogueAsset);
     }
 
-    public override List<List<string>> DialogueForNow()
+    public override List<Dialog> DialogueForNow()
     {
-        List<List<string>> dialog = new List<List<string>>();
+        List<Dialog> dialog = new List<Dialog>();
 
         if (nowTalkCnt > GameManager.instance.MaxStoryTalkCnt)
         {
@@ -44,7 +43,7 @@ public class StoryDialogue : Dialogue
         // 해당 대화 번호에 대화가 있으면
         if (dialogues.Count > dialogCnt)
         {
-            dialog = new List<List<string>>(dialogues[dialogCnt]);
+            dialog = new List<Dialog>(dialogues[dialogCnt]);
         }
         else Debug.LogError(myName.ToString() + "에게 더 이상 할당되어 있는 대화가 없습니다.");
 
@@ -52,9 +51,9 @@ public class StoryDialogue : Dialogue
         return dialog;
     }
 
-    public List<List<string>> DialogForPresent(int presentNum)
+    public List<Dialog> DialogForPresent(int presentNum)
     {
-        List<List<string>> dialog = new List<List<string>>();
+        List<Dialog> dialog = new List<Dialog>();
 
         if (presentDialogues.Count > presentNum) dialog = presentDialogues[presentNum];
 

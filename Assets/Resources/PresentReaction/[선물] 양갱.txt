@@ -1,0 +1,3 @@
+﻿0	양갱	0번 선물의 테스트용 선물 대화	YanggaengBunny_Bust
+1	양갱	1번 선물의 테스트용 선물 대화	YanggaengBunny_Bust
+2	양갱	2번 선물의 테스트용 선물 대화	YanggaengBunny_Bust

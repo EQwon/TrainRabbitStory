@@ -1,0 +1,3 @@
+﻿0	곶감	0번 선물의 테스트용 선물 대화	GotgamBunny_Bust
+1	곶감	1번 선물의 테스트용 선물 대화	GotgamBunny_Bust
+2	곶감	2번 선물의 테스트용 선물 대화	GotgamBunny_Bust

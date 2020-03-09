@@ -69,10 +69,11 @@ GameObject:
   - component: {fileID: 75752857502967870}
   - component: {fileID: 7779136780641783867}
   - component: {fileID: 3240149001557964836}
-  - component: {fileID: 9075799932249590339}
-  - component: {fileID: 2763334017896290672}
-  - component: {fileID: -3024613964939362535}
   - component: {fileID: -7736000910626530510}
+  - component: {fileID: 9075799932249590339}
+  - component: {fileID: -3024613964939362535}
+  - component: {fileID: 8950945325360967927}
+  - component: {fileID: 4997023326504764047}
   m_Layer: 8
   m_Name: CollegeBunny
   m_TagString: Bunny
@@ -191,62 +192,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &9075799932249590339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2503992160686711965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43ea0ca92e4f89844aa4ab886bce6b7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hp: 10000
-  isInteractable: 1
-  isInvincible: 0
---- !u!114 &2763334017896290672
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2503992160686711965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0b63e8d7953aab4ca407b3e0acc41f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueAsset: {fileID: 4900000, guid: 0f2aa6c7c7b4c71468835d8fc1e307a4, type: 3}
-  nowTalkCnt: 0
-  myQuest:
-    questName: 1
-    isAccept: 0
-    isSuccess: 0
-    isInstant: 1
-    title: 
-    description: 
-    successDialogues:
-      scoreLimit: 
-      dialogue: {fileID: 0}
-    afterDialogues:
-      scoreLimit: 
-      dialogue: {fileID: 0}
-    score: 0
---- !u!114 &-3024613964939362535
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2503992160686711965}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1ae6ee392ba1bf419817d768a8e86ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.001
 --- !u!95 &-7736000910626530510
 Animator:
   serializedVersion: 3
@@ -266,6 +211,68 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9075799932249590339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503992160686711965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43ea0ca92e4f89844aa4ab886bce6b7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hp: 10000
+  isInteractable: 1
+  isInvincible: 0
+--- !u!114 &-3024613964939362535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503992160686711965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1ae6ee392ba1bf419817d768a8e86ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.001
+--- !u!114 &8950945325360967927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503992160686711965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c055e64396844246b79ddda530434bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questName: 1
+  questCanvas: {fileID: 0}
+  isAccept: 0
+  isFinish: 0
+  isInstant: 0
+  title: 
+  description: 
+  score: 0
+--- !u!114 &4997023326504764047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2503992160686711965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af694605e6c133d45aaef5a63bc0502d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueAsset: {fileID: 0}
+  cutline: []
 --- !u!1001 &8500771161144447360
 PrefabInstance:
   m_ObjectHideFlags: 0

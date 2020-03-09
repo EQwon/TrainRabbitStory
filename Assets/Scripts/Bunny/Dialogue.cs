@@ -13,7 +13,7 @@ public class Dialogue : MonoBehaviour
     /// <summary>
     /// 현재 스테이지가 시작되고 대화한 횟수
     /// </summary>
-    [SerializeField] protected int nowTalkCnt;
+    protected int nowTalkCnt;
 
     protected List<List<Dialog>> dialogues = new List<List<Dialog>>();
 

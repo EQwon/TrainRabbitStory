@@ -1,0 +1,3 @@
+﻿0	망고	0번 선물의 테스트용 선물 대화	MangoBunny_Bust
+1	망고	1번 선물의 테스트용 선물 대화	MangoBunny_Bust
+2	망고	2번 선물의 테스트용 선물 대화	MangoBunny_Bust

@@ -218,13 +218,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueAsset: {fileID: 4900000, guid: 39b8928735c7cca4b8aa36ec6b992f62, type: 3}
-  nowTalkCnt: 0
-  successDialogues:
-    scoreLimit: 0600000000000000
-    dialogue: {fileID: 4900000, guid: d9f8125f4f9b87145b7646de0d2b1669, type: 3}
-  afterDialogues:
-    scoreLimit: 0600000000000000
-    dialogue: {fileID: 4900000, guid: 20051b1909819744caf07dddac814835, type: 3}
+  cutline:
+  - type: 0
+    score: 6
+    successNum: 2
+    afterNum: 4
+  - type: 0
+    score: 0
+    successNum: 3
+    afterNum: 5
 --- !u!114 &8194230782811344600
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -255,7 +257,6 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1906f95b16ebc7748912a4cb108e6ec0, type: 3}
   - {fileID: 21300000, guid: a218290540082584aab6633dca56ccea, type: 3}
   - {fileID: 21300000, guid: 793f91a5f251dc84aa98b89914388188, type: 3}
-  collectedCnt: 0
   timeLimit: 80
 --- !u!1001 &488296583349007593
 PrefabInstance:

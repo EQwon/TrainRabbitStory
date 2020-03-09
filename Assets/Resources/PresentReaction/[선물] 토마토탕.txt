@@ -1,0 +1,3 @@
+﻿0	토마토탕	0번 선물의 테스트용 선물 대화	TomatotangBunny_Bust
+1	토마토탕	1번 선물의 테스트용 선물 대화	TomatotangBunny_Bust
+2	토마토탕	2번 선물의 테스트용 선물 대화	TomatotangBunny_Bust

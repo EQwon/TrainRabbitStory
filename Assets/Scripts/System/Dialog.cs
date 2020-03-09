@@ -61,7 +61,10 @@ public class Dialog
         }
         catch
         {
-            if (line[4] != "") Debug.LogError(line[4] + "라는 Command Enum은 존재하지 않습니다.");
+            if (line.Count >= 5)
+            {
+                if (line[4] != "") Debug.LogError(line[4] + "라는 Command Enum은 존재하지 않습니다.");
+            }
 
             dialog = new TalkDialog(line[1], line[2], line[3]);
         }

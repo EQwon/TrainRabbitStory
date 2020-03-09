@@ -216,9 +216,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f792b91061ddd5f46a83f70c6a757077, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueAsset: {fileID: 4900000, guid: 279abd67d6c8b324dadf40054720786b, type: 3}
-  nowTalkCnt: 0
-  fixDialogueAsset: {fileID: 4900000, guid: 3b6cfb015d2514a4aad497812f074ef9, type: 3}
+  dialogueAsset: {fileID: 4900000, guid: 026ccc3a7fcee1248b801a917cf8e46b, type: 3}
+  fixDialogueAsset: {fileID: 4900000, guid: 5c2535af1d116f74c9d3b03c089d7e82, type: 3}
   presentDialogueAsset: {fileID: 4900000, guid: 8aaf27a7a6794d042930bbbb3b0cc7e4,
     type: 3}
   myName: 1

@@ -1,0 +1,3 @@
+﻿0	자두푸딩	0번 선물의 테스트용 선물 대화	JadupuddingBunny_Bust
+1	자두푸딩	1번 선물의 테스트용 선물 대화	JadupuddingBunny_Bust
+2	자두푸딩	2번 선물의 테스트용 선물 대화	JadupuddingBunny_Bust
