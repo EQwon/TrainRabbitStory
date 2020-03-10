@@ -242,22 +242,27 @@ MonoBehaviour:
   questName: 5
   questCanvas: {fileID: 2730775453032245612, guid: 0a00f08705d53e74287bae4ebee1d549,
     type: 3}
-  isAccept: 0
-  isFinish: 0
+  questState: 0
   isInstant: 0
   title: 
   description: 
   score: 0
+  timeLimit: 80
   trainStone: {fileID: 6671812737121740057, guid: 234d6ca37a6ffcd4e8e8edccbf314f28,
     type: 3}
-  stoneImages:
-  - {fileID: 21300000, guid: 95b4bb748f3f05a40a58e2e0c2a6e351, type: 3}
-  - {fileID: 21300000, guid: d18d19003260f194eb6c7aada3f11710, type: 3}
-  - {fileID: 21300000, guid: c3aee05b471d0524a9f7004c496fb769, type: 3}
-  - {fileID: 21300000, guid: 1906f95b16ebc7748912a4cb108e6ec0, type: 3}
-  - {fileID: 21300000, guid: a218290540082584aab6633dca56ccea, type: 3}
-  - {fileID: 21300000, guid: 793f91a5f251dc84aa98b89914388188, type: 3}
-  timeLimit: 80
+  stoneInfos:
+  - stoneName: "\uD30C\uC544\uB780\uC0C9 \uB3CC"
+    stoneImage: {fileID: 21300000, guid: a218290540082584aab6633dca56ccea, type: 3}
+  - stoneName: "\uCD08\uC624\uB85D\uC0C9 \uB3CC"
+    stoneImage: {fileID: 21300000, guid: 793f91a5f251dc84aa98b89914388188, type: 3}
+  - stoneName: "\uC8FC\uC6B0\uD669\uC0C9 \uB3CC"
+    stoneImage: {fileID: 21300000, guid: 1906f95b16ebc7748912a4cb108e6ec0, type: 3}
+  - stoneName: "\uBCF4\uC624\uB77C\uC0C9 \uB3CC"
+    stoneImage: {fileID: 21300000, guid: d18d19003260f194eb6c7aada3f11710, type: 3}
+  - stoneName: "\uBE60\uC54C\uAC04\uC0C9 \uB3CC"
+    stoneImage: {fileID: 21300000, guid: c3aee05b471d0524a9f7004c496fb769, type: 3}
+  - stoneName: "\uB178\uC624\uB780\uC0C9 \uB3CC"
+    stoneImage: {fileID: 21300000, guid: 95b4bb748f3f05a40a58e2e0c2a6e351, type: 3}
 --- !u!1001 &488296583349007593
 PrefabInstance:
   m_ObjectHideFlags: 0

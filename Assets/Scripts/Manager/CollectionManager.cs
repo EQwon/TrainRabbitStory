@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public struct Collection
+public class Collection
 {
     public bool isGet;
     public string name;
@@ -25,14 +25,27 @@ public struct Collection
         this.desc = collection.desc;
         this.img = collection.img;
     }
+
+    public void Acquire()
+    {
+        isGet = true;
+    }
 }
 
 public class CollectionManager : MonoBehaviour
 {
+    public static CollectionManager instance;
+
     [SerializeField] private List<Collection> collections = new List<Collection>();
     [SerializeField] private TextAsset collectionData;
 
     public List<Collection> Collections { get { return collections; } }
+
+    private void Awake()
+    {
+        if (instance == null) instance = this;
+        else Destroy(gameObject);
+    }
 
     private void Start()
     {
@@ -41,13 +54,26 @@ public class CollectionManager : MonoBehaviour
 
         for (int i = 0; i < collectionInfos.Count; i++)
         {
-            collections.Add(new Collection(getCollection[i], collectionInfos[i]));
+            Collection collection = new Collection(getCollection[i], collectionInfos[i]);
+            collections.Add(collection);
         }
     }
 
-    public static void AcquireCollection(string collectionName)
+    public void AcquireCollection(string collectionName)
     {
         Debug.Log(collectionName + "에 해당하는 콜렉션을 획득했습니다.");
+        GetCollectionByName(collectionName).Acquire();
+    }
+
+    private Collection GetCollectionByName(string collectionName)
+    {
+        for (int i = 0; i < collections.Count; i++)
+        {
+            if (collections[i].name == collectionName) return collections[i];
+        }
+
+        Debug.LogError(collectionName + "에 해당하는 콜렉션을 찾을 수 없습니다. 0번째 콜렉션을 반환합니다.");
+        return collections[0];
     }
 }
 

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class QuestItem : MonoBehaviour
 {
-    public delegate void WhenPlayerGetItem();
+    public delegate void WhenPlayerGetItem(string itemName);
 
     public WhenPlayerGetItem GetItem;
 
@@ -12,7 +12,7 @@ public class QuestItem : MonoBehaviour
     {
         if (coll.gameObject.tag == "Player")
         {
-            GetItem();
+            GetItem(name);
             gameObject.SetActive(false);
         }
     }

@@ -23,7 +23,7 @@ public class OldManQuest : Quest
         item.GetItem += GetHandkerchief;
     }
 
-    private void GetHandkerchief()
+    private void GetHandkerchief(string itemName)
     {
         QuestManager.instance.QuestFinish(questName);
     }
