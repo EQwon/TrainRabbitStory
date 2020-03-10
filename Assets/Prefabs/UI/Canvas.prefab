@@ -1768,6 +1768,7 @@ MonoBehaviour:
   choicePanel: {fileID: 6378909718293156386}
   choiceCard: {fileID: 8682462398171407588, guid: 382e94768a3808741841711e92d2b359,
     type: 3}
+  effectPanel: {fileID: 3605425463280892710}
   basicUI: {fileID: 2048804366849208676}
   cellNumberText: {fileID: 390239406403297151}
   healthBar: {fileID: 3709037470664303063}
@@ -1784,7 +1785,6 @@ MonoBehaviour:
   questCard: {fileID: 364156504850917562, guid: 5f53055f5247dc74794623e6ddbf91a4,
     type: 3}
   openingAsset: {fileID: 4900000, guid: 9fbd19f58eba38f4dac07e1977bc7c7e, type: 3}
-  darkPanel: {fileID: 3605425463280892710}
   stageClearPanel: {fileID: 7910456228984069775}
   clearMent:
   - {fileID: 21300000, guid: 8d52b40427bd94b42a78354242927826, type: 3}
@@ -5287,7 +5287,7 @@ GameObject:
   - component: {fileID: 5992135131844369967}
   - component: {fileID: 3026210274551920700}
   m_Layer: 5
-  m_Name: DarkPanel
+  m_Name: ScreenEffectPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5333,14 +5333,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.43529412}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.5882353}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1

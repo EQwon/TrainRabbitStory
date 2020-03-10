@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using DG.Tweening;
 
 public class UIManager : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class UIManager : MonoBehaviour
     public GameObject rejectQuestButton;
     public GameObject choicePanel;
     public GameObject choiceCard;
+    public GameObject effectPanel;
 
     [Header("Basic UI")]
     public GameObject basicUI;
@@ -39,7 +41,6 @@ public class UIManager : MonoBehaviour
 
     [Header("For Opening")]
     public TextAsset openingAsset;
-    public GameObject darkPanel;
 
     [Header("Stage Clear")]
     public GameObject stageClearPanel;
@@ -76,7 +77,7 @@ public class UIManager : MonoBehaviour
         choicePanel.SetActive(false);
         basicUI.SetActive(true);
         WarningPanel.SetActive(false);
-        darkPanel.SetActive(false);
+        effectPanel.SetActive(false);
         bagPanel.SetActive(false);
         stageClearPanel.SetActive(false);
 
@@ -277,6 +278,25 @@ public class UIManager : MonoBehaviour
         StageClear();
     }
 
+    public void ShowScreenEffectDialog(BasicDialog dialog, Color color, float duration)
+    {
+        effectPanel.SetActive(true);
+
+        Sequence sequence = DOTween.Sequence();
+        sequence.Append(effectPanel.GetComponent<Image>().DOColor(color, duration))
+            .AppendCallback(() => ScreenEffect(color, duration));
+
+        speakerName.text = dialog.speakerName;
+        speakerText.text = dialog.speakerText;
+        speakerImage.sprite = dialog.speakerImg;
+    }
+
+    private void ScreenEffect(Color color, float duration)
+    {
+        if (color.a == 0) effectPanel.SetActive(false);
+        if (duration != 0) NextDialog();
+    }
+
     private void EndTalk()
     {
         //currentInteractBunny.GetComponent<Dialogue>().GiveReward(currentDialogue);
@@ -340,7 +360,6 @@ public class UIManager : MonoBehaviour
     public void ShowOpeningStory()
     {
         //UI 조정
-        darkPanel.SetActive(true);
         basicUI.SetActive(false);
         talkPanel.SetActive(true);
         talkPanel.GetComponent<Button>().interactable = true;

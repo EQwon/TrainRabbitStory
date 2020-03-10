@@ -21,7 +21,7 @@ public class Dialog
     public enum Command
     {
         수락거절, 선택지, 대답, 대답호감도, 퀘스트종료, 아이템,
-        호감도, 클리어
+        호감도, 클리어, 화면효과
     }
 
     public static Dialog ConvertToDialog(List<string> line, ref List<List<Dialog>> dialogue)
@@ -57,6 +57,9 @@ public class Dialog
                 case Command.호감도:
                     break;
                 case Command.클리어:
+                    break;
+                case Command.화면효과:
+                    dialog = new ScreenEffectDialog(line[1], line[2], line[3], line[5], line[6]);
                     break;
             }
         }
@@ -194,5 +197,27 @@ public class ClearDialog : Dialog
     public override void Show(UIManager UI)
     {
         UI.ShowClearDialog();
+    }
+}
+
+public class ScreenEffectDialog : Dialog
+{
+    BasicDialog dialog;
+    Color targetColor;
+    float duration;
+
+    public ScreenEffectDialog(string speakerName, string speakerText, string speakerImg
+        , string color, string duration)
+    {
+        dialog = new BasicDialog(speakerName, speakerText, Resources.Load<Sprite>("SpeakerImage/" + speakerImg));
+
+        string[] values = color.Split(',');
+        targetColor = new Color(float.Parse(values[0]), float.Parse(values[1]), float.Parse(values[2]), float.Parse(values[3]));
+        this.duration = float.Parse(duration);
+    }
+
+    public override void Show(UIManager UI)
+    {
+        UI.ShowScreenEffectDialog(dialog, targetColor, duration);
     }
 }
