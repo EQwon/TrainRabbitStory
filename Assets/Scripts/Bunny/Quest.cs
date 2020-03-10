@@ -11,8 +11,7 @@ public class Quest : MonoBehaviour
     [Header("General")]
     [SerializeField] protected QuestName questName;
     [SerializeField] private GameObject questCanvas;
-    [SerializeField] private bool isAccept;
-    [SerializeField] private bool isFinish;
+    [SerializeField] private QuestState questState;
     [SerializeField] private bool isInstant;
     [SerializeField] private string title;
     [SerializeField] private string description;
@@ -21,8 +20,7 @@ public class Quest : MonoBehaviour
     protected GameObject myQuestCanvas;
 
     public QuestName QuestName { get { return questName; } }
-    public bool IsAccpet { get { return isAccept; } }
-    public bool IsFinish { get { return isFinish; } }
+    public QuestState QuestState { get { return questState; } set { questState = value; } }
     public bool IsInstant { get { return isInstant; } }
     public int Score { get { return score; } set { score = value; } }
     public string Title
@@ -50,25 +48,6 @@ public class Quest : MonoBehaviour
         }
     }
 
-    private void SetState(QuestState state)
-    {
-        if (state == QuestState.BeforeQuest) isAccept = false; isFinish = false;
-        if (state == QuestState.DoingQuest) isAccept = true; isFinish = false;
-        if (state == QuestState.FinishQuest) isAccept = true; isFinish = true;
-        if (state == QuestState.AfterQuest) isAccept = false; isFinish = true;
-    }
-
-    public QuestState GetState()
-    {
-        if (!isAccept && !isFinish) return QuestState.BeforeQuest;
-        if (isAccept && !isFinish) return QuestState.DoingQuest;
-        if (isAccept && isFinish) return QuestState.FinishQuest;
-        if (!isAccept && isFinish) return QuestState.AfterQuest;
-
-        Debug.LogError("????? 어떻게 왔어...?");
-        return QuestState.BeforeQuest;
-    }
-
     private void Start()
     {
         InitializeQuest();
@@ -92,7 +71,7 @@ public class Quest : MonoBehaviour
     public virtual void StartQuest()
     {
         // 퀘스트의 상태를 DoingQuest로 바꿔주고
-        SetState(QuestState.DoingQuest);
+        QuestState = QuestState.DoingQuest;
         // Quest Canvas On!
         QuestManager.instance.ActivateQuestCanvas(questName);
     }
@@ -102,7 +81,7 @@ public class Quest : MonoBehaviour
     /// </summary>
     public void EndQuest()
     {
-        SetState(QuestState.FinishQuest);
+        QuestState = QuestState.FinishQuest;
         QuestManager.instance.DeactivateQuestCanvas(questName);
     }
 
@@ -111,7 +90,7 @@ public class Quest : MonoBehaviour
     /// </summary>
     public void FinishQuest()
     {
-        SetState(QuestState.AfterQuest);
+        QuestState = QuestState.AfterQuest;
         // 퀘스트 완료에 대한 이벤트를 실행
         Reward();
     }

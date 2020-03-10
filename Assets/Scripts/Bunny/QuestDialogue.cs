@@ -36,7 +36,7 @@ public class QuestDialogue : Dialogue
     {
         nowTalkCnt += 1;
 
-        switch (myQuest.GetState())
+        switch (myQuest.QuestState)
         {
             case QuestState.BeforeQuest:
                 return dialogues[0];

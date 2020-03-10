@@ -38,6 +38,6 @@
 3	토노스 토끼	여기는 코리아.	ThonosBunny_Bust	
 3	토노스 토끼	물은 셀프,	ThonosBunny_Bust	
 3	토노스 토끼	돌도 셀프.	ThonosBunny_Bust	
-3	토노스 토끼	잊고 있었다.	ThonosBunny_Bust	
+3	토노스 토끼	잊고 있었다.	ThonosBunny_Bust	퀘스트종료
 4	토노스 토끼	퀘스트 성공 후 하는 대사	ThonosBunny_Bust	
 5	토노스 토끼	퀘스트 실패 후 하는 대사	ThonosBunny_Bust	

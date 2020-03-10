@@ -81,7 +81,7 @@ public class QuestManager : MonoBehaviour
 
         for (int i = 0; i < quests.Count; i++)
         {
-            if (quests[i].GetState() == QuestState.DoingQuest) returnList.Add(quests[i]);
+            if (quests[i].QuestState == QuestState.DoingQuest) returnList.Add(quests[i]);
         }
         return returnList;
     }
@@ -92,7 +92,7 @@ public class QuestManager : MonoBehaviour
 
         for (int i = 0; i < quests.Count; i++)
         {
-            if (quests[i].GetState() == QuestState.FinishQuest) returnList.Add(quests[i]);
+            if (quests[i].QuestState == QuestState.FinishQuest) returnList.Add(quests[i]);
         }
         return returnList;
     }
@@ -103,7 +103,7 @@ public class QuestManager : MonoBehaviour
 
         for (int i = 0; i < quests.Count; i++)
         {
-            if (quests[i].GetState() == QuestState.AfterQuest) returnList.Add(quests[i]);
+            if (quests[i].QuestState == QuestState.AfterQuest) returnList.Add(quests[i]);
         }
         return returnList;
     }

@@ -50,6 +50,7 @@ public class Dialog
                 case Command.대답호감도:
                     break;
                 case Command.퀘스트종료:
+                    dialog = new QuestFinishDialog(line[1], line[2], line[3]);
                     break;
                 case Command.아이템:
                     break;
@@ -154,7 +155,7 @@ public class QuestFinishDialog : Dialog
 {
     BasicDialog dialog;
 
-    public QuestFinishDialog(string speakerName, string speakerText, string speakerImg, string affinityAmount)
+    public QuestFinishDialog(string speakerName, string speakerText, string speakerImg)
     {
         dialog = new BasicDialog(speakerName, speakerText, Resources.Load<Sprite>("SpeakerImage/" + speakerImg));
     }
