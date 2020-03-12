@@ -18,98 +18,126 @@ public struct BasicDialog
 
 public class Dialog
 {
-    public enum Command
+    public enum Type
     {
-        수락거절, 선택지, 대답, 대답호감도, 퀘스트종료, 아이템,
-        호감도, 클리어, 화면효과
+        대화, 선택지, 클리어, 화면효과
     }
 
-    public static Dialog ConvertToDialog(List<string> line, ref List<List<Dialog>> dialogue)
+    public static Dialog ConvertToDialog(List<string> values, ref List<List<Dialog>> dialogues)
     {
         Dialog dialog = null;
 
-        int num = int.Parse(line[0]);
-        if (num >= dialogue.Count) dialogue.Add(new List<Dialog>());
+        int num = int.Parse(values[0]);
+        if (num >= dialogues.Count) dialogues.Add(new List<Dialog>());
 
         try
         {
-            Command command = (Command)System.Enum.Parse(typeof(Command), line[4]);
+            Type type = (Type)System.Enum.Parse(typeof(Type), values[1]);
 
-            switch (command)
+            switch (type)
             {
-                case Command.수락거절:
-                    dialog = new ARDialog(line[1], line[2], line[3]);
+                case Type.대화:
+                    List<string> vs = values;
+                    vs.RemoveRange(0, 2);
+                    dialog = TalkDialog.ConvertToTalkDialog(vs);
                     break;
-                case Command.선택지:
-                    List<string> choiceTexts = new List<string>(line);
-                    choiceTexts.RemoveRange(0, 5);
-                    dialog = new ChoiceDialog(line[1], line[2], line[3], choiceTexts);
+                case Type.선택지:
                     break;
-                case Command.대답:
+                case Type.클리어:
                     break;
-                case Command.대답호감도:
-                    break;
-                case Command.퀘스트종료:
-                    dialog = new QuestFinishDialog(line[1], line[2], line[3]);
-                    break;
-                case Command.아이템:
-                    break;
-                case Command.호감도:
-                    break;
-                case Command.클리어:
-                    break;
-                case Command.화면효과:
-                    dialog = new ScreenEffectDialog(line[1], line[2], line[3], line[5], line[6]);
+                case Type.화면효과:
+                    dialog = new ScreenEffectDialog(values[1], values[2]);
                     break;
             }
         }
         catch
         {
-            if (line.Count >= 5)
-            {
-                if (line[4] != "") Debug.LogError(line[4] + "라는 Command Enum은 존재하지 않습니다.");
-            }
-
-            dialog = new TalkDialog(line[1], line[2], line[3]);
+            Debug.LogError(values[1] + "에 해당하는 Type Enum이 존재하지 않습니다.");
         }
 
-        dialogue[num].Add(dialog);
+        dialogues[num].Add(dialog);
 
         return dialog;
     }
 
-    public virtual void Show(UIManager UI)
+    public virtual void Run(UIManager UI)
     { 
     }
 }
 
 public class TalkDialog : Dialog
 {
-    private BasicDialog dialog;
+    public enum Command
+    {
+        수락거절, 대답, 대답호감도, 퀘스트종료, 아이템, 호감도
+    }
 
-    public TalkDialog(string speakerName, string speakerText, string speakerImg)
+    protected BasicDialog dialog;
+
+    protected TalkDialog()
+    {
+        dialog = new BasicDialog("EQ1", "버그가 발생했습니다. 뿌쓩빠쓩", Resources.Load<Sprite>("SpeakerImage/DarkBunny_Bust"));
+    }
+
+    protected TalkDialog(string speakerName, string speakerText, string speakerImg)
     {
         dialog = new BasicDialog(speakerName, speakerText, Resources.Load<Sprite>("SpeakerImage/" + speakerImg));
     }
 
-    public override void Show(UIManager UI)
+    public override void Run(UIManager UI)
     {
         UI.ShowTalkDialog(dialog);
     }
+
+    public static TalkDialog ConvertToTalkDialog(List<string> values)
+    {
+        TalkDialog talkDialog = new TalkDialog();
+        //  이름        대사         사진        비고
+        //  values[0]   values[1]   values[2]   values[3]
+        try
+        {
+            Command command = (Command)System.Enum.Parse(typeof(Command), values[3]);
+
+            switch (command)
+            {
+                case Command.수락거절:
+                    talkDialog = new ARDialog(values[0], values[1], values[2]);
+                    break;
+                case Command.대답:
+                    break;
+                case Command.대답호감도:
+                    break;
+                case Command.퀘스트종료:
+                    talkDialog = new QuestFinishDialog(values[0], values[1], values[2]);
+                    break;
+                case Command.아이템:
+                    break;
+                case Command.호감도:
+                    break;
+            }
+        }
+        catch
+        {
+            if (values[3] != "")
+            {
+                Debug.LogError(values[3] + "라는 Command Enum은 존재하지 않습니다.");
+            }
+
+            talkDialog = new TalkDialog(values[0], values[1], values[2]);
+        }
+
+        return talkDialog;
+    }
 }
 
-public class ARDialog : Dialog
+public class ARDialog : TalkDialog
 {
-    private BasicDialog dialog;
+    public ARDialog(string name, string text, string img) : base(name, text, img) { }
 
-    public ARDialog(string speakerName, string speakerText, string speakerImg)
+    public override void Run(UIManager UI)
     {
-        dialog = new BasicDialog(speakerName, speakerText, Resources.Load<Sprite>("SpeakerImage/" + speakerImg));
-    }
-
-    public override void Show(UIManager UI)
-    {
-        UI.ShowARDialog(dialog);
+        base.Run(UI);
+        UI.ShowARButton();
     }
 }
 
@@ -124,7 +152,7 @@ public class ChoiceDialog : Dialog
         this.choiceTexts = choiceTexts;
     }
 
-    public override void Show(UIManager UI)
+    public override void Run(UIManager UI)
     {
         UI.ShowChoiceDialog(dialog, choiceTexts);
     }
@@ -145,7 +173,7 @@ public class ReactionDialog : Dialog
         }
     }
 
-    public override void Show(UIManager UI)
+    public override void Run(UIManager UI)
     {
         UI.ShowReactionDialog(dialogs);
     }
@@ -154,18 +182,14 @@ public class ReactionDialog : Dialog
 public class ReactionAffDialog : Dialog
 { }
 
-public class QuestFinishDialog : Dialog
+public class QuestFinishDialog : TalkDialog
 {
-    BasicDialog dialog;
+    public QuestFinishDialog(string name, string text, string img) : base(name, text, img) { }
 
-    public QuestFinishDialog(string speakerName, string speakerText, string speakerImg)
+    public override void Run(UIManager UI)
     {
-        dialog = new BasicDialog(speakerName, speakerText, Resources.Load<Sprite>("SpeakerImage/" + speakerImg));
-    }
-
-    public override void Show(UIManager UI)
-    {
-        UI.ShowQuestFinishDialog(dialog);
+        base.Run(UI);
+        UI.QuestFinish();
     }
 }
 
@@ -183,7 +207,7 @@ public class AffinityDialog : Dialog
         affinity = int.Parse(affinityAmount);
     }
 
-    public override void Show(UIManager UI)
+    public override void Run(UIManager UI)
     {
         UI.ShowAffinityDialog(dialog, affinity);
     }
@@ -194,7 +218,7 @@ public class ClearDialog : Dialog
     public ClearDialog()
     { }
 
-    public override void Show(UIManager UI)
+    public override void Run(UIManager UI)
     {
         UI.ShowClearDialog();
     }
@@ -202,22 +226,18 @@ public class ClearDialog : Dialog
 
 public class ScreenEffectDialog : Dialog
 {
-    BasicDialog dialog;
     Color targetColor;
     float duration;
 
-    public ScreenEffectDialog(string speakerName, string speakerText, string speakerImg
-        , string color, string duration)
+    public ScreenEffectDialog(string color, string duration)
     {
-        dialog = new BasicDialog(speakerName, speakerText, Resources.Load<Sprite>("SpeakerImage/" + speakerImg));
-
         string[] values = color.Split(',');
         targetColor = new Color(float.Parse(values[0]), float.Parse(values[1]), float.Parse(values[2]), float.Parse(values[3]));
         this.duration = float.Parse(duration);
     }
 
-    public override void Show(UIManager UI)
+    public override void Run(UIManager UI)
     {
-        UI.ShowScreenEffectDialog(dialog, targetColor, duration);
+        UI.ShowScreenEffect(targetColor, duration);
     }
 }

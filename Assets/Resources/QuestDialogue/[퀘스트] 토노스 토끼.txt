@@ -1,43 +1,44 @@
-﻿0	토노스 토끼	자네, 나를 도와주겠는가?	ThonosBunny_Bust	
-0	토노스 토끼	이 지하철은 너무 붐벼...	ThonosBunny_Bust	
-0	토노스 토끼	절반은 없애야 균형이 맞겠어.	ThonosBunny_Bust	
-0	토노스 토끼	나를 도와 여섯 가지의 돌을 모아오면,	ThonosBunny_Bust	
-0	토노스 토끼	내 옆에서 쾌적함이라는 균형을 누릴 수 있는 영광을 주지.	ThonosBunny_Bust	
-0	토노스 토끼	제한시간 안에 지하철에 흩어져있는 여섯 개의 돌을 모아와!	ThonosBunny_Bust	
-0	토노스 토끼	이 일이 끝나면, 절반은 살아남겠지...	ThonosBunny_Bust	
-0	토노스 토끼	완벽하게 균형이 잡혀서 말이야.	ThonosBunny_Bust	수락거절
-1	토노스 토끼	(테스트 대화)어서 트레인 스톤을 구해와!	ThonosBunny_Bust	
-1	토노스 토끼	난 그동안 핑거 스냅 연습하고 있을게.	ThonosBunny_Bust	
-1	토노스 토끼	(열심히 손가락을 튕기고 있지만 소리는 나지 않는다.)	ThonosBunny_Bust	
-2	토노스 토끼	오오 성공했군......	ThonosBunny_Bust	
-2	토노스 토끼	......	ThonosBunny_Bust	
-2	토노스 토끼	으.. 크윽... 으으으악...!	ThonosBunny_Bust	
-2	토노스 토끼	...	ThonosBunny_Bust	
-2	토노스 토끼	후후...	ThonosBunny_Bust	
-2	토노스 토끼	이제 내가 앞발을 한번 "톡"치면,	ThonosBunny_Bust	
-2	토노스 토끼	지하철의 반은 사라진다...!	ThonosBunny_Bust	
-2	토노스 토끼	아이...	ThonosBunny_Bust	
-2	토노스 토끼	앰...	ThonosBunny_Bust	
-2	토노스 토끼	...인에비터블...	ThonosBunny_Bust	
-2	토노스 토끼	톡!	ThonosBunny_Bust	
-2	토노스 토끼	(효과를 넣어야 함)	ThonosBunny_Bust	
-2	토노스 토끼	...?	ThonosBunny_Bust	
-2	토노스 토끼	이런 이런,	ThonosBunny_Bust	
-2	토노스 토끼	어째서 이 칸의 생명들만 반으로 준 것이지?	ThonosBunny_Bust	
-2	토노스 토끼	힘이 부족한가...	ThonosBunny_Bust	
-2	토노스 토끼	...	ThonosBunny_Bust	
-2	토노스 토끼	다음에는 제대로 보여주지.	ThonosBunny_Bust	
-2	토노스 토끼	완벽하게 균형이 잡힌 지하철을!	ThonosBunny_Bust	퀘스트종료
-3	토노스 토끼	실패했군.	ThonosBunny_Bust	
-3	토노스 토끼	예상된 결과였다.	ThonosBunny_Bust	
-3	토노스 토끼	...	ThonosBunny_Bust	
-3	토노스 토끼	모두가 나를 실망시키는군.	ThonosBunny_Bust	
-3	토노스 토끼	...	ThonosBunny_Bust	
-3	토노스 토끼	파인.	ThonosBunny_Bust	
-3	토노스 토끼	아이 윌 두 잇 마이 셀프...	ThonosBunny_Bust	
-3	토노스 토끼	여기는 코리아.	ThonosBunny_Bust	
-3	토노스 토끼	물은 셀프,	ThonosBunny_Bust	
-3	토노스 토끼	돌도 셀프.	ThonosBunny_Bust	
-3	토노스 토끼	잊고 있었다.	ThonosBunny_Bust	퀘스트종료
-4	토노스 토끼	퀘스트 성공 후 하는 대사	ThonosBunny_Bust	
-5	토노스 토끼	퀘스트 실패 후 하는 대사	ThonosBunny_Bust	
+﻿0	대화	토노스 토끼	자네, 나를 도와주겠는가?	ThonosBunny_Bust	
+0	대화	토노스 토끼	이 지하철은 너무 붐벼...	ThonosBunny_Bust	
+0	대화	토노스 토끼	절반은 없애야 균형이 맞겠어.	ThonosBunny_Bust	
+0	대화	토노스 토끼	나를 도와 여섯 가지의 돌을 모아오면,	ThonosBunny_Bust	
+0	대화	토노스 토끼	내 옆에서 쾌적함이라는 균형을 누릴 수 있는 영광을 주지.	ThonosBunny_Bust	
+0	대화	토노스 토끼	제한시간 안에 지하철에 흩어져있는 여섯 개의 돌을 모아와!	ThonosBunny_Bust	
+0	대화	토노스 토끼	이 일이 끝나면, 절반은 살아남겠지...	ThonosBunny_Bust	
+0	대화	토노스 토끼	완벽하게 균형이 잡혀서 말이야.	ThonosBunny_Bust	수락거절
+1	대화	토노스 토끼	(테스트 대화)어서 트레인 스톤을 구해와!	ThonosBunny_Bust	
+1	대화	토노스 토끼	난 그동안 핑거 스냅 연습하고 있을게.	ThonosBunny_Bust	
+1	대화	토노스 토끼	(열심히 손가락을 튕기고 있지만 소리는 나지 않는다.)	ThonosBunny_Bust	
+2	대화	토노스 토끼	오오 성공했군......	ThonosBunny_Bust	
+2	대화	토노스 토끼	......	ThonosBunny_Bust	
+2	대화	토노스 토끼	으.. 크윽... 으으으악...!	ThonosBunny_Bust	
+2	대화	토노스 토끼	...	ThonosBunny_Bust	
+2	대화	토노스 토끼	후후...	ThonosBunny_Bust	
+2	대화	토노스 토끼	이제 내가 앞발을 한번 "톡"치면,	ThonosBunny_Bust	
+2	대화	토노스 토끼	지하철의 반은 사라진다...!	ThonosBunny_Bust	
+2	대화	토노스 토끼	아이...	ThonosBunny_Bust	
+2	대화	토노스 토끼	앰...	ThonosBunny_Bust	
+2	대화	토노스 토끼	...인에비터블...	ThonosBunny_Bust	
+2	대화	토노스 토끼	톡!	ThonosBunny_Bust	
+2	화면효과	1,1,1,1	1		
+2	화면효과	1,1,1,0	1		
+2	대화	토노스 토끼	...?	ThonosBunny_Bust	
+2	대화	토노스 토끼	이런 이런,	ThonosBunny_Bust	
+2	대화	토노스 토끼	어째서 이 칸의 생명들만 반으로 준 것이지?	ThonosBunny_Bust	
+2	대화	토노스 토끼	힘이 부족한가...	ThonosBunny_Bust	
+2	대화	토노스 토끼	...	ThonosBunny_Bust	
+2	대화	토노스 토끼	다음에는 제대로 보여주지.	ThonosBunny_Bust	
+2	대화	토노스 토끼	완벽하게 균형이 잡힌 지하철을!	ThonosBunny_Bust	퀘스트종료
+3	대화	토노스 토끼	실패했군.	ThonosBunny_Bust	
+3	대화	토노스 토끼	예상된 결과였다.	ThonosBunny_Bust	
+3	대화	토노스 토끼	...	ThonosBunny_Bust	
+3	대화	토노스 토끼	모두가 나를 실망시키는군.	ThonosBunny_Bust	
+3	대화	토노스 토끼	...	ThonosBunny_Bust	
+3	대화	토노스 토끼	파인.	ThonosBunny_Bust	
+3	대화	토노스 토끼	아이 윌 두 잇 마이 셀프...	ThonosBunny_Bust	
+3	대화	토노스 토끼	여기는 코리아.	ThonosBunny_Bust	
+3	대화	토노스 토끼	물은 셀프,	ThonosBunny_Bust	
+3	대화	토노스 토끼	돌도 셀프.	ThonosBunny_Bust	
+3	대화	토노스 토끼	잊고 있었다.	ThonosBunny_Bust	
+4	대화	토노스 토끼	퀘스트 성공 후 하는 대사	ThonosBunny_Bust	
+5	대화	토노스 토끼	퀘스트 실패 후 하는 대사	ThonosBunny_Bust	

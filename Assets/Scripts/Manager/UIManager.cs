@@ -184,9 +184,10 @@ public class UIManager : MonoBehaviour
         rejectQuestButton.SetActive(false);
         SoundManager.instance.TalkSE();
 
-        currentDialogue[currentDialogNum].Show(this);
+        currentDialogue[currentDialogNum].Run(this);
     }
 
+    #region 각 대화 클래스에 해당하는 함수
     public void ShowTalkDialog(BasicDialog dialog)
     {
         speakerName.text = dialog.speakerName;
@@ -199,12 +200,8 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    public void ShowARDialog(BasicDialog dialog)
+    public void ShowARButton()
     {
-        speakerName.text = dialog.speakerName;
-        speakerText.text = dialog.speakerText;
-        speakerImage.sprite = dialog.speakerImg;
-
         talkPanel.GetComponent<Button>().interactable = false;
         acceptQuestButton.SetActive(true);
         rejectQuestButton.SetActive(true);
@@ -245,12 +242,8 @@ public class UIManager : MonoBehaviour
         //}
     }
 
-    public void ShowQuestFinishDialog(BasicDialog dialog)
+    public void QuestFinish()
     {
-        speakerName.text = dialog.speakerName;
-        speakerText.text = dialog.speakerText;
-        speakerImage.sprite = dialog.speakerImg;
-
         currentInteractBunny.GetComponent<Quest>().FinishQuest();
         GameManager.instance.IsQuesting = false;
     }
@@ -278,18 +271,15 @@ public class UIManager : MonoBehaviour
         StageClear();
     }
 
-    public void ShowScreenEffectDialog(BasicDialog dialog, Color color, float duration)
+    public void ShowScreenEffect(Color color, float duration)
     {
         effectPanel.SetActive(true);
 
         Sequence sequence = DOTween.Sequence();
         sequence.Append(effectPanel.GetComponent<Image>().DOColor(color, duration))
             .AppendCallback(() => ScreenEffect(color, duration));
-
-        speakerName.text = dialog.speakerName;
-        speakerText.text = dialog.speakerText;
-        speakerImage.sprite = dialog.speakerImg;
     }
+    #endregion
 
     private void ScreenEffect(Color color, float duration)
     {
