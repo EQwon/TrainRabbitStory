@@ -26,33 +26,34 @@ public class Dialog
     public static Dialog ConvertToDialog(List<string> values, ref List<List<Dialog>> dialogues)
     {
         Dialog dialog = null;
+        Type type = Type.대화;
 
         int num = int.Parse(values[0]);
         if (num >= dialogues.Count) dialogues.Add(new List<Dialog>());
 
         try
         {
-            Type type = (Type)System.Enum.Parse(typeof(Type), values[1]);
-
-            switch (type)
-            {
-                case Type.대화:
-                    List<string> vs = values;
-                    vs.RemoveRange(0, 2);
-                    dialog = TalkDialog.ConvertToTalkDialog(vs);
-                    break;
-                case Type.선택지:
-                    break;
-                case Type.클리어:
-                    break;
-                case Type.화면효과:
-                    dialog = new ScreenEffectDialog(values[1], values[2]);
-                    break;
-            }
+            type = (Type)System.Enum.Parse(typeof(Type), values[1]);
         }
         catch
         {
-            Debug.LogError(values[1] + "에 해당하는 Type Enum이 존재하지 않습니다.");
+            Debug.LogError(values[1] + "에 해당하는 Type Enum이 존재하지 않습니다. 대화로 대체합니다.");
+        }
+
+        switch (type)
+        {
+            case Type.대화:
+                List<string> vs = values;
+                vs.RemoveRange(0, 2);
+                dialog = TalkDialog.ConvertToTalkDialog(vs);
+                break;
+            case Type.선택지:
+                break;
+            case Type.클리어:
+                break;
+            case Type.화면효과:
+                dialog = new ScreenEffectDialog(values[2], values[3]);
+                break;
         }
 
         dialogues[num].Add(dialog);
@@ -69,7 +70,7 @@ public class TalkDialog : Dialog
 {
     public enum Command
     {
-        수락거절, 대답, 대답호감도, 퀘스트종료, 아이템, 호감도
+        None, 수락거절, 대답, 대답호감도, 퀘스트종료, 아이템, 호감도
     }
 
     protected BasicDialog dialog;
@@ -92,38 +93,40 @@ public class TalkDialog : Dialog
     public static TalkDialog ConvertToTalkDialog(List<string> values)
     {
         TalkDialog talkDialog = new TalkDialog();
+        Command command = Command.None;
         //  이름        대사         사진        비고
         //  values[0]   values[1]   values[2]   values[3]
         try
         {
-            Command command = (Command)System.Enum.Parse(typeof(Command), values[3]);
-
-            switch (command)
-            {
-                case Command.수락거절:
-                    talkDialog = new ARDialog(values[0], values[1], values[2]);
-                    break;
-                case Command.대답:
-                    break;
-                case Command.대답호감도:
-                    break;
-                case Command.퀘스트종료:
-                    talkDialog = new QuestFinishDialog(values[0], values[1], values[2]);
-                    break;
-                case Command.아이템:
-                    break;
-                case Command.호감도:
-                    break;
-            }
+            command = (Command)System.Enum.Parse(typeof(Command), values[3]);
         }
         catch
         {
-            if (values[3] != "")
+            if (values.Count >= 4 && values[3] != "")
             {
                 Debug.LogError(values[3] + "라는 Command Enum은 존재하지 않습니다.");
             }
+        }
 
-            talkDialog = new TalkDialog(values[0], values[1], values[2]);
+        switch (command)
+        {
+            case Command.None:
+                talkDialog = new TalkDialog(values[0], values[1], values[2]);
+                break;
+            case Command.수락거절:
+                talkDialog = new ARDialog(values[0], values[1], values[2]);
+                break;
+            case Command.대답:
+                break;
+            case Command.대답호감도:
+                break;
+            case Command.퀘스트종료:
+                talkDialog = new QuestFinishDialog(values[0], values[1], values[2]);
+                break;
+            case Command.아이템:
+                break;
+            case Command.호감도:
+                break;
         }
 
         return talkDialog;

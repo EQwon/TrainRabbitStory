@@ -15,7 +15,7 @@ public class StoryDialogue : Dialogue
         base.Start();
 
         fixDialogues = Parser.DialogParse(fixDialogueAsset);
-        presentDialogues = Parser.DialogParse(presentDialogueAsset);
+        //presentDialogues = Parser.DialogParse(presentDialogueAsset);
     }
 
     public override List<Dialog> DialogueForNow()

@@ -1,1 +1,1 @@
-﻿0	대학원생 토끼	논문 좀 대신 써줘...	PostgraduateBunny_Bust
+﻿0	대화	대학원생 토끼	논문 좀 대신 써줘...	PostgraduateBunny_Bust

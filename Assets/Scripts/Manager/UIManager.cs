@@ -178,6 +178,7 @@ public class UIManager : MonoBehaviour
             return;
         }
 
+        talkPanel.SetActive(true);
         talkPanel.GetComponent<Button>().interactable = true;
         finishDialogText.SetActive(false);
         acceptQuestButton.SetActive(false);
@@ -205,6 +206,7 @@ public class UIManager : MonoBehaviour
         talkPanel.GetComponent<Button>().interactable = false;
         acceptQuestButton.SetActive(true);
         rejectQuestButton.SetActive(true);
+        finishDialogText.SetActive(false);
     }
 
     public void ShowChoiceDialog(BasicDialog dialog, List<string> choiceTexts)
@@ -273,18 +275,19 @@ public class UIManager : MonoBehaviour
 
     public void ShowScreenEffect(Color color, float duration)
     {
+        talkPanel.SetActive(false);
         effectPanel.SetActive(true);
 
         Sequence sequence = DOTween.Sequence();
         sequence.Append(effectPanel.GetComponent<Image>().DOColor(color, duration))
-            .AppendCallback(() => ScreenEffect(color, duration));
+            .AppendCallback(() => ScreenEffect(color));
     }
     #endregion
 
-    private void ScreenEffect(Color color, float duration)
+    private void ScreenEffect(Color color)
     {
         if (color.a == 0) effectPanel.SetActive(false);
-        if (duration != 0) NextDialog();
+        NextDialog();
     }
 
     private void EndTalk()

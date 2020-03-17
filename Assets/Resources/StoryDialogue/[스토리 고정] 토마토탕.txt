@@ -1,107 +1,107 @@
-﻿0	???	후...
-0	???	....
-0	???	......
-0	???	음?
-0	???	아, 미안.
-0	???	말 거는 줄 몰랐어.
-0	???	잠깐 뭐 좀 생각하느라...
-0	???	좀 피곤하기도 하고.
-0	???	어... 귀국한 지 얼마 안 돼서 시차 적응이 좀 안되나 봐.
-0	???	음?
-0	???	왜 나갔냐고?
-0	???	어...
-0	???	일 때문에 나갔지.
-0	???	응?!
-0	???	나를 어디서 본 것 같다고?
-0	???	어...
-0	???	기분 탓일 거야.
-0	???	응응, 기분 탓이야.
-0	???	뭐라 불러도 되냐고?
-0	???	어... 글쎄...
-0	???	훠궈의 토마토탕?
-0	???	요즘 내가 꽂힌 음식이라서.
-0		토마토탕씨를 알게 되었다!
-1	토마토탕씨	어? 안녕.
-1	토마토탕씨	지난번에 본 그 친구네.
-1	토마토탕씨	오 초등학생이 되었구나.
-1	토마토탕씨	......
-1	토마토탕씨	요즘은 어릴 때부터 학원 많이 다닌다던데,
-1	토마토탕씨	안 지치니...?
-1	토마토탕씨	아직 그러기에는 너무 어린가?
-1	토마토탕씨	잘 모르겠네...
-1	토마토탕씨	학교를 중학교까지만 다녀서...
-2	토마토탕씨	안녕.
-2	토마토탕씨	이 노선은 탑승객들이 별로 없어서 그런지,
-2	토마토탕씨	한번 마주치면 계속 마주치는 것 같아.
-2	토마토탕씨	나는 이 지하철을 정말 많이 타거든.
-2	토마토탕씨	음...
-2	토마토탕씨	어쨌든 또 만났네.
-3	토마토탕씨	안녕.
-3	토마토탕씨	아, 오늘따라 유난히 피곤하네...
-3	토마토탕씨	공기가 좀 탁해서 그런가...
-3	토마토탕씨	어떻게 생각해?
-4	토마토탕씨	오,
-4	토마토탕씨	하이 하이.
-4	토마토탕씨	생각보다 잘 마주치네.
-4	토마토탕씨	일부러 그러기도 힘든데 말이야,
-4	토마토탕씨	그렇지?
-5	토마토탕씨	안녕.
-5	토마토탕씨	이제 키가 본격적으로 자라는 느낌이네?
-5	토마토탕씨	축하해!
-5	토마토탕씨	어릴 때 잠 많이 자야 쑥쑥 큰다고.
-6	토마토탕씨	...어?
-6	토마토탕씨	어.
-6	토마토탕씨	안녕.
-6	토마토탕씨	아,
-6	토마토탕씨	잠깐 생각 좀 하느라.
-7	토마토탕씨	안녕.
-7	토마토탕씨	와, 벌써 중학생이라고?
-7	토마토탕씨	시간이 진짜 빨리 가네...
-8	토마토탕씨	안녕 안녕.
-8	토마토탕씨	중2라...
-8	토마토탕씨	한창...
-8	토마토탕씨	거칠 나이네...
-8	토마토탕씨	응?!
-8	토마토탕씨	아니야, 그냥...
-9	토마토탕씨	안녕.
-9	토마토탕씨	중3이면,
-9	토마토탕씨	이제 슬슬 진로 고민할 때인가?
-9	토마토탕씨	수학여행은 갔어?
-9	토마토탕씨	언제 가는 거야?
-9	토마토탕씨	재밌겠다...
-10	토마토탕씨	안녕!
-10	토마토탕씨	와...
-10	토마토탕씨	고1이면...
-10	토마토탕씨	공부할 거 많지?
-10	토마토탕씨	힘내...
-11	토마토탕씨	하이!
-11	토마토탕씨	잘 지냈니?
-11	토마토탕씨	너도 고2라서 그런지,
-11	토마토탕씨	좀 피곤해보인다...
-11	토마토탕씨	쉬면서 공부해.
-11	토마토탕씨	건강이 안 좋으면,
-11	토마토탕씨	좀 피곤해보인다...
-11	토마토탕씨	다 의미 없어.
-12	토마토탕씨	와!
-12	토마토탕씨	고3이라니!!
-12	토마토탕씨	고생했어!!!
-12	토마토탕씨	조금만 더 힘내!
-12	토마토탕씨	나는 수능을 안 봐서 잘은 모르지만,
-12	토마토탕씨	원하는 결과를 얻기를 바라.
-13	토마토탕씨	안녕!
-13	토마토탕씨	이제 새내기야?
-13	토마토탕씨	와...
-13	토마토탕씨	뭔가 부럽다!
-13	토마토탕씨	나도 언젠간 대학 다녀보고 싶어...
-13	토마토탕씨	엄청 설렐 것 같아...
-14	토마토탕씨	오옹?
-14	토마토탕씨	휴학했다고?
-14	토마토탕씨	그래 그래.
-14	토마토탕씨	쉴 때가 있어야지.
-14	토마토탕씨	그치?
-15	토마토탕씨	음 안녕!
-15	토마토탕씨	자소서 쓰느라 피곤한가 보다...
-15	토마토탕씨	눈 밑에 다크써클이 생겼네...
-15	토마토탕씨	좀 쉬면서 해...
-15	토마토탕씨	무리하진 말고.
-15	토마토탕씨	알았지?
+﻿0	대화	???	후...	TomatotangBunny_Bust
+0	대화	???	....	TomatotangBunny_Bust
+0	대화	???	......	TomatotangBunny_Bust
+0	대화	???	음?	TomatotangBunny_Bust
+0	대화	???	아, 미안.	TomatotangBunny_Bust
+0	대화	???	말 거는 줄 몰랐어.	TomatotangBunny_Bust
+0	대화	???	잠깐 뭐 좀 생각하느라...	TomatotangBunny_Bust
+0	대화	???	좀 피곤하기도 하고.	TomatotangBunny_Bust
+0	대화	???	어... 귀국한 지 얼마 안 돼서 시차 적응이 좀 안되나 봐.	TomatotangBunny_Bust
+0	대화	???	음?	TomatotangBunny_Bust
+0	대화	???	왜 나갔냐고?	TomatotangBunny_Bust
+0	대화	???	어...	TomatotangBunny_Bust
+0	대화	???	일 때문에 나갔지.	TomatotangBunny_Bust
+0	대화	???	응?!	TomatotangBunny_Bust
+0	대화	???	나를 어디서 본 것 같다고?	TomatotangBunny_Bust
+0	대화	???	어...	TomatotangBunny_Bust
+0	대화	???	기분 탓일 거야.	TomatotangBunny_Bust
+0	대화	???	응응, 기분 탓이야.	TomatotangBunny_Bust
+0	대화	???	뭐라 불러도 되냐고?	TomatotangBunny_Bust
+0	대화	???	어... 글쎄...	TomatotangBunny_Bust
+0	대화	???	훠궈의 토마토탕?	TomatotangBunny_Bust
+0	대화	???	요즘 내가 꽂힌 음식이라서.	TomatotangBunny_Bust
+0	대화		토마토탕씨를 알게 되었다!	TomatotangBunny_Bust
+1	대화	토마토탕씨	어? 안녕.	TomatotangBunny_Bust
+1	대화	토마토탕씨	지난번에 본 그 친구네.	TomatotangBunny_Bust
+1	대화	토마토탕씨	오 초등학생이 되었구나.	TomatotangBunny_Bust
+1	대화	토마토탕씨	......	TomatotangBunny_Bust
+1	대화	토마토탕씨	요즘은 어릴 때부터 학원 많이 다닌다던데,	TomatotangBunny_Bust
+1	대화	토마토탕씨	안 지치니...?	TomatotangBunny_Bust
+1	대화	토마토탕씨	아직 그러기에는 너무 어린가?	TomatotangBunny_Bust
+1	대화	토마토탕씨	잘 모르겠네...	TomatotangBunny_Bust
+1	대화	토마토탕씨	학교를 중학교까지만 다녀서...	TomatotangBunny_Bust
+2	대화	토마토탕씨	안녕.	TomatotangBunny_Bust
+2	대화	토마토탕씨	이 노선은 탑승객들이 별로 없어서 그런지,	TomatotangBunny_Bust
+2	대화	토마토탕씨	한번 마주치면 계속 마주치는 것 같아.	TomatotangBunny_Bust
+2	대화	토마토탕씨	나는 이 지하철을 정말 많이 타거든.	TomatotangBunny_Bust
+2	대화	토마토탕씨	음...	TomatotangBunny_Bust
+2	대화	토마토탕씨	어쨌든 또 만났네.	TomatotangBunny_Bust
+3	대화	토마토탕씨	안녕.	TomatotangBunny_Bust
+3	대화	토마토탕씨	아, 오늘따라 유난히 피곤하네...	TomatotangBunny_Bust
+3	대화	토마토탕씨	공기가 좀 탁해서 그런가...	TomatotangBunny_Bust
+3	대화	토마토탕씨	어떻게 생각해?	TomatotangBunny_Bust
+4	대화	토마토탕씨	오,	TomatotangBunny_Bust
+4	대화	토마토탕씨	하이 하이.	TomatotangBunny_Bust
+4	대화	토마토탕씨	생각보다 잘 마주치네.	TomatotangBunny_Bust
+4	대화	토마토탕씨	일부러 그러기도 힘든데 말이야,	TomatotangBunny_Bust
+4	대화	토마토탕씨	그렇지?	TomatotangBunny_Bust
+5	대화	토마토탕씨	안녕.	TomatotangBunny_Bust
+5	대화	토마토탕씨	이제 키가 본격적으로 자라는 느낌이네?	TomatotangBunny_Bust
+5	대화	토마토탕씨	축하해!	TomatotangBunny_Bust
+5	대화	토마토탕씨	어릴 때 잠 많이 자야 쑥쑥 큰다고.	TomatotangBunny_Bust
+6	대화	토마토탕씨	...어?	TomatotangBunny_Bust
+6	대화	토마토탕씨	어.	TomatotangBunny_Bust
+6	대화	토마토탕씨	안녕.	TomatotangBunny_Bust
+6	대화	토마토탕씨	아,	TomatotangBunny_Bust
+6	대화	토마토탕씨	잠깐 생각 좀 하느라.	TomatotangBunny_Bust
+7	대화	토마토탕씨	안녕.	TomatotangBunny_Bust
+7	대화	토마토탕씨	와, 벌써 중학생이라고?	TomatotangBunny_Bust
+7	대화	토마토탕씨	시간이 진짜 빨리 가네...	TomatotangBunny_Bust
+8	대화	토마토탕씨	안녕 안녕.	TomatotangBunny_Bust
+8	대화	토마토탕씨	중2라...	TomatotangBunny_Bust
+8	대화	토마토탕씨	한창...	TomatotangBunny_Bust
+8	대화	토마토탕씨	거칠 나이네...	TomatotangBunny_Bust
+8	대화	토마토탕씨	응?!	TomatotangBunny_Bust
+8	대화	토마토탕씨	아니야, 그냥...	TomatotangBunny_Bust
+9	대화	토마토탕씨	안녕.	TomatotangBunny_Bust
+9	대화	토마토탕씨	중3이면,	TomatotangBunny_Bust
+9	대화	토마토탕씨	이제 슬슬 진로 고민할 때인가?	TomatotangBunny_Bust
+9	대화	토마토탕씨	수학여행은 갔어?	TomatotangBunny_Bust
+9	대화	토마토탕씨	언제 가는 거야?	TomatotangBunny_Bust
+9	대화	토마토탕씨	재밌겠다...	TomatotangBunny_Bust
+10	대화	토마토탕씨	안녕!	TomatotangBunny_Bust
+10	대화	토마토탕씨	와...	TomatotangBunny_Bust
+10	대화	토마토탕씨	고1이면...	TomatotangBunny_Bust
+10	대화	토마토탕씨	공부할 거 많지?	TomatotangBunny_Bust
+10	대화	토마토탕씨	힘내...	TomatotangBunny_Bust
+11	대화	토마토탕씨	하이!	TomatotangBunny_Bust
+11	대화	토마토탕씨	잘 지냈니?	TomatotangBunny_Bust
+11	대화	토마토탕씨	너도 고2라서 그런지,	TomatotangBunny_Bust
+11	대화	토마토탕씨	좀 피곤해보인다...	TomatotangBunny_Bust
+11	대화	토마토탕씨	쉬면서 공부해.	TomatotangBunny_Bust
+11	대화	토마토탕씨	건강이 안 좋으면,	TomatotangBunny_Bust
+11	대화	토마토탕씨	좀 피곤해보인다...	TomatotangBunny_Bust
+11	대화	토마토탕씨	다 의미 없어.	TomatotangBunny_Bust
+12	대화	토마토탕씨	와!	TomatotangBunny_Bust
+12	대화	토마토탕씨	고3이라니!!	TomatotangBunny_Bust
+12	대화	토마토탕씨	고생했어!!!	TomatotangBunny_Bust
+12	대화	토마토탕씨	조금만 더 힘내!	TomatotangBunny_Bust
+12	대화	토마토탕씨	나는 수능을 안 봐서 잘은 모르지만,	TomatotangBunny_Bust
+12	대화	토마토탕씨	원하는 결과를 얻기를 바라.	TomatotangBunny_Bust
+13	대화	토마토탕씨	안녕!	TomatotangBunny_Bust
+13	대화	토마토탕씨	이제 새내기야?	TomatotangBunny_Bust
+13	대화	토마토탕씨	와...	TomatotangBunny_Bust
+13	대화	토마토탕씨	뭔가 부럽다!	TomatotangBunny_Bust
+13	대화	토마토탕씨	나도 언젠간 대학 다녀보고 싶어...	TomatotangBunny_Bust
+13	대화	토마토탕씨	엄청 설렐 것 같아...	TomatotangBunny_Bust
+14	대화	토마토탕씨	오옹?	TomatotangBunny_Bust
+14	대화	토마토탕씨	휴학했다고?	TomatotangBunny_Bust
+14	대화	토마토탕씨	그래 그래.	TomatotangBunny_Bust
+14	대화	토마토탕씨	쉴 때가 있어야지.	TomatotangBunny_Bust
+14	대화	토마토탕씨	그치?	TomatotangBunny_Bust
+15	대화	토마토탕씨	음 안녕!	TomatotangBunny_Bust
+15	대화	토마토탕씨	자소서 쓰느라 피곤한가 보다...	TomatotangBunny_Bust
+15	대화	토마토탕씨	눈 밑에 다크써클이 생겼네...	TomatotangBunny_Bust
+15	대화	토마토탕씨	좀 쉬면서 해...	TomatotangBunny_Bust
+15	대화	토마토탕씨	무리하진 말고.	TomatotangBunny_Bust
+15	대화	토마토탕씨	알았지?	TomatotangBunny_Bust
