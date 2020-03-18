@@ -5639,6 +5639,7 @@ MonoBehaviour:
   - {fileID: 2503992160686711965, guid: 17f7336c72223fd43a9f842f19e790b7, type: 3}
   - {fileID: 502631167278193035, guid: f7c701b02e6ed7f4ab496c62000fa518, type: 3}
   - {fileID: 846393299363935562, guid: 47f2e0263fbea504eafc9d913650ecf7, type: 3}
+  - {fileID: 2503992160686711965, guid: da1b3009dea3eaf4ba3d0a02c9f7391f, type: 3}
   AppearSittingBunnyList:
   - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
   - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}

@@ -1,0 +1,17 @@
+﻿0	대화	테라라 토끼	오, 이런!	Telala_Bust	
+0	대화	테라라 토끼	정전이군!	Telala_Bust	
+0	대화	테라라 토끼	...	Telala_Bust	
+0	대화	테라라 토끼	내 잘못이라네.	Telala_Bust	
+0	대화	테라라 토끼	회로를 갖고 놀다가 또 정전되어버렸군...	Telala_Bust	
+0	대화	테라라 토끼	그나저나 자네는 내가 보이는군!	Telala_Bust	
+0	대화	테라라 토끼	혹시 평소에 정전기가 잘 일지 않는가?	Telala_Bust	
+0	대화	테라라 토끼	역시!	Telala_Bust	
+0	대화	테라라 토끼	전기가 잘 통하는 몸을 가져서 그렇다네.	Telala_Bust	
+0	대화	테라라 토끼	큰 축복이자 저주지...	Telala_Bust	
+0	대화	테라라 토끼	...	Telala_Bust	
+0	대화	테라라 토끼	혹시 나를 도와주지 않겠나?	Telala_Bust	
+0	대화	테라라 토끼	내가 갖고 놀던 세 개의 회로 퍼즐을 맞춰주면 된다네!	Telala_Bust	
+0	대화	테라라 토끼	자네가 얼마나 잘 하는지에 따라 선물을 주지.	Telala_Bust	
+0	대화	테라라 토끼	선물은 총 세 가지라네.	Telala_Bust	
+0	대화	테라라 토끼	어때,	Telala_Bust	
+0	대화	테라라 토끼	나, 전기의 요정 테라라와 함께 하지 않겠는가?	Telala_Bust	수락거절

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum QuestName { Tutorial, PhoneCall, PickUp, Crammed, Skipping, Thonos };
+public enum QuestName { Tutorial, PhoneCall, PickUp, Crammed, Skipping, Thonos, Telala };
 public enum QuestState { BeforeQuest, DoingQuest, FinishQuest, AfterQuest };
 
 [System.Serializable]
