@@ -23,6 +23,9 @@ public class TelalaQuestPanel : QuestPanel
     [SerializeField] List<Row> level2;
     [SerializeField] List<Row> level3;
 
+    private Vector2 touchPos;
+    private List<List<TelalaBlock>> nowPuzzle = new List<List<TelalaBlock>>();
+
     public override void StartQuest(Quest quest)
     {
         this.quest = quest.GetComponent<TelalaQuest>();
@@ -37,9 +40,10 @@ public class TelalaQuestPanel : QuestPanel
             case State.Start:
                 LoadPuzzle();
                 state = State.Matching;
+                touchPos = Vector2.zero;
                 break;
             case State.Matching:
-                //InteractionActivate();
+                CheckInteraction();
                 break;
             case State.Correct:
                 //SaveResult();
@@ -51,6 +55,7 @@ public class TelalaQuestPanel : QuestPanel
 
     private void LoadPuzzle()
     {
+        nowPuzzle = new List<List<TelalaBlock>>();
         List<Row> blocks = null;
         if (level == 1) blocks = level1;
         else if (level == 2) blocks = level2;
@@ -64,32 +69,107 @@ public class TelalaQuestPanel : QuestPanel
         float blockHeight = blocks[0].sprites[0].rect.height;
         float deltaX = (totalWidth - column * blockWidth) / (column + 1);
         float deltaY = (totalHeight - row * blockHeight) / (row + 1);
-        Debug.Log("Row : " + row + ", column : " + column + ", total = (" + totalWidth + ", " + totalHeight + ")");
 
         for (int x = 0; x < row; x++)
         {
+            nowPuzzle.Add(new List<TelalaBlock>());
             for (int y = 0; y < column; y++)
             {
-                if (blocks[x].sprites[y] == null) continue;
+                if (blocks[x].sprites[y] == null)
+                {
+                    nowPuzzle[x].Add(null);
+                    continue;
+                }
 
                 float posX = y * blockWidth + (y + 1) * deltaX;
                 float posY = (x * blockHeight + (x + 1) * deltaY) * -1;
                 Vector2 blockPos = new Vector2(posX, posY);
                 GameObject block = Instantiate(blockPrefab, blockBackground);
+                nowPuzzle[x].Add(block.GetComponent<TelalaBlock>());
                 block.GetComponent<RectTransform>().anchoredPosition = blockPos;
                 block.GetComponent<Image>().sprite = blocks[x].sprites[y];
                 block.GetComponent<Image>().SetNativeSize();
-                block.GetComponent<TelalaBlockMover>().Initiailize(new Cord(x, y)
-                    , SpriteToCord(blocks[x].sprites[y]), blockWidth + deltaX, blockHeight + deltaY);
+                block.GetComponent<TelalaBlock>().Initiailize(SpriteToCord(blocks[x].sprites[y])
+                                                    , blockWidth + deltaX, blockHeight + deltaY);
             }
         }
     }
+
+    private void CheckInteraction()
+    {
+        UpdateMovableDirection();
+    }
+
+    private void UpdateMovableDirection()
+    {
+        int nullX = 0;
+        int nullY = 0;
+
+        for (int x = 0; x < nowPuzzle.Count; x++)
+        {
+            for (int y = 0; y < nowPuzzle[x].Count; y++)
+            {
+                if (nowPuzzle[x][y] != null) nowPuzzle[x][y].movableDir = TelalaBlock.Direction.None;
+                else
+                {
+                    nullX = x;
+                    nullY = y;
+                }
+            }
+        }
+
+        if (nullX - 1 >= 0) nowPuzzle[nullX - 1][nullY].movableDir = TelalaBlock.Direction.Down;
+        if (nullX + 1 < nowPuzzle.Count) nowPuzzle[nullX + 1][nullY].movableDir = TelalaBlock.Direction.Up;
+        if (nullY - 1 >= 0) nowPuzzle[nullX][nullY - 1].movableDir = TelalaBlock.Direction.Right;
+        if (nullY + 1 < nowPuzzle[nullX].Count) nowPuzzle[nullX][nullY + 1].movableDir = TelalaBlock.Direction.Left;
+}
 
     private Cord SpriteToCord(Sprite sprite)
     {
         string name = sprite.name;
         string[] values = name.Split(' ');
         return new Cord(int.Parse(values[2]), int.Parse(values[3]));
+    }
+
+    public void OnTouchDownPanel()
+    {
+        touchPos = Input.mousePosition;
+    }
+
+    public void OnTouchUpPanel()
+    {
+        Vector2 vector = (Vector2)Input.mousePosition - touchPos;
+        if (vector.magnitude <= 50f)
+        {
+            Debug.Log("거리가 너무 작습니다. 현재 거리 = " + vector.magnitude);
+            return;
+        }
+
+        float x = vector.x;
+        float y = vector.y;
+        if (Mathf.Abs(x) > Mathf.Abs(y))
+        {
+            if (x > 0) OrderToMove(TelalaBlock.Direction.Right);
+            else if (x < 0) OrderToMove(TelalaBlock.Direction.Left);
+        }
+        else if(Mathf.Abs(x) < Mathf.Abs(y))
+        {
+            if (y > 0) OrderToMove(TelalaBlock.Direction.Up);
+            else if (y < 0) OrderToMove(TelalaBlock.Direction.Down);
+        }
+
+        touchPos = Vector2.zero;
+    }
+
+    private void OrderToMove(TelalaBlock.Direction dir)
+    {
+        for (int x = 0; x < nowPuzzle.Count; x++)
+        {
+            for (int y = 0; y < nowPuzzle[x].Count; y++)
+            {
+                nowPuzzle[x][y].Move(dir);
+            }
+        }
     }
 
     public struct Cord
