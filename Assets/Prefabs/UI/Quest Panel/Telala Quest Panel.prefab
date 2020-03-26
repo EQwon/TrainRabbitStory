@@ -326,16 +326,18 @@ MonoBehaviour:
   moveCnt: 0
   starCnt: 0
   blockBackground: {fileID: 7534509529825588323}
+  moveCntText: {fileID: 160403327153500703}
+  starCntText: {fileID: 8896100884572621102}
   blockPrefab: {fileID: 7301659417972554807, guid: 939b42f31332cd74dbb75697cc116792,
     type: 3}
   level1:
   - sprites:
     - {fileID: 21300000, guid: 281aee9b8e0731f4fb741302708c9810, type: 3}
+    - {fileID: 21300000, guid: c51ff8048c64e0e49aa08aacb5f8269a, type: 3}
     - {fileID: 21300000, guid: f720854f5832e03498bd802467c2ffbe, type: 3}
-    - {fileID: 21300000, guid: 28f2c954daedffa4aa3a3dd730b75747, type: 3}
   - sprites:
     - {fileID: 21300000, guid: 1d74e58a3146a5b4ba728529c7b03e47, type: 3}
-    - {fileID: 21300000, guid: c51ff8048c64e0e49aa08aacb5f8269a, type: 3}
+    - {fileID: 21300000, guid: 28f2c954daedffa4aa3a3dd730b75747, type: 3}
     - {fileID: 0}
   level2:
   - sprites:

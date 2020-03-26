@@ -11,8 +11,8 @@ public class TelalaBlock : MonoBehaviour
     public float moveDuration;
     public Direction movableDir = Direction.None;
 
-    private int answerRow;
-    private int answerColumn;
+    public int answerRow;
+    public int answerColumn;
     private float moveWidth;
     private float moveHeight;
 
@@ -25,9 +25,9 @@ public class TelalaBlock : MonoBehaviour
         this.moveHeight = moveHeight;
     }
 
-    public void Move(Direction dir)
+    public bool Move(Direction dir)
     {
-        if (movableDir != dir) return;
+        if (movableDir != dir) return false;
 
         switch (dir)
         {
@@ -44,6 +44,8 @@ public class TelalaBlock : MonoBehaviour
                 MoveY(false);
                 break;
         }
+
+        return true;
     }
 
     private void MoveX(bool goRight)

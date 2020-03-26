@@ -87,6 +87,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a64127bf789d62d4cb484d94dfd6de65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  myRow: 0
-  myColumn: 0
-  duration: 0.5
+  moveDuration: 0.3
+  movableDir: 0

@@ -16,6 +16,8 @@ public class TelalaQuestPanel : QuestPanel
 
     [Header("UI Holder")]
     [SerializeField] private RectTransform blockBackground;
+    [SerializeField] private Text moveCntText;
+    [SerializeField] private Text starCntText;
     [SerializeField] private GameObject blockPrefab;
 
     [Header("Block Image")]
@@ -30,6 +32,7 @@ public class TelalaQuestPanel : QuestPanel
     {
         this.quest = quest.GetComponent<TelalaQuest>();
         level = 1;
+        starCnt = 0;
         state = State.Start;
     }
 
@@ -43,7 +46,7 @@ public class TelalaQuestPanel : QuestPanel
                 touchPos = Vector2.zero;
                 break;
             case State.Matching:
-                CheckInteraction();
+                MatchingAction();
                 break;
             case State.Correct:
                 //SaveResult();
@@ -57,6 +60,8 @@ public class TelalaQuestPanel : QuestPanel
     {
         nowPuzzle = new List<List<TelalaBlock>>();
         List<Row> blocks = null;
+        moveCnt = 0;
+
         if (level == 1) blocks = level1;
         else if (level == 2) blocks = level2;
         else if (level == 3) blocks = level3;
@@ -95,9 +100,13 @@ public class TelalaQuestPanel : QuestPanel
         }
     }
 
-    private void CheckInteraction()
+    private void MatchingAction()
     {
         UpdateMovableDirection();
+        moveCntText.text = moveCnt.ToString();
+        starCntText.text = starCnt.ToString();
+
+        if (CheckMatch()) Debug.Log("Success");
     }
 
     private void UpdateMovableDirection()
@@ -123,6 +132,22 @@ public class TelalaQuestPanel : QuestPanel
         if (nullY - 1 >= 0) nowPuzzle[nullX][nullY - 1].movableDir = TelalaBlock.Direction.Right;
         if (nullY + 1 < nowPuzzle[nullX].Count) nowPuzzle[nullX][nullY + 1].movableDir = TelalaBlock.Direction.Left;
 }
+
+    private bool CheckMatch()
+    {
+        for (int x = 0; x < nowPuzzle.Count; x++)
+        {
+            for (int y = 0; y < nowPuzzle[x].Count; y++)
+            {
+                if (nowPuzzle[x][y] == null) continue;
+
+                if (nowPuzzle[x][y].answerRow != x || nowPuzzle[x][y].answerColumn != y)
+                    return false;
+            }
+        }
+
+        return true;
+    }
 
     private Cord SpriteToCord(Sprite sprite)
     {
@@ -167,7 +192,31 @@ public class TelalaQuestPanel : QuestPanel
         {
             for (int y = 0; y < nowPuzzle[x].Count; y++)
             {
-                nowPuzzle[x][y].Move(dir);
+                if (nowPuzzle[x][y] == null) continue;
+                if (nowPuzzle[x][y].Move(dir))
+                {
+                    moveCnt += 1;
+                    switch (dir)
+                    {
+                        case TelalaBlock.Direction.Right:
+                            nowPuzzle[x][y + 1] = nowPuzzle[x][y];
+                            nowPuzzle[x][y] = null;
+                            break;
+                        case TelalaBlock.Direction.Left:
+                            nowPuzzle[x][y - 1] = nowPuzzle[x][y];
+                            nowPuzzle[x][y] = null;
+                            break;
+                        case TelalaBlock.Direction.Up:
+                            nowPuzzle[x - 1][y] = nowPuzzle[x][y];
+                            nowPuzzle[x][y] = null;
+                            break;
+                        case TelalaBlock.Direction.Down:
+                            nowPuzzle[x + 1][y] = nowPuzzle[x][y];
+                            nowPuzzle[x][y] = null;
+                            break;
+                    }
+                    return;
+                }
             }
         }
     }
