@@ -94,8 +94,8 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaDirect: 0.5
     m_PVRFilteringAtrousPositionSigmaIndirect: 2
     m_PVRFilteringAtrousPositionSigmaAO: 1
-    m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
+    m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -285,7 +285,7 @@ MonoBehaviour:
   CellNum: 7
   AppearStandingBunnyList:
   - {fileID: 846393299363935562, guid: d3eac19066db4cd448df4837a9ec8c2c, type: 3}
-  - {fileID: 2503992160686711965, guid: 86b049a3a23092a4d859e12c1eec7c27, type: 3}
+  - {fileID: 0}
   AppearSittingBunnyList:
   - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
   - {fileID: 1085439849001219257, guid: f592fca38919b5c47950416df118c285, type: 3}
@@ -396,6 +396,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -475,6 +476,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -554,6 +556,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -703,7 +706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CellNum: 1
   AppearStandingBunnyList:
-  - {fileID: 2503992160686711965, guid: 7b4a7500e54a5734aaad3d212ffb2558, type: 3}
+  - {fileID: 0}
   - {fileID: 7256514400031367280, guid: 4d747c294b7a00948882e2a069bde1a7, type: 3}
   AppearSittingBunnyList:
   - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
@@ -815,6 +818,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -899,14 +903,14 @@ MonoBehaviour:
   AppearSittingBunnyList:
   - {fileID: 8503556356629361691, guid: 7feb322b9dac2ce4c8aace400f386beb, type: 3}
   - {fileID: 1085439849001219257, guid: 98f261d3b3d398b4dace5c550854db57, type: 3}
-  - {fileID: 2503992160686711965, guid: 7f7f09ebe42385349896d3240472cc4e, type: 3}
+  - {fileID: 0}
   - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
   - {fileID: 1085439849001219257, guid: 7186550ee774ae249905694d2dfe531f, type: 3}
   - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
   - {fileID: 1085439849001219257, guid: f592fca38919b5c47950416df118c285, type: 3}
-  - {fileID: 2503992160686711965, guid: 9df93a794204d694fbac339e694ea566, type: 3}
+  - {fileID: 0}
   - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
-  - {fileID: 4880791886453202666, guid: 0fe9a770a13641e449ba4e7e2c5f3b97, type: 3}
+  - {fileID: 0}
   - {fileID: 8503556356629361691, guid: 7feb322b9dac2ce4c8aace400f386beb, type: 3}
   - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
 --- !u!68 &382095945
@@ -1006,6 +1010,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1085,6 +1090,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1172,14 +1178,14 @@ MonoBehaviour:
   AppearSittingBunnyList:
   - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
   - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
-  - {fileID: 2503992160686711965, guid: b1c0a5bb29c83a74ea1c896f194a6fbb, type: 3}
+  - {fileID: 0}
   - {fileID: 1085439849001219257, guid: 98f261d3b3d398b4dace5c550854db57, type: 3}
   - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
   - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
   - {fileID: 1085439849001219257, guid: f592fca38919b5c47950416df118c285, type: 3}
   - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
   - {fileID: 1085439849001219257, guid: 7186550ee774ae249905694d2dfe531f, type: 3}
-  - {fileID: 2503992160686711965, guid: 8e37475a30398e740950fd5fceffb4f2, type: 3}
+  - {fileID: 0}
   - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
   - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
 --- !u!68 &659269157
@@ -1279,6 +1285,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1400,7 +1407,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 713040668}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1077351063, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalAxis: Horizontal
@@ -1419,7 +1426,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 713040668}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_FirstSelected: {fileID: 0}
@@ -1566,6 +1573,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1645,6 +1653,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1724,6 +1733,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1874,6 +1884,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -1969,12 +1980,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cond:
   - questName: 2
-    isAccept: 1
-    isSuccess: 0
+    state: 0
     warningText: "\uD560\uC544\uBC84\uC9C0\uC758 \uBD80\uD0C1\uC744 \uB4E4\uC5B4\uC8FC\uC790!"
   - questName: 2
-    isAccept: 1
-    isSuccess: 1
+    state: 0
     warningText: "\uD560\uC544\uBC84\uC9C0\uC5D0\uAC8C \uC190\uC218\uAC74\uC744 \uAC00\uC838\uB2E4
       \uB4DC\uB9AC\uC790!"
 --- !u!1 &947563025
@@ -2104,6 +2113,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2258,12 +2268,12 @@ MonoBehaviour:
   AppearSittingBunnyList:
   - {fileID: 8503556356629361691, guid: 7feb322b9dac2ce4c8aace400f386beb, type: 3}
   - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
-  - {fileID: 2503992160686711965, guid: 9df93a794204d694fbac339e694ea566, type: 3}
+  - {fileID: 0}
   - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
   - {fileID: 8503556356629361691, guid: 0ccfae04766d7904ca27873805be5b38, type: 3}
   - {fileID: 1085439849001219257, guid: 9b7f608028fdddb49aee54ffc2cad195, type: 3}
   - {fileID: 1085439849001219257, guid: 98f261d3b3d398b4dace5c550854db57, type: 3}
-  - {fileID: 2503992160686711965, guid: ca6039c942d912d4e87e6cbf0070fef3, type: 3}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
   - {fileID: 0}
@@ -2365,6 +2375,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2444,6 +2455,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2523,6 +2535,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2602,6 +2615,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2680,20 +2694,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CellNum: 8
   AppearStandingBunnyList:
-  - {fileID: 846393299363935562, guid: d3eac19066db4cd448df4837a9ec8c2c, type: 3}
-  - {fileID: 2503992160686711965, guid: 6399a8e5167fe334cb6f784d398a1be2, type: 3}
+  - {fileID: 2503992160686711965, guid: 9590fdb9744b64e44ac75391908aea0e, type: 3}
+  - {fileID: 2503992160686711965, guid: bffa35e1f376f7b4ca9cabf91cba698b, type: 3}
   AppearSittingBunnyList:
-  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
-  - {fileID: 0}
-  - {fileID: 8503556356629361691, guid: 0ccfae04766d7904ca27873805be5b38, type: 3}
-  - {fileID: 0}
-  - {fileID: 1085439849001219257, guid: f592fca38919b5c47950416df118c285, type: 3}
-  - {fileID: 0}
-  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
-  - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
+  - {fileID: 2503992160686711965, guid: ca6039c942d912d4e87e6cbf0070fef3, type: 3}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
+  - {fileID: 0}
+  - {fileID: 2503992160686711965, guid: 7f7f09ebe42385349896d3240472cc4e, type: 3}
+  - {fileID: 0}
+  - {fileID: 2503992160686711965, guid: b1c0a5bb29c83a74ea1c896f194a6fbb, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 2503992160686711965, guid: 8e37475a30398e740950fd5fceffb4f2, type: 3}
+  - {fileID: 0}
   - {fileID: 0}
 --- !u!68 &1244180712
 EdgeCollider2D:
@@ -2792,6 +2806,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -2942,6 +2957,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3032,14 +3048,14 @@ MonoBehaviour:
   AppearSittingBunnyList:
   - {fileID: 8503556356629361691, guid: 7feb322b9dac2ce4c8aace400f386beb, type: 3}
   - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
-  - {fileID: 2503992160686711965, guid: 31fdc88df7106a3409f4b9e2535af3e6, type: 3}
+  - {fileID: 0}
   - {fileID: 8503556356629361691, guid: 0ccfae04766d7904ca27873805be5b38, type: 3}
   - {fileID: 1085439849001219257, guid: 98f261d3b3d398b4dace5c550854db57, type: 3}
   - {fileID: 1085439849001219257, guid: 7186550ee774ae249905694d2dfe531f, type: 3}
   - {fileID: 1085439849001219257, guid: f592fca38919b5c47950416df118c285, type: 3}
   - {fileID: 1085439849001219257, guid: f592fca38919b5c47950416df118c285, type: 3}
   - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
-  - {fileID: 2503992160686711965, guid: 08b88192fea06ca4fa7607fe48d0f604, type: 3}
+  - {fileID: 0}
   - {fileID: 8503556356629361691, guid: f9200796c7d31be4f842f453e3062e44, type: 3}
   - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
 --- !u!68 &1353000104
@@ -3139,6 +3155,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3218,6 +3235,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3297,6 +3315,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3447,6 +3466,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3526,6 +3546,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3676,6 +3697,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -3718,7 +3740,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1640474011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3728,7 +3750,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1640474010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1301386320, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_IgnoreReversedGraphics: 1
@@ -3745,7 +3767,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1640474010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1980459831, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 1
@@ -3880,6 +3902,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4030,6 +4053,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4100,7 +4124,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1844091424}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
@@ -4120,6 +4144,7 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
 --- !u!222 &1844091427
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4137,7 +4162,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1844091424}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1392445389, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
@@ -4230,8 +4255,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cond:
   - questName: 0
-    isAccept: 1
-    isSuccess: 1
+    state: 0
     warningText: "\uB300\uD559\uC6D0\uC0DD\uC5D0\uAC8C \uAE38\uC744 \uBB3C\uC5B4\uBCF4\uC790!"
 --- !u!61 &1865943256
 BoxCollider2D:
@@ -4315,6 +4339,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4394,6 +4419,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4483,7 +4509,7 @@ MonoBehaviour:
   - {fileID: 4068970608071160942, guid: 2fd372a5ac3679148b2708321cc82f77, type: 3}
   - {fileID: 7090076076996725718, guid: 424aac207a46ffb41822b047dd498bc0, type: 3}
   - {fileID: 1085439849001219257, guid: f592fca38919b5c47950416df118c285, type: 3}
-  - {fileID: 2503992160686711965, guid: 78ad6879b8accc04c8b23120f468d87b, type: 3}
+  - {fileID: 0}
   - {fileID: 0}
   - {fileID: 3923767360612557869, guid: 22d27529e05d5c64f86c8ad930c2867a, type: 3}
   - {fileID: 8503556356629361691, guid: 0ccfae04766d7904ca27873805be5b38, type: 3}
@@ -4585,6 +4611,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -4933,6 +4960,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -5028,8 +5056,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cond:
   - questName: 1
-    isAccept: 0
-    isSuccess: 0
+    state: 0
     warningText: "\uCC29\uD574\uBCF4\uC774\uB294 \uD1A0\uB07C\uC5D0\uAC8C \uD578\uB4DC\uD3F0\uC744
       \uBE4C\uB824\uBCF4\uC790!"
 --- !u!1 &2086894783
@@ -5088,6 +5115,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -5238,6 +5266,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0

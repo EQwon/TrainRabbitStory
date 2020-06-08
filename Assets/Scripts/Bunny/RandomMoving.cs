@@ -73,6 +73,13 @@ public class RandomMoving : MonoBehaviour
 
     private void AnimationControl()
     {
+        if (animator == null)
+        {
+            if (moveDir.x > 0) GetComponent<SpriteRenderer>().flipX = true;
+            else if (moveDir.x < 0) GetComponent<SpriteRenderer>().flipX = false;
+            return;
+        }
+
         if (TimeManager.timeScale == 0)
         {
             animator.SetBool("Walk", false);
@@ -172,12 +179,12 @@ public class RandomMoving : MonoBehaviour
         if (isFacingRight == true)
         {
             moveDir = new Vector2(speed, moveDir.y);
-            animator.SetBool("IsRight", true);
+            if(animator) animator.SetBool("IsRight", true);
         }
         else
         {
             moveDir = new Vector2(-speed, moveDir.y);
-            animator.SetBool("IsRight", false);
+            if (animator) animator.SetBool("IsRight", false);
         }
     }
 }

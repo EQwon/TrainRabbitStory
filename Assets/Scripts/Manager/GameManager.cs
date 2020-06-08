@@ -61,7 +61,7 @@ public class GameManager : MonoBehaviour
                 return 1;
             else
             {
-                if (MP >= 50) return 5;
+                if (MP >= 50) return 50;
                 else return 3;
             }
         }
@@ -129,8 +129,6 @@ public class GameManager : MonoBehaviour
 
             TimeManager.timeScale = 1;
             GetComponent<QuestManager>().enabled = true;
-
-            UIManager.instance.ShowOpeningStory();
         }
     }
 

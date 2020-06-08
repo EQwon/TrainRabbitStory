@@ -82,7 +82,7 @@ public class TalkDialog : Dialog
 
     protected TalkDialog(string speakerName, string speakerText, string speakerImg)
     {
-        dialog = new BasicDialog(speakerName, speakerText, Resources.Load<Sprite>("SpeakerImage/" + speakerImg));
+        dialog = new BasicDialog(speakerName, speakerText, Resources.Load<Sprite>("SpeakerImage/대화_" + speakerImg));
     }
 
     public override void Run(UIManager UI)

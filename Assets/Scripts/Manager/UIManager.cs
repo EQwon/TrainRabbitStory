@@ -39,16 +39,13 @@ public class UIManager : MonoBehaviour
     public GameObject questCard;
     private List<GameObject> questCards = new List<GameObject>();
 
-    [Header("For Opening")]
-    public TextAsset openingAsset;
-
     [Header("Stage Clear")]
     public GameObject stageClearPanel;
     public List<Sprite> clearMent;
 
     private List<Dialog> currentDialogue;
     private GameObject currentInteractBunny;
-    public GameObject CurrentInteractBunny { get { return currentInteractBunny; } }
+    public GameObject CurrentInteractBunny { get { return currentInteractBunny; } set { currentInteractBunny = value; } }
     private int currentDialogNum = -1;
     private int choosedNum = 0;
 
@@ -115,6 +112,7 @@ public class UIManager : MonoBehaviour
     {
         //1. 현재 할 대화를 가져오는 기능
         currentDialogue = interactBunny.GetComponent<Dialogue>().DialogueForNow();
+        Debug.Log(currentDialogue.Count);
         if (currentDialogue.Count == 0) return;
 
         //2. 대화 상태로 UI 조정하는 기능
@@ -348,24 +346,6 @@ public class UIManager : MonoBehaviour
     {
         //주어진 번호로 차량 번호 칸을 업데이트 한다.
         cellNumberText.text = (GameManager.instance.MaxCellNum - cellNum).ToString("00");
-    }
-
-    public void ShowOpeningStory()
-    {
-        //UI 조정
-        basicUI.SetActive(false);
-        talkPanel.SetActive(true);
-        talkPanel.GetComponent<Button>().interactable = true;
-
-        //대화 로딩
-        currentDialogue = Parser.DialogParse(openingAsset)[GameManager.instance.Stage];
-
-        //게임 상태 변화
-        GameManager.instance.IsTalking = true;
-        
-        //대화 시작
-        currentDialogNum = -1;
-        NextDialog();
     }
 
     public void ClearQuestCard()

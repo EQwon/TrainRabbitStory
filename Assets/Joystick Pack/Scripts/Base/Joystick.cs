@@ -163,7 +163,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     public void OnTalkDown()
     {
-        talk = true;
+        UIManager.instance.StartTalk();
     }
 
     private void LateUpdate()

@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public enum BunnyName { Gotgam, Jadupudding, Kkingkkang,
-                        Mango, Pulttegi, Ssookgat, Tomatotang,
-                        Yanggaeng, Yuza, None }
+public enum BunnyName { 김망고, 낑깡씨, 새우초밥씨, 수씨, 용과씨,
+                        유자씨, 카스테라씨, 토마토탕씨, Ssookgat, None }
 
 public class Dialogue : MonoBehaviour
 {
     [SerializeField] private TextAsset dialogueAsset;
+    [SerializeField] private bool isRandom;
     /// <summary>
     /// 현재 스테이지가 시작되고 대화한 횟수
     /// </summary>

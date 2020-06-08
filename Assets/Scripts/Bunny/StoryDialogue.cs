@@ -38,7 +38,8 @@ public class StoryDialogue : Dialogue
         }
 
         // 보여줄 대화 번호
-        int dialogCnt = GameManager.instance.StoryBunny(myName).TalkCnt;
+        int dialogCnt = nowTalkCnt;
+        // int dialogCnt = GameManager.instance.StoryBunny(myName).TalkCnt;
 
         // 해당 대화 번호에 대화가 있으면
         if (dialogues.Count > dialogCnt)

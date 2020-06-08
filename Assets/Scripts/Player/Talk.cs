@@ -14,12 +14,6 @@ public class Talk : MonoBehaviour
     private void Update()
     {
         if (joystick == null) joystick = Player.instance.joystick;
-
-        if (canTalk == true && joystick.Talk/*Input.GetKeyDown(KeyCode.Z)*/)
-        {
-            joystick.Talk = false;
-            UIManager.instance.StartTalk(interactBunny);
-        }
     }
 
     private void OnTriggerEnter2D(Collider2D coll)
@@ -28,6 +22,7 @@ public class Talk : MonoBehaviour
         {
             canTalk = true;
             interactBunny = coll.gameObject.transform.parent.gameObject;
+            UIManager.instance.CurrentInteractBunny = interactBunny;
             UIManager.instance.SetTalkButtonState(true);
             //Debug.Log(interactBunny.name + "와 대화 가능");
         }
@@ -41,6 +36,7 @@ public class Talk : MonoBehaviour
 
             canTalk = false;
             interactBunny = null;
+            UIManager.instance.CurrentInteractBunny = null;
             UIManager.instance.SetTalkButtonState(false);
         }
     }
