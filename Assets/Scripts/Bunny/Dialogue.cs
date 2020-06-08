@@ -9,7 +9,6 @@ public enum BunnyName { 김망고, 낑깡씨, 새우초밥씨, 수씨, 용과씨
 public class Dialogue : MonoBehaviour
 {
     [SerializeField] private TextAsset dialogueAsset;
-    [SerializeField] private bool isRandom;
     /// <summary>
     /// 현재 스테이지가 시작되고 대화한 횟수
     /// </summary>

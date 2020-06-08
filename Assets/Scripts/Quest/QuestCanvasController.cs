@@ -8,7 +8,7 @@ public class QuestCanvasController : MonoBehaviour
 
     public void AddCanvas(QuestName questName, GameObject questCanvas)
     {
-        questCanvas.transform.parent = gameObject.transform;
+        questCanvas.transform.SetParent(gameObject.transform);
         RectTransform rect = questCanvas.GetComponent<RectTransform>();
         rect.anchorMin = Vector2.zero;
         rect.anchorMax = Vector2.one;

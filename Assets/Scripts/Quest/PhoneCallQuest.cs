@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PhoneCallQuest : Quest
+public class PhoneCallQuest : QuestPanel
 {
+    private QuestName questName;
+
     //3, 2, 1 시작!
     //제한시간 15초
     //버튼을 눌러서 알맞은 번호를 누르자.
@@ -33,29 +35,28 @@ public class PhoneCallQuest : Quest
     private float countDownTime = 4f;
     private float remainTime = 0;
 
-    private void Start()
+    public override void StartQuest(Quest quest)
     {
-        GameManager.instance.IsTalking = true;
-        UIManager.instance.gameObject.SetActive(false);
+        questName = quest.QuestName;
         InitializePanel();
         state = State.tutorial;
         remainTime = timeLimit;
     }
 
-    private void Update()
+    protected override void DuringQuest()
     {
         switch (state)
         {
             case State.tutorial:
                 tutorialPanel.SetActive(true);
                 break;
-            case State.ready :
+            case State.ready:
                 countDownTime -= Time.deltaTime;
                 CountDown();
 
                 if (countDownTime <= 0f) StartGame();
                 break;
-            case State.playing :
+            case State.playing:
                 remainTime -= Time.deltaTime;
                 remainTimeText.text = remainTime.ToString("F2") + " s";
                 if (remainTime <= 0)
@@ -157,6 +158,7 @@ public class PhoneCallQuest : Quest
         QuestManager.instance.QuestFinish(questName);
         QuestManager.instance.BackToNoraml();
         UIManager.instance.StartTalk();
+        gameObject.SetActive(false);
     }
 
     private IEnumerator FailReaction()
@@ -167,6 +169,7 @@ public class PhoneCallQuest : Quest
 
         questManager.BackToNoraml();
         UIManager.instance.StartTalk();
+        gameObject.SetActive(false);
     }
 
     public void Ready()

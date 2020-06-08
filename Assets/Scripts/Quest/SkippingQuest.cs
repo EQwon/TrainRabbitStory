@@ -24,7 +24,7 @@ public class CarrotTalkDialogue
     }
 }
 
-public class SkippingQuest : Quest
+public class SkippingQuest : QuestPanel
 {
     [Header("Object Holder")]
     [SerializeField] private GameObject phoneScreen;
@@ -36,14 +36,15 @@ public class SkippingQuest : Quest
     [SerializeField] private GameObject myTextPrefab;
     [SerializeField] private TextAsset skippingTextAsset;
 
+    private QuestName questName;
     private List<CarrotTalkDialogue> dialogues;
     private int nowDialogue;
     private List<GameObject> SpeakLists;
     private int points;
 
-    private void Start()
+    public override void StartQuest(Quest quest)
     {
-        GameManager.instance.IsTalking = true;
+        questName = quest.QuestName;
 
         dialogues = Parser.SkippingParse(skippingTextAsset);
         nowDialogue = 0;
@@ -54,9 +55,8 @@ public class SkippingQuest : Quest
         TeacherSpeak();
     }
 
-    private void Update()
+    protected override void DuringQuest()
     {
-        //거리 계산해서 배치해야함
         for (int i = 0; i < SpeakLists.Count; i++)
         {
             GameObject target = SpeakLists[SpeakLists.Count - 1 - i];
@@ -140,6 +140,7 @@ public class SkippingQuest : Quest
             QuestManager.instance.QuestFinish(questName);
             QuestManager.instance.BackToNoraml();
             UIManager.instance.StartTalk();
+            gameObject.SetActive(false);
 
             yield break;
         }

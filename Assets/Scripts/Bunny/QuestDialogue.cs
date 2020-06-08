@@ -53,6 +53,8 @@ public class QuestDialogue : Dialogue
 
     private List<Dialog> FinishDialogue()
     {
+        if (cutline.Count == 0) return dialogues[2];
+
         int score = myQuest.Score;
 
         for (int i = 0; i < cutline.Count; i++)
@@ -67,6 +69,8 @@ public class QuestDialogue : Dialogue
 
     private List<Dialog> AfterDialogue()
     {
+        if (cutline.Count == 0) return dialogues[2];
+
         int score = myQuest.Score;
 
         for (int i = 0; i < cutline.Count; i++)

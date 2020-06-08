@@ -2695,7 +2695,8 @@ MonoBehaviour:
   CellNum: 8
   AppearStandingBunnyList:
   - {fileID: 2503992160686711965, guid: 9590fdb9744b64e44ac75391908aea0e, type: 3}
-  - {fileID: 2503992160686711965, guid: bffa35e1f376f7b4ca9cabf91cba698b, type: 3}
+  - {fileID: 2503992160686711965, guid: 86b049a3a23092a4d859e12c1eec7c27, type: 3}
+  - {fileID: 2503992160686711965, guid: 8cd982f2c6c898940b157fa9b5d00a27, type: 3}
   AppearSittingBunnyList:
   - {fileID: 2503992160686711965, guid: ca6039c942d912d4e87e6cbf0070fef3, type: 3}
   - {fileID: 0}
@@ -2708,7 +2709,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 2503992160686711965, guid: 8e37475a30398e740950fd5fceffb4f2, type: 3}
   - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 2503992160686711965, guid: bffa35e1f376f7b4ca9cabf91cba698b, type: 3}
 --- !u!68 &1244180712
 EdgeCollider2D:
   m_ObjectHideFlags: 0
